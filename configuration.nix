@@ -50,6 +50,8 @@
     neovim
     git
     wget
+    pciutils
+    gcc
   ];
 
   # List services that you want to enable:
