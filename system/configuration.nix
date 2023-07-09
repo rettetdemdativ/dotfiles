@@ -20,6 +20,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  programs.zsh.enable = true;
   programs.hyprland.enable = true;
 
   # Enable CUPS to print documents.
@@ -38,11 +39,8 @@
     isNormalUser = true;
     initialPassword = "password";
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      librewolf
-      htop
-    ];
   };
+  users.defaultUserShell = pkgs.zsh;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -52,6 +50,7 @@
     wget
     pciutils
     gcc
+    zsh
   ];
 
   # List services that you want to enable:
