@@ -5,6 +5,7 @@
     nixpkgs.url = "nixpkgs/nixos-23.05";
     home-manager.url = "github:nix-community/home-manager/release-23.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }:
@@ -34,6 +35,7 @@
 
 	modules = [
 	  ./system/configuration.nix
+	  nixos-hardware.nixosModules.dell-xps-13-9380
 	];
       };
     };
