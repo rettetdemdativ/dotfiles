@@ -41,6 +41,7 @@
     kitty
     htop
     zsh
+    podman-compose
 
     # Media
     pulsemixer
