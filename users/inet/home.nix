@@ -27,16 +27,25 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    # Wayland WM
     hyprland
     waybar
     mako
     hyprpaper
     bemenu
+
+    # Web
     librewolf
+
+    # Tools
     kitty
     htop
     zsh
+
+    # Media
     pulsemixer
+    mpv
+    zathura
 
     git
     git-crypt
