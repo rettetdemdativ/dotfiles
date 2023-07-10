@@ -56,6 +56,7 @@
 
     # Fonts
     jetbrains-mono
+    roboto
   ];
 
   programs.git = {
