@@ -47,10 +47,14 @@
     mpv
     zathura
 
+    # Misc
     git
     git-crypt
     gnupg
     pinentry_qt
+
+    # Fonts
+    jetbrains-mono
   ];
 
   programs.git = {

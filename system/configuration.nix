@@ -26,7 +26,6 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   programs.zsh.enable = true;
-  programs.hyprland.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -56,6 +55,10 @@
     pciutils
     gcc
     zsh
+  ];
+
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   # List services that you want to enable:
