@@ -30,7 +30,6 @@
 
 	modules = [ 
 	  hyprland.homeManagerModules.default
-	  { wayland.windowManager.hyprland.enable = true; }
 	  ./users/inet/home.nix
 	];
       };
