@@ -2,13 +2,16 @@
   description = "NixOS config";
  
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.05";
-    home-manager.url = "github:nix-community/home-manager/release-23.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, hyprland, ... }:
   let
     system = "x86_64-linux";
 
@@ -25,7 +28,11 @@
       inet = home-manager.lib.homeManagerConfiguration {
 	inherit pkgs;
 
-	modules = [ ./users/inet/home.nix ];
+	modules = [ 
+	  hyprland.homeManagerModules.default
+	  { wayland.windowManager.hyprland.enable = true; }
+	  ./users/inet/home.nix
+	];
       };
     };
 

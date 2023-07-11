@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
   imports =
@@ -24,6 +24,8 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+
+  hardware.opengl.enable = lib.mkDefault true;
 
   programs.zsh.enable = true;
 
@@ -65,6 +67,8 @@
     pciutils
     gcc
     zsh
+
+    seatd
   ];
 
   fonts.fonts = with pkgs; [
