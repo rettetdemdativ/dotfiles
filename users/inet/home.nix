@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }: {
+  imports = [
+    ./features/hyprland
+  ];
 
-{
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "inet";
@@ -18,12 +20,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # Wayland WM
-    waybar
-    mako
-    hyprpaper
-    bemenu
-
     # Web
     librewolf
 
@@ -58,8 +54,6 @@
     pinentryFlavor = "qt";
   };
 
-  wayland.windowManager.hyprland.enable = true;
-
   programs.git = {
     enable = true;
     userName  = "Michael Koeppl";
@@ -69,18 +63,6 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
-    initExtraFirst = ''
-	if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-	  export QT_QPA_PLATFORM=wayland
-	  export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-    	  export XDG_SESSION_TYPE=wayland
-    	  export XDG_CURRENT_DESKTOP=hyprland
-    	  export _JAVA_AWT_WM_NONREPARENTING=1
-    	  export MOZ_ENABLE_WAYLAND=1
-    	  export MOZ_WEBRENDER=1
-    	  exec Hyprland
-	fi	
-    '';
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
