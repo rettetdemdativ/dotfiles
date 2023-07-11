@@ -18,7 +18,7 @@
       fsType = "btrfs";
     };
 
-  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/fa669363-b1d2-4f89-bf21-b88e38bea21d";
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-label/NIXCRYPT";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-label/NIXBOOT";
