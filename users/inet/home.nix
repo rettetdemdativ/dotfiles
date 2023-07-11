@@ -15,17 +15,6 @@
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  programs.gpg = {
-    enable = true;
-  };
-
-  services.gpg-agent = {
-    enable = true;
-    pinentryFlavor = "qt";
-  };
-
-  wayland.windowManager.hyprland.enable = true;
-
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -59,6 +48,17 @@
     jetbrains-mono
     roboto
   ];
+
+  programs.gpg = {
+    enable = true;
+  };
+
+  services.gpg-agent = {
+    enable = true;
+    pinentryFlavor = "qt";
+  };
+
+  wayland.windowManager.hyprland.enable = true;
 
   programs.git = {
     enable = true;
