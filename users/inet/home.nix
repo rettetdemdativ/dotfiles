@@ -1,6 +1,6 @@
 { inputs, config, pkgs, ... }: {
   imports = [
-    ./features/hyprland
+    ./features/desktop/hyprland
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
