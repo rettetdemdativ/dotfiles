@@ -22,6 +22,9 @@
   ];
 
   wayland.windowManager.hyprland.enable = true;
+  xdg.configFile."hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
 
-  xdg.configFile."hypr/hyprland.conf".source = ./config/hyprland.conf;
+  programs.waybar.enable = true;
+  xdg.configFile."waybar/config".source = ./config/waybar/config;
+  xdg.configFile."waybar/style.css".source = ./config/waybar/style.css;
 }
