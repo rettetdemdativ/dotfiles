@@ -1,5 +1,5 @@
 #!/bin/sh
-pushd ~/.dotfiles
+pushd ~/dotfiles
 nix run . -- build --flake .
 ./result/activate
 popd
