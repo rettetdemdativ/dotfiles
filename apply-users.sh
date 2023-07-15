@@ -1,5 +1,4 @@
 #!/bin/sh
 pushd ~/dotfiles
-nix run . -- build --flake .
-./result/activate
+home-manager switch -b backup --flake .
 popd
