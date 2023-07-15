@@ -26,12 +26,12 @@
 
     homeConfigurations = {
       inet = home-manager.lib.homeManagerConfiguration {
-	inherit pkgs;
+        inherit pkgs;
 
-	modules = [ 
-	  hyprland.homeManagerModules.default
-	  ./users/inet/home.nix
-	];
+        modules = [
+          hyprland.homeManagerModules.default
+          ./users/inet/home.nix
+        ];
       };
     };
 
@@ -39,10 +39,10 @@
       nixxps = lib.nixosSystem {
         inherit system;
 
-	modules = [
-	  ./system/configuration.nix
-	  nixos-hardware.nixosModules.dell-xps-13-9380
-	];
+        modules = [
+          ./system/configuration.nix
+          nixos-hardware.nixosModules.dell-xps-13-9380
+        ];
       };
     };
   };
