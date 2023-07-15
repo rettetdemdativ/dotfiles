@@ -38,7 +38,7 @@ return {
 			ensure_installed = {
 				"bash",
 				"go",
-				"help",
+				"vimdoc",
 				"html",
 				"java",
 				"javascript",
