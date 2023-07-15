@@ -48,7 +48,6 @@
       HandlePowerKey=hybrid-sleep
       HandleSuspendKey=suspend
       HandleHibernateKey=hibernate
-      HandleLidSwitch=suspend
       IdleAction=ignore
     '';
   };
