@@ -1,9 +1,9 @@
 { inputs, lib, config, pkgs, ... }: {
   services.mpd = {
     enable = true;
-    dbFile = xdg.configFile."mpd/database";
     musicDirectory = "~/Music";
-    playlistDirectory = xdg.configFile."mpd/playlists";
+    dbFile = "~/.config/mpd/database";
+    playlistDirectory = "~/.config/mpd/playlists";
 
     network = {
       startWhenNeeded = true;
