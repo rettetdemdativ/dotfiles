@@ -40,6 +40,19 @@
 
   hardware.opengl.enable = lib.mkDefault true;
 
+  services.logind = {
+    lidSwitch = hibernate;
+    lidSwitchDocked = suspend;
+    lidSwitchExternalPower = suspend;
+    extraConfig = ''
+      HandlePowerKey=hybrid-sleep
+      HandleSuspendKey=suspend
+      HandleHibernateKey=hibernate
+      HandleLidSwitch=suspend
+      IdleAction=ignore
+    '';
+  };
+
   programs.zsh.enable = true;
 
   # Enable CUPS to print documents.
