@@ -1,7 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    ./mpd
-    ./ncmpcpp
+    ./mpd.nix
+    ./ncmpcpp.nix
   ];
 
   home.packages = with pkgs; [
