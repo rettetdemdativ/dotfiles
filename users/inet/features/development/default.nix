@@ -11,7 +11,6 @@
     podman-compose
 
     clang
-    gcc
     rustup
     go
     # Used for various development tools
