@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
     ./neovim
+    ./kitty
   ];
 
   home.packages = with pkgs; [
