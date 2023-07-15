@@ -41,6 +41,7 @@
     bitwarden
     bitwarden-cli
     mullvad-vpn
+    onedrive
 
     # Fonts
     jetbrains-mono
