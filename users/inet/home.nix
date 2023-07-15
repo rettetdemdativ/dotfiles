@@ -28,12 +28,19 @@
     pulsemixer
     mpv
     zathura
+    ncmpcpp
+    tidal-hifi
 
     # Misc
     git
     git-crypt
     gnupg
     pinentry_qt
+    xfce.thunar
+    nnn
+    bitwarden
+    bitwarden-cli
+    mullvad-vpn
 
     # Fonts
     jetbrains-mono
