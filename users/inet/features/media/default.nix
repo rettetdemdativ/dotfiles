@@ -1,5 +1,5 @@
 { inputs, lib, config, pkgs, ... }: {
-  import = [
+  imports = [
     ./mpd
     ./ncmpcpp
   ];
