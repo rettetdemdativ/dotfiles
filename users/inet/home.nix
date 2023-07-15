@@ -2,6 +2,7 @@
   imports = [
     ./features/desktop
     ./features/development
+    ./features/media
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -23,13 +24,6 @@
   home.packages = with pkgs; [
     # Web
     librewolf
-
-    # Media
-    pulsemixer
-    mpv
-    zathura
-    ncmpcpp
-    tidal-hifi
 
     # Misc
     git
