@@ -1,7 +1,7 @@
 { inputs, config, pkgs, ... }: {
   imports = [
     ./features/desktop
-    ./features/productivity
+    ./features/development
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
