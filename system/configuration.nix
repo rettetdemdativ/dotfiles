@@ -52,6 +52,8 @@
     '';
   };
 
+  services.hardware.bolt.enable = true;
+
   programs.zsh.enable = true;
 
   # Enable CUPS to print documents.
