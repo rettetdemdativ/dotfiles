@@ -10,7 +10,7 @@
         export MOZ_ENABLE_WAYLAND=1
         export MOZ_WEBRENDER=1
         exec Hyprland
-      fi	
+      fi
     '';
   };
 
@@ -22,11 +22,11 @@
   ];
 
   wayland.windowManager.hyprland.enable = true;
-  xdg.configFile."hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
+  xdg.configFile."../../../.config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
 
   programs.waybar.enable = true;
-  xdg.configFile."waybar/config".source = ./config/waybar/config;
-  xdg.configFile."waybar/style.css".source = ./config/waybar/style.css;
+  xdg.configFile."../../../.config/waybar/config".source = ./config/waybar/config;
+  xdg.configFile."../../../.config/waybar/style.css".source = ./config/waybar/style.css;
 
-  xdg.configFile."mako/config".source = ./config/mako/config;
+  xdg.configFile."../../../.config/mako/config".source = ./config/mako/config;
 }
