@@ -4,7 +4,10 @@
   ];
 
   home.packages = with pkgs; [
-    neovim
     jetbrains.idea-ultimate
+    kitty
+    htop
+    zsh
+    podman-compose
   ];
 }

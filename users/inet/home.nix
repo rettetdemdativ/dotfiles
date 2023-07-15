@@ -24,12 +24,6 @@
     # Web
     librewolf
 
-    # Tools
-    kitty
-    htop
-    zsh
-    podman-compose
-
     # Media
     pulsemixer
     mpv
