@@ -2,8 +2,6 @@
   services.mpd = {
     enable = true;
     musicDirectory = "~/Music";
-    dbFile = "~/.config/mpd/database";
-    playlistDirectory = "~/.config/mpd/playlists";
 
     network = {
       startWhenNeeded = true;
