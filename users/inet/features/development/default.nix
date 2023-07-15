@@ -10,6 +10,9 @@
     zsh
     podman-compose
 
+    clang
+    gcc
+    rustup
     go
     # Used for various development tools
     nodejs_20
