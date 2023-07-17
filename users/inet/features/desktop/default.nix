@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
     ./hyprland.nix
+    ./hyprpaper.nix
     ./gammastep.nix
     ./waybar.nix
     ./mako.nix
