@@ -23,9 +23,11 @@
   };
 
   home.packages = with pkgs; [
+    # Hyprland is imported through its flake in flake.nix
     waybar
     mako
     hyprpaper
+    swaylock
     bemenu
     gammastep
     geoclue2
