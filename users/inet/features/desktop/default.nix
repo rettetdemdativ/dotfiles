@@ -26,5 +26,6 @@
     hyprpaper
     bemenu
     gammastep
+    geoclue2
   ];
 }
