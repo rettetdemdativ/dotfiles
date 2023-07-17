@@ -25,5 +25,6 @@
     mako
     hyprpaper
     bemenu
+    gammastep
   ];
 }
