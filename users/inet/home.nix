@@ -36,6 +36,7 @@
     bitwarden-cli
     mullvad-vpn
     onedrive
+    handlr-regex
 
     # Fonts
     jetbrains-mono

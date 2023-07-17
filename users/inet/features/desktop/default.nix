@@ -1,8 +1,8 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    ./hyprland
-    ./waybar
-    ./mako
+    ./hyprland.nix
+    ./waybar.nix
+    ./mako.nix
   ];
 
   programs.zsh = {

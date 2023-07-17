@@ -1,7 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    ./neovim
-    ./kitty
+    ./neovim.nix
+    ./kitty.nix
   ];
 
   home.packages = with pkgs; [
