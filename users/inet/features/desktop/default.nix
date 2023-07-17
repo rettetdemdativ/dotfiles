@@ -5,6 +5,7 @@
     ./gammastep.nix
     ./waybar.nix
     ./mako.nix
+    ./zathura.nix
   ];
 
   programs.zsh = {
