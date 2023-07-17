@@ -8,6 +8,7 @@
     pulsemixer
     mpv
     zathura
+    feh
     mpd
     ncmpcpp
     tidal-hifi

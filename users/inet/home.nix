@@ -30,6 +30,7 @@
     git-crypt
     gnupg
     pinentry_qt
+
     xfce.thunar
     nnn
     bitwarden
@@ -61,6 +62,32 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = [ "zathura.desktop" ];
+      "image/jpeg" = [ "feh.desktop" ];
+      "image/png" = [ "feh.desktop" ];
+      "x-scheme-handler/http" = [ "librewolf.desktop" ];
+      "x-scheme-handler/https" = [ "librewolf.desktop" ];
+      "text/html" = [ "librewolf.desktop" ];
+      "application/x-extension-htm" = [ "librewolf.desktop" ];
+      "application/x-extension-html" = [ "librewolf.desktop" ];
+      "application/x-extension-shtml" = [ "librewolf.desktop" ];
+      "application/x-extension-xht" = [ "librewolf.desktop" ];
+      "application/x-extension-xhtml" = [ "librewolf.desktop" ];
+      "application/xhtml+xml" = [ "librewolf.desktop" ];
+
+      "video/webm" = [ "mpv.desktop" ];
+      "video/ogg" = [ "mpv.desktop" ];
+      "video/x-msvideo" = [ "mpv.desktop" ];
+      "video/x-flv" = [ "mpv.desktop" ];
+      "video/mp4" = [ "mpv.desktop" ];
+
+      "inode/directory" = [ "nnn.desktop" "nautilus.desktop" ];
+    };
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
