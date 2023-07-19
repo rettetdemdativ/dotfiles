@@ -1,4 +1,8 @@
 { inputs, lib, config, pkgs, ... }: {
+  imports = [
+    ./onedrive.nix
+  ];
+
   home.packages = with pkgs; [
     git
     git-crypt

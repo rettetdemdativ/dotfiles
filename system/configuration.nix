@@ -52,6 +52,12 @@
     '';
   };
 
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
+
   services.hardware.bolt.enable = true;
 
   programs.zsh.enable = true;
