@@ -28,7 +28,7 @@
     waybar
     mako
     hyprpaper
-    swaylock
+    swaylock-effects
     bemenu
     gammastep
     geoclue2
