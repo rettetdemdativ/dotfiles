@@ -3,6 +3,7 @@
     ./features/desktop
     ./features/development
     ./features/media
+    ./features/cli
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -25,39 +26,14 @@
     # Web
     librewolf
 
-    # Misc
-    git
-    git-crypt
-    gnupg
-    pinentry_qt
-
     xfce.thunar
-    nnn
     bitwarden
-    bitwarden-cli
     mullvad-vpn
-    onedrive
-    handlr-regex
 
     # Fonts
     jetbrains-mono
     roboto
   ];
-
-  programs.gpg = {
-    enable = true;
-  };
-
-  services.gpg-agent = {
-    enable = true;
-    pinentryFlavor = "qt";
-  };
-
-  programs.git = {
-    enable = true;
-    userName  = "Michael Koeppl";
-    userEmail = "michael@koeppl.dev";
-  };
 
   programs.zsh = {
     enable = true;
