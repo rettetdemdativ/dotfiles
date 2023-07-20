@@ -74,7 +74,12 @@
   services.hardware.bolt.enable = true;
   services.fwupd.enable = true;
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      apply-system= "$HOME/dotfiles/scripts/apply-system.sh";
+    };
+  };
 
   programs.hyprland = {
     enable = true;
