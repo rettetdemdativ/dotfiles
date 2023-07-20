@@ -1,3 +1,3 @@
 { inputs, lib, config, pkgs, ... }: {
-  xdg.configFile."onedrive/config".source = ../../.config/onedrive/config;
+  xdg.configFile."onedrive".source = ../../.config/onedrive;
 }
