@@ -11,6 +11,8 @@
     nixfmt # Nix formatter
     bitwarden-cli
     handlr-regex
+
+    brightnessctl
   ];
 
   programs.gpg = {
