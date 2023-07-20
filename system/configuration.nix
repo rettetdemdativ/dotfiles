@@ -60,6 +60,13 @@
     '';
   };
 
+  services.tlp = {
+    enable = true;
+    settings = {
+      USB_AUTOSUSPEND = 0;
+    };
+  };
+
   services.hardware.bolt.enable = true;
   services.fwupd.enable = true;
 
