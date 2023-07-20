@@ -1,8 +1,4 @@
 { inputs, lib, config, pkgs, ... }: {
-  imports = [
-    ./onedrive.nix
-  ];
-
   home.packages = with pkgs; [
     git
     git-crypt
@@ -14,7 +10,6 @@
     nil # Nix LSP
     nixfmt # Nix formatter
     bitwarden-cli
-    onedrive
     handlr-regex
   ];
 
