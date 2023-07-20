@@ -12,7 +12,8 @@
     # Used for various development tools
     nodePackages.prettier
     lua
-    nil
+    nil # Nix LSP
+    nixfmt # Nix formatter
     ripgrep
   ];
 }
