@@ -48,6 +48,7 @@
       dev_go = "$HOME/dotfiles/scripts/activate-dev.sh languages/go";
       dev_c = "$HOME/dotfiles/scripts/activate-dev.sh languages/c";
       dev_nodejs = "$HOME/dotfiles/scripts/activate-dev.sh languages/nodejs";
+      dev_aws = "$HOME/dotfiles/scripts/activate-dev.sh stacks/aws";
     };
   };
 
