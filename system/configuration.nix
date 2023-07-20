@@ -77,7 +77,8 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      apply-system= "$HOME/dotfiles/scripts/apply-system.sh";
+      apply-system = "$HOME/dotfiles/scripts/apply-system.sh";
+      update-all = "$HOME/dotfiles/scripts/update.sh";
     };
   };
 
