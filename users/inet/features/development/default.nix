@@ -8,6 +8,7 @@
     jetbrains.idea-ultimate
     kitty
     podman-compose
+    buildah
 
     # Used for various development tools
     nodePackages.prettier
