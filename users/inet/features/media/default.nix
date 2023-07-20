@@ -12,5 +12,6 @@
     mpd
     ncmpcpp
     tidal-hifi
+    obs-studio
   ];
 }
