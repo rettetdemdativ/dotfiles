@@ -1,2 +1,2 @@
 #!/bin/sh
-nix develop ~/dotfiles/develop/$1 -c $SHELL
+nix develop "$HOME/dotfiles/develop/$1" -c "$SHELL"
