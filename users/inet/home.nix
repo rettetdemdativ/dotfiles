@@ -29,6 +29,7 @@
     cinnamon.nemo
     bitwarden
     mullvad-vpn
+    signal-desktop
 
     # Fonts
     jetbrains-mono
