@@ -17,5 +17,7 @@
     # Used for various development tools
     nodejs_20
     nodePackages.prettier
+    lua
+    nil
   ];
 }

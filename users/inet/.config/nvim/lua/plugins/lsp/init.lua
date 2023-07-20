@@ -38,7 +38,7 @@ return {
 				ruff_lsp = {},
 				rust_analyzer = {},
 				lua_ls = {},
-				nixd = {},
+				nil_ls = {},
 			},
 			setup = {},
 		},
