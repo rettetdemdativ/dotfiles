@@ -44,9 +44,9 @@
   hardware.opengl.enable = lib.mkDefault true;
 
   services.logind = {
-    lidSwitch = "hibernate";
-    lidSwitchDocked = "suspend";
-    lidSwitchExternalPower = "suspend";
+    lidSwitch = "hybrid-sleep";
+    lidSwitchDocked = "hybrid-sleep";
+    lidSwitchExternalPower = "hybrid-sleep";
     extraConfig = ''
       HandlePowerKey=hybrid-sleep
       HandleSuspendKey=suspend

@@ -30,6 +30,7 @@
     mako
     hyprpaper
     swaylock-effects
+    swayidle
     bemenu
     gammastep
     geoclue2
