@@ -109,6 +109,8 @@
     gcc
     zsh
     lm_sensors
+    mullvad
+    mullvad-vpn
   ];
 
   fonts.fonts = with pkgs; [
@@ -119,6 +121,8 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  services.mullvad-vpn.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
