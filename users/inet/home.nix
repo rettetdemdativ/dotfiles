@@ -38,6 +38,9 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
+    initExtra = ''
+      export DOCKER_HOST="unix:///run/user/$UID/podman/podman.sock";
+    '';
     shellAliases = {
       apply-users = "$HOME/dotfiles/scripts/apply-users.sh";
       nix-shell = "nix-shell --command 'zsh'";
