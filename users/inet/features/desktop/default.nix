@@ -33,5 +33,7 @@
     bemenu
     gammastep
     geoclue2
+    grim
+    slurp
   ];
 }
