@@ -7,8 +7,6 @@
   home.packages = with pkgs; [
     jetbrains.idea-ultimate
     kitty
-    htop
-    zsh
     podman-compose
 
     # Used for various development tools

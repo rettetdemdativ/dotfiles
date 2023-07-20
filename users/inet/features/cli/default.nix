@@ -5,10 +5,11 @@
     gnupg
     pinentry_qt
 
+    htop
+    s-tui
     nnn # File browser
     ncdu # TUI disk usage
-    nil # Nix LSP
-    nixfmt # Nix formatter
+
     bitwarden-cli
     handlr-regex
 
