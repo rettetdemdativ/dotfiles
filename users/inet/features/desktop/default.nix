@@ -35,5 +35,6 @@
     geoclue2
     grim
     slurp
+    wl-clipboard
   ];
 }
