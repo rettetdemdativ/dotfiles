@@ -31,6 +31,7 @@
   };
 
   boot.loader.systemd-boot.enable = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixxps";
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
