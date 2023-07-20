@@ -124,7 +124,6 @@
     git
     wget
     pciutils
-    gcc
     zsh
     lm_sensors
     mullvad

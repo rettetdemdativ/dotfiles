@@ -46,6 +46,7 @@
 
       dev_rust = "$HOME/dotfiles/scripts/activate-dev.sh rust";
       dev_go = "$HOME/dotfiles/scripts/activate-dev.sh go";
+      dev_c = "$HOME/dotfiles/scripts/activate-dev.sh c";
     };
   };
 

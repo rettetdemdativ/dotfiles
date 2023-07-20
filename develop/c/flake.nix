@@ -1,5 +1,5 @@
 {
-  description = "Go development environment";
+  description = "C development environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -24,8 +24,8 @@
       devShells = forAllSystems ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            go
-            gotools
+            gcc
+            clang_16
           ];
         };
       });

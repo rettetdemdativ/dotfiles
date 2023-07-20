@@ -1,13 +1,11 @@
 {
   description = "Rust development environment";
 
-  # Flake inputs
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
     rust-overlay.url = "github:oxalica/rust-overlay"; # A helper for Rust + Nix
   };
 
-  # Flake outputs
   outputs = { self, nixpkgs, rust-overlay }:
     let
       # Overlays enable you to customize the Nixpkgs attribute set
