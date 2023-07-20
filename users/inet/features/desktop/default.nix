@@ -25,6 +25,7 @@
 
   home.packages = with pkgs; [
     # Hyprland is imported through its flake in flake.nix
+    seatd
     waybar
     mako
     hyprpaper

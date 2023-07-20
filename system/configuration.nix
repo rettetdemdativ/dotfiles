@@ -100,8 +100,6 @@
     pciutils
     gcc
     zsh
-
-    seatd
   ];
 
   fonts.fonts = with pkgs; [
