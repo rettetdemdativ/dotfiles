@@ -44,10 +44,10 @@
       monitor_laptop = "sh $HOME/.config/hypr/apply_monitor_setup.sh laptop";
       monitor_home = "sh $HOME/.config/hypr/apply_monitor_setup.sh home";
 
-      dev_rust = "$HOME/dotfiles/scripts/activate-dev.sh rust";
-      dev_go = "$HOME/dotfiles/scripts/activate-dev.sh go";
-      dev_c = "$HOME/dotfiles/scripts/activate-dev.sh c";
-      dev_nodejs = "$HOME/dotfiles/scripts/activate-dev.sh nodejs";
+      dev_rust = "$HOME/dotfiles/scripts/activate-dev.sh languages/rust";
+      dev_go = "$HOME/dotfiles/scripts/activate-dev.sh languages/go";
+      dev_c = "$HOME/dotfiles/scripts/activate-dev.sh languages/c";
+      dev_nodejs = "$HOME/dotfiles/scripts/activate-dev.sh languages/nodejs";
     };
   };
 
