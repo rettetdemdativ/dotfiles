@@ -26,7 +26,7 @@
     # Web
     librewolf
 
-    xfce.thunar
+    cinnamon.nemo
     bitwarden
     mullvad-vpn
 
