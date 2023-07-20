@@ -87,7 +87,7 @@
   users.users.inet = {
     isNormalUser = true;
     initialPassword = "password";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ and network editing for the user.
   };
   users.defaultUserShell = pkgs.zsh;
 
