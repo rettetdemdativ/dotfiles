@@ -39,6 +39,20 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   hardware.opengl.enable = lib.mkDefault true;
+  hardware.fancontrol = {
+    enable = true;
+    config = ''
+      INTERVAL=10
+      DEVPATH=hwmon0=devices/pci0000:00/0000:00:1d.4/0000:6e:00.0/nvme/nvme0 hwmon2=devices/virtual/thermal/thermal_zone3 hwmon5=devices/platform/dell_smm_hwmon
+      DEVNAME=hwmon0=nvme hwmon2=pch_cannonlake hwmon5=dell_smm
+      FCTEMPS=hwmon5/pwm2=hwmon2/temp1_input hwmon5/pwm1=hwmon0/temp3_input
+      FCFANS=hwmon5/pwm2= hwmon5/pwm1=
+      MINTEMP=hwmon5/pwm2=35 hwmon5/pwm1=35
+      MAXTEMP=hwmon5/pwm2=65 hwmon5/pwm1=65
+      MINSTART=hwmon5/pwm2=180 hwmon5/pwm1=180
+      MINSTOP=hwmon5/pwm2=80 hwmon5/pwm1=80
+    '';
+  };
 
   services.logind = {
     lidSwitch = "hibernate";
@@ -101,6 +115,7 @@
     pciutils
     gcc
     zsh
+    lm_sensors
   ];
 
   fonts.fonts = with pkgs; [
