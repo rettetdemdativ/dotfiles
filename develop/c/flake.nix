@@ -24,7 +24,7 @@
       devShells = forAllSystems ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            gcc
+            gcc13
             clang_16
           ];
         };
