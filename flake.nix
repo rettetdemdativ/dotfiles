@@ -11,7 +11,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, hyprland, ... }:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... } @ inputs :
   let
     system = "x86_64-linux";
 
@@ -29,7 +29,6 @@
         inherit pkgs;
 
         modules = [
-          hyprland.homeManagerModules.default
           ./users/inet/home.nix
         ];
       };
@@ -38,7 +37,7 @@
     nixosConfigurations = {
       nixxps = lib.nixosSystem {
         inherit system;
-
+        specialArgs = { inherit inputs; };
         modules = [
           ./system/configuration.nix
           nixos-hardware.nixosModules.dell-xps-13-9380
