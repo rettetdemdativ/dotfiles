@@ -39,7 +39,7 @@
     enable = true;
     enableAutosuggestions = true;
     shellAliases = {
-      apply-user = "$HOME/dotfiles/scripts/apply-users.sh";
+      apply-users = "$HOME/dotfiles/scripts/apply-users.sh";
       nix-shell = "nix-shell --command 'zsh'";
       monitor_laptop = "sh $HOME/.config/hypr/apply_monitor_setup.sh laptop";
       monitor_home = "sh $HOME/.config/hypr/apply_monitor_setup.sh home";
