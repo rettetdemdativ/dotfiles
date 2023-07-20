@@ -59,6 +59,7 @@
   };
 
   services.hardware.bolt.enable = true;
+  services.fwupd.enable = true;
 
   programs.zsh.enable = true;
 
