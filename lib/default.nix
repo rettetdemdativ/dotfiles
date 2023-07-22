@@ -1,6 +1,6 @@
-{ inputs, outputs, nixpkgs, stateVersion, ... }:
+{ inputs, outputs, nixpkgs, agenix, stateVersion, ... }:
 let
-  helpers = import ./helpers.nix { inherit inputs outputs nixpkgs stateVersion; };
+  helpers = import ./helpers.nix { inherit inputs outputs nixpkgs agenix stateVersion; };
 in
 {
   mkHome = helpers.mkHome;

@@ -9,13 +9,14 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland.url = "github:hyprwm/Hyprland";
+    agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... } @ inputs :
+  outputs = { self, nixpkgs, agenix, home-manager, nixos-hardware, ... } @ inputs :
   let
     inherit (self) outputs;
     stateVersion = "23.05";
-    libx = import ./lib { inherit inputs outputs nixpkgs stateVersion; };
+    libx = import ./lib { inherit inputs outputs nixpkgs agenix stateVersion; };
   in {
     # home-manager switch -b backup --flake $HOME/.config/nix-config
     # nix build .#homeConfigurations."username@host".activationPackage

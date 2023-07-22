@@ -27,6 +27,7 @@
     enableAutosuggestions = true;
     initExtra = ''
       export DOCKER_HOST="unix:///run/user/$UID/podman/podman.sock";
+      export EDITOR="nvim";
     '';
     shellAliases = {
       apply-users = "$HOME/dotfiles/scripts/apply-users.sh";
@@ -94,6 +95,5 @@
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    EDITOR = "neovim";
   };
 }

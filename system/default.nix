@@ -120,9 +120,11 @@
 
   services.mullvad-vpn.enable = true;
 
+  age.secrets.inet-hashed.file = ../secrets/inet-hashed.age;
+
   users.users.inet = {
     isNormalUser = true;
-    initialPassword = "password";
+    passwordFile = config.age.secrets.inet-hashed.path;
     extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
     packages = [ pkgs.home-manager ];
     shell = pkgs.zsh;
