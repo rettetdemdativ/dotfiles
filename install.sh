@@ -11,10 +11,16 @@ cryptsetup luksFormat --label NIXCRYPT /dev/${diskname}3
 cryptsetup luksOpen /dev/${diskname}3 cryptroot
 mkfs.btrfs -L NIXROOT /dev/mapper/cryptroot -f
 
-mount /dev/disk/by-label/NIXROOT /mnt
+mount -t tmpfs tmpfs /mnt
+
+mkdir /mnt/nix
+mount /dev/disk/by-label/NIXROOT /mnt/nix
+
+mkdir /mnt/persist
+mount /dev/disk/by-label/NIXPERSIST /mnt/persist
+
 mkdir /mnt/boot
 mount /dev/disk/by-label/NIXBOOT /mnt/boot
-mount /dev/disk/by-label/NIXPERSIST /mnt/persist
 
 mkdir -p /mnt/persist/etc/nixos
 mkdir -p /mnt/persist/etc/users
