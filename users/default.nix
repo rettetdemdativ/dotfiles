@@ -19,6 +19,7 @@ in {
       "Downloads"
       "Pictures"
       "Videos"
+      "VMs"
     ];
     files = [ ".zsh_history" ];
   };
