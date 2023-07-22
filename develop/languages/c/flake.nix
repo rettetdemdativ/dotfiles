@@ -1,9 +1,7 @@
 {
   description = "C development environment";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  };
+  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; };
 
   outputs = { self, nixpkgs }:
     let
@@ -16,18 +14,12 @@
       ];
 
       # Helper to provide system-specific attributes
-      forAllSystems = f: nixpkgs.lib.genAttrs allSystems (system: f {
-        pkgs = import nixpkgs { inherit system; };
-      });
-    in
-    {
+      forAllSystems = f:
+        nixpkgs.lib.genAttrs allSystems
+        (system: f { pkgs = import nixpkgs { inherit system; }; });
+    in {
       devShells = forAllSystems ({ pkgs }: {
-        default = pkgs.mkShell {
-          packages = with pkgs; [
-            gcc13
-            clang_16
-          ];
-        };
+        default = pkgs.mkShell { packages = with pkgs; [ gcc13 clang_16 ]; };
       });
     };
 }

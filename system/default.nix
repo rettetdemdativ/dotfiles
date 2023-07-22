@@ -2,11 +2,14 @@
 
 {
   imports = [
-      ./fs.nix
-      (./. + "/${hostname}/boot.nix")
-      (./. + "/${hostname}/hardware.nix")
-    ]
-    ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix")) (import ./${hostname}/extra.nix { config = config; pkgs = pkgs; } );
+    ./fs.nix
+    (./. + "/${hostname}/boot.nix")
+    (./. + "/${hostname}/hardware.nix")
+  ] ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix"))
+    (import ./${hostname}/extra.nix {
+      config = config;
+      pkgs = pkgs;
+    });
 
   nix = {
     package = pkgs.nixFlakes;
@@ -19,12 +22,11 @@
     optimise.automatic = true;
     settings = {
       auto-optimise-store = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
+      experimental-features = [ "nix-command" "flakes" ];
+      substituters = [ "https://hyprland.cachix.org" ];
+      trusted-public-keys = [
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
   };
 
@@ -88,14 +90,10 @@
     podman = {
       enable = true;
       dockerCompat = true;
-      defaultNetwork.settings = {
-        dns_enabled = true;
-      };
+      defaultNetwork.settings = { dns_enabled = true; };
     };
 
-    libvirtd = {
-      enable = true;
-    };
+    libvirtd = { enable = true; };
   };
 
   # List packages installed in system profile. To search, run:
@@ -111,9 +109,8 @@
     mullvad-vpn
   ];
 
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+  fonts.fonts = with pkgs;
+    [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

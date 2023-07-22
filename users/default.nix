@@ -1,7 +1,5 @@
 { inputs, config, lib, pkgs, username, ... }: {
-  imports = [ 
-    (./. + "/${username}")
-  ];
+  imports = [ (./. + "/${username}") ];
 
   home.username = username;
   home.homeDirectory = "/home/${username}";
@@ -23,9 +21,7 @@
 
   nix = {
     package = lib.mkDefault pkgs.nix;
-    settings = {
-      warn-dirty = false;
-    };
+    settings = { warn-dirty = false; };
   };
 
   # Let Home Manager install and manage itself.

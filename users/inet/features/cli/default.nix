@@ -16,9 +16,7 @@
     brightnessctl
   ];
 
-  programs.gpg = {
-    enable = true;
-  };
+  programs.gpg = { enable = true; };
 
   services.gpg-agent = {
     enable = true;
@@ -27,7 +25,7 @@
 
   programs.git = {
     enable = true;
-    userName  = "Michael Koeppl";
+    userName = "Michael Koeppl";
     userEmail = "michael@koeppl.dev";
   };
 }

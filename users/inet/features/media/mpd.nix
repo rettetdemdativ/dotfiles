@@ -3,9 +3,7 @@
     enable = true;
     musicDirectory = "~/Music";
 
-    network = {
-      startWhenNeeded = true;
-    };
+    network = { startWhenNeeded = true; };
 
     extraConfig = ''
       pid_file           "~/.config/mpd/pid"

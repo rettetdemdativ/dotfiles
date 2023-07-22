@@ -6,7 +6,6 @@
     ./features/cli
   ];
 
-
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -94,6 +93,5 @@
   #  /etc/profiles/per-user/inet/etc/profile.d/hm-session-vars.sh
   #
   # if you don't want to manage your shell through Home Manager.
-  home.sessionVariables = {
-  };
+  home.sessionVariables = { };
 }

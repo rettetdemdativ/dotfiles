@@ -14,9 +14,7 @@
         (import rust-overlay)
         # Provides a `rustToolchain` attribute for Nixpkgs that we can use to
         # create a Rust environment
-        (self: super: {
-          rustToolchain = super.rust-bin.stable.latest.default;
-        })
+        (self: super: { rustToolchain = super.rust-bin.stable.latest.default; })
       ];
 
       # Systems supported
@@ -28,20 +26,21 @@
       ];
 
       # Helper to provide system-specific attributes
-      forAllSystems = f: nixpkgs.lib.genAttrs allSystems (system: f {
-        pkgs = import nixpkgs { inherit overlays system; };
-      });
-    in
-    {
+      forAllSystems = f:
+        nixpkgs.lib.genAttrs allSystems
+        (system: f { pkgs = import nixpkgs { inherit overlays system; }; });
+    in {
       # Development environment output
       devShells = forAllSystems ({ pkgs }: {
         default = pkgs.mkShell {
           # The Nix packages provided in the environment
-          packages = (with pkgs; [
-            # The package provided by our custom overlay. Includes cargo, Clippy, cargo-fmt,
-            # rustdoc, rustfmt, and other tools.
-            rustToolchain
-          ]) ++ pkgs.lib.optionals pkgs.stdenv.isDarwin (with pkgs; [ libiconv ]);
+          packages = (with pkgs;
+            [
+              # The package provided by our custom overlay. Includes cargo, Clippy, cargo-fmt,
+              # rustdoc, rustfmt, and other tools.
+              rustToolchain
+            ]) ++ pkgs.lib.optionals pkgs.stdenv.isDarwin
+            (with pkgs; [ libiconv ]);
         };
       });
     };
