@@ -37,7 +37,7 @@ in {
   environment.persistence."/nix/persist/system" = {
     directories = [
       "/etc/nixos" # bind mounted from /nix/persist/system/etc/nixos to /etc/nixos
-      "etc/users"
+      "/etc/users"
       "/etc/NetworkManager"
       "/etc/ssh"
       "/etc/wireguard"
