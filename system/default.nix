@@ -1,14 +1,12 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running `nixos-help`).
-
-{ inputs, lib, config, pkgs, ... }:
+{ inputs, lib, config, pkgs, hostname, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+      ./fs.nix
+      (./. + "/${hostname}/boot.nix")
+      (./. + "/${hostname}/hardware.nix")
+    ]
+    ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix")) (import ./${hostname}/extra.nix { config = config; pkgs = pkgs; } );
 
   nix = {
     package = pkgs.nixFlakes;
@@ -30,18 +28,19 @@
     };
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  networking.hostName = "nixxps";
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.hostName = hostname;
+  networking.networkmanager.enable = true;
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp60s0u2u4.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
   time.timeZone = "Europe/Amsterdam";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
-  hardware.opengl.enable = lib.mkDefault true;
 
   services.logind = {
     lidSwitch = "hybrid-sleep";
@@ -60,20 +59,6 @@
       auth include login
     '';
   };
-
-  services.tlp = {
-    enable = true;
-    settings = {
-      USB_AUTOSUSPEND = 0;
-    };
-  };
-
-  services.acpid = {
-    enable = true;
-  };
-
-  services.hardware.bolt.enable = true;
-  services.fwupd.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -107,15 +92,11 @@
         dns_enabled = true;
       };
     };
-  };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.inet = {
-    isNormalUser = true;
-    initialPassword = "password";
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ and network editing for the user.
+    libvirtd = {
+      enable = true;
+    };
   };
-  users.defaultUserShell = pkgs.zsh;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -134,23 +115,18 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
   services.mullvad-vpn.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
+  users.users.inet = {
+    isNormalUser = true;
+    initialPassword = "password";
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
+    packages = [ pkgs.home-manager ];
+    shell = pkgs.zsh;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

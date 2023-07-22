@@ -9,6 +9,7 @@
     kitty
     podman-compose
     buildah
+    virt-manager
 
     # Used for various development tools
     nodePackages.prettier

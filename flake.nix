@@ -13,36 +13,19 @@
 
   outputs = { self, nixpkgs, home-manager, nixos-hardware, ... } @ inputs :
   let
-    system = "x86_64-linux";
-
-    pkgs = import nixpkgs {
-      inherit system;
-      config = { allowUnfree = true; };
-    };
-
-    lib = nixpkgs.lib;
+    inherit (self) outputs;
+    stateVersion = "23.05";
+    libx = import ./lib { inherit inputs outputs nixpkgs stateVersion; };
   in {
-    defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
-
+    # home-manager switch -b backup --flake $HOME/.config/nix-config
+    # nix build .#homeConfigurations."username@host".activationPackage
     homeConfigurations = {
-      inet = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        modules = [
-          ./users/inet/home.nix
-        ];
-      };
+      "inet" = libx.mkHome { username = "inet"; platform = "x86_64-linux"; };
     };
 
     nixosConfigurations = {
-      nixxps = lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./system/configuration.nix
-          nixos-hardware.nixosModules.dell-xps-13-9380
-        ];
-      };
+      # sudo nixos-rebuild switch --flake .#
+      nixxps = libx.mkHost { hostname = "nixxps"; };
     };
   };
 }
