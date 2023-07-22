@@ -24,6 +24,6 @@ sudo mkdir -p /mnt/persist/etc/wireguard/
 sudo mkdir -p /mnt/persist/var/log
 sudo mkdir -p /mnt/persist/var/lib/bluetooth
 
-sudo mkpasswd -m sha-512 /mnt/persist/etc/users/${username}
+sudo mkpasswd -m sha-512 > /mnt/persist/etc/users/${username}
 
 sudo nixos-install --impure --flake .#${hostname}
