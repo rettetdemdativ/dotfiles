@@ -1,10 +1,14 @@
 { inputs, lib, config, pkgs, hostname, ... }:
 
-{
+let
+  impermanence = builtins.fetchTarball
+    "https://github.com/nix-community/impermanence/archive/master.tar.gz";
+in {
   imports = [
     ./fs.nix
     (./. + "/${hostname}/boot.nix")
     (./. + "/${hostname}/hardware.nix")
+    "${impermanence}/nixos.nix"
   ] ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix"))
     (import ./${hostname}/extra.nix {
       config = config;
@@ -28,6 +32,17 @@
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
     };
+  };
+
+  environment.persistence."/nix/persist/system" = {
+    directories = [
+      "/etc/nixos" # bind mounted from /nix/persist/system/etc/nixos to /etc/nixos
+      "/etc/NetworkManager"
+      "/etc/ssh"
+      "/var/log"
+      "/var/lib"
+    ];
+    files = [ "/etc/nix/id_rsa" ];
   };
 
   networking.hostName = hostname;
@@ -119,13 +134,18 @@
 
   age.secrets.inet-hashed.file = ../secrets/inet-hashed.age;
 
+  users.mutableUsers = false;
   users.users.inet = {
     isNormalUser = true;
     passwordFile = config.age.secrets.inet-hashed.path;
+    initialHashedPassword =
+      "$6$PqfsGvBRZyQvwJSv$QkxbjyoRVieu9aTOUVD0owJlDrRBde/8KejMXLvmHNO7rnla06UFdzeXahqq/m92r/fHDr7KWN8AK5CHYbj3H0";
     extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
     packages = [ pkgs.home-manager ];
     shell = pkgs.zsh;
   };
+  users.users.root.initialPassword =
+    "$6$PqfsGvBRZyQvwJSv$QkxbjyoRVieu9aTOUVD0owJlDrRBde/8KejMXLvmHNO7rnla06UFdzeXahqq/m92r/fHDr7KWN8AK5CHYbj3H0";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

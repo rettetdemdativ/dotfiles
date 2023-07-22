@@ -1,8 +1,27 @@
-{ inputs, config, lib, pkgs, username, ... }: {
-  imports = [ (./. + "/${username}") ];
+{ inputs, config, lib, pkgs, username, ... }:
+
+let
+  impermanence = builtins.fetchTarball
+    "https://github.com/nix-community/impermanence/archive/master.tar.gz";
+in {
+  imports = [ (./. + "/${username}") "${impermanence}/home-manager.nix" ];
 
   home.username = username;
   home.homeDirectory = "/home/${username}";
+
+  home.persistence."/nix/persist/home/${username}" = {
+    directories = [
+      ".ssh"
+      ".gnupg"
+      "dotfiles"
+      "workspace"
+      "Desktop"
+      "Downloads"
+      "Pictures"
+      "Videos"
+    ];
+    files = [ ".zsh_history" ];
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
