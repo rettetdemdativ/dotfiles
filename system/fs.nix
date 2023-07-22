@@ -13,6 +13,7 @@
   fileSystems."/persist" = {
     device = "/dev/disk/by-label/NIXPERSIST";
     fsType = "btrfs";
+    neededForBoot = true;
   };
 
   fileSystems."/nix" = {
