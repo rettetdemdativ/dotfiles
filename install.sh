@@ -14,13 +14,13 @@ mkfs.btrfs -L NIXROOT /dev/mapper/cryptroot -f
 mount -t tmpfs tmpfs /mnt
 
 mkdir /mnt/nix
-mount /dev/disk/by-label/NIXROOT /mnt/nix
+mount /dev/${diskname}3 /mnt/nix
 
 mkdir /mnt/persist
-mount /dev/disk/by-label/NIXPERSIST /mnt/persist
+mount /dev/${diskname}2 /mnt/persist
 
 mkdir /mnt/boot
-mount /dev/disk/by-label/NIXBOOT /mnt/boot
+mount /dev/${diskname}1 /mnt/boot
 
 mkdir -p /mnt/persist/etc/nixos
 mkdir -p /mnt/persist/etc/users
