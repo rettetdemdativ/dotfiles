@@ -10,6 +10,11 @@
       [ "size=3G" "mode=755" ]; # mode=755 so only root can write to those files
   };
 
+  fileSystems."/persist" = {
+    device = "/dev/disk/by-label/NIXPERSIST";
+    fsType = "btrfs";
+  };
+
   fileSystems."/nix" = {
     device = "/dev/disk/by-label/NIXROOT";
     fsType = "btrfs";
@@ -22,5 +27,5 @@
     fsType = "vfat";
   };
 
-  swapDevices = [{ device = "/dev/disk/by-label/NIXSWAP"; }];
+  swapDevices = [ ];
 }

@@ -132,20 +132,15 @@ in {
 
   services.mullvad-vpn.enable = true;
 
-  age.secrets.inet-hashed.file = ../secrets/inet-hashed.age;
-
   users.mutableUsers = false;
   users.users.inet = {
     isNormalUser = true;
-    passwordFile = config.age.secrets.inet-hashed.path;
-    initialHashedPassword =
-      "$6$PqfsGvBRZyQvwJSv$QkxbjyoRVieu9aTOUVD0owJlDrRBde/8KejMXLvmHNO7rnla06UFdzeXahqq/m92r/fHDr7KWN8AK5CHYbj3H0";
+    passwordFile = "/persist/etc/users/inet";
     extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
     packages = [ pkgs.home-manager ];
     shell = pkgs.zsh;
   };
-  users.users.root.initialPassword =
-    "$6$PqfsGvBRZyQvwJSv$QkxbjyoRVieu9aTOUVD0owJlDrRBde/8KejMXLvmHNO7rnla06UFdzeXahqq/m92r/fHDr7KWN8AK5CHYbj3H0";
+  users.users.root.hashedPassword= "!"; # Disable root login
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

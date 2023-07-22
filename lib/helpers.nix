@@ -1,4 +1,4 @@
-{ inputs, outputs, nixpkgs, agenix, stateVersion, ... }: {
+{ inputs, outputs, nixpkgs, stateVersion, ... }: {
   mkHome = { username, platform ? "x86_64-linux" }:
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {
@@ -14,7 +14,7 @@
   mkHost = { hostname, installer ? null }:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs outputs hostname stateVersion; };
-      modules = [ ../system agenix.nixosModules.default ]
+      modules = [ ../system ]
         ++ (inputs.nixpkgs.lib.optionals (installer != null) [ installer ]);
     };
 
