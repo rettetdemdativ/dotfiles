@@ -8,7 +8,7 @@ mkfs.fat -F 32 /dev/${diskname}1
 fatlabel /dev/${diskname}1 NIXBOOT
 mkfs.btrfs -f -L NIXPERSIST /dev/${diskname}2
 cryptsetup luksFormat --label NIXCRYPT /dev/${diskname}3
-cryptsetup luksOpen /dev/${diskname} cryptroot
+cryptsetup luksOpen /dev/${diskname}3 cryptroot
 mkfs.btrfs -f -L NIXROOT /dev/mapper/cryptroot
 
 mount /dev/disk/by-label/NIXROOT /mnt
