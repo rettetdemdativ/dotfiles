@@ -14,7 +14,7 @@ mkfs.btrfs -L NIXROOT /dev/mapper/cryptroot -f
 mount -t tmpfs tmpfs /mnt
 
 mkdir /mnt/nix
-mount /dev/${diskname}3 /mnt/nix
+mount /dev/mapper/cryptroot /mnt/nix
 
 mkdir /mnt/persist
 mount /dev/${diskname}2 /mnt/persist
