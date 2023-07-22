@@ -6,10 +6,10 @@ sfdisk /dev/${diskname} < sda.sfdisk
 
 mkfs.fat -F 32 /dev/${diskname}1
 fatlabel /dev/${diskname}1 NIXBOOT
-mkfs.btrfs -f -L NIXPERSIST /dev/${diskname}2
+mkfs.btrfs -L NIXPERSIST /dev/${diskname}2 -f
 cryptsetup luksFormat --label NIXCRYPT /dev/${diskname}3
 cryptsetup luksOpen /dev/${diskname}3 cryptroot
-mkfs.btrfs -f -L NIXROOT /dev/mapper/cryptroot
+mkfs.btrfs -L NIXROOT /dev/mapper/cryptroot -f
 
 mount /dev/disk/by-label/NIXROOT /mnt
 mkdir /mnt/boot
