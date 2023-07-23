@@ -7,8 +7,8 @@
         content = {
           type = "table";
           format = "gpt";
-          partitions = [
-            {
+          partitions = {
+            ESP = {
               type = "partition";
               name = "ESP";
               start = "1MiB";
@@ -20,24 +20,12 @@
                 format = "vfat";
                 mountpoint = "/boot";
               };
-            }
-            {
-              name = "swap";
-              type = "partition";
-              start = "1G";
-              end = "17G";
-              part-type = "primary";
-              extraArgs = [ "--label NIXSWAP" ];
-              content = {
-                type = "swap";
-                randomEncryption = true;
-              };
-            }
-            {
+            };
+            root = {
               name = "luks";
               type = "partition";
-              start = "17G";
-              end = "100%";
+              start = "1G";
+              end = "-16G";
               extraArgs = [ "--label NIXCRYPT" ];
               content = {
                 type = "luks";
@@ -59,8 +47,16 @@
                   };
                 };
               };
-            }
-          ];
+            };
+            swap = {
+              size = "100%";
+              content = {
+                type = "swap";
+                randomEncryption = true;
+                resumeDevice = true; # resume from hiberation from this device
+              };
+            };
+          };
         };
       };
     };
