@@ -9,14 +9,13 @@ nix run \
 
 MOUNT="/mnt2"
 mkdir $MOUNT
-mount -o subvol=@ "$DISK"3 "$MOUNT"
+mount -t btrfs -o subvol=@ "$DISK"3 "$MOUNT"
 # Make tmp and srv directories so subvolumes are not autocreated
 # by systemd, stopping deletion of root subvolume
 mkdir -p "$MOUNT/root/srv"
 mkdir -p "$MOUNT/root/tmp"
 
-cryptsetup luksOpen "$DISK"2 cryptroot
-mount -o subvol=@persist "/dev/mapper/cryptroot" /mnt/persist
+mount -t btrfs -o subvol=@persist "/dev/mapper/cryptroot" /mnt/persist
 
 mkpasswd -m sha-512 > /mnt/persist/etc/users/${USERNAME}
 
