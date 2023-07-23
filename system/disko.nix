@@ -16,9 +16,7 @@
                 mountpoint = "/boot";
               };
             };
-            root = {
-              name = "luks";
-              type = "partition";
+            luks = {
               start = "512M";
               end = "-16G";
               content = {
