@@ -8,12 +8,8 @@
           type = "gpt";
           partitions = {
             ESP = {
-              type = "partition";
-              name = "ESP";
-              start = "1MiB";
-              end = "1G";
-              fs-type = "fat32";
-              bootable = true;
+              type = "EF00";
+              size = "512M";
               content = {
                 type = "filesystem";
                 format = "vfat";
@@ -23,7 +19,7 @@
             root = {
               name = "luks";
               type = "partition";
-              start = "1G";
+              start = "512M";
               end = "-16G";
               extraArgs = [ "--label NIXCRYPT" ];
               content = {
