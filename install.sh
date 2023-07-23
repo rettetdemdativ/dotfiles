@@ -16,7 +16,7 @@ mount -t btrfs -o subvol=@ /dev/mapper/cryptroot "$MOUNT"
 mkdir -p "$MOUNT/root/srv"
 mkdir -p "$MOUNT/root/tmp"
 
-mount -t btrfs -o subvol=@persist /dev/mapper/cryptroot /mnt/persist
+mount -t btrfs -o subvol=@persist /dev/mapper/cryptroot ${MOUNT}/persist
 
 mkpasswd -m sha-512 > ${MOUNT}/persist/etc/users/${USERNAME}
 
