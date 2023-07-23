@@ -1,4 +1,4 @@
-{ inputs, outputs, nixpkgs, stateVersion, ... }: {
+{ inputs, outputs, nixpkgs, disko, stateVersion, ... }: {
   mkHome = { username, platform ? "x86_64-linux" }:
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {
@@ -11,10 +11,17 @@
       modules = [ ../users ];
     };
 
-  mkHost = { hostname, installer ? null }:
+  mkHost = { hostname, disk, installer ? null }:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs outputs hostname stateVersion; };
-      modules = [ ../system ]
+      modules = [ 
+        disko.nixosModules.disko
+        ../system/disko.nix
+        {
+          _module.args.disks = [ disk ];
+        }
+        ../system 
+      ]
         ++ (inputs.nixpkgs.lib.optionals (installer != null) [ installer ]);
     };
 

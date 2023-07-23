@@ -5,7 +5,6 @@ let
     "https://github.com/nix-community/impermanence/archive/master.tar.gz";
 in {
   imports = [
-    ./fs.nix
     (./. + "/${hostname}/boot.nix")
     (./. + "/${hostname}/hardware.nix")
     "${impermanence}/nixos.nix"

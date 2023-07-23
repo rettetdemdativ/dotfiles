@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,12 +13,12 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, disko, home-manager, nixos-hardware, ... }@inputs:
     let
       inherit (self) outputs;
       stateVersion = "23.05";
       libx =
-        import ./lib { inherit inputs outputs nixpkgs stateVersion; };
+        import ./lib { inherit inputs outputs nixpkgs disko stateVersion; };
     in {
       # home-manager switch -b backup --flake $HOME/.config/nix-config
       # nix build .#homeConfigurations."username@host".activationPackage
@@ -29,7 +31,7 @@
 
       nixosConfigurations = {
         # sudo nixos-rebuild switch --flake .#
-        nixxps = libx.mkHost { hostname = "nixxps"; };
+        nixxps = libx.mkHost { hostname = "nixxps"; disk = "/dev/nvme0n1"; };
       };
     };
 }
