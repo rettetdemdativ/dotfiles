@@ -21,7 +21,6 @@
               type = "partition";
               start = "512M";
               end = "-16G";
-              extraArgs = [ "--label NIXCRYPT" ];
               content = {
                 type = "luks";
                 name = "cryptroot";
