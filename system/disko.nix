@@ -15,7 +15,6 @@
               end = "1G";
               fs-type = "fat32";
               bootable = true;
-              extraArgs = [ "--label NIXBOOT" ];
               content = {
                 type = "filesystem";
                 format = "vfat";
