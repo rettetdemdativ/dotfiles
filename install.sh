@@ -23,6 +23,7 @@ mkdir -p "$MOUNT/persist/etc/users"
 mkpasswd -m sha-512 > ${MOUNT}/persist/etc/users/${USERNAME}
 
 cryptsetup close cryptroot
+umount "$MOUNT/persist"
 umount "$MOUNT"
 
 nixos-install --impure --flake .#${HOSTNAME}
