@@ -8,6 +8,7 @@ nix run \
   github:nix-community/disko -- --mode disko system/disko.nix --arg disks "[ \"${DISK}\" ]"
 
 MOUNT="/mnt2"
+umount $MOUNT
 mkdir $MOUNT
 mount -t btrfs -o subvol=@ "$DISK"3 "$MOUNT"
 # Make tmp and srv directories so subvolumes are not autocreated
