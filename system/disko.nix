@@ -24,12 +24,23 @@
                 content = {
                   type = "btrfs";
                   subvolumes = {
-                    "/home" = { mountOptions = [ "compress=zstd" ]; };
-                    "/nix" = { mountOptions = [ "compress=zstd" "noatime" ]; };
-                    "/persist" = {
+                    "/@" = {
+                      mountpoint = "/";
                       mountOptions = [ "compress=zstd" "noatime" ];
                     };
-                    "/log" = {
+                    "/@nix" = {
+                      mountpoint = "/nix";
+                      mountOptions = [ "compress=zstd" "noatime" ];
+                    };
+                    "/@home" = {
+                      mountpoint = "/home";
+                      mountOptions = [ "compress=zstd" "noatime" ];
+                    };
+                    "/@persist" = {
+                      mountpoint = "/persist";
+                      mountOptions = [ "compress=zstd" "noatime" ];
+                    };
+                    "/@log" = {
                       mountpoint = "/var/log";
                       mountOptions = [ "compress=zstd" "noatime" ];
                     };
