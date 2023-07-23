@@ -17,15 +17,12 @@
               };
             };
             luks = {
-              start = "512M";
               end = "-16G";
               content = {
                 type = "luks";
                 name = "cryptroot";
                 content = {
                   type = "btrfs";
-                  extraArgs =
-                    [ "-f" "--label NIXROOT" ]; # Override existing partition
                   subvolumes = {
                     "/home" = { mountOptions = [ "compress=zstd" ]; };
                     "/nix" = { mountOptions = [ "compress=zstd" "noatime" ]; };
