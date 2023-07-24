@@ -26,4 +26,13 @@ cryptsetup close cryptroot
 umount "$MOUNT/persist"
 umount "$MOUNT"
 
+mount -t btrfs -p subvol=@ /dev/mapper/cryptroot /mnt
+mkdir /mnt/nix
+mkdir /mnt/home
+mkdir /mnt/persist
+
+mount -t btrfs -p subvol=@nix /dev/mapper/cryptroot /mnt/nix
+mount -t btrfs -p subvol=@home /dev/mapper/cryptroot /mnt/home
+mount -t btrfs -p subvol=@persist /dev/mapper/cryptroot /mnt/persist
+
 nixos-install --impure --flake .#${HOSTNAME}
