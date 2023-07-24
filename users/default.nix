@@ -9,6 +9,8 @@ in {
   home.username = username;
   home.homeDirectory = "/home/${username}";
 
+  programs.fuse.userAllowOther = true;
+
   home.persistence."/persist/home/${username}" = {
     allowOther = true;
     directories = [
