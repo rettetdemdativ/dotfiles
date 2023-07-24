@@ -20,7 +20,10 @@ mount -t btrfs -o subvol=@nix /dev/mapper/cryptroot /mnt/nix
 
 mkdir -p /mnt/persist/etc/nixos
 mkdir -p /mnt/persist/system
-mkdir -p /mnt/persist/home
+
+mkdir -p /mnt/persist/home/${USERNAME}
+chown -R ${USERNAME} /mnt/persist/home/${USERNAME}
+
 mkdir -p /mnt/persist/etc/users
 mkdir -p /mnt/persist/etc/NetworkManager
 mkdir -p /mnt/persist/etc/ssh
