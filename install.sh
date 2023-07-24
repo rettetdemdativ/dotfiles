@@ -20,7 +20,11 @@ mkdir -p "$MOUNT/persist"
 mount -t btrfs -o subvol=@persist /dev/mapper/cryptroot ${MOUNT}/persist
 mkdir -p "$MOUNT/persist/etc/users"
 
+echo "Enter password for user ${USERNAME}"
 mkpasswd -m sha-512 > ${MOUNT}/persist/etc/users/${USERNAME}
+
+echo "Enter password for user root"
+mkpasswd -m sha-512 > ${MOUNT}/persist/etc/users/root
 
 cryptsetup close cryptroot
 umount "$MOUNT/persist"

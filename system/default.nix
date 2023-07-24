@@ -142,7 +142,7 @@ in {
     packages = [ pkgs.home-manager ];
     shell = pkgs.zsh;
   };
-  users.users.root.hashedPassword= "!"; # Disable root login
+  users.users.root.passwordFile = "/persist/etc/users/root";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
