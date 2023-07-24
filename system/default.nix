@@ -8,6 +8,7 @@ in {
     (./. + "/${hostname}/boot.nix")
     (./. + "/${hostname}/hardware.nix")
     "${impermanence}/nixos.nix"
+    ./fs.nix
   ] ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix"))
     (import ./${hostname}/extra.nix {
       config = config;
