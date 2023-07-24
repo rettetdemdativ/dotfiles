@@ -34,7 +34,7 @@ in {
     };
   };
 
-  environment.persistence."/persist" = {
+  environment.persistence."/persist/system" = {
     directories = [
       "/etc/nixos" # bind mounted from /nix/persist/system/etc/nixos to /etc/nixos
       "/etc/users"

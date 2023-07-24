@@ -9,7 +9,7 @@ in {
   home.username = username;
   home.homeDirectory = "/home/${username}";
 
-  home.persistence."/home/${username}" = {
+  home.persistence."/persist/home/${username}" = {
     directories = [
       ".ssh"
       ".gnupg"
