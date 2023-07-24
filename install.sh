@@ -37,4 +37,12 @@ mount -t btrfs -o subvol=@nix /dev/mapper/cryptroot /mnt/nix
 mount -t btrfs -o subvol=@home /dev/mapper/cryptroot /mnt/home
 mount -t btrfs -o subvol=@persist /dev/mapper/cryptroot /mnt/persist
 
+mkdir -p /mnt/persist/etc/nixos
+mkdir -p /mnt/persist/etc/users
+mkdir -p /mnt/persist/etc/NetworkManager
+mkdir -p /mnt/persist/etc/ssh
+mkdir -p /mnt/persist/etc/wireguard
+mkdir -p /mnt/persist/var/log
+mkdir -p /mnt/persist/var/lib
+
 nixos-install --impure --flake .#${HOSTNAME}
