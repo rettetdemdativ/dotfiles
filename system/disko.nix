@@ -23,22 +23,23 @@
                 name = "cryptroot";
                 content = {
                   type = "btrfs";
+                  extraArgs = ["-f"];
                   subvolumes = {
                     "/@" = {
                       mountpoint = "/";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [ "compress=zstd" "noatime" "x-systemd.automount" ];
                     };
                     "/@nix" = {
                       mountpoint = "/nix";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [ "compress=zstd" "noatime" "x-systemd.automount" ];
                     };
                     "/@home" = {
                       mountpoint = "/home";
-                      mountOptions = [ "compress=zstd" ];
+                      mountOptions = [ "compress=zstd" "x-systemd.automount" ];
                     };
                     "/@persist" = {
                       mountpoint = "/persist";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [ "compress=zstd" "noatime" "x-systemd.automount" ];
                     };
                   };
                 };
