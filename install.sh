@@ -10,7 +10,7 @@ nix run \
 mount -t tmpfs tmpfs /mnt
 
 mkdir -p /mnt/boot
-mount /dev/${DISK}1 /mnt/boot
+mount ${DISK}1 /mnt/boot
 
 mkdir -p /mnt/persist
 mount -t btrfs -o subvol=@persist /dev/mapper/cryptroot /mnt/persist
