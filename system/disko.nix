@@ -27,19 +27,19 @@
                   subvolumes = {
                     "/@" = {
                       mountpoint = "/";
-                      mountOptions = [ "compress=zstd" "noatime" "x-systemd.automount" ];
+                      mountOptions = [ "compress=zstd" "noatime" ];
                     };
                     "/@nix" = {
                       mountpoint = "/nix";
-                      mountOptions = [ "compress=zstd" "noatime" "x-systemd.automount" ];
+                      mountOptions = [ "compress=zstd" "noatime" ];
                     };
                     "/@home" = {
                       mountpoint = "/home";
-                      mountOptions = [ "compress=zstd" "x-systemd.automount" ];
+                      mountOptions = [ "compress=zstd" ];
                     };
                     "/@persist" = {
                       mountpoint = "/persist";
-                      mountOptions = [ "compress=zstd" "noatime" "x-systemd.automount" ];
+                      mountOptions = [ "compress=zstd" "noatime" ];
                     };
                   };
                 };
