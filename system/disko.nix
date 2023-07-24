@@ -21,6 +21,7 @@
               content = {
                 type = "luks";
                 name = "cryptroot";
+                extraOpenArgs = [ "--allow-discards" ];
                 content = {
                   type = "btrfs";
                   extraArgs = ["-f"];
