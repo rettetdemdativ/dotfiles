@@ -10,6 +10,7 @@ in {
   home.homeDirectory = "/home/${username}";
 
   home.persistence."/persist/home/${username}" = {
+    allowOther = true;
     directories = [
       ".ssh"
       ".gnupg"
