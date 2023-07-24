@@ -27,9 +27,11 @@ umount "$MOUNT/persist"
 umount "$MOUNT"
 
 mount -t btrfs -p subvol=@ /dev/mapper/cryptroot /mnt
-mkdir /mnt/nix
-mkdir /mnt/home
-mkdir /mnt/persist
+mkdir -p /mnt/boot
+mount /dev/vda1 /mnt/boot
+mkdir -p /mnt/nix
+mkdir -p /mnt/home
+mkdir -p /mnt/persist
 
 mount -t btrfs -p subvol=@nix /dev/mapper/cryptroot /mnt/nix
 mount -t btrfs -p subvol=@home /dev/mapper/cryptroot /mnt/home
