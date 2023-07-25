@@ -1,13 +1,8 @@
-{ inputs, lib, config, pkgs, hostname, ... }:
-
-let
-  impermanence = builtins.fetchTarball
-    "https://github.com/nix-community/impermanence/archive/master.tar.gz";
-in {
+{ inputs, lib, config, pkgs, hostname, ... }: {
   imports = [
     (./. + "/${hostname}/boot.nix")
     (./. + "/${hostname}/hardware.nix")
-    "${impermanence}/nixos.nix"
+    "${inputs.impermanence}/nixos.nix"
     ./fs.nix
   ] ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix"))
     (import ./${hostname}/extra.nix {
