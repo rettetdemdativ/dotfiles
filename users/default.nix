@@ -16,8 +16,9 @@
       "Pictures"
       "Videos"
       "VMs"
+      ".local/share/nvim/lazy"
+      ".local/share/nvim/mason"
     ];
-    files = [ ".zsh_history" ];
   };
 
   # This value determines the Home Manager release that your configuration is
