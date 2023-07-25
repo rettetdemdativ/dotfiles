@@ -1,10 +1,5 @@
-{ inputs, config, lib, pkgs, username, ... }:
-
-let
-  impermanence = builtins.fetchTarball
-    "https://github.com/nix-community/impermanence/archive/master.tar.gz";
-in {
-  imports = [ (./. + "/${username}") "${impermanence}/home-manager.nix" ];
+{ inputs, config, lib, pkgs, username, ... }: {
+  imports = [ (./. + "/${username}") "${inputs.impermanence}/home-manager.nix" ];
 
   home.username = username;
   home.homeDirectory = "/home/${username}";
