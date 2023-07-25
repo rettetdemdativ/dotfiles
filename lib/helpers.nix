@@ -11,8 +11,12 @@
       modules = [ ../users ];
     };
 
-  mkHost = { hostname, username, disk, installer ? null }:
+  mkHost = { hostname, username, platform ? "x86_64-linux", disk, installer ? null }:
     inputs.nixpkgs.lib.nixosSystem {
+      pkgs = import nixpkgs {
+        system = platform;
+        config = { allowUnfree = true; };
+      };
       specialArgs = { inherit inputs outputs hostname username stateVersion; };
       modules = [
         inputs.disko.nixosModules.disko
