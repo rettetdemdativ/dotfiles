@@ -21,7 +21,7 @@
       modules = [
         inputs.disko.nixosModules.disko
         ../system/disko.nix
-        { _module.args.disks = [ disk ]; _module.args.username = username; }
+        { _module.args.disks = [ disk ]; _module.args.usernames = [ username ]; }
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
