@@ -26,7 +26,7 @@ mkdir -p /mnt/persist/etc/nixos
 mkdir -p /mnt/persist/system
 
 mkdir -p /mnt/persist/home/${USERNAME}
-chown -R ${USERNAME} /mnt/persist/home/${USERNAME}
+chmod 777 /mnt/persist/home/${USERNAME}
 
 mkdir -p /mnt/persist/etc/users
 mkdir -p /mnt/persist/etc/NetworkManager
