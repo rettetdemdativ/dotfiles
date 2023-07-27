@@ -1,4 +1,4 @@
-{ disks ? [ "/dev/vda" ], ... }: {
+{ disks ? [ "/dev/vda" ], username, ... }: {
   disko.devices = {
     disk = {
       vda = {
@@ -57,7 +57,7 @@
           "size=2G" "mode=755"
         ];
       };
-      "/home" = {
+      "/home/${username}" = {
         fsType = "tmpfs";
         mountOptions = [
           "size=4G" "mode=777"
