@@ -57,6 +57,12 @@
           "size=2G" "mode=755"
         ];
       };
+      "/home" = {
+        fsType = "tmpfs";
+        mountOptions = [
+          "size=4G" "mode=777"
+        ];
+      };
     };
   };
 }
