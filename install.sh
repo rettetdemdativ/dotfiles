@@ -9,6 +9,10 @@ nix run \
 
 mount -t tmpfs tmpfs /mnt
 
+mkdir -p /mnt/home
+mount -t tmpfs tmpfs /mnt/home
+mkdir -p /mnt/home/${USERNAME}
+
 mkdir -p /mnt/boot
 mount ${DISK}1 /mnt/boot
 
