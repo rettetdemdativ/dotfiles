@@ -5,7 +5,7 @@ USERNAME=$3
 nix run \
   --extra-experimental-features flakes \
   --extra-experimental-features nix-command \
-  github:nix-community/disko -- --mode disko system/disko.nix --arg disks "[ \"${DISK}\" ]"
+  github:nix-community/disko -- --mode disko system/disko.nix --arg disks "[ \"${DISK}\" ]" --arg username "${USERNAME}"
 
 mount -t tmpfs tmpfs /mnt
 
