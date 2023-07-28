@@ -18,6 +18,7 @@
       "VMs"
       ".local/share/nvim/lazy"
       ".local/share/nvim/mason"
+      ".librewolf"
     ];
   };
 
