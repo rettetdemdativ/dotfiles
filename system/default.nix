@@ -92,6 +92,9 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+  security.sudo.extraConfig = ''
+    lecture=never
+  '';
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
