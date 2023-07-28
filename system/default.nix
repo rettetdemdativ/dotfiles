@@ -35,11 +35,15 @@
       "/etc/users"
       "/etc/NetworkManager"
       "/etc/ssh"
-      "/etc/wireguard"
       "/var/log"
       "/var/lib"
     ];
     files = [ "/etc/nix/id_rsa" ];
+  };
+
+  boot.tmp = {
+    useTmpfs = true;
+    tmpfsSize = "95%";
   };
 
   networking.hostName = hostname;
