@@ -18,6 +18,8 @@
       "VMs"
       ".local/share/nvim/lazy"
       ".local/share/nvim/mason"
+      ".local/share/JetBrains"
+      ".config/JetBrains"
       ".librewolf"
     ];
   };
