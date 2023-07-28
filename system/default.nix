@@ -93,7 +93,7 @@
   # services.printing.enable = true;
 
   security.sudo.extraConfig = ''
-    lecture=never
+    Defaults        lecture = never
   '';
   security.rtkit.enable = true;
   services.pipewire = {
