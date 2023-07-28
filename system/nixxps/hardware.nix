@@ -1,7 +1,10 @@
-{ inputs, lib, config, pkgs, ... }:
+{ inputs, lib, config, modulesPath, pkgs, ... }:
 
 {
-  imports = [ inputs.nixos-hardware.nixosModules.dell-xps-13-9380 ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+    inputs.nixos-hardware.nixosModules.dell-xps-13-9380
+  ];
 
   hardware.opengl.enable = lib.mkDefault true;
 
