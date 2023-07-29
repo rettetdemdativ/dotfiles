@@ -1,12 +1,10 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     git
     git-crypt
     gnupg
     pinentry_qt
 
-    htop
-    s-tui
     nnn # File browser
     ncdu # TUI disk usage
 
@@ -27,5 +25,13 @@
     enable = true;
     userName = "Michael Koeppl";
     userEmail = "michael@koeppl.dev";
+  };
+
+  programs.btop = {
+    enable = true;
+    settings = {
+      color_theme = "HotPurpleTrafficLight";
+      vim_keys = true;
+    };
   };
 }
