@@ -10,6 +10,8 @@
 
     # Used for various development tools
     nodePackages.prettier
+    prettierd
+    eslint_d
     lua
     nil # Nix LSP
     nixfmt # Nix formatter
