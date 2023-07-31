@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     # Web
     librewolf
+    brave
 
     cinnamon.nemo
     bitwarden
