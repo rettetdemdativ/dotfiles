@@ -1,10 +1,28 @@
 { inputs, config, lib, pkgs, username, ... }: {
-  imports = [ 
-    (./. + "/${username}")
-  ];
+  imports = [ (./. + "/${username}") "${inputs.impermanence}/home-manager.nix" ];
 
   home.username = username;
   home.homeDirectory = "/home/${username}";
+
+  home.persistence."/persist/home/${username}" = {
+    allowOther = true;
+    directories = [
+      ".ssh"
+      ".gnupg"
+      "dotfiles"
+      "workspace"
+      "Desktop"
+      "Downloads"
+      "Pictures"
+      "Videos"
+      "VMs"
+      ".local/share/nvim/lazy"
+      ".local/share/nvim/mason"
+      ".local/share/JetBrains"
+      ".config/JetBrains"
+      ".librewolf"
+    ];
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -23,9 +41,7 @@
 
   nix = {
     package = lib.mkDefault pkgs.nix;
-    settings = {
-      warn-dirty = false;
-    };
+    settings = { warn-dirty = false; };
   };
 
   # Let Home Manager install and manage itself.

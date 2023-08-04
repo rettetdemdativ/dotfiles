@@ -1,12 +1,14 @@
-{ inputs, lib, config, pkgs, hostname, ... }:
-
-{
+{ inputs, lib, config, pkgs, hostname, ... }: {
   imports = [
-      ./fs.nix
-      (./. + "/${hostname}/boot.nix")
-      (./. + "/${hostname}/hardware.nix")
-    ]
-    ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix")) (import ./${hostname}/extra.nix { config = config; pkgs = pkgs; } );
+    (./. + "/${hostname}/boot.nix")
+    (./. + "/${hostname}/hardware.nix")
+    "${inputs.impermanence}/nixos.nix"
+    ./fs.nix
+  ] ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix"))
+    (import ./${hostname}/extra.nix {
+      config = config;
+      pkgs = pkgs;
+    });
 
   nix = {
     package = pkgs.nixFlakes;
@@ -19,13 +21,29 @@
     optimise.automatic = true;
     settings = {
       auto-optimise-store = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
+      experimental-features = [ "nix-command" "flakes" ];
+      substituters = [ "https://hyprland.cachix.org" ];
+      trusted-public-keys = [
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
+  };
+
+  environment.persistence."/persist/system" = {
+    directories = [
+      "/etc/nixos" # bind mounted from /nix/persist/system/etc/nixos to /etc/nixos
+      "/etc/users"
+      "/etc/NetworkManager"
+      "/etc/ssh"
+      "/var/log"
+      "/var/lib"
+    ];
+    files = [ "/etc/nix/id_rsa" ];
+  };
+
+  boot.tmp = {
+    useTmpfs = true;
+    tmpfsSize = "95%";
   };
 
   networking.hostName = hostname;
@@ -65,8 +83,11 @@
     shellAliases = {
       apply-system = "$HOME/dotfiles/scripts/apply-system.sh";
       update-all = "$HOME/dotfiles/scripts/update.sh";
+      clean-generations = "$HOME/dotfiles/scripts/generations-cleanup.sh";
     };
   };
+
+  programs.fuse.userAllowOther = true;
 
   programs.hyprland = {
     enable = true;
@@ -76,6 +97,9 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+  security.sudo.extraConfig = ''
+    Defaults        lecture = never
+  '';
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -88,14 +112,10 @@
     podman = {
       enable = true;
       dockerCompat = true;
-      defaultNetwork.settings = {
-        dns_enabled = true;
-      };
+      defaultNetwork.settings = { dns_enabled = true; };
     };
 
-    libvirtd = {
-      enable = true;
-    };
+    libvirtd = { enable = true; };
   };
 
   # List packages installed in system profile. To search, run:
@@ -111,22 +131,23 @@
     mullvad-vpn
   ];
 
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+  fonts.packages = with pkgs;
+    [ (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" ]; }) ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
   services.mullvad-vpn.enable = true;
 
+  users.mutableUsers = false;
   users.users.inet = {
     isNormalUser = true;
-    initialPassword = "password";
+    passwordFile = "/persist/etc/users/inet";
     extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
     packages = [ pkgs.home-manager ];
     shell = pkgs.zsh;
   };
+  users.users.root.passwordFile = "/persist/etc/users/root";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

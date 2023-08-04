@@ -2,9 +2,7 @@
   programs.kitty = {
     enable = true;
     shellIntegration.enableZshIntegration = true;
-    keybindings = {
-      "ctrl+shift+enter" = "new_os_window_with_cwd";
-    };
+    keybindings = { "ctrl+shift+enter" = "new_os_window_with_cwd"; };
     extraConfig = ''
       linux_display_server wayland
 

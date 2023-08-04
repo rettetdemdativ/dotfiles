@@ -1,8 +1,5 @@
 { inputs, lib, config, pkgs, ... }: {
-  imports = [
-    ./neovim.nix
-    ./kitty.nix
-  ];
+  imports = [ ./neovim.nix ./kitty.nix ];
 
   home.packages = with pkgs; [
     jetbrains.idea-ultimate
@@ -13,6 +10,8 @@
 
     # Used for various development tools
     nodePackages.prettier
+    prettierd
+    eslint_d
     lua
     nil # Nix LSP
     nixfmt # Nix formatter
