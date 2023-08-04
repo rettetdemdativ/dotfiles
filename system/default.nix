@@ -83,6 +83,7 @@
     shellAliases = {
       apply-system = "$HOME/dotfiles/scripts/apply-system.sh";
       update-all = "$HOME/dotfiles/scripts/update.sh";
+      clean-generations = "$HOME/dotfiles/scripts/generations-cleanup.sh";
     };
   };
 
