@@ -4,7 +4,6 @@ let
     inherit inputs outputs nixpkgs stateVersion;
   };
 in {
-  mkHome = helpers.mkHome;
   mkHost = helpers.mkHost;
   forAllSystems = helpers.forAllSystems;
 }

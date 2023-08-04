@@ -1,16 +1,4 @@
 { inputs, outputs, nixpkgs, stateVersion, ... }: {
-  mkHome = { username, platform ? "x86_64-linux" }:
-    inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        system = platform;
-        config = { allowUnfree = true; };
-      };
-      extraSpecialArgs = {
-        inherit inputs outputs platform username stateVersion;
-      };
-      modules = [ ../users ];
-    };
-
   mkHost = { hostname, username, platform ? "x86_64-linux", disk, installer ? null }:
     inputs.nixpkgs.lib.nixosSystem {
       pkgs = import nixpkgs {
