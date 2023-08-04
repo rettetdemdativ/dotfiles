@@ -16,6 +16,7 @@
     cinnamon.nemo
     bitwarden
     signal-desktop
+    teamspeak_client
 
     # Fonts
     jetbrains-mono
