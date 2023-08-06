@@ -21,6 +21,7 @@
       ".local/share/JetBrains"
       ".config/JetBrains"
       ".librewolf"
+      ".ts3client"
     ];
   };
 
