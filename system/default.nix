@@ -115,7 +115,7 @@
       defaultNetwork.settings = { dns_enabled = true; };
     };
 
-    libvirtd = { enable = true; };
+    libvirtd = { enable = false; };
   };
 
   # List packages installed in system profile. To search, run:
