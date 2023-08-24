@@ -21,6 +21,7 @@
       ".local/share/JetBrains"
       ".config/Signal"
       ".config/JetBrains"
+      ".config/tidal-hifi"
       ".librewolf"
       ".ts3client"
     ];
