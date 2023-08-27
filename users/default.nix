@@ -19,6 +19,7 @@
       ".local/share/nvim/lazy"
       ".local/share/nvim/mason"
       ".local/share/JetBrains"
+      ".local/shared/Anki2"
       ".config/Signal"
       ".config/JetBrains"
       ".config/tidal-hifi"
