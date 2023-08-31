@@ -129,6 +129,7 @@
     lm_sensors
     mullvad
     mullvad-vpn
+    nvd
   ];
 
   fonts.packages = with pkgs;
