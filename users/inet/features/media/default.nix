@@ -3,6 +3,7 @@
 
   home.packages = with pkgs; [
     pulsemixer
+    pamixer # Volume controls
     mpv
     zathura
     feh
