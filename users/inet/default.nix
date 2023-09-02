@@ -14,7 +14,7 @@
     librewolf
     brave
 
-    cinnamon.nemo
+    gnome.nautilus
     bitwarden
     signal-desktop
     teamspeak_client
@@ -42,6 +42,29 @@
       dev_nodejs = "$HOME/dotfiles/scripts/activate-dev.sh languages/nodejs";
       dev_aws = "$HOME/dotfiles/scripts/activate-dev.sh stacks/aws";
     };
+  };
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Numix";
+      package = pkgs.numix-icon-theme;
+    };
+    theme = {
+      name = "Arc-Dark";
+      package = pkgs.arc-theme;
+    };
+
+    gtk2 = {
+      configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+      extraConfig = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+
+    gtk3 = { extraConfig = { gtk-application-prefer-dark-theme = 1; }; };
+
+    gtk4 = { extraConfig = { gtk-application-prefer-dark-theme = 1; }; };
   };
 
   xdg.mimeApps = {
