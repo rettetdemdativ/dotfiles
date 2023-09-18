@@ -16,7 +16,7 @@
         (system: f { pkgs = import nixpkgs { inherit system; }; });
     in {
       devShells = forAllSystems ({ pkgs }: {
-        default = pkgs.mkShell { packages = with pkgs; [ aws-sam-cli localstack ]; };
+        default = pkgs.mkShell { packages = with pkgs; [ aws-sam-cli ]; };
       });
     };
 }

@@ -3,7 +3,7 @@
     git
     git-crypt
     gnupg
-    pinentry_qt
+    pinentry-qt
 
     nnn # File browser
     ncdu # TUI disk usage

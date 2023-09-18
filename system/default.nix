@@ -185,12 +185,12 @@
   users.mutableUsers = false;
   users.users.inet = {
     isNormalUser = true;
-    passwordFile = "/persist/etc/users/inet";
+    hashedPasswordFile = "/persist/etc/users/inet";
     extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
     packages = [ pkgs.home-manager ];
     shell = pkgs.zsh;
   };
-  users.users.root.passwordFile = "/persist/etc/users/root";
+  users.users.root.hashedPasswordFile = "/persist/etc/users/root";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
