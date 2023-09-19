@@ -14,6 +14,7 @@
       "Desktop"
       "Downloads"
       "Pictures"
+      "Music"
       "Videos"
       "VMs"
       ".local/share/nvim/lazy"
