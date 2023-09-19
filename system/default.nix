@@ -35,7 +35,6 @@
       "/etc/users"
       "/etc/NetworkManager"
       "/etc/ssh"
-      "/etc/geoclue"
       "/var/log"
       "/var/lib"
     ];
@@ -180,9 +179,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  # For applications such as Gammastep, etc.
-  services.geoclue2.enable = true;
 
   services.mullvad-vpn.enable = true;
 
