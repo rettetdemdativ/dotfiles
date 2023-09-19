@@ -42,6 +42,8 @@
       dev_nodejs = "$HOME/dotfiles/scripts/activate-dev.sh languages/nodejs";
       dev_python = "$HOME/dotfiles/scripts/activate-dev.sh languages/python";
       dev_aws = "$HOME/dotfiles/scripts/activate-dev.sh stacks/aws";
+
+      android-studio = "IDEA_PROPERTIES=$HOME/workspace/Android/idea.properties /etc/profiles/per-user/inet/bin/android-studio";
     };
   };
 

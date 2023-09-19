@@ -2,6 +2,7 @@
   imports = [ ./neovim.nix ./kitty.nix ];
 
   home.packages = with pkgs; [
+    android-studio
     jetbrains.idea-ultimate
     kitty
     podman-compose
