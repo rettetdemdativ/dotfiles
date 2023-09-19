@@ -35,6 +35,7 @@
       "/etc/users"
       "/etc/NetworkManager"
       "/etc/ssh"
+      "/etc/mullvad-vpn"
       "/var/log"
       "/var/lib"
     ];
