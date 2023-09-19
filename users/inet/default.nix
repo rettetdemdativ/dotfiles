@@ -27,10 +27,6 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
-    initExtra = ''
-      export DOCKER_HOST="unix:///run/user/$UID/podman/podman.sock";
-      export EDITOR="nvim";
-    '';
     shellAliases = {
       nix-shell = "nix-shell --command 'zsh'";
       monitor_laptop = "sh $HOME/.config/hypr/apply_monitor_setup.sh laptop";
@@ -42,9 +38,13 @@
       dev_nodejs = "$HOME/dotfiles/scripts/activate-dev.sh languages/nodejs";
       dev_python = "$HOME/dotfiles/scripts/activate-dev.sh languages/python";
       dev_aws = "$HOME/dotfiles/scripts/activate-dev.sh stacks/aws";
-
-      android-studio = "IDEA_PROPERTIES=$HOME/workspace/Android/idea.properties /etc/profiles/per-user/inet/bin/android-studio";
     };
+  };
+
+  home.sessionVariables = rec {
+    EDITOR = "nvim";
+    DOCKER_HOST = "unix:///run/user/$UID/podman/podman.sock";
+    ANDROID_HOME = "$HOME/workspace/Android";
   };
 
   gtk = {
