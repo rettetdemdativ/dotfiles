@@ -24,10 +24,13 @@
       ".config/Signal"
       ".config/JetBrains"
       ".config/tidal-hifi"
-      ".config/Google/AndroidStudio2022.3"
-      ".android"
       ".librewolf"
       ".ts3client"
+
+      # Android Studio
+      ".gradle"
+      ".config/Google/AndroidStudio2022.3"
+      ".android"
     ];
   };
 
