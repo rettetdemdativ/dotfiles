@@ -9,5 +9,5 @@ let
   });
 in {
 
-  home.packages = with pkgs; [ anki-bin tex ];
+  home.packages = with pkgs; [ anki-bin tex qalculate-gtk ];
 }
