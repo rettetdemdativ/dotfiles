@@ -27,6 +27,7 @@
       ".config/JetBrains"
       ".config/tidal-hifi"
       ".librewolf"
+      ".mozilla/firefox"
       ".ts3client"
 
       # Android Studio
