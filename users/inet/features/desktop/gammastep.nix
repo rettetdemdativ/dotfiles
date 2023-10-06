@@ -1,6 +1,6 @@
 { inputs, lib, config, pkgs, ... }: {
   services.gammastep = {
-    enable = true;
+    enable = false;
     provider = "manual";
     temperature = {
       day = 6000;

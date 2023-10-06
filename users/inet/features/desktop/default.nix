@@ -2,6 +2,7 @@
   imports = [
     ./hyprland.nix
     ./hyprpaper.nix
+    ./kanshi.nix
     ./gammastep.nix
     ./waybar.nix
     ./mako.nix
@@ -26,13 +27,10 @@
   home.packages = with pkgs; [
     # Hyprland is imported through its flake in flake.nix
     seatd
-    waybar
-    mako
     hyprpaper
     swaylock-effects
     swayidle
     bemenu
-    gammastep
     grim
     slurp
     wl-clipboard
