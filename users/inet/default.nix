@@ -22,6 +22,7 @@
     # Fonts
     jetbrains-mono
     roboto
+    inter
   ];
 
   programs.zsh = {
