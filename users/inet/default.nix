@@ -23,6 +23,7 @@
     jetbrains-mono
     roboto
     inter
+    mononoki
   ];
 
   programs.zsh = {

@@ -176,7 +176,7 @@
   ];
 
   fonts.packages = with pkgs;
-    [ (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" ]; }) ];
+    [ (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" "UbuntuMono" "Mononoki" "FiraCode" ]; }) ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
