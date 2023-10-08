@@ -8,6 +8,7 @@
     podman-compose
     buildah
     virt-manager
+    dbeaver
 
     # Used for various development tools
     nodePackages.prettier
