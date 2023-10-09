@@ -38,9 +38,8 @@
       "editor.suggestSelection" = "first";
       "editor.minimap.enabled" = false;
       "editor.minimap.side" = "left";
-      "terminal.integrated.fontSize" = 13;
-      "terminal.integrated.fontWeightBold" = "normal";
-      "debug.console.fontSize" = 13;
+      "terminal.integrated.fontSize" = 15;
+      "debug.console.fontSize" = 15;
 
       "go.formatTool" = "goimports";
       "go.useLanguageServer" = true;

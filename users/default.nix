@@ -25,6 +25,7 @@
       ".config/Signal"
       ".config/mpd"
       ".config/JetBrains"
+      ".config/VSCodium"
       ".config/tidal-hifi"
       ".librewolf"
       ".mozilla/firefox"
