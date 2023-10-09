@@ -9,6 +9,7 @@
     buildah
     virt-manager
     dbeaver
+    hurl
 
     # Used for various development tools
     nodePackages.prettier
