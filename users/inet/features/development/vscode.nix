@@ -12,6 +12,7 @@
       pkgs.vscode-extensions.golang.go
       pkgs.vscode-extensions.editorconfig.editorconfig
       pkgs.vscode-extensions.rust-lang.rust-analyzer
+      pkgs.vscode-extensions.bbenoist.nix
     ];
     userSettings = {
       "window.menuBarVisibility" = "toggle";
@@ -43,6 +44,23 @@
 
       "go.formatTool" = "goimports";
       "go.useLanguageServer" = true;
+
+      "files.exclude" = {
+        "**/__pycache__" = true;
+        "**/.classpath" = true;
+        "**/.project" = true;
+        "**/.settings" = true;
+        "**/.factorypath" = true;
+      };
+
+      "[vue]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[json]"."editor.defaultFormatter" = "vscode.json-language-features";
+      "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[typescriptreact]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[jsonc]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[svelte]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
     };
   };
 }
