@@ -10,6 +10,7 @@
       pkgs.vscode-extensions.esbenp.prettier-vscode
       pkgs.vscode-extensions.ms-python.python
       pkgs.vscode-extensions.golang.go
+      pkgs.vscode-extensions.svelte.svelte-vscode
       pkgs.vscode-extensions.editorconfig.editorconfig
       pkgs.vscode-extensions.rust-lang.rust-analyzer
       pkgs.vscode-extensions.bbenoist.nix
@@ -38,11 +39,19 @@
       "editor.suggestSelection" = "first";
       "editor.minimap.enabled" = false;
       "editor.minimap.side" = "left";
+      "editor.formatOnSave" = true;
+      "editor.codeActionsOnSave" = {
+        "source.addMissingImports" = true;
+        "source.organizeImports" = true;
+        "source.fixAll.eslint" = true;
+      };
       "terminal.integrated.fontSize" = 15;
       "debug.console.fontSize" = 15;
 
       "go.formatTool" = "goimports";
       "go.useLanguageServer" = true;
+
+      "svelte.enable-ts-plugin" = true;
 
       "files.exclude" = {
         "**/__pycache__" = true;
