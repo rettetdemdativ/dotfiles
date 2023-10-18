@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, hostname, ... }: {
+{ inputs, lib, config, pkgs, hostname, username, ... }: {
   imports = [
     (./. + "/${hostname}/boot.nix")
     (./. + "/${hostname}/hardware.nix")
@@ -108,6 +108,13 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  
+  # Force mpd to run under user instead of system user
+  services.mpd.user = "${username}";
+  systemd.services.mpd.environment = {
+      # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
+      XDG_RUNTIME_DIR = "/run/user/1000";
+  };
 
   virtualisation = {
     podman = {
@@ -119,7 +126,7 @@
     libvirtd = { enable = false; };
   };
 
-  containers.docker= {
+  containers.docker = {
     autoStart = false;
     privateNetwork = true;
     hostAddress = "192.168.100.10";
