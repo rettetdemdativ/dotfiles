@@ -14,6 +14,7 @@
     mpd
     ncmpcpp
     amberol
+    kid3
     tidal-hifi
   ];
 }
