@@ -1,6 +1,6 @@
 { inputs, lib, config, pkgs, ... }: {
   services.kanshi = {
-    enable = true;
+    enable = false;
     systemdTarget = "hyprland-session.target";
     profiles = {
       undocked = {
