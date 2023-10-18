@@ -88,6 +88,8 @@
     };
   };
 
+  programs.dconf.enable = true;
+
   programs.fuse.userAllowOther = true;
 
   programs.hyprland = {

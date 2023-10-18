@@ -13,6 +13,7 @@
     feh
     mpd
     ncmpcpp
+    amberol
     tidal-hifi
   ];
 }

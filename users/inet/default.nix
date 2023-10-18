@@ -15,6 +15,9 @@
     brave
 
     gnome.nautilus
+    # GTK configuration through gsettings
+    # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
+    glib 
     bitwarden
     signal-desktop
     teamspeak_client
@@ -1306,19 +1309,12 @@
     EDITOR = "nvim";
     DOCKER_HOST = "unix:///run/user/$UID/podman/podman.sock";
     ANDROID_HOME = "$HOME/workspace/Android";
-    MPD_HOST= "$HOME/.config/mpd/socket";
+    MPD_HOST = "$HOME/.config/mpd/socket";
+    GTK_THEME = "Adwaita-dark";
   };
 
   gtk = {
     enable = true;
-    iconTheme = {
-      name = "Numix";
-      package = pkgs.numix-icon-theme;
-    };
-    theme = {
-      name = "Arc-Dark";
-      package = pkgs.arc-theme;
-    };
 
     gtk2 = {
       configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
