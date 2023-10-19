@@ -36,5 +36,7 @@
     grim
     slurp
     wl-clipboard
+  
+    numix-icon-theme
   ];
 }
