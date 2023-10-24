@@ -12,7 +12,7 @@
   home.packages = with pkgs; [
     # Web
     firefox
-    brave
+    chromium
 
     gnome.nautilus
     # GTK configuration through gsettings
