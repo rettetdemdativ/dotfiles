@@ -20,16 +20,18 @@
       ".local/share/nvim/lazy"
       ".local/share/nvim/mason"
       ".local/share/mpd"
-      ".local/share/JetBrains"
       ".local/share/Anki2"
       ".config/Signal"
       ".config/mpd"
-      ".config/JetBrains"
       ".config/VSCodium"
       ".config/tidal-hifi"
-      ".librewolf"
       ".mozilla/firefox"
       ".ts3client"
+
+      # IntelliJ
+      ".config/JetBrains"
+      ".local/share/JetBrains"
+      ".cache/JetBrains"
 
       # Android Studio
       ".gradle"
