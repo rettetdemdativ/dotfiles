@@ -288,7 +288,8 @@ return {
 	-- indent-blankline
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = { "BufReadPost", "BufNewFile" },
+    main = "ibl",
+    event = { "BufReadPost", "BufNewFile" },
 		opts = {
 			-- char = "▏",
 			char = "│",
