@@ -4,12 +4,10 @@
     systemdTarget = "hyprland-session.target";
     profiles = {
       undocked = {
-        outputs = [
-          {
-            criteria = "eDP-1";
-            status = "enable";
-          }
-        ];
+        outputs = [{
+          criteria = "eDP-1";
+          status = "enable";
+        }];
       };
 
       dockedHome = {

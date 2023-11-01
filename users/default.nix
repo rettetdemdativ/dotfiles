@@ -1,5 +1,6 @@
 { inputs, config, lib, pkgs, username, ... }: {
-  imports = [ (./. + "/${username}") "${inputs.impermanence}/home-manager.nix" ];
+  imports =
+    [ (./. + "/${username}") "${inputs.impermanence}/home-manager.nix" ];
 
   home.username = username;
   home.homeDirectory = "/home/${username}";
@@ -40,7 +41,6 @@
       ".android"
     ];
   };
-
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

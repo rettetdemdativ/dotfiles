@@ -18,8 +18,7 @@
     let
       inherit (self) outputs;
       stateVersion = "23.05";
-      libx =
-        import ./lib { inherit inputs outputs nixpkgs stateVersion; };
+      libx = import ./lib { inherit inputs outputs nixpkgs stateVersion; };
     in {
       # home-manager switch -b backup --flake $HOME/.config/nix-config
       # nix build .#homeConfigurations."username@host".activationPackage
@@ -32,7 +31,11 @@
 
       nixosConfigurations = {
         # sudo nixos-rebuild switch --flake .#
-        nixxps = libx.mkHost { hostname = "nixxps"; username = "inet"; disk = "/dev/nvme0n1"; };
+        nixxps = libx.mkHost {
+          hostname = "nixxps";
+          username = "inet";
+          disk = "/dev/nvme0n1";
+        };
       };
     };
 }

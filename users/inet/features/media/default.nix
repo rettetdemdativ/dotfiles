@@ -1,9 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [ ./mpd.nix ./ncmpcpp.nix ];
 
-  programs.obs-studio = {
-    enable = true;
-  };
+  programs.obs-studio = { enable = true; };
 
   home.packages = with pkgs; [
     pulsemixer

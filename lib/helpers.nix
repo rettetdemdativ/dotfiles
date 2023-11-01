@@ -1,5 +1,6 @@
 { inputs, outputs, nixpkgs, stateVersion, ... }: {
-  mkHost = { hostname, username, platform ? "x86_64-linux", disk, installer ? null }:
+  mkHost =
+    { hostname, username, platform ? "x86_64-linux", disk, installer ? null }:
     inputs.nixpkgs.lib.nixosSystem {
       pkgs = import nixpkgs {
         system = platform;
@@ -9,7 +10,10 @@
       modules = [
         inputs.disko.nixosModules.disko
         ../system/disko.nix
-        { _module.args.disks = [ disk ]; _module.args.usernames = [ username ]; }
+        {
+          _module.args.disks = [ disk ];
+          _module.args.usernames = [ username ];
+        }
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

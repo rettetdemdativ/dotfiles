@@ -24,7 +24,6 @@
     '';
   };
 
-
   home.packages = with pkgs; [
     # Hyprland is imported through its flake in flake.nix
     seatd
@@ -36,7 +35,7 @@
     grim
     slurp
     wl-clipboard
-  
+
     numix-icon-theme
   ];
 }

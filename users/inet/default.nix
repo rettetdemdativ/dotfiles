@@ -17,7 +17,7 @@
     gnome.nautilus
     # GTK configuration through gsettings
     # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
-    glib 
+    glib
     bitwarden
     signal-desktop
     teamspeak_client

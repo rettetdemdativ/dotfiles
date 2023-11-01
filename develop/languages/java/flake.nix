@@ -19,15 +19,15 @@
         (system: f { pkgs = import nixpkgs { inherit system; }; });
     in {
       devShells = forAllSystems ({ pkgs }: {
-        default = pkgs.mkShell { 
-          packages = with pkgs; [ 
-            openjdk19 
-            maven 
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            openjdk19
+            maven
             gradle
             kotlin
             zlib
             ncurses
-            freetype # for missing libfreetype.so.6 ]; 
+            freetype # for missing libfreetype.so.6 ];
           ];
           shellHook = ''
             export JAVA_HOME=${pkgs.openjdk19}
