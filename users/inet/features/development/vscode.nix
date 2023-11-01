@@ -11,6 +11,7 @@
       pkgs.vscode-extensions.ms-python.python
       pkgs.vscode-extensions.golang.go
       pkgs.vscode-extensions.svelte.svelte-vscode
+      pkgs.vscode-extensions.ms-vscode.cpptools
       pkgs.vscode-extensions.jnoortheen.nix-ide
       pkgs.vscode-extensions.editorconfig.editorconfig
       pkgs.vscode-extensions.rust-lang.rust-analyzer
