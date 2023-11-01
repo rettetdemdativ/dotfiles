@@ -38,7 +38,6 @@
       "/etc/mullvad-vpn"
       "/var/log"
       "/var/lib"
-      "/run/containers"
     ];
     files = [ "/etc/nix/id_rsa" ];
   };

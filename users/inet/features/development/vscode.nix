@@ -11,9 +11,9 @@
       pkgs.vscode-extensions.ms-python.python
       pkgs.vscode-extensions.golang.go
       pkgs.vscode-extensions.svelte.svelte-vscode
+      pkgs.vscode-extensions.jnoortheen.nix-ide
       pkgs.vscode-extensions.editorconfig.editorconfig
       pkgs.vscode-extensions.rust-lang.rust-analyzer
-      pkgs.vscode-extensions.bbenoist.nix
     ];
     userSettings = {
       "window.menuBarVisibility" = "toggle";
@@ -21,7 +21,7 @@
 
       "vim.easymotion" = true;
 
-      "workbench.iconTheme"= "vscode-icons";
+      "workbench.iconTheme" = "vscode-icons";
       "workbench.activityBar.visible" = false;
       "workbench.statusBar.visible" = true;
       "workbench.editor.tabSizing" = "shrink";
@@ -52,6 +52,8 @@
       "go.useLanguageServer" = true;
 
       "svelte.enable-ts-plugin" = true;
+
+      "nix.formatterPath" = "/etc/profiles/per-user/inet/bin/nixfmt";
 
       "files.exclude" = {
         "**/__pycache__" = true;

@@ -1,5 +1,5 @@
 { inputs, lib, config, pkgs, ... }: {
-  imports = [ ./neovim.nix ./vscode.nix ./kitty.nix ];
+  imports = [ ./neovim.nix ./vscode.nix ./kitty.nix ./podman.nix ];
 
   home.packages = with pkgs; [
     android-studio
