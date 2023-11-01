@@ -39,7 +39,7 @@
       "/var/log"
       "/var/lib"
     ];
-    files = [ "/etc/nix/id_rsa" "/etc/machine-id" ];
+    files = [ "/etc/nix/id_rsa" ];
   };
 
   boot.tmp = {
@@ -121,13 +121,13 @@
   };
 
   virtualisation = {
-    containers.enable = true;
-
     podman = {
       enable = true;
       dockerCompat = true;
       defaultNetwork.settings = { dns_enabled = true; };
     };
+
+    oci-containers = { backend = "podman"; };
 
     libvirtd = { enable = false; };
   };
