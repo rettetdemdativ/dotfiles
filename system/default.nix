@@ -39,7 +39,7 @@
       "/var/log"
       "/var/lib"
     ];
-    files = [ "/etc/nix/id_rsa" ];
+    files = [ "/etc/nix/id_rsa" "/etc/machine-id" ];
   };
 
   boot.tmp = {
@@ -121,6 +121,8 @@
   };
 
   virtualisation = {
+    containers.enable = true;
+
     podman = {
       enable = true;
       dockerCompat = true;
