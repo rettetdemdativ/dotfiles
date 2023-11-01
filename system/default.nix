@@ -38,6 +38,7 @@
       "/etc/mullvad-vpn"
       "/var/log"
       "/var/lib"
+      "/run/containers"
     ];
     files = [ "/etc/nix/id_rsa" ];
   };
@@ -110,12 +111,14 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  
+
+  services.fstrim.enable = true;
+
   # Force mpd to run under user instead of system user
   services.mpd.user = "${username}";
   systemd.services.mpd.environment = {
-      # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
-      XDG_RUNTIME_DIR = "/run/user/1000";
+    # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
+    XDG_RUNTIME_DIR = "/run/user/1000";
   };
 
   virtualisation = {
@@ -185,7 +188,12 @@
   ];
 
   fonts.packages = with pkgs;
-    [ (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" "UbuntuMono" "Mononoki" "FiraCode" ]; }) ];
+    [
+      (nerdfonts.override {
+        fonts =
+          [ "JetBrainsMono" "RobotoMono" "UbuntuMono" "Mononoki" "FiraCode" ];
+      })
+    ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
