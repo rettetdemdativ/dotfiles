@@ -17,6 +17,7 @@
       "Music"
       "Videos"
       "VMs"
+      ".local/share/containers"
       ".local/share/nvim/lazy"
       ".local/share/nvim/mason"
       ".local/share/mpd"
