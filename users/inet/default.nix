@@ -42,7 +42,7 @@
       dev_c = "$HOME/dotfiles/scripts/activate-dev.sh languages/c";
       dev_java = "$HOME/dotfiles/scripts/activate-dev.sh languages/java";
       dev_nodejs = "$HOME/dotfiles/scripts/activate-dev.sh languages/nodejs";
-      dev_python = "$HOME/dotfiles/scripts/activate-dev.sh languages/python";
+      dev_python = "$HOME/dotfiles/scripts/activate-dev.sh languages/python3";
       dev_aws = "$HOME/dotfiles/scripts/activate-dev.sh stacks/aws";
     };
   };
