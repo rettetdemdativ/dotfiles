@@ -31,8 +31,13 @@
           requirements = ''
             virtualenv
           '';
+
+          ignoreDataOutdated = true;
         };
       in {
-        devShell = pkgs.mkShell { nativeBuildInputs = [ pythonInstall ]; };
+        devShell = pkgs.mkShell {
+          nativeBuildInputs = [ pythonInstall ];
+          ignoreDataOutdated = true;
+        };
       });
 }
