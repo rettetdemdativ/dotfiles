@@ -9,6 +9,7 @@
       pkgs.vscode-extensions.eamodio.gitlens
       pkgs.vscode-extensions.esbenp.prettier-vscode
       pkgs.vscode-extensions.ms-python.python
+      pkgs.vscode-extensions.ms-python.black-formatter
       pkgs.vscode-extensions.golang.go
       pkgs.vscode-extensions.svelte.svelte-vscode
       pkgs.vscode-extensions.ms-vscode.cpptools
@@ -72,6 +73,7 @@
       "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
       "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
       "[svelte]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[python]"."editor.defaultFormatter" = "ms-python.black-formatter";
     };
   };
 }
