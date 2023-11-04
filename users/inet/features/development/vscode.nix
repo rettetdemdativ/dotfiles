@@ -12,6 +12,7 @@
       pkgs.vscode-extensions.ms-python.black-formatter
       pkgs.vscode-extensions.golang.go
       pkgs.vscode-extensions.svelte.svelte-vscode
+      pkgs.vscode-extensions.angular.ng-template
       pkgs.vscode-extensions.ms-vscode.cpptools
       pkgs.vscode-extensions.jnoortheen.nix-ide
       pkgs.vscode-extensions.editorconfig.editorconfig
