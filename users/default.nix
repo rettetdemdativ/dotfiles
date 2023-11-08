@@ -29,8 +29,9 @@
       ".mozilla/firefox"
       ".ts3client"
 
-      ".local/share/containers/tmp"
-      ".local/share/containers/storage"
+      "./local/share/docker"
+      #".local/share/containers/tmp"
+      #".local/share/containers/storage"
 
       # IntelliJ
       ".config/JetBrains"

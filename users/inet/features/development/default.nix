@@ -1,11 +1,18 @@
 { inputs, lib, config, pkgs, ... }: {
-  imports = [ ./neovim.nix ./vscode.nix ./kitty.nix ./podman.nix ];
+  imports = [
+    ./neovim.nix
+    ./vscode.nix
+    ./kitty.nix
+    #./podman.nix
+    ./docker.nix
+  ];
 
   home.packages = with pkgs; [
     android-studio
     jetbrains.idea-ultimate
     kitty
     podman-compose
+    docker-compose
     buildah
     virt-manager
     dbeaver

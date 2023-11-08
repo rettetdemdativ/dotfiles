@@ -121,13 +121,22 @@
   };
 
   virtualisation = {
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings = { dns_enabled = true; };
-    };
+    #podman = {
+    #  enable = true;
+    #  dockerCompat = true;
+    #  defaultNetwork.settings = { dns_enabled = true; };
+    #};
 
-    oci-containers = { backend = "podman"; };
+    #oci-containers = { backend = "podman"; };
+
+    docker = {
+      enable = true;
+      storageDriver = "btrfs";
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
 
     libvirtd = { enable = false; };
   };
@@ -205,7 +214,7 @@
   users.users.inet = {
     isNormalUser = true;
     hashedPasswordFile = "/persist/etc/users/inet";
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
     packages = [ pkgs.home-manager ];
     shell = pkgs.zsh;
   };

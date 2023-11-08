@@ -1307,7 +1307,7 @@
 
   home.sessionVariables = rec {
     EDITOR = "nvim";
-    DOCKER_HOST = "unix:///run/user/$UID/podman/podman.sock";
+    #DOCKER_HOST = "unix:///run/user/$UID/podman/podman.sock";
     ANDROID_HOME = "$HOME/workspace/Android";
     MPD_HOST = "$HOME/.config/mpd/socket";
     GTK_THEME = "Adwaita-dark";
