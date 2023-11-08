@@ -19,7 +19,8 @@
         (system: f { pkgs = import nixpkgs { inherit system; }; });
     in {
       devShells = forAllSystems ({ pkgs }: {
-        default = pkgs.mkShell { packages = with pkgs; [ gcc13 clang_16 ]; };
+        default =
+          pkgs.mkShell { packages = with pkgs; [ gcc13 clang_16 cbmc ]; };
       });
     };
 }
