@@ -45,6 +45,14 @@
       dev_python = "$HOME/dotfiles/scripts/activate-dev.sh languages/python3";
       dev_aws = "$HOME/dotfiles/scripts/activate-dev.sh stacks/aws";
     };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+
+      custom = "$HOME/.config/oh-my-custom";
+      theme = "simple";
+    };
   };
 
   programs.firefox = {

@@ -2,6 +2,7 @@
   imports = [
     ./neovim.nix
     ./vscode.nix
+    ./zsh.nix
     ./kitty.nix
     #./podman.nix
     ./docker.nix
