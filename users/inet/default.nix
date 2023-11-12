@@ -41,6 +41,7 @@
       dev_go = "$HOME/dotfiles/scripts/activate-dev.sh languages/go";
       dev_c = "$HOME/dotfiles/scripts/activate-dev.sh languages/c";
       dev_java = "$HOME/dotfiles/scripts/activate-dev.sh languages/java";
+      dev_java11 = "$HOME/dotfiles/scripts/activate-dev.sh languages/java11";
       dev_nodejs = "$HOME/dotfiles/scripts/activate-dev.sh languages/nodejs";
       dev_python = "$HOME/dotfiles/scripts/activate-dev.sh languages/python3";
       dev_aws = "$HOME/dotfiles/scripts/activate-dev.sh stacks/aws";

@@ -21,7 +21,7 @@
       devShells = forAllSystems ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            jdk
+            jdk11
             maven
             gradle
             kotlin
@@ -30,8 +30,8 @@
             freetype # for missing libfreetype.so.6 ];
           ];
           shellHook = ''
-            export JAVA_HOME=${pkgs.jdk}/lib/openjdk
-            PATH="${pkgs.jdk}/bin:$PATH"
+            export JAVA_HOME=${pkgs.jdk11}/lib/openjdk
+            PATH="${pkgs.jdk11}/bin:$PATH"
           '';
         };
       });
