@@ -4,8 +4,8 @@
     ./vscode.nix
     ./zsh.nix
     ./kitty.nix
-    #./podman.nix
-    ./docker.nix
+    ./podman.nix
+    #./docker.nix
   ];
 
   home.packages = with pkgs; [

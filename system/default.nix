@@ -121,66 +121,28 @@
   };
 
   virtualisation = {
-    #podman = {
-    #  enable = true;
-    #  dockerCompat = true;
-    #  defaultNetwork.settings = { dns_enabled = true; };
-    #};
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings = { dns_enabled = true; };
+    };
 
     #oci-containers = { backend = "podman"; };
 
-    docker = {
-      enable = true;
-      storageDriver = "btrfs";
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
-    };
+    #docker = {
+    #  enable = true;
+    #  storageDriver = "btrfs";
+    #  rootless = {
+    #    enable = true;
+    #    setSocketVariable = true;
+    #    daemon.settings = {
+    #      data-root = "/home/inet/.local/share/docker";
+    #      storage-driver = "vfs";
+    #    };
+    #  };
+    #};
 
     libvirtd = { enable = false; };
-  };
-
-  containers.docker = {
-    autoStart = false;
-    privateNetwork = true;
-    hostAddress = "192.168.100.10";
-    localAddress = "192.168.100.11";
-    enableTun = true;
-    extraFlags = [ "--private-users-ownership=chown" ];
-    additionalCapabilities = [
-      # This is a very ugly hack to add the system-call-filter flag to
-      # nspawn. extraFlags is written to an env file as an env var and
-      # does not support spaces in arguments, so I take advantage of
-      # the additionalCapabilities generation to inject the command
-      # line argument.
-      ''all" --system-call-filter="add_key keyctl bpf" --capability="all''
-    ];
-    allowedDevices = [
-      {
-        node = "/dev/fuse";
-        modifier = "rwm";
-      }
-      {
-        node = "/dev/mapper/control";
-        modifier = "rw";
-      }
-      {
-        node = "/dev/console";
-        modifier = "rwm";
-      }
-    ];
-    bindMounts.fuse = {
-      hostPath = "/dev/fuse";
-      mountPoint = "/dev/fuse";
-      isReadOnly = false;
-    };
-    config = { config, pkgs, ... }: {
-      boot.isContainer = true;
-      system.stateVersion = "22.11";
-      virtualisation.docker.enable = true;
-      systemd.services.docker.path = [ pkgs.fuse-overlayfs ];
-    };
   };
 
   # List packages installed in system profile. To search, run:
@@ -195,6 +157,7 @@
     mullvad
     mullvad-vpn
     nvd
+    fuse-overlayfs
   ];
 
   fonts.packages = with pkgs;

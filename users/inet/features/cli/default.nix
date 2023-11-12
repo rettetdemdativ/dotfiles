@@ -7,6 +7,7 @@
 
     nnn # File browser
     ncdu # TUI disk usage
+    duf # TUI disk usage overview
 
     bitwarden-cli
     handlr-regex
