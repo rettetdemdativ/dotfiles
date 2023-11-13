@@ -123,24 +123,23 @@
   virtualisation = {
     podman = {
       enable = true;
-      dockerCompat = true;
+      dockerCompat = false;
       defaultNetwork.settings = { dns_enabled = true; };
     };
 
     #oci-containers = { backend = "podman"; };
 
-    #docker = {
-    #  enable = true;
-    #  storageDriver = "btrfs";
-    #  rootless = {
-    #    enable = true;
-    #    setSocketVariable = true;
-    #    daemon.settings = {
-    #      data-root = "/home/inet/.local/share/docker";
-    #      storage-driver = "vfs";
-    #    };
-    #  };
-    #};
+    docker = {
+      enable = true;
+      storageDriver = "btrfs";
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+        daemon.settings = {
+          data-root = "/persist/home/inet/.local/share/docker";
+        };
+      };
+    };
 
     libvirtd = { enable = false; };
   };
