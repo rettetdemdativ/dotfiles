@@ -4,6 +4,7 @@
     ./vscode.nix
     ./zsh.nix
     ./kitty.nix
+    ./alacritty.nix
     ./podman.nix
     #./docker.nix
   ];
