@@ -30,7 +30,7 @@
       "workbench.editor.tabSizing" = "shrink";
       "workbench.sideBar.location" = "right";
       "breadcrumbs.enabled" = true;
-      "editor.fontFamily" = "JetBrains Mono";
+      "editor.fontFamily" = "Monaspace Neon";
       "editor.fontSize" = 15;
       "editor.fontLigatures" = true;
       "editor.renderControlCharacters" = false;

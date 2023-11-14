@@ -23,6 +23,7 @@
     teamspeak_client
 
     # Fonts
+    monaspace
     jetbrains-mono
     roboto
     inter
