@@ -31,7 +31,7 @@
       "workbench.sideBar.location" = "right";
       "breadcrumbs.enabled" = true;
       "editor.fontFamily" = "Monaspace Neon";
-      "editor.fontSize" = 15;
+      "editor.fontSize" = 15.5;
       "editor.fontLigatures" = true;
       "editor.renderControlCharacters" = false;
       "editor.renderWhitespace" = "selection";
