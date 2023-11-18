@@ -15,6 +15,7 @@
       in {
         devShell = pkgs.mkShell {
           packages = [ (pkgs.python3.withPackages my-python-packages) ];
+          LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
         };
       });
 }
