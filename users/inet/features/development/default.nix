@@ -19,6 +19,7 @@
     virt-manager
     dbeaver
     hurl
+    podman-desktop
 
     # Used for various development tools
     nodePackages.prettier
