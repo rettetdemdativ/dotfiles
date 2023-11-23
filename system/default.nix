@@ -131,7 +131,7 @@
 
     docker = {
       enable = true;
-      storageDriver = "btrfs";
+      storageDriver = "overlay";
       rootless = {
         enable = true;
         setSocketVariable = true;
