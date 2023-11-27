@@ -26,6 +26,7 @@
 
       "workbench.iconTheme" = "vscode-icons";
       "workbench.activityBar.visible" = false;
+      "workbench.activityBar.location" = "hidden";
       "workbench.statusBar.visible" = true;
       "workbench.editor.tabSizing" = "shrink";
       "workbench.sideBar.location" = "right";
