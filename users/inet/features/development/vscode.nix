@@ -43,7 +43,7 @@
       "editor.suggestSelection" = "first";
       "editor.minimap.enabled" = false;
       "editor.minimap.side" = "left";
-      "editor.formatOnSave" = true;
+      "editor.formatOnSave" = false;
       "editor.codeActionsOnSave" = {
         "source.addMissingImports" = true;
         "source.organizeImports" = true;
