@@ -171,6 +171,7 @@
   services.openssh.enable = true;
 
   services.mullvad-vpn.enable = true;
+  services.resolved.enable = true;
 
   users.mutableUsers = false;
   users.users.inet = {
