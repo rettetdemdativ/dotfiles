@@ -19,63 +19,55 @@
       pkgs.vscode-extensions.rust-lang.rust-analyzer
     ];
     userSettings = {
-      "window.menuBarVisibility" = "toggle";
-      "window.commandCenter" = true;
-
-      "vim.easymotion" = true;
-
-      "workbench.iconTheme" = "vscode-icons";
-      "workbench.activityBar.visible" = false;
-      "workbench.activityBar.location" = "hidden";
-      "workbench.statusBar.visible" = true;
-      "workbench.editor.tabSizing" = "shrink";
-      "workbench.sideBar.location" = "right";
-      "breadcrumbs.enabled" = true;
-      "editor.fontFamily" = "Monaspace Neon";
-      "editor.fontSize" = 15.5;
-      "editor.fontLigatures" = true;
-      "editor.renderControlCharacters" = false;
-      "editor.renderWhitespace" = "selection";
-      "editor.lineNumbers" = "relative";
-      "editor.bracketPairColorization.enabled" = true;
-      "editor.guides.bracketPairs" = "active";
-      "editor.guides.indentation" = false;
-      "editor.suggestSelection" = "first";
-      "editor.minimap.enabled" = false;
-      "editor.minimap.side" = "left";
-      "editor.formatOnSave" = false;
-      "editor.codeActionsOnSave" = {
-        "source.addMissingImports" = true;
-        "source.organizeImports" = true;
-        "source.fixAll.eslint" = true;
-      };
-      "terminal.integrated.fontSize" = 15;
-      "debug.console.fontSize" = 15;
-
-      "go.formatTool" = "goimports";
-      "go.useLanguageServer" = true;
-
-      "svelte.enable-ts-plugin" = true;
-
-      "nix.formatterPath" = "/etc/profiles/per-user/inet/bin/nixfmt";
-
-      "files.exclude" = {
-        "**/__pycache__" = true;
-        "**/.classpath" = true;
-        "**/.project" = true;
-        "**/.settings" = true;
-        "**/.factorypath" = true;
-      };
-
-      "[vue]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
       "[json]"."editor.defaultFormatter" = "vscode.json-language-features";
+      "[jsonc]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[python]"."editor.defaultFormatter" = "ms-python.black-formatter";
+      "[svelte]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
       "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
       "[typescriptreact]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[jsonc]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[svelte]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[python]"."editor.defaultFormatter" = "ms-python.black-formatter";
+      "[vue]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "breadcrumbs.enabled" = true;
+      "debug.console.fontSize" = 15;
+      "editor.bracketPairColorization.enabled" = true;
+      "editor.codeActionsOnSave" = {
+        "source.addMissingImports" = true;
+        "source.fixAll.eslint" = true;
+        "source.organizeImports" = true;
+      };
+      "editor.fontFamily" = "Monaspace Neon";
+      "editor.fontLigatures" = true;
+      "editor.fontSize" = 15.5;
+      "editor.formatOnSave" = false;
+      "editor.guides.bracketPairs" = "active";
+      "editor.guides.indentation" = false;
+      "editor.lineNumbers" = "relative";
+      "editor.minimap.enabled" = false;
+      "editor.minimap.side" = "left";
+      "editor.renderControlCharacters" = false;
+      "editor.renderWhitespace" = "selection";
+      "editor.suggestSelection" = "first";
+      "files.exclude" = {
+        "**/.classpath" = true;
+        "**/.factorypath" = true;
+        "**/.project" = true;
+        "**/.settings" = true;
+        "**/__pycache__" = true;
+      };
+      "go.formatTool" = "goimports";
+      "go.useLanguageServer" = true;
+      "nix.formatterPath" = "/etc/profiles/per-user/inet/bin/nixfmt";
+      "svelte.enable-ts-plugin" = true;
+      "terminal.integrated.fontSize" = 15;
+      "vim.easymotion" = true;
+      "window.commandCenter" = true;
+      "window.menuBarVisibility" = "toggle";
+      "workbench.activityBar.location" = "hidden";
+      "workbench.editor.tabSizing" = "shrink";
+      "workbench.iconTheme" = "vscode-icons";
+      "workbench.sideBar.location" = "right";
+      "workbench.statusBar.visible" = true;
     };
   };
 }
