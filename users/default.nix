@@ -40,6 +40,10 @@
       ".gradle"
       ".config/Google/AndroidStudio2022.3"
       ".android"
+
+      # Rust
+      ".cargo"
+      ".rustup"
     ];
   };
 

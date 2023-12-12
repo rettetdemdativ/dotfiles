@@ -1,22 +1,10 @@
 {
   description = "Rust development environment";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
-    rust-overlay.url = "github:oxalica/rust-overlay"; # A helper for Rust + Nix
-  };
+  inputs = { nixpkgs.url = "github:NixOS/nixpkgs"; };
 
-  outputs = { self, nixpkgs, rust-overlay }:
+  outputs = { self, nixpkgs }:
     let
-      # Overlays enable you to customize the Nixpkgs attribute set
-      overlays = [
-        # Makes a `rust-bin` attribute available in Nixpkgs
-        (import rust-overlay)
-        # Provides a `rustToolchain` attribute for Nixpkgs that we can use to
-        # create a Rust environment
-        (self: super: { rustToolchain = super.rust-bin.stable.latest.default; })
-      ];
-
       # Systems supported
       allSystems = [
         "x86_64-linux" # 64-bit Intel/AMD Linux
@@ -28,19 +16,43 @@
       # Helper to provide system-specific attributes
       forAllSystems = f:
         nixpkgs.lib.genAttrs allSystems
-        (system: f { pkgs = import nixpkgs { inherit overlays system; }; });
+        (system: f { pkgs = import nixpkgs { inherit system; }; });
     in {
       # Development environment output
       devShells = forAllSystems ({ pkgs }: {
-        default = pkgs.mkShell {
-          # The Nix packages provided in the environment
-          packages = (with pkgs;
-            [
-              # The package provided by our custom overlay. Includes cargo, Clippy, cargo-fmt,
-              # rustdoc, rustfmt, and other tools.
-              rustToolchain
-            ]) ++ pkgs.lib.optionals pkgs.stdenv.isDarwin
-            (with pkgs; [ libiconv ]);
+        default = pkgs.mkShell rec {
+          buildInputs = with pkgs; [
+            clang
+            # Replace llvmPackages with llvmPackages_X, where X is the latest LLVM version (at the time of writing, 16)
+            llvmPackages.bintools
+            rustup
+          ];
+          RUSTC_VERSION = pkgs.lib.readFile ./rust-toolchain;
+          # https://github.com/rust-lang/rust-bindgen#environment-variables
+          LIBCLANG_PATH =
+            pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
+          shellHook = ''
+            export PATH=$PATH:''${CARGO_HOME:-~/.cargo}/bin
+            export PATH=$PATH:''${RUSTUP_HOME:-~/.rustup}/toolchains/$RUSTC_VERSION-x86_64-unknown-linux-gnu/bin/
+          '';
+          # Add precompiled library to rustc search path
+          RUSTFLAGS = (builtins.map (a: "-L ${a}/lib") [
+            # add libraries here (e.g. pkgs.libvmi)
+          ]);
+          # Add glibc, clang, glib and other headers to bindgen search path
+          BINDGEN_EXTRA_CLANG_ARGS =
+            # Includes with normal include path
+            (builtins.map (a: ''-I"${a}/include"'') [
+              # add dev libraries here (e.g. pkgs.libvmi.dev)
+              pkgs.glibc.dev
+            ])
+            # Includes with special directory paths
+            ++ [
+              ''
+                -I"${pkgs.llvmPackages_latest.libclang.lib}/lib/clang/${pkgs.llvmPackages_latest.libclang.version}/include"''
+              ''-I"${pkgs.glib.dev}/include/glib-2.0"''
+              "-I${pkgs.glib.out}/lib/glib-2.0/include/"
+            ];
         };
       });
     };
