@@ -10,6 +10,8 @@
       pkgs.vscode-extensions.esbenp.prettier-vscode
       pkgs.vscode-extensions.ms-python.python
       pkgs.vscode-extensions.ms-python.black-formatter
+      pkgs.vscode-extensions.ms-toolsai.jupyter
+      pkgs.vscode-extensions.ms-toolsai.jupyter-renderers
       pkgs.vscode-extensions.golang.go
       pkgs.vscode-extensions.svelte.svelte-vscode
       pkgs.vscode-extensions.angular.ng-template
