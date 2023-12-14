@@ -35,6 +35,7 @@
       nix-shell = "nix-shell --command 'zsh'";
       monitor_laptop = "sh $HOME/.config/hypr/apply_monitor_setup.sh laptop";
       monitor_home = "sh $HOME/.config/hypr/apply_monitor_setup.sh home";
+      monitor_mirror = "sh $HOME/.config/hypr/apply_monitor_setup.sh mirror";
 
       dev_rust = "$HOME/dotfiles/scripts/activate-dev.sh languages/rust";
       dev_go = "$HOME/dotfiles/scripts/activate-dev.sh languages/go";
