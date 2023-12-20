@@ -14,5 +14,6 @@
     amberol
     kid3
     tidal-hifi
+    invidtui
   ];
 }
