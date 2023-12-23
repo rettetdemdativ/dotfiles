@@ -44,6 +44,9 @@
       # Rust
       ".cargo"
       ".rustup"
+
+      # Nix package maintenance
+      ".cache/nixpkgs-review"
     ];
   };
 
