@@ -64,7 +64,7 @@
     ANDROID_HOME = "$HOME/workspace/Android";
     MPD_HOST = "$HOME/.config/mpd/socket";
     GTK_THEME = "Adwaita-dark";
-    NIXOS_OZONE_WL = "1";
+    #NIXOS_OZONE_WL = "1";
   };
 
   gtk = {
