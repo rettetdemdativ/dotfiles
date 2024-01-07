@@ -45,6 +45,9 @@
       ".cargo"
       ".rustup"
 
+      # Maven, unfortunately
+      ".m2"
+
       # Nix package maintenance
       ".cache/nixpkgs-review"
     ];
