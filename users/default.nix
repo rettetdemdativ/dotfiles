@@ -50,6 +50,7 @@
 
       # Nix package maintenance
       ".cache/nixpkgs-review"
+      ".cache/nix"
     ];
   };
 
