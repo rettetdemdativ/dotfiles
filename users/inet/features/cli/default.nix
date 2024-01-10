@@ -26,6 +26,11 @@
     enable = true;
     userName = "Michael Koeppl";
     userEmail = "michael@koeppl.dev";
+    extraConfig = {
+      gpg.format = "ssh";
+      user.signingKey = "/home/inet/.ssh/id_ed25519.pub";
+      commit.gpgsign = true;
+    };
   };
 
   programs.btop = {
