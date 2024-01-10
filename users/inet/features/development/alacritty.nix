@@ -11,8 +11,8 @@
         y = 8;
       };
       window.opacity = 0.87;
-      draw_bold_text_with_bright_colors = true;
       colors = {
+        draw_bold_text_with_bright_colors = true;
         primary = {
           background = "0x000000";
           foreground = "0xffffff";
@@ -45,11 +45,13 @@
           white = "0xFFFFFF";
         };
       };
-      key_bindings = [{
-        key = "Return";
-        mods = "Control|Shift";
-        action = "SpawnNewInstance";
-      }];
+      keyboard = {
+        bindings = [{
+          key = "Return";
+          mods = "Control|Shift";
+          action = "SpawnNewInstance";
+        }];
+      };
     };
   };
 }
