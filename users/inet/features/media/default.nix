@@ -11,7 +11,7 @@
     feh
     mpd
     ncmpcpp
-    amberol
+    rhythmbox
     kid3
     tidal-hifi
     invidtui
