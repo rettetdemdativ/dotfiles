@@ -8,6 +8,8 @@
           force = true;
         };
         extraConfig = ''
+          user_pref("cookiebanners.service.mode", 1);
+
                    /******
           *    name: arkenfox user.js
           *    date: 20 November 2023
