@@ -95,7 +95,8 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
   # Enable CUPS to print documents.
@@ -172,7 +173,7 @@
   services.openssh.enable = true;
 
   services.mullvad-vpn.enable = true;
-  services.resolved.enable = true;
+  #services.resolved.enable = true;
 
   users.mutableUsers = false;
   users.users.inet = {
