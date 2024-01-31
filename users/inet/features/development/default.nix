@@ -20,6 +20,7 @@
     dbeaver
     hurl
     podman-desktop
+    lefthook
 
     # Used for various development tools
     nodePackages.prettier
