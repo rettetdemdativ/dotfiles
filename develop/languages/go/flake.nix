@@ -19,7 +19,7 @@
         (system: f { pkgs = import nixpkgs { inherit system; }; });
     in {
       devShells = forAllSystems ({ pkgs }: {
-        default = pkgs.mkShell { packages = with pkgs; [ go gotools ]; };
+        default = pkgs.mkShell { packages = with pkgs; [ go gotools delve ]; };
       });
     };
 }
