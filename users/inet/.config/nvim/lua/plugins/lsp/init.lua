@@ -34,10 +34,11 @@ return {
 				angularls = {},
 				svelte = {},
 				html = {},
-        tailwindcss = {},
+				tailwindcss = {},
 				gopls = {},
-				ruff_lsp = {},
 				rust_analyzer = {},
+				pyright = {},
+				nil_ls = {},
 			},
 			setup = {},
 		},
@@ -94,7 +95,7 @@ return {
 
 	-- formatters
 	{
-		"jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = { "mason.nvim" },
 		opts = function()
@@ -133,8 +134,8 @@ return {
 					null_ls.builtins.formatting.gofmt,
 					null_ls.builtins.formatting.rustfmt,
 					null_ls.builtins.formatting.stylua,
-					null_ls.builtins.diagnostics.ruff,
-					null_ls.builtins.formatting.ruff,
+					null_ls.builtins.formatting.black,
+					null_ls.builtins.diagnostics.pylint,
 					null_ls.builtins.diagnostics.checkstyle.with({
 						extra_args = { "-c", "/google_checks.xml" }, -- or "/sun_checks.xml" or path to self written rules
 					}),

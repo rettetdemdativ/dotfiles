@@ -15,10 +15,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
-	"plugins" -- load from 'plugins' Lua module
+	"plugins", -- load from 'plugins' Lua module
+	{
+		lockfile = "/persist/home/inet/.config/nvim/lazy-lock.json", -- lockfile generated after running update.
+	}
 )
 
-require("vscode").load()
-vim.cmd("colorscheme vscode")
---require("nightfox").load()
---vim.cmd("colorscheme carbonfox")
+--require("vscode").load()
+--vim.cmd("colorscheme vscode")
+require("nightfox").load()
+vim.cmd("colorscheme carbonfox")
+
+--vim.cmd("colorscheme tokyonight-night")
