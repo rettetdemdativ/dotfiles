@@ -122,8 +122,7 @@ return {
 							group = augroup,
 							buffer = bufnr,
 							callback = function()
-								-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-								lsp_formatting(bufnr)
+                                vim.lsp.buf.format({ async = false })
 							end,
 						})
 					end
