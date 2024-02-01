@@ -297,6 +297,27 @@ return {
 		} 
 	},
 
+    {
+        "hiphish/rainbow-delimiters.nvim",
+        config = function()
+            require("rainbow-delimiters.setup").setup {
+                query = {
+                    [''] = 'rainbow-delimiters',
+                    lua = 'rainbow-blocks',
+                },
+                highlight = {
+                    'RainbowDelimiterYellow',
+                    'RainbowDelimiterViolet',
+                    'RainbowDelimiterBlue',
+                    'RainbowDelimiterOrange',
+                    'RainbowDelimiterCyan',
+                    'RainbowDelimiterGreen',
+                    'RainbowDelimiterRed',
+                },
+            }
+        end,
+    },
+
 	-- noice.nvim
 	-- experimental notifications ui
 	{
