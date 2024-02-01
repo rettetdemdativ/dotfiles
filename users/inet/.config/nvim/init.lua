@@ -21,9 +21,9 @@ require("lazy").setup(
 	}
 )
 
---require("vscode").load()
---vim.cmd("colorscheme vscode")
-require("nightfox").load()
-vim.cmd("colorscheme carbonfox")
+require("vscode").load()
+vim.cmd("colorscheme vscode")
+--require("nightfox").load()
+--vim.cmd("colorscheme carbonfox")
 
---vim.cmd("colorscheme tokyonight-night")
+--vim.cmd("colorscheme tokyonight")

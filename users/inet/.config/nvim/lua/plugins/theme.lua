@@ -1,7 +1,6 @@
 return {
 	{
 		"Mofiqul/vscode.nvim",
-		enabled = false,
 		lazy = true,
 		priority = 1000,
 		config = function()
@@ -57,7 +56,7 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
-		enabled = false,
+        enabled = false,
 		lazy = true,
 		priority = 1000,
 		config = function()
@@ -69,7 +68,7 @@ return {
 
 	{
 		"EdenEast/nightfox.nvim",
-		enabled = true,
+		enabled = false,
 		lazy = true,
 		priority = 1000,
 		config = function()
