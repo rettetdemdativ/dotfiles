@@ -21,6 +21,7 @@
     hurl
     podman-desktop
     lefthook
+    pre-commit
 
     # Used for various development tools
     nodePackages.prettier
