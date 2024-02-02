@@ -118,13 +118,13 @@ return {
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
 						vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-						vim.api.nvim_create_autocmd("BufWritePre", {
-							group = augroup,
-							buffer = bufnr,
-							callback = function()
-                                vim.lsp.buf.format({ async = false })
-							end,
-						})
+						--vim.api.nvim_create_autocmd("BufWritePre", {
+						--	group = augroup,
+						--	buffer = bufnr,
+						--	callback = function()
+                        --        vim.lsp.buf.format({ async = false })
+						--	end,
+						--})
 					end
 				end,
 				sources = {
@@ -134,10 +134,10 @@ return {
 					null_ls.builtins.formatting.rustfmt,
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.black,
-					null_ls.builtins.diagnostics.pylint,
-					null_ls.builtins.diagnostics.checkstyle.with({
-						extra_args = { "-c", "/google_checks.xml" }, -- or "/sun_checks.xml" or path to self written rules
-					}),
+					--null_ls.builtins.diagnostics.pylint,
+					--null_ls.builtins.diagnostics.checkstyle.with({
+					--	extra_args = { "-c", "/google_checks.xml" }, -- or "/sun_checks.xml" or path to self written rules
+					--}),
 				},
 			}
 		end,

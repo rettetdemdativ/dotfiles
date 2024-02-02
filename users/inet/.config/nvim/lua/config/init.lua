@@ -76,7 +76,7 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 -- Formatting
-vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting_sync(nil, 10000)<CR>")
+vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = false })<CR>")
 vim.keymap.set("n", "<leader>uf", require("plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
 
 vim.keymap.set("n", "<A-c>", "<cmd>bdelete! %d<CR>")
