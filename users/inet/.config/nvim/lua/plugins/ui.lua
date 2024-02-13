@@ -1,50 +1,20 @@
 return {
-	-- neo-tree.nvim
-	-- tree
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-		},
-		cmd = "Neotree",
-		keys = {
-			{ "<C-n>", "<CMD>Neotree toggle=true<CR>" },
-		},
-		deactivate = function()
-			vim.cmd([[Neotree close]])
-		end,
-		init = function()
-			vim.g.neo_tree_remove_legacy_commands = 1
-			if vim.fn.argc() == 1 then
-				local stat = vim.loop.fs_stat(vim.fn.argv(0))
-				if stat and stat.type == "directory" then
-					require("neo-tree")
-				end
-			end
-		end,
-		opts = {
-			filesystem = {
-				bind_to_cwd = false,
-				follow_current_file = {
-          enabled = true,
-          leave_dirs_open = false,
+    {
+        "nvim-tree/nvim-tree.lua",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
         },
-				filtered_items = {
-					visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
-					hide_dotfiles = false,
-					hide_gitignored = false,
-				},
-			},
-			window = {
-                position = "right",
-				mappings = {
-					["<space>"] = "none",
-				},
-			},
-		},
-	},
+        config = function(_, opts)
+			require("nvim-tree").setup({
+                view = {
+                    side = "right",
+                },
+            })
+		end,
+        keys = {
+			{ "<C-n>", "<CMD>NvimTreeToggle<CR>" },
+		}
+    },
 
 	{
 		"s1n7ax/nvim-window-picker",
