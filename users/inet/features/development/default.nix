@@ -17,6 +17,7 @@
     docker-compose
     buildah
     virt-manager
+    distrobox
     dbeaver
     hurl
     podman-desktop
