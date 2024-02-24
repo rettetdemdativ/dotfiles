@@ -19,7 +19,7 @@
         (system: f { pkgs = import nixpkgs { inherit system; }; });
     in {
       devShells = forAllSystems ({ pkgs }: {
-        default = pkgs.mkShell { packages = with pkgs; [ dotnet-sdk_8 ]; };
+        default = pkgs.mkShell { packages = with pkgs; [ dotnet-sdk_8 dotnet-aspnetcore_8 omnisharp-roslyn mono ]; };
       });
     };
 }
