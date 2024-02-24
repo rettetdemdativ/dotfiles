@@ -40,7 +40,7 @@ return {
 				pyright = {},
 				nil_ls = {},
 				omnisharp = {
-					--cmd = { "dotnet", "/path/to/omnisharp/OmniSharp.dll" },
+					cmd = { "omnisharp" },
 
 					-- Enables support for reading code style, naming convention and analyzer
 					-- settings from .editorconfig.
