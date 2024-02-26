@@ -33,10 +33,10 @@
       "breadcrumbs.enabled" = true;
       "debug.console.fontSize" = 15;
       "editor.bracketPairColorization.enabled" = true;
-      "editor.codeActionsOnSave" = {
-        "source.addMissingImports" = true;
-        "source.fixAll.eslint" = true;
-        "source.organizeImports" = true;
+        "editor.codeActionsOnSave" = {
+        "source.addMissingImports" = "explicit";
+        "source.fixAll.eslint" = "explicit";
+        "source.organizeImports" = "explicit";
       };
       "editor.fontFamily" = "Monaspace Neon";
       "editor.fontLigatures" = true;
