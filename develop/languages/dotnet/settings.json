@@ -1,0 +1,46 @@
+{
+  "breadcrumbs.enabled": true,
+  "debug.console.fontSize": 15,
+  "dotnet.preferCSharpExtension": false,
+  "dotnetAcquisitionExtension.enableTelemetry": false,
+  "dotnetAcquisitionExtension.existingDotnetPath": [
+    {
+      "extensionId": "ms-dotnettools.csharp",
+      "path": "dotnet"
+    }
+  ],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.fontFamily": "Monaspace Neon",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 15.5,
+  "editor.formatOnSave": false,
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.indentation": false,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.minimap.side": "left",
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "selection",
+  "editor.suggestSelection": "first",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/__pycache__": true
+  },
+  "terminal.integrated.fontSize": 15,
+  "vim.easymotion": true,
+  "window.commandCenter": true,
+  "window.menuBarVisibility": "toggle",
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.sideBar.location": "right",
+  "workbench.statusBar.visible": true
+}

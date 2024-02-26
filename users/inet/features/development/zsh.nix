@@ -13,7 +13,7 @@
       git_relief = "sh $HOME/dotfiles/scripts/git-relief.sh";
 
       dev_c = "$HOME/dotfiles/scripts/activate-dev.sh languages/c";
-      dev_dotnet = "$HOME/dotfiles/scripts/activate-dev.sh languages/dotnet";
+      dev_dotnet = "sh $HOME/dotfiles/develop/languages/dotnet/activate.sh";
       dev_go = "$HOME/dotfiles/scripts/activate-dev.sh languages/go";
       dev_java = "$HOME/dotfiles/scripts/activate-dev.sh languages/java";
       dev_java11 = "$HOME/dotfiles/scripts/activate-dev.sh languages/java11";
