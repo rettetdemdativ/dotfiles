@@ -22,6 +22,7 @@
       ".local/share/nvim/mason"
       ".local/share/mpd"
       ".local/share/Anki2"
+      ".local/share/cinny"
       ".config/Signal"
       ".config/mpd"
       ".config/VSCodium"
