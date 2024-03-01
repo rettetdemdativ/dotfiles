@@ -18,6 +18,7 @@
     buildah
     virt-manager
     distrobox
+    quickemu
     dbeaver
     hurl
     podman-desktop
