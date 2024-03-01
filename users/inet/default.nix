@@ -20,6 +20,7 @@
     glib
     signal-desktop
     teamspeak_client
+    cinny-desktop
 
     # Fonts
     monaspace
