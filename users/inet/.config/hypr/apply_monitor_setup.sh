@@ -6,3 +6,6 @@ elif [[ $1 == "mirror" ]]; then
 elif [[ $1 == "home" ]]; then
   hyprctl keyword monitor eDP-1,disable
 fi
+
+pkill hyprpaper
+hyprpaper&
