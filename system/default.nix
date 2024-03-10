@@ -93,12 +93,15 @@
 
   programs.fuse.userAllowOther = true;
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
-  };
+
+  programs.niri.enable = true;
+
+  #programs.hyprland = {
+  #  enable = true;
+  #  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  #  portalPackage =
+  #    inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+  #};
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;

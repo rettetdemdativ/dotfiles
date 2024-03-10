@@ -7,7 +7,7 @@
         icons-enabled = false;
       };
       colors = {
-        background = "00000000";
+        background = "000000ff";
         text = "ffffffff";
         match = "cb4b16ff";
       };
