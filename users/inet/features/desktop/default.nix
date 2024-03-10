@@ -1,11 +1,12 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
+    ./fuzzel.nix
+    ./gammastep.nix
     ./hyprland.nix
     ./hyprpaper.nix
     ./kanshi.nix
-    ./gammastep.nix
-    ./waybar.nix
     ./mako.nix
+    ./waybar.nix
     ./zathura.nix
   ];
 
@@ -32,6 +33,7 @@
     swayidle
     wdisplays
     bemenu
+    fuzzel
     grim
     slurp
     wl-clipboard
