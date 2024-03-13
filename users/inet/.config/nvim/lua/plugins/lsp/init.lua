@@ -36,7 +36,9 @@ return {
 				html = {},
 				tailwindcss = {},
 				gopls = {},
-				rust_analyzer = {},
+				rust_analyzer = {
+                    cmd = { "rust-analyzer" },
+                },
 				pyright = {},
 				nil_ls = {},
 				omnisharp = {
