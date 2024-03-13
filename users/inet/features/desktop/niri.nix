@@ -23,9 +23,21 @@ let
   };
 in {
   xdg.configFile."niri/config.kdl".source = ../../.config/niri/config.kdl;
+  xdg.configFile."systemd/user/niri.service.wants/swaybg.service".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.xdg.configHome}/systemd/user/swaybg.service";
+  xdg.configFile."systemd/user/niri.service.wants/waybar.service".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.xdg.configHome}/systemd/user/waybar.service";
 
-  xdg.configFile."systemd/user/swaybg.service".source = ../../.config/systemd/user/swaybg.service;
-  xdg.configFile."systemd/user/niri.service.wants/swaybg.service".source = config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/systemd/user/swaybg.service";
+  xdg.portal = {
+    enable = true;
+    config = {
+      common = { default = [ "gtk" "gnome" ]; };
+    };
+    extraPortals =
+      [ pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-gtk ];
+  };
 
-  home.packages = with pkgs; [ configure-gtk swaybg ];
+  home.packages = with pkgs; [ configure-gtk ];
 }

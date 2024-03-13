@@ -7,6 +7,7 @@
     ./kanshi.nix
     ./mako.nix
     ./niri.nix
+    (import ./swaybg.nix { wpPath = "/home/inet/Pictures/Wallpapers/dctower.jpg"; })
     ./waybar.nix
     ./zathura.nix
   ];
@@ -31,7 +32,6 @@
   home.packages = with pkgs; [
     # Hyprland is imported through its flake in flake.nix
     seatd
-    swaybg
     swaylock-effects
     swayidle
     wdisplays
