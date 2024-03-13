@@ -20,6 +20,7 @@
       pkgs.vscode-extensions.jnoortheen.nix-ide
       pkgs.vscode-extensions.editorconfig.editorconfig
       pkgs.vscode-extensions.rust-lang.rust-analyzer
+      pkgs.vscode-extensions.vadimcn.vscode-lldb
     ];
     userSettings = {
       "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
