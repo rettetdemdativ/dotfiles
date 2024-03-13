@@ -8,6 +8,7 @@
     ./mako.nix
     ./niri.nix
     (import ./swaybg.nix { wpPath = "/home/inet/Pictures/Wallpapers/dctower.jpg"; })
+    ./swayidle.nix
     ./waybar.nix
     ./zathura.nix
   ];
@@ -33,7 +34,6 @@
     # Hyprland is imported through its flake in flake.nix
     seatd
     swaylock-effects
-    swayidle
     wdisplays
     fuzzel
     grim

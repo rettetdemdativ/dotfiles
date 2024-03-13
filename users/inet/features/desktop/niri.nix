@@ -23,6 +23,17 @@ let
   };
 in {
   xdg.configFile."niri/config.kdl".source = ../../.config/niri/config.kdl;
+
+  # Services started with niri
+  xdg.configFile."systemd/user/niri.service.wants/swayidle.service".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.xdg.configHome}/systemd/user/swayidle.service";
+  xdg.configFile."systemd/user/niri.service.wants/xdg-desktop-portal-gtk.service".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.xdg.configHome}/systemd/user/xdg-desktop-portal-gtk.service";
+  xdg.configFile."systemd/user/niri.service.wants/xdg-desktop-portal-gnome.service".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.xdg.configHome}/systemd/user/xdg-desktop-portal-gnome.service";
   xdg.configFile."systemd/user/niri.service.wants/swaybg.service".source =
     config.lib.file.mkOutOfStoreSymlink
     "${config.xdg.configHome}/systemd/user/swaybg.service";
