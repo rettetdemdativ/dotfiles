@@ -1,7 +1,11 @@
 { inputs, lib, config, pkgs, ... }: {
+  home.packages = with pkgs; [
+    kanshi
+  ];
+
   services.kanshi = {
     enable = false;
-    systemdTarget = "hyprland-session.target";
+    systemdTarget = "graphical-session.target";
     profiles = {
       undocked = {
         outputs = [{
@@ -10,7 +14,7 @@
         }];
       };
 
-      dockedHome = {
+      dockedHome1 = {
         outputs = [
           {
             criteria = "eDP-1";
@@ -18,6 +22,19 @@
           }
           {
             criteria = "DP-2";
+            status = "enable";
+          }
+        ];
+      };
+
+      dockedHome2 = {
+        outputs = [
+          {
+            criteria = "eDP-1";
+            status = "disable";
+          }
+          {
+            criteria = "DP-1";
             status = "enable";
           }
         ];

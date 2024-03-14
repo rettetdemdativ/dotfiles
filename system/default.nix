@@ -74,7 +74,7 @@
     '';
   };
 
-  security.polkit.enable = true;
+  #security.polkit.enable = true;
 
   security.pam.services.swaylock = {
     text = ''
