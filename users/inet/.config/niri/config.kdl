@@ -74,7 +74,7 @@ input {
 // Remember to uncomment the node by removing "/-"!
 output "eDP-1" {
     // Uncomment this line to disable this output.
-    // off
+    off
 
     // Scale is a floating-point number, but at the moment only integer values work.
     // scale 2.0
