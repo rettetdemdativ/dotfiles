@@ -1,4 +1,5 @@
 {
+    "layer": "top",
     "height": 25,
     //"modules-left": ["sway/workspaces"],
     //"modules-left": ["hyprland/window"],
