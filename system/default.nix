@@ -58,6 +58,8 @@
   # networking.interfaces.enp60s0u2u4.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
+  services.tailscale.enable = true;
+
   time.timeZone = "Europe/Amsterdam";
 
   i18n.defaultLocale = "en_US.UTF-8";
