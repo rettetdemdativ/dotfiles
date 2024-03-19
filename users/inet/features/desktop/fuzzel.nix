@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Monaspace Neon";
+        font = "Monaspace Neon:size=11";
         icons-enabled = false;
       };
       colors = {
