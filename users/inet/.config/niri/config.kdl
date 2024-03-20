@@ -400,7 +400,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "alacritty"; }
     Mod+D { spawn "fuzzel"; }
-    Mod+Shift+X { spawn "swaylock" "-f" "--screenshots" "--clock" "--indicator" "--effect-blur" "7x5" "--grace" "2" "--fade-in" "0.2"; }
+    Mod+Shift+X { spawn "swaylock" "-f" "--screenshots" "--clock" "--indicator" "--effect-blur" "7x5" "--fade-in" "0.2"; }
 
     // You can also use a shell:
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
