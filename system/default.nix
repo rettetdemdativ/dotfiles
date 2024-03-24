@@ -123,13 +123,6 @@
 
   services.fstrim.enable = true;
 
-  # Force mpd to run under user instead of system user
-  #services.mpd.user = "${username}";
-  #systemd.services.mpd.environment = {
-  #  # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
-  #  XDG_RUNTIME_DIR = "/run/user/1000";
-  #};
-
   virtualisation = {
     podman = {
       enable = true;
