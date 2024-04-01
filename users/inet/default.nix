@@ -22,6 +22,7 @@
     glib
     signal-desktop
     teamspeak_client
+    teamspeak5_client
     cinny-desktop
 
     # Fonts

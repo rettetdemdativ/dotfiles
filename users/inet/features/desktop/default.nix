@@ -35,10 +35,10 @@
     seatd
     swaylock-effects
     wdisplays
-    fuzzel
     grim
     slurp
     wl-clipboard
+    cage # For running XWayland windows in separate "cage"
 
     numix-icon-theme
   ];
