@@ -20,6 +20,19 @@
       pkgs.vscode-extensions.jnoortheen.nix-ide
       pkgs.vscode-extensions.editorconfig.editorconfig
       pkgs.vscode-extensions.rust-lang.rust-analyzer
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "vscode-azurefunctions";
+        publisher = "ms-azuretools";
+        version = "1.14.0";
+        sha256 = "sha256-iMgAjrdd+47XD417A2+BZj/HjDvTs8msmrXm0At3GRI=";
+      }
+      {
+        name = "vscode-azureresourcegroups";
+        publisher = "ms-azuretools";
+        version = "0.8.4";
+        sha256 = "sha256-MYm5ARmDcVOluKhnfjNciYlOBXumJMKCg4jds2h/B/g=";
+      }
     ];
     userSettings = {
       "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
