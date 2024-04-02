@@ -24,6 +24,7 @@
             inherit inputs outputs hostname username stateVersion;
           };
         }
+        inputs.niri.nixosModules.niri
         ../system
       ] ++ (inputs.nixpkgs.lib.optionals (installer != null) [ installer ]);
     };

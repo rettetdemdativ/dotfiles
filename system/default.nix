@@ -58,6 +58,8 @@
   # networking.interfaces.enp60s0u2u4.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
+  services.tailscale.enable = true;
+
   time.timeZone = "Europe/Amsterdam";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -73,6 +75,8 @@
       IdleAction=ignore
     '';
   };
+
+  #security.polkit.enable = true;
 
   security.pam.services.swaylock = {
     text = ''
@@ -93,12 +97,15 @@
 
   programs.fuse.userAllowOther = true;
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
-  };
+
+  programs.niri.enable = true;
+
+  #programs.hyprland = {
+  #  enable = true;
+  #  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  #  portalPackage =
+  #    inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+  #};
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -115,13 +122,6 @@
   };
 
   services.fstrim.enable = true;
-
-  # Force mpd to run under user instead of system user
-  services.mpd.user = "${username}";
-  systemd.services.mpd.environment = {
-    # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
-    XDG_RUNTIME_DIR = "/run/user/1000";
-  };
 
   virtualisation = {
     podman = {
