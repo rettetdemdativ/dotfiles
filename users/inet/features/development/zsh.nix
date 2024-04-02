@@ -21,6 +21,7 @@
       dev_python = "$HOME/dotfiles/scripts/activate-dev.sh languages/python3";
       dev_rust = "$HOME/dotfiles/scripts/activate-dev.sh languages/rust";
       dev_aws = "$HOME/dotfiles/scripts/activate-dev.sh stacks/aws";
+      dev_azure = "$HOME/dotfiles/scripts/activate-dev.sh stacks/azure";
     };
 
     oh-my-zsh = {
