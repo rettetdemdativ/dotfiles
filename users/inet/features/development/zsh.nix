@@ -4,7 +4,7 @@
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     shellAliases = {
       nix-shell = "nix-shell --command 'zsh'";
       monitor_laptop = "sh $HOME/.config/hypr/apply_monitor_setup.sh laptop";
