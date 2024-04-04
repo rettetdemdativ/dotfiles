@@ -221,8 +221,6 @@ environment {
 
     // Remove a variable by using null as the value:
     // DISPLAY null
-    
-    XCURSOR_SIZE 16
 }
 
 cursor {
@@ -230,7 +228,6 @@ cursor {
     // `XCURSOR_THEME` and `XCURSOR_SIZE` env variables.
     // xcursor-theme "default"
     // xcursor-size 24
-    xcursor-size 16
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
