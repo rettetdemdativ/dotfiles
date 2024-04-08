@@ -1,5 +1,6 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
+    ./helix.nix
     ./neovim.nix
     ./vscode.nix
     ./zsh.nix
