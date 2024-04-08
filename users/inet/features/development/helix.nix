@@ -1,7 +1,7 @@
 { inputs, config, pkgs, ... }: {
   programs.helix = {
     enable = true;
-    extraPackages = [ pkgs.gopls pkgs.nil pkgs.nixfmt ];
+    extraPackages = [ pkgs.gopls pkgs.nil pkgs.nixfmt pkgs.python311Packages.python-lsp-server ];
     settings = {
       theme = "dark_plus";
       editor = {
