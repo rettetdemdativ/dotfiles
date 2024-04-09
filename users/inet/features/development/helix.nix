@@ -33,6 +33,10 @@
           ];
           separator = "|";
         };
+
+        file-picker = {
+          hidden = false;
+        };
       };
     };
   };
