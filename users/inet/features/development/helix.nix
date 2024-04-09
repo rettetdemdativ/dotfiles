@@ -7,6 +7,8 @@
       pkgs.nil
       pkgs.nixfmt
       pkgs.python311Packages.python-lsp-server
+      pkgs.dockerfile-language-server-nodejs
+      pkgs.docker-compose-language-service
     ];
     settings = {
       theme = "dark_plus";
