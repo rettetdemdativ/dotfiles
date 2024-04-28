@@ -32,7 +32,7 @@
     eslint_d
     lua
     nil # Nix LSP
-    nixfmt # Nix formatter
+    nixfmt-classic # Nix formatter
     ripgrep
   ];
 }

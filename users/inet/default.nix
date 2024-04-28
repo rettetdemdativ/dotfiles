@@ -59,7 +59,7 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "application/pdf" = [ "zathura.desktop" ];
+      "application/pdf" = [ "sioyek.desktop" ];
       "image/jpeg" = [ "feh.desktop" ];
       "image/png" = [ "feh.desktop" ];
       "x-scheme-handler/http" = [ "firefox.desktop" ];

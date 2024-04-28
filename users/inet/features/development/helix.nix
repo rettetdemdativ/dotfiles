@@ -5,7 +5,7 @@
       pkgs.gopls
       pkgs.rust-analyzer
       pkgs.nil
-      pkgs.nixfmt
+      pkgs.nixfmt-classic
       pkgs.python311Packages.python-lsp-server
       pkgs.dockerfile-language-server-nodejs
       pkgs.docker-compose-language-service

@@ -7,7 +7,7 @@
     pulsemixer
     pamixer # Volume controls
     mpv
-    zathura
+    sioyek
     feh
     mpd
     ncmpcpp
