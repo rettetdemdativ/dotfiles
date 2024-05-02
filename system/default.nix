@@ -97,7 +97,6 @@
 
   programs.fuse.userAllowOther = true;
 
-
   programs.niri.enable = true;
 
   #programs.hyprland = {
@@ -110,9 +109,17 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  security.sudo.extraConfig = ''
-    Defaults        lecture = never
-  '';
+  security.doas.enable = true;
+  security.sudo.enable = false;
+  security.doas.extraRules = [{
+    users = [ username ];
+    # Optional, retains environment variables while running commands 
+    # e.g. retains your NIX_PATH when applying your config
+    keepEnv = true;
+    persist =
+      true; # Optional, don't ask for the password for some time, after a successfully authentication
+  }];
+ 
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
