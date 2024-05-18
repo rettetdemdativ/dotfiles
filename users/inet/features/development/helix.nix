@@ -11,7 +11,7 @@
       pkgs.docker-compose-language-service
     ];
     settings = {
-      theme = "tokyonight";
+      theme = "dark_plus";
       editor = {
         line-number = "relative";
         color-modes = true;
