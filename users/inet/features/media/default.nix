@@ -8,7 +8,7 @@
     pamixer # Volume controls
     mpv
     sioyek
-    feh
+    imv
     mpd
     ncmpcpp
     rhythmbox

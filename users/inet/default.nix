@@ -60,8 +60,8 @@
     enable = true;
     defaultApplications = {
       "application/pdf" = [ "sioyek.desktop" ];
-      "image/jpeg" = [ "feh.desktop" ];
-      "image/png" = [ "feh.desktop" ];
+      "image/jpeg" = [ "imv.desktop" ];
+      "image/png" = [ "imv.desktop" ];
       "x-scheme-handler/http" = [ "firefox.desktop" ];
       "x-scheme-handler/https" = [ "firefox.desktop" ];
       "text/html" = [ "firefox.desktop" ];

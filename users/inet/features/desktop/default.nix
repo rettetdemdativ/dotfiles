@@ -7,7 +7,7 @@
     ./kanshi.nix
     ./mako.nix
     ./niri.nix
-    (import ./swaybg.nix { wpPath = "/home/inet/Pictures/Wallpapers/dctower.jpg"; })
+    (import ./swaybg.nix { wpPath = "/home/inet/Pictures/Wallpapers"; })
     ./swayidle.nix
     ./waybar.nix
     ./zathura.nix
