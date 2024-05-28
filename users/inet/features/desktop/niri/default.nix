@@ -22,11 +22,27 @@ let
     '';
   };
 in {
-  xdg.configFile."hypr/hyprland.conf".source = ../../.config/hypr/hyprland.conf;
-  xdg.configFile."hypr/apply_monitor_setup.sh".source =
-    ../../.config/hypr/apply_monitor_setup.sh;
-  xdg.configFile."systemd/user/hyprland-session.target".source =
-    ../../.config/hypr/hyprland-session.target;
+  xdg.configFile."niri/config.kdl".source = ../../../.config/niri/config.kdl;
+
+  # Services started with niri
+  xdg.configFile."systemd/user/niri.service.wants/swayidle.service".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.xdg.configHome}/systemd/user/swayidle.service";
+  xdg.configFile."systemd/user/niri.service.wants/swaybg.service".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.xdg.configHome}/systemd/user/swaybg.service";
+  xdg.configFile."systemd/user/niri.service.wants/waybar.service".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.xdg.configHome}/systemd/user/waybar.service";
 
   home.packages = with pkgs; [ configure-gtk ];
+
+  
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      monitor_home = "sh $HOME/dotfiles/users/inet/features/desktop/niri/scripts/monitors.sh home";
+      monitor_laptop = "sh $HOME/dotfiles/users/inet/features/desktop/niri/scripts/monitors.sh laptop";
+    };
+  };
 }

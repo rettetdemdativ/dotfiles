@@ -2,11 +2,11 @@
   imports = [
     ./fuzzel.nix
     ./gammastep.nix
-    #./hyprland.nix
+    #./hyprland
     ./hyprpaper.nix
     ./kanshi.nix
     ./mako.nix
-    ./niri.nix
+    ./niri
     (import ./swaybg.nix { wpPath = "/home/inet/Pictures/Wallpapers"; })
     ./swayidle.nix
     ./waybar.nix
