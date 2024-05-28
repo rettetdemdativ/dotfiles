@@ -20,7 +20,7 @@
     virt-manager
     distrobox
     quickemu
-    dbeaver-bin
+    beekeeper-studio
     hurl
     podman-desktop
     lefthook
