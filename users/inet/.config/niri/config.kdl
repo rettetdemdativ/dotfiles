@@ -323,6 +323,15 @@ animations {
 
         // Example for a slightly bouncy window opening:
         // spring damping-ratio=0.8 stiffness=1000 epsilon=0.0001
+
+        
+        custom-shader r"
+            vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
+                vec3 coords_tex_next = niri_geo_to_tex_next * coords_curr_geo;
+                vec4 color = texture2D(niri_tex_next, coords_tex_next.st);
+                return color;
+            }
+        "
     }
 
     // Config parse error and new default config creation notification
@@ -371,6 +380,12 @@ animations {
     open-fullscreen true
     // You can also set this to false to prevent a window from opening fullscreen.
     // open-fullscreen false
+}
+
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
 }
 
 // Here's a useful example. Work around WezTerm's initial configure bug
