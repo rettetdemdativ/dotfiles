@@ -40,7 +40,7 @@
         "source.fixAll.eslint" = "explicit";
         "source.organizeImports" = "explicit";
       };
-      "editor.fontFamily" = "Monaspace Neon";
+      "editor.fontFamily" = "Cascadia Code";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 15.5;
       "editor.formatOnSave" = false;

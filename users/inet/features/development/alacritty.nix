@@ -4,7 +4,7 @@
     settings = {
       font = {
         size = 12;
-        normal = { family = "Monaspace Neon"; };
+        normal = { family = "Cascadia Code"; };
       };
       window.padding = {
         x = 8;

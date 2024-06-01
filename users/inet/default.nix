@@ -30,6 +30,7 @@
     roboto
     inter
     mononoki
+    cascadia-code
   ];
 
   home.sessionVariables = rec {
