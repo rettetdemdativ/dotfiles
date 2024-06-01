@@ -60,6 +60,7 @@
         "**/.settings" = true;
         "**/__pycache__" = true;
       };
+      "gitlens.plusFeatures.enabled" = false;
       "go.formatTool" = "goimports";
       "go.useLanguageServer" = true;
       "nix.formatterPath" = "/etc/profiles/per-user/inet/bin/nixfmt";
