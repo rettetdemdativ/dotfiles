@@ -17,6 +17,7 @@
       dev_nodejs = "$HOME/dotfiles/scripts/activate-dev.sh languages/nodejs";
       dev_python = "$HOME/dotfiles/scripts/activate-dev.sh languages/python3";
       dev_rust = "$HOME/dotfiles/scripts/activate-dev.sh languages/rust";
+      dev_typst = "$HOME/dotfiles/scripts/activate-dev.sh languages/typst";
       dev_aws = "$HOME/dotfiles/scripts/activate-dev.sh stacks/aws";
       dev_azure = "$HOME/dotfiles/scripts/activate-dev.sh stacks/azure";
     };
