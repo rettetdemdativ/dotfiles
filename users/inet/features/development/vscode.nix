@@ -22,6 +22,13 @@
       pkgs.vscode-extensions.rust-lang.rust-analyzer
       pkgs.vscode-extensions.vadimcn.vscode-lldb
       pkgs.vscode-extensions.nvarner.typst-lsp
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "fleet-theme";
+        publisher = "MichaelZhou";
+        version = "1.3.10";
+        sha256 = "sha256-zQBziXtu9OiCAR/XMt73DY7CE/KJxtEAHoAi7rJp8hQ=";
+      }
     ];
     userSettings = {
       "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
