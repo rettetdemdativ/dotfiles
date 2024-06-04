@@ -4,6 +4,7 @@
     package = pkgs.vscodium;
     extensions = [
       pkgs.vscode-extensions.vscodevim.vim
+      pkgs.vscode-extensions.pkief.material-icon-theme
       pkgs.vscode-extensions.vscode-icons-team.vscode-icons
       pkgs.vscode-extensions.dbaeumer.vscode-eslint
       pkgs.vscode-extensions.eamodio.gitlens
@@ -78,7 +79,7 @@
       "window.menuBarVisibility" = "toggle";
       "workbench.activityBar.location" = "hidden";
       "workbench.editor.tabSizing" = "shrink";
-      "workbench.iconTheme" = "vscode-icons";
+      "workbench.iconTheme" = "material-icon-theme";
       "workbench.sideBar.location" = "right";
       "workbench.statusBar.visible" = true;
     };
