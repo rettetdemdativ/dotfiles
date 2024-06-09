@@ -21,6 +21,7 @@
     distrobox
     quickemu
     beekeeper-studio
+    bruno
     hurl
     podman-desktop
     lefthook
