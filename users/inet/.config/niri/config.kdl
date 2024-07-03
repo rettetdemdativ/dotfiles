@@ -78,8 +78,7 @@ output "eDP-1" {
     // Uncomment this line to disable this output.
     // off
 
-    // Scale is a floating-point number, but at the moment only integer values work.
-    // scale 2.0
+    scale 1.0
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
