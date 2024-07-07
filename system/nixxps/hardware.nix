@@ -6,7 +6,7 @@
     inputs.nixos-hardware.nixosModules.dell-xps-13-9380
   ];
 
-  hardware.opengl.enable = lib.mkDefault true;
+  hardware.graphics.enable = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
