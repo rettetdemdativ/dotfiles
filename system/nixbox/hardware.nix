@@ -17,4 +17,5 @@ in {
   hardware.opengl.extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
   hardware.graphics.enable = lib.mkDefault true;
 
+  hardware.pulseaudio.enable = false;
 }
