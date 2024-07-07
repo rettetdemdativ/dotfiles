@@ -41,9 +41,9 @@ in {
     enable = true;
     shellAliases = {
       monitor_home =
-        "sh $HOME/dotfiles/users/${username}/features/desktop/niri/scripts/monitors.sh home";
+        "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh home";
       monitor_laptop =
-        "sh $HOME/dotfiles/users/${username}/features/desktop/niri/scripts/monitors.sh laptop";
+        "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh laptop";
     };
     initExtraFirst = ''
       if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
