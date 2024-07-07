@@ -119,7 +119,7 @@
     persist =
       true; # Optional, don't ask for the password for some time, after a successfully authentication
   }];
- 
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -187,6 +187,13 @@
   users.users.inet = {
     isNormalUser = true;
     hashedPasswordFile = "/persist/etc/users/inet";
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
+    packages = [ pkgs.home-manager ];
+    shell = pkgs.zsh;
+  };
+  users.users.rettetdemdativ = {
+    isNormalUser = true;
+    hashedPasswordFile = "/persist/etc/users/rettetdemdativ";
     extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
     packages = [ pkgs.home-manager ];
     shell = pkgs.zsh;

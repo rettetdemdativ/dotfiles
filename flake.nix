@@ -28,6 +28,10 @@
           username = "inet";
           platform = "x86_64-linux";
         };
+        "rettetdemdativ" = libx.mkHome {
+          username = "rettetdemdativ";
+          platform = "x86_64-linux";
+        };
       };
 
       nixosConfigurations = {
@@ -35,6 +39,11 @@
         nixxps = libx.mkHost {
           hostname = "nixxps";
           username = "inet";
+          disk = "/dev/nvme0n1";
+        };
+        nixbox = libx.mkHost {
+          hostname = "nixbox";
+          username = "rettetdemdativ";
           disk = "/dev/nvme0n1";
         };
       };
