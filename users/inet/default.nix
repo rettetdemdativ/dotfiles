@@ -1,11 +1,11 @@
-{ inputs, config, pkgs, ... }: {
+{ inputs, config, pkgs, username, ... }: {
   imports = [
-    ./features/desktop
-    ./features/development
-    ./features/general
-    ./features/media
-    ./features/cli
-    ./features/productivity
+    ../features/desktop
+    ../features/development
+    ../features/general
+    ../features/media
+    ../features/cli
+    ../features/productivity
   ];
 
   # The home.packages option allows you to install Nix packages into your

@@ -146,7 +146,7 @@
         enable = true;
         setSocketVariable = true;
         daemon.settings = {
-          data-root = "/persist/home/inet/.local/share/docker";
+          data-root = "/persist/home/${username}/.local/share/docker";
         };
       };
     };

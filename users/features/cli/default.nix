@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
   home.packages = with pkgs; [
     git
     git-crypt
@@ -28,7 +28,7 @@
     userEmail = "michael@koeppl.dev";
     extraConfig = {
       gpg.format = "ssh";
-      user.signingKey = "/home/inet/.ssh/id_ed25519.pub";
+      user.signingKey = "/home/${username}/.ssh/id_ed25519.pub";
       commit.gpgsign = true;
     };
   };
