@@ -27,6 +27,7 @@
     userName = "Michael Koeppl";
     userEmail = "michael@koeppl.dev";
     extraConfig = {
+      safe.directory = "/home/${username}/dotfiles/.git";
       gpg.format = "ssh";
       user.signingKey = "/home/${username}/.ssh/id_ed25519.pub";
       commit.gpgsign = true;
