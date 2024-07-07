@@ -6,6 +6,7 @@
     ./fs.nix
   ] ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix"))
     (import ./${hostname}/extra.nix {
+      lib = lib;
       config = config;
       pkgs = pkgs;
     });

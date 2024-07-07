@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
   # In addition to niri as a default, nixbox also has GNOME
@@ -23,4 +23,20 @@
       hitori # sudoku game
       atomix # puzzle game
     ]);
+
+  # Most stuff in common.nix
+  #pkgs.config.allowUnfreePredicate = pkg:
+  #  builtins.elem (lib.getName pkg) [ "steam" "steam-original" "steam-run" ];
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall =
+      true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall =
+      true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall =
+      true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
+  programs.steam.gamescopeSession.enable = true;
 }
