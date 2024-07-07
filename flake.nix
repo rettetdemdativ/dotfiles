@@ -44,7 +44,7 @@
         nixbox = libx.mkHost {
           hostname = "nixbox";
           username = "rettetdemdativ";
-          disk = "/dev/nvme0n1";
+          disk = "/dev/sda";
         };
       };
     };

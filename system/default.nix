@@ -184,21 +184,23 @@
   #services.resolved.enable = true;
 
   users.mutableUsers = false;
-  users.users.inet = {
-    isNormalUser = true;
-    hashedPasswordFile = "/persist/etc/users/inet";
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
-    packages = [ pkgs.home-manager ];
-    shell = pkgs.zsh;
+  users.users = {
+    inet = {
+      isNormalUser = true;
+      hashedPasswordFile = "/persist/etc/users/inet";
+      extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
+      packages = [ pkgs.home-manager ];
+      shell = pkgs.zsh;
+    };
+    rettetdemdativ = {
+      isNormalUser = true;
+      hashedPasswordFile = "/persist/etc/users/rettetdemdativ";
+      extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
+      packages = [ pkgs.home-manager ];
+      shell = pkgs.zsh;
+    };
+    root.hashedPasswordFile = "/persist/etc/users/root";
   };
-  users.users.rettetdemdativ = {
-    isNormalUser = true;
-    hashedPasswordFile = "/persist/etc/users/rettetdemdativ";
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
-    packages = [ pkgs.home-manager ];
-    shell = pkgs.zsh;
-  };
-  users.users.root.hashedPasswordFile = "/persist/etc/users/root";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
