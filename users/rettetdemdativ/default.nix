@@ -52,6 +52,9 @@
 
       # Steam
       ".local/share/Steam"
+      ".local/share/wineprefixes"
+      ".cache/protontricks"
+      ".cache/winetricks"
     ];
   };
 }
