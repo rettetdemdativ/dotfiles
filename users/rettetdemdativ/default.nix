@@ -51,7 +51,6 @@
       ".cache/nix"
 
       # Steam
-      ".steam"
       ".local/share/Steam"
     ];
   };
