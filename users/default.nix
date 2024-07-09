@@ -18,6 +18,17 @@
     allowUnfree = true;
     # Workaround for https://github.com/nix-community/home-manager/issues/2942
     allowUnfreePredicate = (_: true);
+
+    packageOverrides = let
+      curlWithGnuTls = (pkgs.curl.override {
+        gnutlsSupport = true;
+        opensslSupport = false;
+      });
+    in pkgs: {
+      steam = pkgs.steam.override {
+        extraPkgs = pkgs: with pkgs; [ curlWithGnuTls curlWithGnuTls.out ];
+      };
+    };
   };
 
   nix = {

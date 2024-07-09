@@ -57,4 +57,10 @@
       ".cache/winetricks"
     ];
   };
+
+  programs.zsh = {
+    shellAliases = {
+      steam_radv = "AMD_VULKAN_ICD=\"RADV\" steam";
+    };
+  };
 }

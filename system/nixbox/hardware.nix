@@ -12,10 +12,15 @@ in {
   ];
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-  hardware.opengl.extraPackages = with pkgs; [ amdvlk ];
-  # For 32 bit applications 
-  hardware.opengl.extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
-  hardware.graphics.enable = lib.mkDefault true;
+  hardware.graphics = {
+    # radv
+    enable = true;
+    enable32Bit = true;
+
+    # amdvlk
+    extraPackages = with pkgs; [ amdvlk ];
+    extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
+  };
 
   hardware.pulseaudio.enable = false;
 }

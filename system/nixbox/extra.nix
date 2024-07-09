@@ -24,10 +24,6 @@
       atomix # puzzle game
     ]);
 
-  # Most stuff in common.nix
-  #pkgs.config.allowUnfreePredicate = pkg:
-  #  builtins.elem (lib.getName pkg) [ "steam" "steam-original" "steam-run" ];
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall =
@@ -38,9 +34,9 @@
       true; # Open ports in the firewall for Steam Local Network Game Transfers
 
     protontricks.enable = true;
+    gamescopeSession.enable = true;
   };
 
-  programs.steam.gamescopeSession.enable = true;
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;
 }
