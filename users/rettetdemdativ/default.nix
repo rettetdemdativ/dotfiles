@@ -56,6 +56,9 @@
       ".local/share/wineprefixes"
       ".cache/protontricks"
       ".cache/winetricks"
+
+      # Lutris
+      "Games"
     ];
   };
 
