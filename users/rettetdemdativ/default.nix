@@ -1,5 +1,5 @@
 { inputs, lib, config, pkgs, username, ... }: {
-  imports = [ ../common.nix ];
+  imports = [ ../common.nix ../features/gaming ];
 
   home.persistence."/persist/home/${username}" = {
     allowOther = true;
@@ -52,6 +52,7 @@
 
       # Steam
       ".local/share/Steam"
+      ".local/share/lutris"
       ".local/share/wineprefixes"
       ".cache/protontricks"
       ".cache/winetricks"
@@ -62,5 +63,10 @@
     shellAliases = {
       steam_radv = "AMD_VULKAN_ICD=\"RADV\" steam";
     };
+  };
+
+  home.sessionVariables = rec {
+    # Set radv as default
+    AMD_VULKAN_ICD = "RADV";
   };
 }

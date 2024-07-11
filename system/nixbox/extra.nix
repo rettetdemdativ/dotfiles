@@ -1,6 +1,8 @@
 { lib, config, pkgs, ... }:
 
 {
+  systemd.services.nix-daemon.serviceConfig.LimitNOFILE = lib.mkForce 40960;
+
   # In addition to niri as a default, nixbox also has GNOME
   services.xserver = {
     enable = true;
