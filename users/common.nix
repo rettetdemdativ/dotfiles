@@ -13,7 +13,7 @@
   home.packages = with pkgs; [
     brave
 
-    gnome.nautilus
+    nautilus
     #networkmanagerapplet
 
     # GTK configuration through gsettings
@@ -21,7 +21,6 @@
     glib
     signal-desktop
     teamspeak_client
-    teamspeak5_client
     cinny-desktop
 
     # Fonts

@@ -3,6 +3,7 @@
     ./helix.nix
     ./neovim.nix
     ./vscode.nix
+    ./zed.nix
     ./zsh.nix
     ./kitty.nix
     ./alacritty.nix
