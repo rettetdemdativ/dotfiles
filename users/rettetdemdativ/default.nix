@@ -1,6 +1,5 @@
-{ inputs, config, pkgs, username, ... }: {
-  imports = [ ../common.nix ];
-  # Most stuff in common.nix
+{ inputs, lib, config, pkgs, username, ... }: {
+  imports = [ ../common.nix ../features/gaming ];
 
   home.persistence."/persist/home/${username}" = {
     allowOther = true;
@@ -50,6 +49,26 @@
       # Nix package maintenance
       ".cache/nixpkgs-review"
       ".cache/nix"
+
+      # Steam
+      ".local/share/Steam"
+      ".local/share/lutris"
+      ".local/share/wineprefixes"
+      ".cache/protontricks"
+      ".cache/winetricks"
+
+      # Flatpak for Steam
+      ".local/share/flatpak"
+      ".var/app/com.valvesoftware.Steam"
+
+      # Lutris
+      "Games"
     ];
+  };
+
+  programs.zsh = {
+    shellAliases = {
+      steam_flatpak = "flatpak run com.valvesoftware.Steam";
+    };
   };
 }

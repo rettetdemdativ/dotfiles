@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }: {
+{ inputs, config, pkgs, username, ... }: {
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
@@ -71,7 +71,7 @@
       "gitlens.plusFeatures.enabled" = false;
       "go.formatTool" = "goimports";
       "go.useLanguageServer" = true;
-      "nix.formatterPath" = "/etc/profiles/per-user/inet/bin/nixfmt";
+      "nix.formatterPath" = "/etc/profiles/per-user/${username}/bin/nixfmt";
       "svelte.enable-ts-plugin" = true;
       "terminal.integrated.fontSize" = 15;
       "vim.easymotion" = true;

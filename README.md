@@ -24,7 +24,7 @@
 * Get the minimal NixOS ISO, burn it to disk/usb, etc. and boot from it
 * Run `git clone https://github.com/rettetdemdativ/dotfiles && cd dotfiles`
 * (optional) Update the config to suit your host(s) and user(s)
-* Run `./scripts/install.sh <host> <user> <disk path>` (e.g. `./scripts/install.sh nixxps inet /dev/sda`)
+* Run `./scripts/install.sh <host> <disk path> <user>` (e.g. `./scripts/install.sh nixxps /dev/sda inet`)
 
 ## Update the system
 

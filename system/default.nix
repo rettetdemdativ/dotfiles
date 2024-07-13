@@ -6,6 +6,7 @@
     ./fs.nix
   ] ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix"))
     (import ./${hostname}/extra.nix {
+      lib = lib;
       config = config;
       pkgs = pkgs;
     });
@@ -22,9 +23,9 @@
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
-      substituters = [ "https://hyprland.cachix.org" ];
+      #substituters = [ "https://hyprland.cachix.org" ];
       trusted-public-keys = [
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+        # "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
     };
   };
@@ -119,7 +120,7 @@
     persist =
       true; # Optional, don't ask for the password for some time, after a successfully authentication
   }];
- 
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -146,7 +147,7 @@
         enable = true;
         setSocketVariable = true;
         daemon.settings = {
-          data-root = "/persist/home/inet/.local/share/docker";
+          data-root = "/persist/home/${username}/.local/share/docker";
         };
       };
     };
@@ -184,14 +185,23 @@
   #services.resolved.enable = true;
 
   users.mutableUsers = false;
-  users.users.inet = {
-    isNormalUser = true;
-    hashedPasswordFile = "/persist/etc/users/inet";
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
-    packages = [ pkgs.home-manager ];
-    shell = pkgs.zsh;
+  users.users = {
+    inet = {
+      isNormalUser = true;
+      hashedPasswordFile = "/persist/etc/users/inet";
+      extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
+      packages = [ pkgs.home-manager ];
+      shell = pkgs.zsh;
+    };
+    rettetdemdativ = {
+      isNormalUser = true;
+      hashedPasswordFile = "/persist/etc/users/rettetdemdativ";
+      extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
+      packages = [ pkgs.home-manager ];
+      shell = pkgs.zsh;
+    };
+    root.hashedPasswordFile = "/persist/etc/users/root";
   };
-  users.users.root.hashedPasswordFile = "/persist/etc/users/root";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

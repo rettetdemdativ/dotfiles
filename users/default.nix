@@ -5,57 +5,6 @@
   home.username = username;
   home.homeDirectory = "/home/${username}";
 
-  home.persistence."/persist/home/${username}" = {
-    allowOther = true;
-    directories = [
-      ".ssh"
-      ".gnupg"
-      "dotfiles"
-      "workspace"
-      "Desktop"
-      "Downloads"
-      "Pictures"
-      "Music"
-      "Videos"
-      "VMs"
-      ".local/share/nvim/lazy"
-      ".local/share/nvim/mason"
-      ".local/share/mpd"
-      ".local/share/Anki2"
-      ".local/share/cinny"
-      ".config/Signal"
-      ".config/mpd"
-      ".config/VSCodium"
-      ".config/tidal-hifi"
-      ".config/libreoffice"
-      ".mozilla/firefox"
-      ".ts3client"
-
-      ".local/share/containers"
-
-      # IntelliJ
-      ".config/JetBrains"
-      ".local/share/JetBrains"
-      ".cache/JetBrains"
-
-      # Android Studio
-      ".gradle"
-      ".config/Google/AndroidStudio2022.3"
-      ".android"
-
-      # Rust
-      ".cargo"
-      ".rustup"
-
-      # Maven, unfortunately
-      ".m2"
-
-      # Nix package maintenance
-      ".cache/nixpkgs-review"
-      ".cache/nix"
-    ];
-  };
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -69,6 +18,17 @@
     allowUnfree = true;
     # Workaround for https://github.com/nix-community/home-manager/issues/2942
     allowUnfreePredicate = (_: true);
+
+    packageOverrides = let
+      curlWithGnuTls = (pkgs.curl.override {
+        gnutlsSupport = true;
+        opensslSupport = false;
+      });
+    in pkgs: {
+      steam = pkgs.steam.override {
+        extraPkgs = pkgs: with pkgs; [ curlWithGnuTls curlWithGnuTls.out ];
+      };
+    };
   };
 
   nix = {

@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }:
+{ inputs, lib, config, pkgs, username, ... }:
 let
   # currently, there is some friction between sway and gtk:
   # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
@@ -37,12 +37,26 @@ in {
 
   home.packages = with pkgs; [ configure-gtk ];
 
-  
   programs.zsh = {
     enable = true;
     shellAliases = {
-      monitor_home = "sh $HOME/dotfiles/users/inet/features/desktop/niri/scripts/monitors.sh home";
-      monitor_laptop = "sh $HOME/dotfiles/users/inet/features/desktop/niri/scripts/monitors.sh laptop";
+      monitor_home =
+        "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh home";
+      monitor_laptop =
+        "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh laptop";
     };
+    initExtraFirst = ''
+      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+        export QT_QPA_PLATFORM=wayland
+        export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+        export XDG_SESSION_TYPE=wayland
+        #export XDG_CURRENT_DESKTOP=hyprland
+        export _JAVA_AWT_WM_NONREPARENTING=1
+        export MOZ_ENABLE_WAYLAND=1
+        export MOZ_WEBRENDER=1
+        #exec dbus-run-session niri-session
+        exec niri-session
+      fi	
+    '';
   };
 }

@@ -11,7 +11,7 @@
     };
     impermanence.url = "github:nix-community/impermanence/master";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland.url = "github:hyprwm/Hyprland";
     niri.url = "github:sodiboo/niri-flake";
   };
 
@@ -28,6 +28,10 @@
           username = "inet";
           platform = "x86_64-linux";
         };
+        "rettetdemdativ" = libx.mkHome {
+          username = "rettetdemdativ";
+          platform = "x86_64-linux";
+        };
       };
 
       nixosConfigurations = {
@@ -36,6 +40,11 @@
           hostname = "nixxps";
           username = "inet";
           disk = "/dev/nvme0n1";
+        };
+        nixbox = libx.mkHost {
+          hostname = "nixbox";
+          username = "rettetdemdativ";
+          disk = "/dev/sda";
         };
       };
     };
