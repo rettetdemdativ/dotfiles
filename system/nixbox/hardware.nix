@@ -12,15 +12,16 @@ in {
   ];
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-  hardware.graphics = {
-    # radv
-    enable = true;
-    enable32Bit = true;
+  # Handled by the nixos-hardware module
+  # hardware.graphics = {
+  #   # radv
+  #   enable = true;
+  #   enable32Bit = true;
 
-    # amdvlk
-    extraPackages = with pkgs; [ amdvlk ];
-    extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
-  };
+  #   # amdvlk
+  #   #extraPackages = with pkgs; [ amdvlk ];
+  #   #extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
+  # };
 
   hardware.pulseaudio.enable = false;
 }

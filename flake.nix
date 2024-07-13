@@ -11,7 +11,7 @@
     };
     impermanence.url = "github:nix-community/impermanence/master";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland.url = "github:hyprwm/Hyprland";
     niri.url = "github:sodiboo/niri-flake";
   };
 

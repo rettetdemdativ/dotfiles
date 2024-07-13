@@ -57,6 +57,10 @@
       ".cache/protontricks"
       ".cache/winetricks"
 
+      # Flatpak for Steam
+      ".local/share/flatpak"
+      ".var/app/com.valvesoftware.Steam"
+
       # Lutris
       "Games"
     ];
@@ -64,12 +68,7 @@
 
   programs.zsh = {
     shellAliases = {
-      steam_radv = "AMD_VULKAN_ICD=\"RADV\" steam";
+      steam_flatpak = "flatpak run com.valvesoftware.Steam";
     };
-  };
-
-  home.sessionVariables = rec {
-    # Set radv as default
-    AMD_VULKAN_ICD = "RADV";
   };
 }

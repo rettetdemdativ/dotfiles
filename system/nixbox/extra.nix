@@ -1,8 +1,6 @@
 { lib, config, pkgs, ... }:
 
 {
-  systemd.services.nix-daemon.serviceConfig.LimitNOFILE = lib.mkForce 40960;
-
   # In addition to niri as a default, nixbox also has GNOME
   services.xserver = {
     enable = true;
@@ -28,12 +26,8 @@
     atomix # puzzle game
   ]);
 
-  security.pam.loginLimits = [{
-    domain = "*";
-    type = "soft";
-    item = "nofile";
-    value = "16384";
-  }];
+  # For Flatpak Steam
+  services.flatpak.enable = true;
 
   programs.steam = {
     enable = true;
@@ -46,8 +40,35 @@
 
     protontricks.enable = true;
     gamescopeSession.enable = true;
+
+    extraCompatPackages = with pkgs; [ proton-ge-bin ];
+    extraPackages = with pkgs; [ gamescope gamemode mangohud ];
   };
 
-  programs.gamescope.enable = true;
-  programs.gamemode.enable = true;
+  # systemd.tmpfiles.rules = let
+  #   rocmEnv = pkgs.symlinkJoin {
+  #     name = "rocm-combined";
+  #     paths = with pkgs.rocmPackages; [ rocblas hipblas clr ];
+  #   };
+  # in [ "L+    /opt/rocm   -    -    -     -    ${rocmEnv}" ];
+
+  # Enable lact as well
+  environment.systemPackages = with pkgs; [ lact ];
+
+  systemd.services.lactd = {
+    description = "AMDGPU Control Daemon";
+    enable = true;
+    serviceConfig = { ExecStart = "${pkgs.lact}/bin/lact daemon"; };
+    wantedBy = [ "multi-user.target" ];
+  };
+
+  # Set limits for esync.
+  systemd.extraConfig = "DefaultLimitNOFILE=1048576";
+
+  security.pam.loginLimits = [{
+    domain = "*";
+    type = "hard";
+    item = "nofile";
+    value = "1048576";
+  }];
 }
