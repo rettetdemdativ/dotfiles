@@ -23,6 +23,7 @@
           home-manager.extraSpecialArgs = {
             inherit inputs outputs hostname username stateVersion;
           };
+          home-manager.extraSpecialArgs.flake-inputs = inputs;
         }
         inputs.niri.nixosModules.niri
         ../system

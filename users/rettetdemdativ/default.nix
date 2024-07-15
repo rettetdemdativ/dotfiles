@@ -1,5 +1,9 @@
 { inputs, lib, config, pkgs, username, ... }: {
-  imports = [ ../common.nix ../features/gaming ];
+  imports = [
+    ../common.nix
+    ../features/gaming
+    #../features/flatpak 
+  ];
 
   home.persistence."/persist/home/${username}" = {
     allowOther = true;
@@ -67,8 +71,6 @@
   };
 
   programs.zsh = {
-    shellAliases = {
-      steam_flatpak = "flatpak run com.valvesoftware.Steam";
-    };
+    shellAliases = { steam_flatpak = "flatpak run com.valvesoftware.Steam"; };
   };
 }
