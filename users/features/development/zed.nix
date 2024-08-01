@@ -3,5 +3,5 @@
     zed-editor
   ];
 
-  #xdg.configFile."nvim".source = ../../.config/nvim;
+  xdg.configFile."zed".source = ../../.config/zed;
 }
