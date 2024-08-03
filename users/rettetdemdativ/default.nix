@@ -20,6 +20,7 @@
       "VMs"
       ".local/share/nvim/lazy"
       ".local/share/nvim/mason"
+      ".local/share/zed"
       ".local/share/mpd"
       ".local/share/Anki2"
       ".local/share/cinny"

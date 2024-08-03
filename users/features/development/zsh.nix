@@ -20,6 +20,7 @@
       dev_typst = "$HOME/dotfiles/scripts/activate-dev.sh languages/typst";
       dev_aws = "$HOME/dotfiles/scripts/activate-dev.sh stacks/aws";
       dev_azure = "$HOME/dotfiles/scripts/activate-dev.sh stacks/azure";
+      dev_zed = "nix-shell $HOME/dotfiles/develop/tools/zed";
     };
 
     oh-my-zsh = {

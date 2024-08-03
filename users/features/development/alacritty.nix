@@ -4,7 +4,7 @@
     settings = {
       font = {
         size = 12;
-        normal = { family = "Cascadia Code"; };
+        normal = { family = "JetBrains Mono"; };
       };
       window.padding = {
         x = 8;
