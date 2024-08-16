@@ -18,7 +18,8 @@
   "theme": {
     "mode": "dark",
     "light": "Fleet Dark",
-    "dark": "Tokyo Night"
+    "dark": "VScode Dark Plus"
+    //"dark": "Tokyo Night"
   },
   "relative_line_numbers": true,
   "server_url": "https://disable-zed-downloads.invalid"
