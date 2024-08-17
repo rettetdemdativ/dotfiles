@@ -51,7 +51,7 @@
       };
       "editor.fontFamily" = "Cascadia Code";
       "editor.fontLigatures" = true;
-      "editor.fontSize" = 15.5;
+      "editor.fontSize" = 15;
       "editor.formatOnSave" = false;
       "editor.guides.bracketPairs" = "active";
       "editor.guides.indentation" = false;
