@@ -50,8 +50,8 @@
             };
           };
 
-          default = "Brave Search";
-          privateDefault = "Brave Search";
+          default = "DuckDuckGo";
+          privateDefault = "DuckDuckGo";
           force = true;
         };
         extraConfig = ''
