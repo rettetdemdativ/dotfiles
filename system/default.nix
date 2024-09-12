@@ -181,7 +181,7 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  #services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.enable = true;
   services.resolved.enable = true;
 
   users.mutableUsers = false;
