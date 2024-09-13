@@ -17,7 +17,6 @@
     totem
     gnome-photos
     gnome-tour
-  ]) ++ (with pkgs.gnome; [
     gnome-music
     gnome-characters
     tali # poker game
