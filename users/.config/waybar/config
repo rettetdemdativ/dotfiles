@@ -1,9 +1,8 @@
 {
     "layer": "top",
     "height": 25,
-    //"modules-left": ["sway/workspaces"],
-    //"modules-left": ["hyprland/window"],
-    "modules-left": ["hyprland/workspaces"],
+    //"modules-left": ["hyprland/workspaces"],
+    "modules-left": ["niri/workspaces"],
     "modules-right": ["pulseaudio", "network#wifi", "network#eth", "network#vpn", "cpu", "memory", "backlight", "battery", "clock", "tray"],
 
     "wlr/workspaces": {
