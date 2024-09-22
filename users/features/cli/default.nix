@@ -5,7 +5,7 @@
     gnupg
     pinentry-qt
 
-    nnn # File browser
+    yazi # File browser
     ncdu # TUI disk usage
     duf # TUI disk usage overview
 

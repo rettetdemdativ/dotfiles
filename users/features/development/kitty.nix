@@ -6,9 +6,9 @@
     extraConfig = ''
       linux_display_server wayland
 
-      font_family      Monaspace Neon
+      font_family     JetBrains Mono
 
-      font_size 11.5
+      font_size 12
 
       cursor_shape block
       shell_integration no-cursor
