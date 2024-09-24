@@ -1,4 +1,4 @@
 #!/bin/sh
-pushd ~/dotfiles
+pushd ~/dotfiles/hosts/"$HOSTNAME"
 nix flake update
 popd
