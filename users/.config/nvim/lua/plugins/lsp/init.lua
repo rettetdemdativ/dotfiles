@@ -30,7 +30,7 @@ return {
 				},
 				cssls = {},
 				eslint = {},
-				tsserver = {},
+				ts_ls = {},
 				angularls = {},
 				svelte = {},
 				html = {},
