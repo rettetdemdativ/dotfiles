@@ -2,5 +2,5 @@
 
 (pkgs.buildFHSEnv {
     name = "zed";
-    runScript = "zed .";
+    runScript = "zeditor .";
 }).env
