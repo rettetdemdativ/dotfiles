@@ -21,6 +21,13 @@
     "dark": "Fleet Dark"
     //"dark": "Tokyo Night"
   },
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "font_style": "italic"
+      }
+    }
+  },
   "tabs": {
     "file_icons": true,
     "git_status": true
