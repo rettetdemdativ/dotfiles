@@ -12,7 +12,7 @@
     "metrics": false
   },
   "vim_mode": true,
-  "buffer_font_family": "JetBrainsMonoNF-Regular",
+  "buffer_font_family": "Monaspace Neon",
   "ui_font_size": 16,
   "buffer_font_size": 14.5,
   "theme": {
@@ -20,6 +20,10 @@
     "light": "Fleet Dark",
     "dark": "Fleet Dark"
     //"dark": "Tokyo Night"
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
   },
   "relative_line_numbers": true,
   "server_url": "https://disable-zed-downloads.invalid"
