@@ -75,6 +75,9 @@
       "svelte.enable-ts-plugin" = true;
       "terminal.integrated.fontSize" = 15;
       "vim.easymotion" = true;
+      "vim.handleKeys" = {
+        "<C-p>" = false;
+      };
       "window.commandCenter" = true;
       "window.menuBarVisibility" = "toggle";
       "workbench.activityBar.location" = "hidden";
