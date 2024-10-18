@@ -32,8 +32,8 @@
             buffer_font_size = 14.5;
             theme = {
                 mode = "dark";
-                light = "Fleet Dark";
-                dark = "Fleet Dark";
+                light = "VSCode Dark Modern";
+                dark = "VSCode Dark Modern";
             };
             experimental.theme_overrides = {
                 syntax = {
