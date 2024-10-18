@@ -11,8 +11,8 @@
       pkgs.vscode-extensions.esbenp.prettier-vscode
       pkgs.vscode-extensions.ms-python.python
       pkgs.vscode-extensions.ms-python.black-formatter
-      pkgs.vscode-extensions.ms-toolsai.jupyter
-      pkgs.vscode-extensions.ms-toolsai.jupyter-renderers
+      #pkgs.vscode-extensions.ms-toolsai.jupyter
+      #pkgs.vscode-extensions.ms-toolsai.jupyter-renderers
       pkgs.vscode-extensions.hashicorp.terraform
       pkgs.vscode-extensions.golang.go
       pkgs.vscode-extensions.svelte.svelte-vscode
@@ -21,7 +21,7 @@
       pkgs.vscode-extensions.jnoortheen.nix-ide
       pkgs.vscode-extensions.editorconfig.editorconfig
       pkgs.vscode-extensions.rust-lang.rust-analyzer
-      pkgs.vscode-extensions.vadimcn.vscode-lldb
+      #pkgs.vscode-extensions.vadimcn.vscode-lldb
       pkgs.vscode-extensions.nvarner.typst-lsp
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
@@ -49,7 +49,7 @@
         "source.fixAll.eslint" = "explicit";
         "source.organizeImports" = "explicit";
       };
-      "editor.fontFamily" = "Cascadia Code";
+      "editor.fontFamily" = "JetBrains Mono";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 15;
       "editor.formatOnSave" = false;
