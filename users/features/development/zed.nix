@@ -27,7 +27,7 @@
                 metrics = false;
             };
             vim_mode = true;
-            buffer_font_family = "Monaspace Neon";
+            buffer_font_family = "JetBrains Mono";
             ui_font_size = 16;
             buffer_font_size = 14.5;
             theme = {
