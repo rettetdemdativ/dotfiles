@@ -4,7 +4,7 @@
         extensions = [
             "basher"
             "docker-compose"
-            "docker"
+            "dockerfile"
             "fleet-themes"
             "github-theme"
             "intellij-newui-theme"
