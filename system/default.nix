@@ -12,8 +12,6 @@
     });
 
   nix = {
-    package = pkgs.nixFlakes;
-
     gc = {
       automatic = true;
       options = "--delete-older-than 14d";
@@ -59,8 +57,6 @@
   # networking.interfaces.enp60s0u2u4.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
-  services.tailscale.enable = true;
-
   time.timeZone = "Europe/Amsterdam";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -100,13 +96,6 @@
 
   programs.niri.enable = true;
 
-  #programs.hyprland = {
-  #  enable = true;
-  #  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  #  portalPackage =
-  #    inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
-  #};
-
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -114,7 +103,7 @@
   security.sudo.enable = true;
   #security.doas.extraRules = [{
   #  users = [ username "wheel" ];
-  #  # Optional, retains environment variables while running commands 
+  #  # Optional, retains environment variables while running commands
   #  # e.g. retains your NIX_PATH when applying your config
   #  keepEnv = true;
   #  persist =
@@ -212,4 +201,3 @@
   system.stateVersion = "23.05"; # Did you read the comment?
 
 }
-

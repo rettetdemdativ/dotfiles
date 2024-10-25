@@ -8,7 +8,7 @@
     ./kitty.nix
     ./alacritty.nix
     ./podman.nix
-    #./docker.nix
+    #./aider.nix
   ];
 
   home.packages = with pkgs; [
@@ -33,6 +33,7 @@
     eslint_d
     lua
     nil # Nix LSP
+    nixd # other Nix LSP
     nixfmt-classic # Nix formatter
     ripgrep
   ];

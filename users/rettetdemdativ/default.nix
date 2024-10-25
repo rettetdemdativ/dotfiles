@@ -2,7 +2,7 @@
   imports = [
     ../common.nix
     ../features/gaming
-    #../features/flatpak 
+    #../features/flatpak
   ];
 
   home.persistence."/persist/home/${username}" = {
@@ -52,6 +52,8 @@
       # Nix package maintenance
       ".cache/nixpkgs-review"
       ".cache/nix"
+
+      ".aider.conf.yml"
 
       # Steam
       ".local/share/Steam"
