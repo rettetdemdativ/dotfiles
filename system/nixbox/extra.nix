@@ -28,6 +28,8 @@
   # For Flatpak Steam
   services.flatpak.enable = true;
 
+  programs.gamemode.enable = true;
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall =
@@ -41,7 +43,7 @@
     gamescopeSession.enable = true;
 
     extraCompatPackages = with pkgs; [ proton-ge-bin ];
-    extraPackages = with pkgs; [ gamescope gamemode mangohud ];
+    extraPackages = with pkgs; [ mangohud ];
   };
 
   # systemd.tmpfiles.rules = let
@@ -52,7 +54,7 @@
   # in [ "L+    /opt/rocm   -    -    -     -    ${rocmEnv}" ];
 
   # Enable lact as well
-  environment.systemPackages = with pkgs; [ lact ];
+  environment.systemPackages = with pkgs; [ lact mangohud ];
 
   systemd.services.lactd = {
     description = "AMDGPU Control Daemon";
