@@ -25,9 +25,6 @@
     atomix # puzzle game
   ]);
 
-  # For Flatpak Steam
-  services.flatpak.enable = true;
-
   programs.gamemode.enable = true;
 
   programs.steam = {
@@ -46,13 +43,6 @@
     extraPackages = with pkgs; [ mangohud ];
   };
 
-  # systemd.tmpfiles.rules = let
-  #   rocmEnv = pkgs.symlinkJoin {
-  #     name = "rocm-combined";
-  #     paths = with pkgs.rocmPackages; [ rocblas hipblas clr ];
-  #   };
-  # in [ "L+    /opt/rocm   -    -    -     -    ${rocmEnv}" ];
-
   # Enable lact as well
   environment.systemPackages = with pkgs; [ lact mangohud ];
 
@@ -62,14 +52,4 @@
     serviceConfig = { ExecStart = "${pkgs.lact}/bin/lact daemon"; };
     wantedBy = [ "multi-user.target" ];
   };
-
-  # Set limits for esync.
-  # systemd.extraConfig = "DefaultLimitNOFILE=1048576";
-
-  # security.pam.loginLimits = [{
-  #   domain = "*";
-  #   type = "hard";
-  #   item = "nofile";
-  #   value = "1048576";
-  # }];
 }

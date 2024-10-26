@@ -9,6 +9,17 @@
     "Music"
     "Videos"
     "VMs"
+
+    # Home manager
+    {
+      directory = ".local/state/nix/profiles";
+      mode = "0700";
+    }
+    {
+      directory = ".local/state/home-manager";
+      mode = "0700";
+    }
+
     {
       directory = ".ssh";
       mode = "0700";
@@ -52,16 +63,11 @@
       mode = "0700";
     }
     {
+      directory = ".config/systemd/user/niri.service.wants";
+      mode = "0700";
+    }
+    {
       directory = ".local/share/zed";
-      mode = "0700";
-    }
-    # Neovim
-    {
-      directory = ".local/share/nvim/lazy";
-      mode = "0700";
-    }
-    {
-      directory = ".local/share/nvim/mason";
       mode = "0700";
     }
     # mpd
@@ -125,14 +131,6 @@
     }
     {
       directory = ".local/share/wineprefixes";
-      mode = "0700";
-    }
-    {
-      directory = ".local/share/flatpak";
-      mode = "0700";
-    }
-    {
-      directory = ".var/app/com.valvesoftware.Steam";
       mode = "0700";
     }
     # Explicit allowed cache
