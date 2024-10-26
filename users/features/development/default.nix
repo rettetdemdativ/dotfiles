@@ -1,7 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
     ./helix.nix
-    #./neovim.nix
+    ./neovim.nix
     ./vscode.nix
     ./zed.nix
     ./zsh.nix
