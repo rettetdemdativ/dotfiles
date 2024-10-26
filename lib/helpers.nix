@@ -24,6 +24,7 @@
             inherit inputs outputs hostname username stateVersion;
           };
           home-manager.extraSpecialArgs.flake-inputs = inputs;
+          home-manager.backupFileExtension = "hm-backup";
         }
         inputs.niri.nixosModules.niri
         ../system
