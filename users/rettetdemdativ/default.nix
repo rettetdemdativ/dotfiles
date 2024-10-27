@@ -52,8 +52,6 @@
       ".cache/nixpkgs-review"
       ".cache/nix"
 
-      ".aider.conf.yml"
-
       # Steam
       {
         directory = ".local/share/Steam";
@@ -66,6 +64,9 @@
 
       # Lutris
       "Games"
+    ];
+    files = [
+      ".aider.conf.yml"
     ];
   };
 }

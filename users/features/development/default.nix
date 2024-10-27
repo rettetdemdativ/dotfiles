@@ -9,7 +9,7 @@
     ./alacritty.nix
     ./podman.nix
     ./docker.nix
-    #./aider.nix
+    ./aider.nix
   ];
 
   home.packages = with pkgs; [
