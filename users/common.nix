@@ -54,31 +54,32 @@
     gtk4 = { extraConfig = { gtk-application-prefer-dark-theme = 1; }; };
   };
 
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "application/pdf" = [ "sioyek.desktop" ];
-      "image/jpeg" = [ "imv.desktop" ];
-      "image/png" = [ "imv.desktop" ];
-      "x-scheme-handler/http" = [ "firefox.desktop" ];
-      "x-scheme-handler/https" = [ "firefox.desktop" ];
-      "text/html" = [ "firefox.desktop" ];
-      "application/x-extension-htm" = [ "firefox.desktop" ];
-      "application/x-extension-html" = [ "firefox.desktop" ];
-      "application/x-extension-shtml" = [ "firefox.desktop" ];
-      "application/x-extension-xht" = [ "firefox.desktop" ];
-      "application/x-extension-xhtml" = [ "firefox.desktop" ];
-      "application/xhtml+xml" = [ "firefox.desktop" ];
+  # xdg.mimeApps = {
+  #   enable = true;
+  #   defaultApplications = {
+  #     "application/pdf" = [ "sioyek.desktop" ];
+  #     "image/jpeg" = [ "imv.desktop" ];
+  #     "image/png" = [ "imv.desktop" ];
+  #     "x-scheme-handler/http" = [ "firefox.desktop" ];
+  #     "x-scheme-handler/https" = [ "firefox.desktop" ];
+  #     "text/html" = [ "firefox.desktop" ];
+  #     "application/x-extension-htm" = [ "firefox.desktop" ];
+  #     "application/x-extension-html" = [ "firefox.desktop" ];
+  #     "application/x-extension-shtml" = [ "firefox.desktop" ];
+  #     "application/x-extension-xht" = [ "firefox.desktop" ];
+  #     "application/x-extension-xhtml" = [ "firefox.desktop" ];
+  #     "application/xhtml+xml" = [ "firefox.desktop" ];
 
-      "video/webm" = [ "mpv.desktop" ];
-      "video/ogg" = [ "mpv.desktop" ];
-      "video/x-msvideo" = [ "mpv.desktop" ];
-      "video/x-flv" = [ "mpv.desktop" ];
-      "video/mp4" = [ "mpv.desktop" ];
+  #     "video/webm" = [ "mpv.desktop" ];
+  #     "video/ogg" = [ "mpv.desktop" ];
+  #     "video/x-msvideo" = [ "mpv.desktop" ];
+  #     "video/x-flv" = [ "mpv.desktop" ];
+  #     "video/mp4" = [ "mpv.desktop" ];
 
-      "inode/directory" = [ "nnn.desktop" "nautilus.desktop" ];
-    };
-  };
+  #     "inode/directory" = [ "nnn.desktop" "nautilus.desktop" ];
+  #   };
+  # };
+  xdg.configFile."mimeapps.list".source = ./.config/mimeapps.list;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

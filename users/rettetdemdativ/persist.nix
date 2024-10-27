@@ -21,6 +21,11 @@
     }
 
     {
+      directory = ".config/nix";
+      mode = "0700";
+    }
+
+    {
       directory = ".ssh";
       mode = "0700";
     }
@@ -37,11 +42,31 @@
       mode = "0700";
     }
     {
-      directory = ".config/mpd";
+      directory = ".config/VSCodium";
       mode = "0700";
     }
     {
-      directory = ".config/VSCodium";
+      directory = ".config/git";
+      mode = "0700";
+    }
+    {
+      directory = ".config/helix";
+      mode = "0700";
+    }
+    {
+      directory = ".config/zed";
+      mode = "0700";
+    }
+    {
+      directory = ".config/alacritty";
+      mode = "0700";
+    }
+    {
+      directory = ".config/kitty";
+      mode = "0700";
+    }
+    {
+      directory = ".config/btop";
       mode = "0700";
     }
     {
@@ -63,14 +88,106 @@
       mode = "0700";
     }
     {
-      directory = ".config/systemd/user/niri.service.wants";
+      directory = ".config/systemd/user";
+      mode = "0700";
+    }
+    # {
+    #   directory = ".config/systemd/user/niri.service.wants";
+    #   mode = "0700";
+    # }
+    # {
+    #   directory = ".config/systemd/user/default.target.wants";
+    #   mode = "0700";
+    # }
+    # {
+    #   directory = ".config/systemd/user/graphical-session.target.wants";
+    #   mode = "0700";
+    # }
+    # {
+    #   directory = ".config/systemd/user/sockets.target.wants";
+    #   mode = "0700";
+    # }
+    {
+      directory = ".config/fuzzel";
+      mode = "0700";
+    }
+    {
+      directory = ".config/gammastep";
+      mode = "0700";
+    }
+    {
+      directory = ".config/hypr";
+      mode = "0700";
+    }
+    {
+      directory = ".config/hyprpaper";
+      mode = "0700";
+    }
+    {
+      directory = ".config/kanshi";
+      mode = "0700";
+    }
+    {
+      directory = ".config/mako";
+      mode = "0700";
+    }
+    {
+      directory = ".config/swaybg";
+      mode = "0700";
+    }
+    {
+      directory = ".config/swayidle";
+      mode = "0700";
+    }
+    {
+      directory = ".config/waybar";
+      mode = "0700";
+    }
+    {
+      directory = ".config/zathura";
+      mode = "0700";
+    }
+    {
+      directory = ".config/gtk-2.0";
+      mode = "0700";
+    }
+    {
+      directory = ".config/gtk-3.0";
+      mode = "0700";
+    }
+    {
+      directory = ".config/gtk-4.0";
+      mode = "0700";
+    }
+    {
+      directory = ".config/containers";
+      mode = "0700";
+    }
+    {
+      directory = ".config/dconf";
+      mode = "0700";
+    }
+    {
+      directory = ".config/environment.d";
+      mode = "0700";
+    }
+    {
+      directory = ".config/fontconfig";
       mode = "0700";
     }
     {
       directory = ".local/share/zed";
       mode = "0700";
     }
+    {
+      directory = ".config/ncmpcpp";
+      mode = "0700";
+    }
     # mpd
+    {
+      directory = ".config/mpd";
+      mode = "0700";
+    }
     {
       directory = ".local/share/mpd";
       mode = "0700";
@@ -122,6 +239,14 @@
       mode = "0700";
     }
     {
+      directory = ".oh-my-zsh";
+      mode = "0700";
+    }
+    {
+      directory = ".config/oh-my-custom";
+      mode = "0700";
+    }
+    {
       directory = ".local/share/Steam";
       mode = "0700";
     }
@@ -158,5 +283,8 @@
       directory = ".cache/kitty";
       mode = "0700";
     }
+  ];
+  files = [
+    ".config/mimeapps.list"
   ];
 }

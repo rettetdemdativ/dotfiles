@@ -17,10 +17,10 @@
 
   programs.gpg = { enable = true; };
 
-  services.gpg-agent = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  # services.gpg-agent = {
+  #   enable = true;
+  #   enableZshIntegration = true;
+  # };
 
   programs.git = {
     enable = true;
