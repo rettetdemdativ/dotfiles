@@ -25,9 +25,6 @@
     atomix # puzzle game
   ]);
 
-  # For Flatpak Steam
-  services.flatpak.enable = true;
-
   programs.gamemode.enable = true;
 
   programs.steam = {

@@ -2,7 +2,6 @@
   imports = [
     ../common.nix
     ../features/gaming
-    #../features/flatpak
   ];
 
   home.persistence."/persist/home/${username}" = {
@@ -56,22 +55,17 @@
       ".aider.conf.yml"
 
       # Steam
-      ".local/share/Steam"
+      {
+        directory = ".local/share/Steam";
+        method = "symlink";
+      }
       ".local/share/lutris"
       ".local/share/wineprefixes"
       ".cache/protontricks"
       ".cache/winetricks"
 
-      # Flatpak for Steam
-      ".local/share/flatpak"
-      ".var/app/com.valvesoftware.Steam"
-
       # Lutris
       "Games"
     ];
-  };
-
-  programs.zsh = {
-    shellAliases = { steam_flatpak = "flatpak run com.valvesoftware.Steam"; };
   };
 }

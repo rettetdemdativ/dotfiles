@@ -11,12 +11,10 @@
     };
     impermanence.url = "github:nix-community/impermanence/master";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    #hyprland.url = "github:hyprwm/Hyprland";
     niri.url = "github:sodiboo/niri-flake";
-    flatpaks.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
   };
 
-  outputs = inputs@{ self, nixpkgs, disko, home-manager, nixos-hardware, flatpaks, ... }:
+  outputs = inputs@{ self, nixpkgs, disko, home-manager, nixos-hardware, ... }:
     let
       inherit (self) outputs;
       stateVersion = "23.05";
