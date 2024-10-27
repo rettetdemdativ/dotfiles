@@ -203,7 +203,7 @@
       mode = "0700";
     }
     {
-      directory = ".mozilla/firefox";
+      directory = ".mozilla";
       mode = "0700";
     }
     {
@@ -283,8 +283,13 @@
       directory = ".cache/kitty";
       mode = "0700";
     }
+    {
+      directory = ".cache/oh-my-zsh";
+      mode = "0700";
+    }
   ];
   files = [
     ".config/mimeapps.list"
+    ".cache/.keep"
   ];
 }

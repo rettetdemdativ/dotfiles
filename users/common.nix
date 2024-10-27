@@ -79,7 +79,8 @@
   #     "inode/directory" = [ "nnn.desktop" "nautilus.desktop" ];
   #   };
   # };
-  xdg.configFile."mimeapps.list".source = ./.config/mimeapps.list;
+
+  #xdg.configFile."mimeapps.list".source = ./.config/mimeapps.list;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
