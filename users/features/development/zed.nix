@@ -1,6 +1,15 @@
-{ inputs, config, pkgs, ... }: {
+{ inputs, config, pkgs, ... }:
+let
+  zed-fhs = pkgs.buildFHSUserEnv {
+    name = "zed";
+    targetPkgs = pkgs: with pkgs; [ zed-editor ];
+    runScript = "zeditor";
+  };
+
+in {
   programs.zed-editor = {
     enable = true;
+    package = zed-fhs;
     extensions = [
       "basher"
       "docker-compose"
