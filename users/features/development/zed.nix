@@ -53,6 +53,7 @@ in {
       };
       relative_line_numbers = true;
       #server_url = "https://disable-zed-downloads.invalid";
+      indent_guides = { enabled = false; };
     };
   };
 }
