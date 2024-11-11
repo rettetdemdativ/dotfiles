@@ -14,7 +14,6 @@
   home.packages = with pkgs; [
     android-studio
     jetbrains.idea-ultimate
-    kitty
     podman-compose
     docker-compose
     buildah

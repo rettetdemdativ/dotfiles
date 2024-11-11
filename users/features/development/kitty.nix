@@ -6,7 +6,10 @@
     extraConfig = ''
       linux_display_server wayland
 
-      font_family     JetBrains Mono
+      font_family JetBrainsMono Nerd Font Mono
+      bold_font auto
+      italic_font auto
+      bold_italic_font auto
 
       font_size 12
 

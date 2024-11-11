@@ -138,7 +138,7 @@ in {
 
       # UI
       gitgutter.enable = true;
-      lualine.enable = true;
+      #lualine.enable = true;
       nvim-tree.enable = true;
       telescope.enable = true;
       which-key.enable = true;
