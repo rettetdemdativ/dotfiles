@@ -32,7 +32,7 @@
   ];
 
   home.sessionVariables = rec {
-    EDITOR = "hx";
+    EDITOR = "nvim";
     #DOCKER_HOST = "unix:///run/user/$UID/podman/podman.sock";
     ANDROID_HOME = "$HOME/workspace/Android";
     MPD_HOST = "$HOME/.config/mpd/socket";

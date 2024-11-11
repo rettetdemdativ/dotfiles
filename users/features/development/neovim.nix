@@ -3,6 +3,13 @@ let selectOpts = "{behavior = cmp.SelectBehavior.Select}";
 in {
   imports = [ inputs.nixvim.homeManagerModules.nixvim ];
 
+  programs.neovim = {
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+  };
+
   programs.nixvim = {
     enable = true;
     opts = {
