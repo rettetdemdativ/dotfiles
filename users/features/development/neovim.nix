@@ -67,6 +67,8 @@ in {
             timeout_ms = 500;
           };
           formatters_by_ft = {
+            c = [ "clang-format" ];
+            cpp = [ "clang-format" ];
             rust = [ "rustfmt" ];
             go = [ "gofmt" ];
             python = [ "black" ];
@@ -74,15 +76,58 @@ in {
             css = [ "prettierd" ];
             html = [ "prettierd" ];
             json = [ "prettierd" ];
+            kotlin = [ "ktfmt" ];
             lua = [ "stylua" ];
             markdown = [ "prettierd" ];
             nix = [ "nixfmt" ];
             terraform = [ "tofu_fmt" ];
             tf = [ "tofu_fmt" ];
+            typst = [ "typstyle" ];
           };
         };
       };
-      treesitter.enable = true;
+      treesitter = {
+        enable = true;
+        settings = {
+          highlight.enable = true;
+          indent.enable = true;
+        };
+        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+          angular
+          bash
+          c
+          cpp
+          css
+          dockerfile
+          go
+          gomod
+          gosum
+          groovy
+          hcl
+          html
+          java
+          javascript
+          json
+          jsonc
+          kotlin
+          llvm
+          lua
+          make
+          markdown
+          nix
+          python
+          regex
+          rust
+          sql
+          svelte
+          terraform
+          toml
+          tsx
+          typescript
+          typst
+          yaml
+        ];
+      };
       treesitter-context.enable = true;
       treesitter-refactor.enable = true;
       treesitter-textobjects.enable = true;
@@ -153,6 +198,8 @@ in {
         '';
         servers = {
           angularls.enable = true;
+          dockerls.enable = true;
+          docker_compose_language_service.enable = true;
           nil_ls.enable = true;
           nixd.enable = true;
           lua_ls.enable = true;
@@ -166,8 +213,15 @@ in {
           ts_ls.enable = true;
           ccls.enable = true;
           svelte.enable = true;
+          typst_lsp.enable = true;
         };
       };
+      lspsaga = {
+        enable = true;
+        beacon.enable = false;
+        lightbulb.enable = false;
+      };
+
       cmp = {
         enable = true;
         settings = {
