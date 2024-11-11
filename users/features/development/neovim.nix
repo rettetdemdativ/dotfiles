@@ -1,4 +1,303 @@
-{ inputs, config, pkgs, ... }: {
-  programs.neovim.enable = true;
-  xdg.configFile."nvim".source = ../../.config/nvim;
+{ inputs, config, pkgs, ... }:
+let selectOpts = "{behavior = cmp.SelectBehavior.Select}";
+in {
+  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
+
+  programs.nixvim = {
+    enable = true;
+    opts = {
+      number = true; # Show line numbers
+      relativenumber = true; # Show relative line numbers
+      shiftwidth = 4; # Tab width should be 4
+      tabstop = 4;
+      smartcase = true;
+      smartindent = true;
+      expandtab = true;
+      termguicolors = true;
+    };
+    keymaps = [
+      {
+        mode = "n";
+        key = "<C-n>";
+        options.silent = true;
+        action = "<cmd>NvimTreeToggle<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>ff";
+        options.silent = true;
+        action = "<cmd>:Telescope find_files<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>fg";
+        options.silent = true;
+        action = "<cmd>:Telescope live_grep<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>fb";
+        options.silent = true;
+        action = "<cmd>:Telescope buffers<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>fc";
+        options.silent = true;
+        action = "<cmd>:Telescope git_commits<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>fm";
+        options.silent = true;
+        action = "<cmd>:Telescope man_pages<CR>";
+      }
+    ];
+    colorschemes.vscode.enable = true;
+    plugins = {
+      # Editor
+      illuminate.enable = true;
+      rainbow-delimiters.enable = true;
+      leap.enable = true;
+      conform-nvim = {
+        enable = true;
+        settings = {
+          format_on_save = {
+            lsp_fallback = "fallback";
+            timeout_ms = 500;
+          };
+          formatters_by_ft = {
+            rust = [ "rustfmt" ];
+            go = [ "gofmt" ];
+            python = [ "black" ];
+            javascript = [ "prettierd" ];
+            css = [ "prettierd" ];
+            html = [ "prettierd" ];
+            json = [ "prettierd" ];
+            lua = [ "stylua" ];
+            markdown = [ "prettierd" ];
+            nix = [ "nixfmt" ];
+            terraform = [ "tofu_fmt" ];
+            tf = [ "tofu_fmt" ];
+          };
+        };
+      };
+      treesitter.enable = true;
+      treesitter-context.enable = true;
+      treesitter-refactor.enable = true;
+      treesitter-textobjects.enable = true;
+      trouble = {
+        enable = true;
+        #settings = { use_diagnostic_signs = true; };
+      };
+
+      # UI
+      gitgutter.enable = true;
+      lualine.enable = true;
+      nvim-tree.enable = true;
+      telescope.enable = true;
+      which-key.enable = true;
+      web-devicons.enable = true;
+
+      # LSP
+      lsp = {
+        enable = true;
+        inlayHints = true;
+        keymaps = {
+          diagnostic = {
+            "<leader>E" = "open_float";
+            "[" = "goto_prev";
+            "]" = "goto_next";
+            "<leader>do" = "setloclist";
+          };
+          lspBuf = {
+            "K" = "hover";
+            "gD" = "declaration";
+            "gd" = "definition";
+            "gr" = "references";
+            "gI" = "implementation";
+            "gy" = "type_definition";
+            "<leader>ca" = "code_action";
+            "<leader>cr" = "rename";
+            "<leader>wl" = "list_workspace_folders";
+            "<leader>wr" = "remove_workspace_folder";
+            "<leader>wa" = "add_workspace_folder";
+          };
+        };
+        preConfig = ''
+          vim.diagnostic.config({
+            virtual_text = false,
+            severity_sort = true,
+            float = {
+              border = 'rounded',
+              source = 'always',
+            },
+          })
+
+          vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+            vim.lsp.handlers.hover,
+            {border = 'rounded'}
+          )
+
+          vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+            vim.lsp.handlers.signature_help,
+            {border = 'rounded'}
+          )
+        '';
+        postConfig = ''
+          local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+          for type, icon in pairs(signs) do
+            local hl = "DiagnosticSign" .. type
+            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+          end
+        '';
+        servers = {
+          angularls.enable = true;
+          nil_ls.enable = true;
+          nixd.enable = true;
+          lua_ls.enable = true;
+          rust_analyzer = {
+            enable = true;
+            installCargo = false;
+            installRustc = false;
+          };
+          gopls.enable = true;
+          pylsp.enable = true;
+          ts_ls.enable = true;
+          ccls.enable = true;
+          svelte.enable = true;
+        };
+      };
+      cmp = {
+        enable = true;
+        settings = {
+          autoEnableSources = true;
+          performance = { debounce = 150; };
+          sources = [
+            { name = "path"; }
+            {
+              name = "nvim_lsp";
+              keywordLength = 1;
+            }
+            {
+              name = "buffer";
+              keywordLength = 3;
+            }
+            #{ name = "supermaven"; }
+          ];
+
+          formatting = {
+            fields = [ "menu" "abbr" "kind" ];
+            format = ''
+              function(entry, item)
+                local menu_icon = {
+                  nvim_lsp = '[LSP]',
+                  buffer = '[BUF]',
+                  path = '[PATH]',
+                }
+
+                item.menu = menu_icon[entry.source.name]
+                return item
+              end
+            '';
+          };
+
+          mapping = {
+            "<Up>" = "cmp.mapping.select_prev_item(${selectOpts})";
+            "<Down>" = "cmp.mapping.select_next_item(${selectOpts})";
+
+            "<C-p>" = "cmp.mapping.select_prev_item(${selectOpts})";
+            "<C-n>" = "cmp.mapping.select_next_item(${selectOpts})";
+
+            "<C-u>" = "cmp.mapping.scroll_docs(-4)";
+            "<C-d>" = "cmp.mapping.scroll_docs(4)";
+
+            "<C-e>" = "cmp.mapping.abort()";
+            "<C-y>" = "cmp.mapping.confirm({select = true})";
+            "<CR>" = "cmp.mapping.confirm({select = false})";
+
+            "<C-f>" = ''
+              cmp.mapping(
+                function(fallback)
+                  if luasnip.jumpable(1) then
+                    luasnip.jump(1)
+                  else
+                    fallback()
+                  end
+                end,
+                { "i", "s" }
+              )
+            '';
+
+            "<C-b>" = ''
+              cmp.mapping(
+                function(fallback)
+                  if luasnip.jumpable(-1) then
+                    luasnip.jump(-1)
+                  else
+                    fallback()
+                  end
+                end,
+                { "i", "s" }
+              )
+            '';
+
+            "<Tab>" = ''
+              cmp.mapping(
+                function(fallback)
+                  local col = vim.fn.col('.') - 1
+
+                  if cmp.visible() then
+                    cmp.select_next_item(select_opts)
+                  elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+                    fallback()
+                  else
+                    cmp.complete()
+                  end
+                end,
+                { "i", "s" }
+              )
+            '';
+
+            "<S-Tab>" = ''
+              cmp.mapping(
+                function(fallback)
+                  if cmp.visible() then
+                    cmp.select_prev_item(select_opts)
+                  else
+                    fallback()
+                  end
+                end,
+                { "i", "s" }
+              )
+            '';
+          };
+          window = {
+            completion = {
+              border = "rounded";
+              winhighlight =
+                "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
+              zindex = 1001;
+              scrolloff = 0;
+              colOffset = 0;
+              sidePadding = 1;
+              scrollbar = true;
+            };
+            documentation = {
+              border = "rounded";
+              winhighlight =
+                "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None";
+              zindex = 1001;
+              maxHeight = 20;
+            };
+          };
+        };
+      };
+      cmp-nvim-lsp.enable = true;
+      cmp-buffer.enable = true;
+      cmp-path.enable = true;
+      cmp-treesitter.enable = true;
+      dap.enable = true;
+    };
+  };
 }

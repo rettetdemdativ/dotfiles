@@ -12,6 +12,10 @@
     impermanence.url = "github:nix-community/impermanence/master";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     niri.url = "github:sodiboo/niri-flake";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, disko, home-manager, nixos-hardware, ... }:
