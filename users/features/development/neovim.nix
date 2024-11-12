@@ -21,6 +21,7 @@ in {
       smartindent = true;
       expandtab = true;
       termguicolors = true;
+      cmdheight = 0;
     };
     keymaps = [
       {
@@ -145,7 +146,23 @@ in {
 
       # UI
       gitgutter.enable = true;
-      #lualine.enable = true;
+      lualine = {
+        enable = true;
+        settings = {
+          options = {
+            globalstatus = true;
+            theme = "papercolor_light";
+            section_separators = {
+              left = "";
+              right = "";
+            };
+            component_separators = {
+              left = "";
+              right = "";
+            };
+          };
+        };
+      };
       nvim-tree.enable = true;
       telescope.enable = true;
       which-key.enable = true;
