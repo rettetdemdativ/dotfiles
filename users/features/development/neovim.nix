@@ -61,7 +61,24 @@ in {
         action = "<cmd>:Telescope man_pages<CR>";
       }
     ];
-    colorschemes.vscode.enable = true;
+    colorschemes.vscode = {
+      enable = true;
+      settings = { italic_comments = true; };
+    };
+    #colorschemes.tokyonight = {
+    #enable = true;
+    #settings = {
+    #style = "storm";
+    #styles = {
+    #comments = { italic = true; };
+    #floats = "dark";
+    #functions = { };
+    #keywords = { italic = true; };
+    #sidebars = "dark";
+    #variables = { };
+    #};
+    #};
+    #};
     plugins = {
       # Editor
       illuminate.enable = true;
@@ -146,6 +163,7 @@ in {
 
       # UI
       gitgutter.enable = true;
+      gitblame.enable = true;
       lualine = {
         enable = true;
         settings = {
