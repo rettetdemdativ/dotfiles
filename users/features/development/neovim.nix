@@ -181,7 +181,10 @@ in {
           };
         };
       };
-      nvim-tree.enable = true;
+      nvim-tree = {
+        enable = true;
+        git.ignore = false;
+      };
       telescope.enable = true;
       which-key.enable = true;
       web-devicons.enable = true;
