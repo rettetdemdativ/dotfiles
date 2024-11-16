@@ -98,6 +98,7 @@ in {
             go = [ "gofmt" ];
             python = [ "black" ];
             javascript = [ "prettierd" ];
+            typescript = [ "prettierd" ];
             css = [ "prettierd" ];
             html = [ "prettierd" ];
             json = [ "prettierd" ];
@@ -109,6 +110,14 @@ in {
             tf = [ "tofu_fmt" ];
             typst = [ "typstyle" ];
           };
+        };
+      };
+      lint = {
+        enable = true;
+        lintersByFt = {
+          python = [ "pylint" ];
+          javascript = [ "eslint_d" ];
+          typescript = [ "eslint_d" ];
         };
       };
       treesitter = {
