@@ -14,13 +14,13 @@
         my-python = pkgs.python3.withPackages my-python-packages;
       in {
         devShell = pkgs.mkShell rec {
-          buildInputs = [
-            pkgs.python3
-            pkgs.zlib
-          ];
-          packages = [ (pkgs.python3.withPackages my-python-packages) pkgs.zlib ];
+          buildInputs = [ pkgs.python3 pkgs.zlib pkgs.pylint pkgs.black ];
+          packages =
+            [ (pkgs.python3.withPackages my-python-packages) pkgs.zlib ];
           shellHook = ''
-            export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath buildInputs}:$LD_LIBRARY_PATH"
+            export LD_LIBRARY_PATH="${
+              pkgs.lib.makeLibraryPath buildInputs
+            }:$LD_LIBRARY_PATH"
             export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib.outPath}/lib:$LD_LIBRARY_PATH"
           '';
         };
