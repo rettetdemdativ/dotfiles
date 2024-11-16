@@ -3,6 +3,10 @@
     enable = true;
     profiles = {
       default = {
+        settings = {
+          "sidebar.revamp" = true;
+          "sidebar.verticalTabs" = true;
+        };
         search = {
           engines = {
             "Brave Search" = {
