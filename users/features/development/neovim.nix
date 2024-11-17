@@ -60,6 +60,12 @@ in {
         options.silent = true;
         action = "<cmd>:Telescope man_pages<CR>";
       }
+      {
+        mode = "n";
+        key = "<C-h>";
+        options.silent = true;
+        action = "<cmd>:Lspsaga hover_doc<CR>";
+      }
     ];
     colorschemes.vscode = {
       enable = true;
@@ -275,6 +281,7 @@ in {
         beacon.enable = false;
         lightbulb.enable = false;
       };
+      lsp-signature.enable = true;
 
       cmp = {
         enable = true;
