@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       font = {
-        size = 12;
+        size = 11.5;
         normal = { family = "JetBrains Mono"; };
       };
       window.padding = {

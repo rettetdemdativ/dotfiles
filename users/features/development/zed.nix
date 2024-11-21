@@ -38,7 +38,7 @@ in {
       vim_mode = true;
       buffer_font_family = "JetBrainsMono Nerd Font";
       ui_font_size = 16;
-      buffer_font_size = 15;
+      buffer_font_size = 14.5;
       theme = {
         mode = "dark";
         light = "Fleet Dark";
