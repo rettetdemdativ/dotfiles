@@ -23,7 +23,6 @@
       ".config/mpd"
       ".config/VSCodium"
       ".config/tidal-hifi"
-      ".config/libreoffice"
       ".mozilla/firefox"
       ".ts3client"
 

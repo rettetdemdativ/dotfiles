@@ -9,5 +9,5 @@ let
   });
 in {
 
-  home.packages = with pkgs; [ anki-bin libreoffice-fresh qalculate-gtk tex ];
+  home.packages = with pkgs; [ anki-bin qalculate-gtk tex ];
 }
