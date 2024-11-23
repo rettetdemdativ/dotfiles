@@ -71,6 +71,15 @@ in {
       enable = true;
       settings = { italic_comments = true; };
     };
+    highlight = {
+      RDYellow = { fg = "#ffd602"; };
+      RDViolet = { fg = "#d66ed2"; };
+      RDBlue = { fg = "#569cd6"; };
+      RDOrange = { fg = "#d7ba7d"; };
+      RDCyan = { fg = "#4ec9b0"; };
+      RDGreen = { fg = "#6a9955"; };
+      RDRed = { fg = "#d16969"; };
+    };
     #colorschemes.tokyonight = {
     #enable = true;
     #settings = {
@@ -88,7 +97,18 @@ in {
     plugins = {
       # Editor
       illuminate.enable = true;
-      rainbow-delimiters.enable = true;
+      rainbow-delimiters = {
+        enable = true;
+        highlight = [
+          "RDYellow"
+          "RDViolet"
+          "RDBlue"
+          "RDOrange"
+          "RDCyan"
+          "RDGreen"
+          "RDRed"
+        ];
+      };
       leap.enable = true;
       conform-nvim = {
         enable = true;
