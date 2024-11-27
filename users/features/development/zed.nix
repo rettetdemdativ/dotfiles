@@ -52,7 +52,7 @@ in {
       };
       project_panel = { dock = "right"; };
       outline_panel = { dock = "right"; };
-      collab_panel = { dock = "right"; };
+      collaboration_panel = { dock = "right"; };
       tabs = {
         file_icons = true;
         git_status = true;
