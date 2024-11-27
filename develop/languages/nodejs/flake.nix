@@ -19,8 +19,16 @@
         (system: f { pkgs = import nixpkgs { inherit system; }; });
     in {
       devShells = forAllSystems ({ pkgs }: {
-        default =
-          pkgs.mkShell { packages = with pkgs; [ nodejs_20 eslint_d ]; };
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            nodejs_20
+            eslint_d
+            eslint
+            prettierd
+            nodePackages.typescript-language-server
+            nodePackages.svelte-language-server
+          ];
+        };
       });
     };
 }

@@ -16,7 +16,7 @@
         devShell = pkgs.mkShell rec {
           buildInputs = [ pkgs.python3 pkgs.zlib pkgs.pylint pkgs.black ];
           packages =
-            [ (pkgs.python3.withPackages my-python-packages) pkgs.zlib ];
+            [ (pkgs.python3.withPackages my-python-packages) pkgs.zlib pkgs.ruff ];
           shellHook = ''
             export LD_LIBRARY_PATH="${
               pkgs.lib.makeLibraryPath buildInputs
