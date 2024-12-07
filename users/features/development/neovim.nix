@@ -191,10 +191,7 @@ in {
       treesitter-context.enable = true;
       treesitter-refactor.enable = true;
       treesitter-textobjects.enable = true;
-      trouble = {
-        enable = true;
-        #settings = { use_diagnostic_signs = true; };
-      };
+      trouble = { enable = true; };
 
       # UI
       gitgutter.enable = true;
@@ -229,12 +226,6 @@ in {
         enable = true;
         inlayHints = true;
         keymaps = {
-          diagnostic = {
-            "<leader>E" = "open_float";
-            "[" = "goto_prev";
-            "]" = "goto_next";
-            "<leader>do" = "setloclist";
-          };
           lspBuf = {
             "K" = "hover";
             "gD" = "declaration";
@@ -249,33 +240,6 @@ in {
             "<leader>wa" = "add_workspace_folder";
           };
         };
-        preConfig = ''
-          vim.diagnostic.config({
-            virtual_text = false,
-            severity_sort = true,
-            float = {
-              border = 'rounded',
-              source = 'always',
-            },
-          })
-
-          vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-            vim.lsp.handlers.hover,
-            {border = 'rounded'}
-          )
-
-          vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-            vim.lsp.handlers.signature_help,
-            {border = 'rounded'}
-          )
-        '';
-        postConfig = ''
-          local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-          for type, icon in pairs(signs) do
-            local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-          end
-        '';
         servers = {
           angularls.enable = true;
           dockerls.enable = true;
@@ -441,6 +405,7 @@ in {
           dap-virtual-text.enable = true;
         };
       };
+      autoclose.enable = true;
     };
   };
 }
