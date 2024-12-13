@@ -162,13 +162,14 @@
     fuse-overlayfs
   ];
 
-  fonts.packages = with pkgs;
-    [
-      (nerdfonts.override {
-        fonts =
-          [ "JetBrainsMono" "RobotoMono" "UbuntuMono" "Mononoki" "FiraCode" ];
-      })
-    ];
+  fonts.packages = [
+    pkgs.nerd-fonts.zed-mono
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.roboto-mono
+    pkgs.nerd-fonts.ubuntu-mono
+    pkgs.nerd-fonts.mononoki
+    pkgs.nerd-fonts.fira-code
+  ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
