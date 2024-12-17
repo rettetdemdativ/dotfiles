@@ -257,7 +257,7 @@ in {
           ts_ls.enable = true;
           ccls.enable = true;
           svelte.enable = true;
-          typst_lsp.enable = true;
+          tinymist.enable = true;
         };
       };
       lspsaga = {
