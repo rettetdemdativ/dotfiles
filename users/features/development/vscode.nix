@@ -50,7 +50,7 @@
       };
       "editor.fontFamily" = "JetBrains Mono";
       "editor.fontLigatures" = true;
-      "editor.fontSize" = 15;
+      "editor.fontSize" = 14.5;
       "editor.formatOnSave" = false;
       "editor.guides.bracketPairs" = "active";
       "editor.guides.indentation" = false;
@@ -68,6 +68,7 @@
         "**/__pycache__" = true;
       };
       "gitlens.plusFeatures.enabled" = false;
+      "gitlens.launchpad.indicator.enabled" = false;
       "go.formatTool" = "goimports";
       "go.useLanguageServer" = true;
       "nix.formatterPath" = "/etc/profiles/per-user/${username}/bin/nixfmt";
