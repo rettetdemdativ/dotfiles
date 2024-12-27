@@ -7,6 +7,7 @@
     ./zsh.nix
     ./kitty.nix
     ./alacritty.nix
+    ./ghostty.nix
     ./podman.nix
     ./aider.nix
   ];

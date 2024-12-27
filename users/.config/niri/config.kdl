@@ -414,7 +414,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return { spawn "alacritty"; }
+    Mod+Return { spawn "ghostty"; }
     Mod+D { spawn "fuzzel"; }
     Mod+Shift+X { spawn "swaylock" "-f" "--screenshots" "--clock" "--indicator" "--effect-blur" "7x5" "--fade-in" "0.2"; }
 
