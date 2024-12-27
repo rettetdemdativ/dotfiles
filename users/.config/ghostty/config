@@ -13,3 +13,4 @@ keybind = alt+left=next_tab
 keybind = alt+right=previous_tab
 #keybind = alt+shift+left=move_tab-1
 #keybind = alt+shift+right=move_tab+1
+keybind = alt+d=toggle_window_decorations
