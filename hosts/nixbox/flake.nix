@@ -16,6 +16,7 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty = { url = "github:ghostty-org/ghostty"; };
   };
 
   outputs = inputs@{ self, nixpkgs, disko, home-manager, nixos-hardware, ... }:
