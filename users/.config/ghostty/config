@@ -1,7 +1,7 @@
 font-size = 11
 
-#theme = "Monokai Remastered"
-theme = "Dark Pastel"
+theme = "Monokai Remastered"
+#theme = "Dark Pastel"
 window-decoration = false
 
 window-padding-y = 2,1
