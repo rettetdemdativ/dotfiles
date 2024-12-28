@@ -20,7 +20,7 @@
     in {
       devShells = forAllSystems ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ gcc13 clang_16 cbmc ccls bear ];
+          packages = with pkgs; [ gcc clang cmake cbmc ccls bear ];
         };
       });
     };
