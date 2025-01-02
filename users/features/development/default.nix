@@ -5,8 +5,8 @@
     ./vscode.nix
     ./zed.nix
     ./zsh.nix
-    ./kitty.nix
-    ./alacritty.nix
+    #./kitty.nix
+    #./alacritty.nix
     ./ghostty.nix
     ./podman.nix
     ./aider.nix
@@ -20,7 +20,6 @@
     buildah
     virt-manager
     distrobox
-    quickemu
     beekeeper-studio
     bruno
     podman-desktop
