@@ -19,6 +19,7 @@
     docker-compose
     buildah
     virt-manager
+    quickemu
     distrobox
     beekeeper-studio
     bruno
