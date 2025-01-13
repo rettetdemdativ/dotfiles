@@ -9,6 +9,7 @@
     #./alacritty.nix
     ./ghostty.nix
     ./podman.nix
+    ./qemu.nix
     ./aider.nix
   ];
 
@@ -19,7 +20,6 @@
     docker-compose
     buildah
     virt-manager
-    quickemu
     distrobox
     beekeeper-studio
     bruno
