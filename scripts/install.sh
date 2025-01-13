@@ -5,7 +5,7 @@ USERNAME=$3
 nix run \
   --extra-experimental-features flakes \
   --extra-experimental-features nix-command \
-  github:nix-community/disko -- --mode disko ../system/disko.nix --arg disks "[ \"${DISK}\" ]" --arg usernames "[ \"${USERNAME}\" ]"
+  github:nix-community/disko -- --mode disko ./system/disko.nix --arg disks "[ \"${DISK}\" ]" --arg usernames "[ \"${USERNAME}\" ]"
 
 mount -t tmpfs tmpfs /mnt
 
@@ -41,4 +41,4 @@ mkpasswd -m sha-512 > /mnt/persist/etc/users/${USERNAME}
 echo "Enter password for user root"
 mkpasswd -m sha-512 > /mnt/persist/etc/users/root
 
-nixos-install --impure --flake .#${HOSTNAME}
+nixos-install --impure --flake ./hosts/${HOSTNAME}#${HOSTNAME}
