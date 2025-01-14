@@ -66,8 +66,8 @@ in {
         clangd = {
           binary = {
             path_lookup = true;
-            path = "clangd";
-            arguments = [ "--header-insertion=never" ];
+            #path = "clangd";
+            arguments = ["--background-index" "--compile-commands-dir=build"];
           };
         };
         nix = { binary = { path_lookup = true; }; };
