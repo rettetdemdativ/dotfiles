@@ -38,9 +38,9 @@ in {
         metrics = false;
       };
       vim_mode = true;
-      buffer_font_family = "JetBrains Mono";
+      buffer_font_family = "Iosevka NF";
       ui_font_size = 16;
-      buffer_font_size = 14.5;
+      buffer_font_size = 15;
       theme = {
         mode = "dark";
         light = "Fleet Dark";

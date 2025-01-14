@@ -165,6 +165,7 @@
   fonts.packages = [
     pkgs.nerd-fonts.zed-mono
     pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.iosevka
     pkgs.nerd-fonts.roboto-mono
     pkgs.nerd-fonts.ubuntu-mono
     pkgs.nerd-fonts.mononoki
