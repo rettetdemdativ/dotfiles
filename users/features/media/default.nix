@@ -7,7 +7,6 @@
     pulsemixer
     pamixer # Volume controls
     mpv
-    sioyek
     imv
     mpd
     ncmpcpp
