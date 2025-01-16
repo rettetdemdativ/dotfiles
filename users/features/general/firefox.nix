@@ -23,6 +23,20 @@
               definedAliases = [ "@np" ];
             };
 
+            "searx.be" = {
+              urls = [{
+                template = "https://searx.be/search";
+                params = [{
+                  name = "q";
+                  value = "{searchTerms}";
+                }];
+              }];
+
+              icon =
+                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [ "@np" ];
+            };
+
             "Nix Packages" = {
               urls = [{
                 template = "https://search.nixos.org/packages";
@@ -54,8 +68,8 @@
             };
           };
 
-          default = "DuckDuckGo";
-          privateDefault = "DuckDuckGo";
+          default = "searx.be";
+          privateDefault = "searx.be";
           force = true;
         };
         extraConfig = ''
@@ -1277,7 +1291,7 @@
 
             /* END: internal custom pref to test for syntax errors ***/
             user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
-                     
+
         '';
         # Extensions done manually
       };
