@@ -1,5 +1,9 @@
 { inputs, lib, config, pkgs, ... }: {
-  imports = [ ./mpd.nix ./ncmpcpp.nix ];
+  imports = [
+    ./mpd.nix
+    ./cava.nix
+    #./ncmpcpp.nix
+  ];
 
   programs.obs-studio = { enable = true; };
 
@@ -9,9 +13,7 @@
     mpv
     imv
     mpd
-    ncmpcpp
-    rhythmbox
-    kid3
+    cmus
     tidal-hifi
     invidtui
   ];
