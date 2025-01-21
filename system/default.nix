@@ -144,7 +144,10 @@
     #   daemon.settings = { dns = [ "10.0.0.2" "8.8.8.8" ]; };
     # };
 
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+      qemu = { package = pkgs.qemu_kvm; };
+    };
   };
   programs.virt-manager.enable = true;
 
