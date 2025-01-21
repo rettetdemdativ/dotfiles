@@ -1,20 +1,13 @@
-{ inputs, config, pkgs, ... }: {
+{ inputs, config, pkgs, username, ... }: {
   imports = [ ../common.nix ];
 
-  home.username = "inet";
-  home.homeDirectory = "/home/inet";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
   home.stateVersion = "23.11";
 
   nixpkgs.config = {
     allowUnfree = true;
     # Workaround for https://github.com/nix-community/home-manager/issues/2942
     allowUnfreePredicate = (_: true);
-
-    packageOverrides = let
-      curlWithGnuTls = (pkgs.curl.override {
-        gnutlsSupport = true;
-        opensslSupport = false;
-      });
-    in pkgs: { };
   };
 }
