@@ -6,7 +6,6 @@
     ../features/general
     ../features/media
     ../features/cli
-    ../features/productivity
   ];
 
   home.username = username;
