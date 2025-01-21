@@ -7,7 +7,7 @@
     ./zsh.nix
     ./ghostty.nix
     ./podman.nix
-    ./qemu.nix
+    #./qemu.nix
     ./aider.nix
   ];
 
@@ -15,7 +15,6 @@
     podman-compose
     docker-compose
     buildah
-    virt-manager
     distrobox
     beekeeper-studio
     bruno
