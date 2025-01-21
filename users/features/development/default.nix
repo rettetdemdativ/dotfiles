@@ -5,8 +5,6 @@
     ./vscode.nix
     ./zed.nix
     ./zsh.nix
-    #./kitty.nix
-    #./alacritty.nix
     ./ghostty.nix
     ./podman.nix
     ./qemu.nix
@@ -14,8 +12,6 @@
   ];
 
   home.packages = with pkgs; [
-    android-studio
-    jetbrains.idea-ultimate
     podman-compose
     docker-compose
     buildah
