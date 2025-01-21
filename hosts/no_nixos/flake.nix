@@ -21,17 +21,8 @@
       pkgs = import nixpkgs { inherit system; };
     in {
       homeConfigurations.inet = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ../../users/no_nixos
-          {
-            home = {
-              username = "inet";
-              homeDirectory = "/home/inet";
-              stateVersion = "23.11";
-            };
-          }
-        ];
+        inherit inputs pkgs;
+        modules = [ ../../users/no_nixos ];
       };
     };
 }
