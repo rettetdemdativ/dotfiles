@@ -16,16 +16,14 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let
-      username = "inet";
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
     in {
-      homeConfigurations.${username} =
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ../../users/no_nixos ];
-          extraSpecialArgs = { inherit inputs username; };
-          extraSpecialArgs.flake-inputs = inputs;
-        };
+      homeConfigurations.inet = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ../../users/no_nixos ];
+        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs.flake-inputs = inputs;
+      };
     };
 }

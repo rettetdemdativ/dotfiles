@@ -1,8 +1,8 @@
-{ inputs, config, pkgs, username, ... }: {
+{ inputs, config, pkgs, ... }: {
   imports = [ ../common.nix ];
 
-  home.username = "${username}";
-  home.homeDirectory = "/home/${username}";
+  home.username = "inet";
+  home.homeDirectory = "/home/inet";
   home.stateVersion = "23.11";
 
   nixpkgs.config = {
