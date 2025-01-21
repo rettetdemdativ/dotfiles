@@ -1,7 +1,7 @@
-{ inputs, config, pkgs, ... }: {
+{ inputs, config, pkgs, username, ... }: {
   imports = [ ../common.nix ];
 
-  home.username = "inet";
-  home.homeDirectory = "/home/inet";
+  home.username = "${username}";
+  home.homeDirectory = "/home/${username}";
   home.stateVersion = "23.11";
 }

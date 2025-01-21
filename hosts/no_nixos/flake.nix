@@ -14,15 +14,17 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { inputs, outputs, nixpkgs, home-manager, ... }:
     let
-      lib = nixpkgs.lib;
+      username = "inet";
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
     in {
-      homeConfigurations.inet = home-manager.lib.homeManagerConfiguration {
-        inherit inputs pkgs;
-        modules = [ ../../users/no_nixos ];
-      };
+      homeConfigurations.${username} =
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ../../users/no_nixos ];
+          extraSpecialArgs = { inherit inputs outputs username; };
+        };
     };
 }
