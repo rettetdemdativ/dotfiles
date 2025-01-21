@@ -1,12 +1,12 @@
 { inputs, config, pkgs, username, ... }: {
   imports = [
     inputs.niri.homeModules.niri
-    ./features/desktop
-    ./features/development
-    ./features/general
-    ./features/media
-    ./features/cli
-    ./features/productivity
+    ../features/desktop
+    ../features/development
+    ../features/general
+    ../features/media
+    ../features/cli
+    ../features/productivity
   ];
 
   home.username = username;
