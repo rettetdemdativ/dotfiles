@@ -144,8 +144,12 @@
     #   daemon.settings = { dns = [ "10.0.0.2" "8.8.8.8" ]; };
     # };
 
-    libvirtd = { enable = false; };
+    libvirtd = {
+      enable = true;
+      qemu = { package = pkgs.qemu_kvm; };
+    };
   };
+  programs.virt-manager.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

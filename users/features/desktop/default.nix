@@ -2,7 +2,6 @@
   imports = [
     ./fuzzel.nix
     ./gammastep.nix
-    #./hyprland
     ./hyprpaper.nix
     ./kanshi.nix
     ./mako.nix
