@@ -1,5 +1,7 @@
 { inputs, config, pkgs, username, ... }: {
-  imports = [ ../common.nix ];
+  imports = [ ../common.nix inputs.niri.homeModules.niri ];
+
+  programs.niri.enable = true;
 
   home.username = username;
   home.homeDirectory = "/home/${username}";
