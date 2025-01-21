@@ -22,9 +22,9 @@
     in {
       homeConfigurations = {
         inet = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+          inherit system username pkgs;
           #configuration = (import ../../users/no_nixos {username="inet";});
-          modules = [ (../../users/no_nixos { username = "inet"; }) ];
+          modules = [ ../../users/no_nixos ];
         };
       };
     };
