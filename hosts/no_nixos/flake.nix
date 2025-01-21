@@ -18,14 +18,14 @@
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
+      username = "inet";
       pkgs = import nixpkgs { inherit system; };
     in {
-      homeConfigurations = {
-        inet = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.${username} =
+        home-manager.lib.homeManagerConfiguration {
           inherit system username pkgs;
           #configuration = (import ../../users/no_nixos {username="inet";});
           modules = [ ../../users/no_nixos ];
         };
-      };
     };
 }
