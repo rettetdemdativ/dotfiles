@@ -14,7 +14,7 @@
     };
   };
 
-  outputs = { inputs, outputs, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let
       username = "inet";
       system = "x86_64-linux";
@@ -24,7 +24,8 @@
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ../../users/no_nixos ];
-          extraSpecialArgs = { inherit inputs outputs username; };
+          extraSpecialArgs = { inherit inputs username; };
+          extraSpecialArgs.flake-inputs = inputs;
         };
     };
 }
