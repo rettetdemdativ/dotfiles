@@ -8,7 +8,7 @@
     ./ghostty.nix
     ./podman.nix
     #./qemu.nix
-    ./aider.nix
+    #./aider.nix
   ];
 
   home.packages = with pkgs; [
