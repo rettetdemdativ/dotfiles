@@ -31,10 +31,16 @@
                   value = "{searchTerms}";
                 }];
               }];
+            };
 
-              icon =
-                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@np" ];
+            "gruble.de" = {
+              urls = [{
+                template = "https://gruble.de/search";
+                params = [{
+                  name = "q";
+                  value = "{searchTerms}";
+                }];
+              }];
             };
 
             "Nix Packages" = {
@@ -68,8 +74,8 @@
             };
           };
 
-          default = "searx.be";
-          privateDefault = "searx.be";
+          default = "gruble.de";
+          privateDefault = "gruble.de";
           force = true;
         };
         extraConfig = ''
