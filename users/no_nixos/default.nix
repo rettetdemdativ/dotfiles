@@ -1,4 +1,6 @@
-{ inputs, config, pkgs, username, ... }: {
+{ inputs, config, pkgs, username, nixgl, ... }:
+let
+in rec {
   imports = [
     inputs.niri.homeModules.niri
     #../features/desktop
@@ -7,6 +9,10 @@
     ../features/media
     ../features/cli
   ];
+
+  nixGL.packages = nixgl.packages;
+  nixGL.defaultWrapper = "mesa";
+  nixGL.installScripts = [ "mesa" ];
 
   home.username = username;
   home.homeDirectory = "/home/${username}";
@@ -21,11 +27,6 @@
   #programs.niri.enable = true;
 
   home.packages = with pkgs; [ rustup ];
-
-  programs.zsh = {
-    enable = true;
-    shellAliases = { nixGL = "${pkgs.nixgl.nixGLDefault}/bin/nixGL"; };
-  };
 
   home.sessionVariables = rec { EDITOR = "nvim"; };
 
