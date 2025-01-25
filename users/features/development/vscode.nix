@@ -55,9 +55,9 @@
         "source.fixAll.eslint" = "explicit";
         "source.organizeImports" = "explicit";
       };
-      "editor.fontFamily" = "JetBrains Mono";
+      "editor.fontFamily" = "Iosevka NF";
       "editor.fontLigatures" = true;
-      "editor.fontSize" = 14.5;
+      "editor.fontSize" = 15;
       "editor.formatOnSave" = false;
       "editor.guides.bracketPairs" = "active";
       "editor.guides.indentation" = false;
