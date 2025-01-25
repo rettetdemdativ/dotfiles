@@ -2,8 +2,8 @@
 let
 in rec {
   imports = [
-    inputs.niri.homeModules.niri
-    #../features/desktop
+    #inputs.niri.homeModules.niri
+    ../features/desktop
     ../features/development
     ../features/general
     ../features/media
@@ -26,7 +26,10 @@ in rec {
     allowUnfreePredicate = (_: true);
   };
 
-  #programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    package = with pkgs; (config.lib.nixGL.wrap niri);
+  };
 
   home.packages = with pkgs; [ rustup ];
 
