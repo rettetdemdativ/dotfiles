@@ -12,12 +12,15 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixgl.url =
+      "github:nix-community/nixGL"; # Necessary to run GL software on non-NixOS systems
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nixgl, ... }:
     let
       username = "inet";
       system = "x86_64-linux";
+      overlays = [ nixgl.overlay ];
       pkgs = import nixpkgs { inherit system; };
     in {
       homeConfigurations.${username} =
