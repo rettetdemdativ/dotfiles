@@ -14,6 +14,8 @@ in rec {
   nixGL.defaultWrapper = "mesa";
   nixGL.installScripts = [ "mesa" ];
 
+  programs.ghostty.package = with pkgs; (config.lib.nixGL.wrap ghostty);
+
   home.username = username;
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "23.11";
