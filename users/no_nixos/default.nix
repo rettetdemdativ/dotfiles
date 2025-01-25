@@ -2,7 +2,7 @@
 let
 in rec {
   imports = [
-    #inputs.niri.homeModules.niri
+    inputs.niri.homeModules.niri
     ../features/desktop
     ../features/development
     ../features/general
