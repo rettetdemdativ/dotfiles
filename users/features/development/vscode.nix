@@ -17,19 +17,26 @@
       pkgs.vscode-extensions.hashicorp.terraform
       pkgs.vscode-extensions.golang.go
       pkgs.vscode-extensions.svelte.svelte-vscode
-      pkgs.vscode-extensions.angular.ng-template
       pkgs.vscode-extensions.ms-vscode.cpptools
       pkgs.vscode-extensions.jnoortheen.nix-ide
       pkgs.vscode-extensions.editorconfig.editorconfig
       pkgs.vscode-extensions.rust-lang.rust-analyzer
       #pkgs.vscode-extensions.vadimcn.vscode-lldb
       pkgs.vscode-extensions.nvarner.typst-lsp
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
-      name = "fleet-theme";
-      publisher = "MichaelZhou";
-      version = "1.3.10";
-      sha256 = "sha256-zQBziXtu9OiCAR/XMt73DY7CE/KJxtEAHoAi7rJp8hQ=";
-    }];
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "fleet-theme";
+        publisher = "MichaelZhou";
+        version = "1.3.10";
+        sha256 = "sha256-zQBziXtu9OiCAR/XMt73DY7CE/KJxtEAHoAi7rJp8hQ=";
+      }
+      {
+        name = "ng-template";
+        publisher = "Angular";
+        version = "19.0.4";
+        sha256 = "sha256-ERsbEtx/PaVCky0TWWlBNqSIyTDwVKpYaZtYaSqQw9g=";
+      }
+    ];
     userSettings = {
       "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
       "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
