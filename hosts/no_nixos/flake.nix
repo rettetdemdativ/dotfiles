@@ -20,8 +20,10 @@
     let
       username = "inet";
       system = "x86_64-linux";
-      overlays = [ nixgl.overlay ];
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [ nixgl.overlay ];
+      };
     in {
       homeConfigurations.${username} =
         home-manager.lib.homeManagerConfiguration {

@@ -1,7 +1,7 @@
 { inputs, config, pkgs, username, ... }: {
   imports = [
     inputs.niri.homeModules.niri
-    ../features/desktop
+    #../features/desktop
     ../features/development
     ../features/general
     ../features/media
@@ -18,9 +18,14 @@
     allowUnfreePredicate = (_: true);
   };
 
-  programs.niri.enable = true;
+  #programs.niri.enable = true;
 
-  home.packages = with pkgs; [ signal-desktop ];
+  home.packages = with pkgs; [ rustup ];
+
+  programs.zsh = {
+    enable = true;
+    shellAliases = { nixGL = "${pkgs.nixgl.nixGLDefault}/bin/nixGL"; };
+  };
 
   home.sessionVariables = rec { EDITOR = "nvim"; };
 
