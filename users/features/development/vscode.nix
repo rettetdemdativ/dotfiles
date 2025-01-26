@@ -88,7 +88,7 @@
       "workbench.activityBar.location" = "hidden";
       "workbench.editor.tabSizing" = "shrink";
       "workbench.iconTheme" = "material-icon-theme";
-      "workbench.sideBar.location" = "right";
+      "workbench.sideBar.location" = "left";
       "workbench.statusBar.visible" = true;
     };
   };
