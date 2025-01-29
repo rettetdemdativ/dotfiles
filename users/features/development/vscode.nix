@@ -22,7 +22,6 @@
       pkgs.vscode-extensions.editorconfig.editorconfig
       pkgs.vscode-extensions.rust-lang.rust-analyzer
       #pkgs.vscode-extensions.vadimcn.vscode-lldb
-      pkgs.vscode-extensions.nvarner.typst-lsp
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "fleet-theme";
