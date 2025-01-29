@@ -28,7 +28,7 @@ in {
       "tokyo-night"
       "typst"
       "vscode-dark-modern"
-      "vscode-dark-plus"
+      "catppuccin"
       "xcode-themes"
     ];
     userSettings = {
@@ -67,7 +67,7 @@ in {
           binary = {
             path_lookup = true;
             #path = "clangd";
-            arguments = ["--background-index" "--compile-commands-dir=build"];
+            arguments = [ "--background-index" "--compile-commands-dir=build" ];
           };
         };
         nix = { binary = { path_lookup = true; }; };
