@@ -217,6 +217,7 @@ in {
         enable = true;
         git.ignore = false;
         updateFocusedFile.enable = true;
+        view = { side = "right"; };
       };
       barbar = {
         enable = true;
