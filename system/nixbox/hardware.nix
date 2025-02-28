@@ -23,5 +23,5 @@ in {
   #   #extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
   # };
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 }
