@@ -61,15 +61,15 @@
       "application/pdf" = [ "zathura.desktop" ];
       "image/jpeg" = [ "imv.desktop" ];
       "image/png" = [ "imv.desktop" ];
-      "x-scheme-handler/http" = [ "firefox.desktop" ];
-      "x-scheme-handler/https" = [ "firefox.desktop" ];
-      "text/html" = [ "firefox.desktop" ];
-      "application/x-extension-htm" = [ "firefox.desktop" ];
-      "application/x-extension-html" = [ "firefox.desktop" ];
-      "application/x-extension-shtml" = [ "firefox.desktop" ];
-      "application/x-extension-xht" = [ "firefox.desktop" ];
-      "application/x-extension-xhtml" = [ "firefox.desktop" ];
-      "application/xhtml+xml" = [ "firefox.desktop" ];
+      "x-scheme-handler/http" = [ "librewolf.desktop" ];
+      "x-scheme-handler/https" = [ "librewolf.desktop" ];
+      "text/html" = [ "librewolf.desktop" ];
+      "application/x-extension-htm" = [ "librewolf.desktop" ];
+      "application/x-extension-html" = [ "librewolf.desktop" ];
+      "application/x-extension-shtml" = [ "librewolf.desktop" ];
+      "application/x-extension-xht" = [ "librewolf.desktop" ];
+      "application/x-extension-xhtml" = [ "librewolf.desktop" ];
+      "application/xhtml+xml" = [ "librewolf.desktop" ];
 
       "video/webm" = [ "mpv.desktop" ];
       "video/ogg" = [ "mpv.desktop" ];
