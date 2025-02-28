@@ -24,6 +24,7 @@
       ".config/VSCodium"
       ".config/tidal-hifi"
       ".mozilla/firefox"
+      ".librewolf"
       ".ts3client"
 
       ".local/share/containers"

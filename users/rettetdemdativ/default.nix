@@ -1,8 +1,5 @@
 { inputs, lib, config, pkgs, username, ... }: {
-  imports = [
-    ../common.nix
-    ../features/gaming
-  ];
+  imports = [ ../common.nix ../features/gaming ];
 
   home.persistence."/persist/home/${username}" = {
     allowOther = true;
@@ -27,6 +24,7 @@
       ".config/tidal-hifi"
       ".config/libreoffice"
       ".mozilla/firefox"
+      ".librewolf"
       ".ts3client"
 
       ".local/share/containers"
@@ -65,8 +63,6 @@
       # Lutris
       "Games"
     ];
-    files = [
-      ".aider.conf.yml"
-    ];
+    files = [ ".aider.conf.yml" ];
   };
 }
