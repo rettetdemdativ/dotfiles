@@ -3,10 +3,9 @@ let
 in rec {
   imports = [
     #inputs.niri.homeModules.niri
-    ../features/desktop
-    ../features/development
     ../features/general
-    ../features/media
+    ../features/development/ghostty.nix
+    ../features/development/neovim.nix
     ../features/cli
   ];
 
@@ -16,7 +15,13 @@ in rec {
 
   programs.ghostty.package = with pkgs; (config.lib.nixGL.wrap ghostty);
 
-  home.username = username;
+  programs.home-manager.enable = true;
+
+  home.packages = with pkgs; [
+    signal-desktop
+  ];
+
+  home.username = "${username}";
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "23.11";
 
@@ -26,38 +31,16 @@ in rec {
     allowUnfreePredicate = (_: true);
   };
 
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      apply-home = "$HOME/dotfiles/scripts/no_nixos/apply-home.sh";
+      update-all = "$HOME/dotfiles/scripts/no_nixos/update.sh";
+    };
+  };
+
   #programs.niri = {
   #  enable = true;
   #  package = with pkgs; (config.lib.nixGL.wrap niri);
   #};
-
-  home.packages = with pkgs; [ rustup ];
-
-  home.sessionVariables = rec { EDITOR = "nvim"; };
-
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "application/pdf" = [ "zathura.desktop" ];
-      "image/jpeg" = [ "imv.desktop" ];
-      "image/png" = [ "imv.desktop" ];
-      "x-scheme-handler/http" = [ "librewolf.desktop" ];
-      "x-scheme-handler/https" = [ "librewolf.desktop" ];
-      "text/html" = [ "librewolf.desktop" ];
-      "application/x-extension-htm" = [ "librewolf.desktop" ];
-      "application/x-extension-html" = [ "librewolf.desktop" ];
-      "application/x-extension-shtml" = [ "librewolf.desktop" ];
-      "application/x-extension-xht" = [ "librewolf.desktop" ];
-      "application/x-extension-xhtml" = [ "librewolf.desktop" ];
-      "application/xhtml+xml" = [ "librewolf.desktop" ];
-
-      "video/webm" = [ "mpv.desktop" ];
-      "video/ogg" = [ "mpv.desktop" ];
-      "video/x-msvideo" = [ "mpv.desktop" ];
-      "video/x-flv" = [ "mpv.desktop" ];
-      "video/mp4" = [ "mpv.desktop" ];
-
-      "inode/directory" = [ "nnn.desktop" "nautilus.desktop" ];
-    };
-  };
 }
