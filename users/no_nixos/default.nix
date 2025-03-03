@@ -6,6 +6,7 @@ in rec {
     ../features/general
     ../features/development/ghostty.nix
     ../features/development/neovim.nix
+    ../features/development/zsh.nix
     ../features/cli
   ];
 
