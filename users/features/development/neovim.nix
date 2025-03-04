@@ -135,6 +135,7 @@ in {
             terraform = [ "tofu_fmt" ];
             tf = [ "tofu_fmt" ];
             typst = [ "typstyle" ];
+            perl = [ "perltidy" ];
           };
         };
       };
@@ -175,6 +176,7 @@ in {
           make
           markdown
           nix
+          perl
           python
           regex
           rust
@@ -266,6 +268,7 @@ in {
           nil_ls.enable = true;
           nixd.enable = true;
           lua_ls.enable = true;
+          perlnavigator.enable = true;
           rust_analyzer = {
             enable = true;
             installCargo = false;

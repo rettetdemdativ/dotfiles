@@ -4,7 +4,7 @@
     settings = {
       "sidebar.revamp" = true;
       "sidebar.verticalTabs" = true;
-      "privacy.resistFingerprinting.letterboxing" = true;
+      #"privacy.resistFingerprinting.letterboxing" = true;
     };
   };
 }

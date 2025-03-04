@@ -11,12 +11,8 @@
       After = "graphical-session.target";
       Requisite = "graphical-session.target";
     };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-    Service = {
-      ExecStart = "${pkgs.waybar}/bin/waybar";
-    };
+    Install = { WantedBy = [ "default.target" ]; };
+    Service = { ExecStart = "${pkgs.waybar}/bin/waybar"; };
   };
 
   xdg.configFile."waybar/config".source = ../../.config/waybar/config;
