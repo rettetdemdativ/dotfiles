@@ -276,7 +276,7 @@ in {
       gaps outer 5
 
       #bindsym $mod+shift+x exec sh /home/inet/.i3/lock.sh
-      bindsym $mod+shift+x exec swaylock -f -c 000000 --ring-color ffffff --clock
+      bindsym $mod+shift+x exec swaylock -f -c 000000 --ring-color ffffff
       bindsym $mod+alt+x exec oblogout
 
       ## PERSONAL STUFF ##
