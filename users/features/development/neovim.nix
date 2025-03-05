@@ -175,6 +175,7 @@ in {
           make
           markdown
           nix
+          perl
           python
           regex
           rust
@@ -261,22 +262,23 @@ in {
         };
         servers = {
           angularls.enable = true;
+          ccls.enable = true;
           dockerls.enable = true;
           docker_compose_language_service.enable = true;
+          gopls.enable = true;
+          lua_ls.enable = true;
           nil_ls.enable = true;
           nixd.enable = true;
-          lua_ls.enable = true;
+          perlnavigator.enable = true;
+          pylsp.enable = true;
           rust_analyzer = {
             enable = true;
             installCargo = false;
             installRustc = false;
           };
-          gopls.enable = true;
-          pylsp.enable = true;
-          ts_ls.enable = true;
-          ccls.enable = true;
           svelte.enable = true;
           tinymist.enable = true;
+          ts_ls.enable = true;
         };
       };
       lspsaga = {
