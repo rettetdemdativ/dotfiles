@@ -4,7 +4,7 @@
     enableZshIntegration = true;
     settings = {
       font-family = "Iosevka NF";
-      font-size = 11;
+      font-size = 10.5;
       font-style = "Medium";
       font-style-bold = "Bold";
       font-style-italic = "Medium Italic";

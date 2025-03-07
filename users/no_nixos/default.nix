@@ -5,6 +5,7 @@ in rec {
     #inputs.niri.homeModules.niri
     ../features/general
     ../features/desktop/sway
+    (import ../features/desktop/swaybg.nix { wpPath = "/home/${username}/Pictures/Wallpapers"; })
     ../features/desktop/fuzzel.nix
     ../features/desktop/zathura.nix
     ../features/development/ghostty.nix
