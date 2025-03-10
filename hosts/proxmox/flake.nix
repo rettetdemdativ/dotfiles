@@ -26,10 +26,10 @@
     in {
       nixosConfigurations = {
         # sudo nixos-rebuild switch --flake .#
-        nixxps = libx.mkHost {
+        proxmox = libx.mkHost {
           hostname = "proxmox";
           username = "mkoeppl";
-          disk = "/dev/nvme0n1";
+          disk = "/dev/sda";
         };
       };
     };
