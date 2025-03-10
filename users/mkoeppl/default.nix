@@ -1,11 +1,11 @@
 { inputs, config, pkgs, username, ... }: {
   imports = [ ../common.nix
-    ./features/desktop
-    ./features/development
-    ./features/general
-    ./features/media
-    ./features/cli
-    ./features/productivity
+    ../features/desktop
+    ../features/development
+    ../features/general
+    ../features/media
+    ../features/cli
+    ../features/productivity
     ];
   # Most stuff in common.nix
 
