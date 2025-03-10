@@ -1,12 +1,12 @@
 { inputs, config, pkgs, username, ... }: {
-  imports = [ ../common.nix
+  imports = [
     ../features/desktop
     ../features/development
     ../features/general
     ../features/media
     ../features/cli
     ../features/productivity
-    ];
+  ];
   # Most stuff in common.nix
 
   home.persistence."/persist/home/${username}" = {
