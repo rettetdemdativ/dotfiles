@@ -1,7 +1,13 @@
 { inputs, config, pkgs, username, ... }: {
   imports = [
     ../features/desktop
-    ../features/development
+    ../features/development/alacritty.nix
+    ../features/development/ghostty.nix
+    ../features/development/helix.nix
+    ../features/development/neovim.nix
+    ../features/development/vscode.nix
+    ../features/development/zed.nix
+    ../features/development/zsh.nix
     ../features/general
     ../features/media
     ../features/cli
@@ -64,6 +70,13 @@
     inter
     mononoki
     cascadia-code
+
+    # For this user these are imported separately
+    distrobox
+    nil # Nix LSP
+    nixd # other Nix LSP
+    nixfmt-classic # Nix formatter
+    ripgrep
   ];
 
   home.sessionVariables = rec {
