@@ -198,6 +198,13 @@
       packages = [ pkgs.home-manager ];
       shell = pkgs.zsh;
     };
+    mkoeppl = {
+      isNormalUser = true;
+      hashedPasswordFile = "/persist/etc/users/mkoeppl";
+      extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
+      packages = [ pkgs.home-manager ];
+      shell = pkgs.zsh;
+    };
     root.hashedPasswordFile = "/persist/etc/users/root";
   };
 

@@ -36,28 +36,14 @@
 
       ".local/share/containers"
 
-      # IntelliJ
-      ".config/JetBrains"
-      ".local/share/JetBrains"
-      ".cache/JetBrains"
-
-      # Android Studio
-      ".gradle"
-      ".config/Google/AndroidStudio2022.3"
-      ".android"
-
       # Rust
       ".cargo"
       ".rustup"
-
-      # Maven, unfortunately
-      ".m2"
 
       # Nix package maintenance
       ".cache/nixpkgs-review"
       ".cache/nix"
     ];
-    files = [ ".aider.conf.yml" ];
   };
 
   # The home.packages option allows you to install Nix packages into your
