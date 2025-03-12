@@ -1,27 +1,32 @@
 {
-  description = "Rust development environment";
-
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    rust-overlay.url = "github:oxalica/rust-overlay";
-    flake-utils.url = "github:numtide/flake-utils";
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixpkgs.url = "nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        overlays = [ (import rust-overlay) ];
-        pkgs = import nixpkgs { inherit system overlays; };
-      in {
-        devShells.default = with pkgs;
-          mkShell {
-            buildInputs =
-              [ openssl pkg-config eza fd rust-bin.stable.latest.default ];
-
-            shellHook = ''
-              alias ls=eza
-              alias find=fd
-            '';
-          };
-      });
+  outputs = { self, fenix, nixpkgs }: {
+    packages.x86_64-linux.default =
+      fenix.packages.x86_64-linux.minimal.toolchain;
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ({ pkgs, ... }: {
+          nixpkgs.overlays = [ fenix.overlays.default ];
+          environment.systemPackages = with pkgs; [
+            (fenix.complete.withComponents [
+              "cargo"
+              "clippy"
+              "rust-src"
+              "rustc"
+              "rustfmt"
+            ])
+            rust-analyzer-nightly
+          ];
+        })
+      ];
+    };
+  };
 }
