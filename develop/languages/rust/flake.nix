@@ -1,32 +1,30 @@
 {
   inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     fenix = {
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
-
-  outputs = { self, fenix, nixpkgs }: {
-    packages.x86_64-linux.default =
-      fenix.packages.x86_64-linux.minimal.toolchain;
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ({ pkgs, ... }: {
-          nixpkgs.overlays = [ fenix.overlays.default ];
-          environment.systemPackages = with pkgs; [
-            (fenix.complete.withComponents [
+  outputs = { self, nixpkgs, fenix, flake-utils, }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+        devToolchain = fenix.packages."${system}".stable;
+      in rec {
+        devShell = pkgs.mkShell {
+          nativeBuildInputs = [
+            (devToolchain.withComponents [
               "cargo"
-              "clippy"
-              "rust-src"
               "rustc"
+              "rust-src"
               "rustfmt"
+              "clippy"
             ])
-            rust-analyzer-nightly
           ];
-        })
-      ];
-    };
-  };
+          RUST_BACKTRACE = 1;
+        };
+      });
 }
+
