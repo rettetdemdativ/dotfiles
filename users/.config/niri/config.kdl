@@ -168,6 +168,10 @@ layout {
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
+    shadow {
+        on
+    }
+
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
@@ -491,6 +495,9 @@ binds {
     // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
     // ...
 
+    // Switch so tabbed mode for a column
+    Mod+W { toggle-column-tabbed-display; }
+
     Mod+Y              { focus-workspace-down; }
     Mod+O              { focus-workspace-up; }
     Mod+U              { focus-workspace-down; }
@@ -549,6 +556,7 @@ binds {
     Mod+R { switch-preset-column-width; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
+    Mod+E { expand-column-to-available-width; }
     Mod+C { center-column; }
 
     // Finer width adjustments.
