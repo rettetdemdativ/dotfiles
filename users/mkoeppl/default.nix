@@ -1,17 +1,14 @@
 { inputs, config, pkgs, username, ... }: {
   imports = [
     ../features/desktop
-    ../features/development/alacritty.nix
     ../features/development/ghostty.nix
     ../features/development/helix.nix
     ../features/development/neovim.nix
     ../features/development/vscode.nix
-    ../features/development/zed.nix
     ../features/development/zsh.nix
     ../features/general
     ../features/media
     ../features/cli
-    ../features/productivity
   ];
   # Most stuff in common.nix
 
