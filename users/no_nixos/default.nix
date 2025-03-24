@@ -46,7 +46,10 @@ in rec {
 
   programs.bash = {
     enable = true;
-    sessionVariables = { TERM = "xterm-256color"; };
+    sessionVariables = { 
+      EDITOR = "nvim";
+      TERM = "xterm-256color"; 
+    };
     shellAliases = {
       apply-home = "$HOME/dotfiles/scripts/no_nixos/apply-home.sh";
       update-all = "$HOME/dotfiles/scripts/no_nixos/update.sh";
