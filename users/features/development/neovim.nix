@@ -67,10 +67,11 @@ in {
         action = "<cmd>:Lspsaga hover_doc<CR>";
       }
     ];
-    colorschemes.vscode = {
-      enable = true;
-      settings = { italic_comments = true; };
-    };
+    #colorschemes.vscode = {
+    #  enable = true;
+    #  settings = { italic_comments = true; };
+    #};
+    colorschemes.cyberdream.enable = true;
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
