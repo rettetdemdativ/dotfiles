@@ -5,22 +5,7 @@ USERNAME=$3
 nix run \
   --extra-experimental-features flakes \
   --extra-experimental-features nix-command \
-  github:nix-community/disko -- --mode disko ./system/disko.nix --arg disks "[ \"${DISK}\" ]" --arg usernames "[ \"${USERNAME}\" ]"
-
-mount -t tmpfs tmpfs /mnt
-
-mkdir -p /mnt/home
-mount -t tmpfs tmpfs /mnt/home
-mkdir -p /mnt/home/${USERNAME}
-
-mkdir -p /mnt/boot
-mount ${DISK}1 /mnt/boot
-
-mkdir -p /mnt/persist
-mount -t btrfs -o subvol=@persist /dev/mapper/cryptroot /mnt/persist
-
-mkdir -p /mnt/nix
-mount -t btrfs -o subvol=@nix /dev/mapper/cryptroot /mnt/nix
+  github:nix-community/disko/latest -- --mode destroy,format,mount ./system/disko.nix --arg disks "[ \"${DISK}\" ]" --arg usernames "[ \"${USERNAME}\" ]"
 
 mkdir -p /mnt/persist/etc/nixos
 mkdir -p /mnt/persist/system
