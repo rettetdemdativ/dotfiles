@@ -78,7 +78,7 @@ output "eDP-1" {
     // Uncomment this line to disable this output.
     // off
 
-    scale 1.0
+    scale 1.7
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
