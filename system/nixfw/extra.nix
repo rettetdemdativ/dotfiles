@@ -6,7 +6,7 @@
 
   # Instead of TLP (better support for boost)
   services.auto-cpufreq = {
-    enable = true;
+    enable = false;
     settings = {
       battery = {
         governor = "powersave";
