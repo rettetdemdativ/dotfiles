@@ -102,6 +102,8 @@ output "eDP-1" {
     // It the position is unset or results in an overlap, the output is instead placed
     // automatically.
     // position x=1280 y=0
+
+    variable-refresh-rate
 }
 
 output "DP-2" {
