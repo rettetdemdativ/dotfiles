@@ -12,6 +12,7 @@ in rec {
     ../features/development/neovim.nix
     ../features/development/zsh.nix
     ../features/cli
+    ../features/media
   ];
 
   nixGL = {
@@ -57,6 +58,18 @@ in rec {
     profileExtra = ''
       . "/home/${username}/.cargo/env"
       source "/home/${username}/.cargo/env"
+    '';
+    initExtra = ''
+        if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+            export QT_QPA_PLATFORM=wayland
+            export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+            export XDG_SESSION_TYPE=wayland
+            #export XDG_CURRENT_DESKTOP=sway
+            export _JAVA_AWT_WM_NONREPARENTING=1
+            export MOZ_ENABLE_WAYLAND=1
+            export MOZ_WEBRENDER=1
+            exec sway
+        fi
     '';
   };
 

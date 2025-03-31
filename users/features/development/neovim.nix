@@ -67,9 +67,15 @@ in {
         action = "<cmd>:Lspsaga hover_doc<CR>";
       }
     ];
-    colorschemes.vscode = {
-      enable = true;
-      settings = { italic_comments = true; };
+        #colorschemes.vscode = {
+        #  enable = true;
+        #  settings = { italic_comments = true; };
+        #};
+    colorschemes.cyberdream = {
+        enable = true;
+        settings = {
+            italic_comments = true;
+        };
     };
     highlight = {
       RDYellow = { fg = "#ffd602"; };
@@ -113,10 +119,10 @@ in {
       conform-nvim = {
         enable = true;
         settings = {
-          format_on_save = {
-            lsp_fallback = "fallback";
-            timeout_ms = 500;
-          };
+          #format_on_save = {
+          #  lsp_fallback = "fallback";
+          #  timeout_ms = 500;
+          #};
           formatters_by_ft = {
             c = [ "clang-format" ];
             cpp = [ "clang-format" ];

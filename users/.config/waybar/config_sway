@@ -46,7 +46,7 @@
         "format": "{}% "
     },
     "network#eth": {
-        "interface": "enp*",
+        "interface": "vmbr*",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈀",
         "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": "Disconnected ⚠",
