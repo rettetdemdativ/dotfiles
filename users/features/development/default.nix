@@ -16,7 +16,6 @@
     docker-compose
     buildah
     distrobox
-    beekeeper-studio
     bruno
     podman-desktop
     lefthook
