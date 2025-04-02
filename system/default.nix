@@ -61,18 +61,6 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.logind = {
-    lidSwitch = "hybrid-sleep";
-    lidSwitchDocked = "hybrid-sleep";
-    lidSwitchExternalPower = "hybrid-sleep";
-    extraConfig = ''
-      HandlePowerKey=hybrid-sleep
-      HandleSuspendKey=suspend
-      HandleHibernateKey=hibernate
-      IdleAction=ignore
-    '';
-  };
-
   #security.polkit.enable = true;
 
   security.pam.services.swaylock = {
