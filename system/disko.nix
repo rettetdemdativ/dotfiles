@@ -17,7 +17,7 @@
               };
             };
             luks = {
-              end = "-16G";
+              end = "-32G";
               content = {
                 type = "luks";
                 name = "cryptroot";
