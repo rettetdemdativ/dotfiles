@@ -38,7 +38,7 @@
   services.acpid = { enable = true; };
 
   services.logind = {
-    lidSwitch = "suspend";
+    lidSwitch = "suspend-then-hibernate";
     lidSwitchDocked = "suspend";
     lidSwitchExternalPower = "suspend";
     extraConfig = ''
