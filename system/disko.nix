@@ -42,7 +42,7 @@
               size = "100%";
               content = {
                 type = "swap";
-                randomEncryption = true;
+                randomEncryption = false;
                 resumeDevice = true; # resume from hibernation from this device
               };
             };
