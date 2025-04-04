@@ -13,6 +13,7 @@ in rec {
     ../features/development/zsh.nix
     ../features/cli
     ../features/media
+    ../features/productivity
   ];
 
   nixGL = {
@@ -54,6 +55,8 @@ in rec {
     shellAliases = {
       apply-home = "$HOME/dotfiles/scripts/no_nixos/apply-home.sh";
       update-all = "$HOME/dotfiles/scripts/no_nixos/update.sh";
+      start-vm = "$HOME/dotfiles/scripts/no_nixos/proxmox/start_vm.sh";
+      spice-connect = "$HOME/dotfiles/scripts/no_nixos/proxmox/spice-connect.sh";
     };
     profileExtra = ''
       . "/home/${username}/.cargo/env"
