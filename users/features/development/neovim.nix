@@ -16,10 +16,11 @@ in {
       number = true; # Show line numbers
       relativenumber = true; # Show relative line numbers
       shiftwidth = 4; # Tab width should be 4
-      tabstop = 4;
+      tabstop = 8;
+      softtabstop = 4;
       smartcase = true;
       smartindent = true;
-      expandtab = true;
+      expandtab = false;
       termguicolors = true;
       cmdheight = 0;
     };
