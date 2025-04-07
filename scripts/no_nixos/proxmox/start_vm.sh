@@ -5,7 +5,7 @@ FORMAT="${FORMAT:=raw}"
 STORAGE="${STORAGE:=local-lvm}"
 DISKSIZE="${DISKSIZE:=32}"
 BIOS="${BIOS:=seabios}"
-IP="10.1.1.$VMID"
+IP="192.168.27.$VMID"
 
 if [ "$#" -lt 2 ]; then
 	echo "dev-vm-create-pve VMID HOSTNAME"
