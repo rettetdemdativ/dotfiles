@@ -32,8 +32,8 @@ in rec {
       TERM = "xterm-256color"; 
     };
     shellAliases = {
-      apply-home = "$HOME/dotfiles/scripts/no_nixos/apply-home.sh";
-      update-all = "$HOME/dotfiles/scripts/no_nixos/update.sh";
+      apply-home = "$HOME/dotfiles/scripts/dev_vm/apply-home.sh";
+      update-all = "$HOME/dotfiles/scripts/dev_vm/update.sh";
       start-vm = "$HOME/dotfiles/scripts/no_nixos/proxmox/start_vm.sh";
       spice-connect = "$HOME/dotfiles/scripts/no_nixos/proxmox/spice-connect.sh";
     };
