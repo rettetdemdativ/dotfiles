@@ -61,6 +61,7 @@ in rec {
     profileExtra = ''
       . "/home/${username}/.cargo/env"
       source "/home/${username}/.cargo/env"
+      eval "$(ssh-agent)"
     '';
     initExtra = ''
         if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
