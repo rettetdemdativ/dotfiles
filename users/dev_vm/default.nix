@@ -37,9 +37,5 @@ in rec {
       start-vm = "$HOME/dotfiles/scripts/no_nixos/proxmox/start_vm.sh";
       spice-connect = "$HOME/dotfiles/scripts/no_nixos/proxmox/spice-connect.sh";
     };
-    profileExtra = ''
-      . "/home/${username}/.cargo/env"
-      source "/home/${username}/.cargo/env"
-    '';
   };
 }
