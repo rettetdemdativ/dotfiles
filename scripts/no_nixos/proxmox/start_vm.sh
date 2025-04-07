@@ -37,10 +37,10 @@ mkdir "$DIR"
 
 cat > "$DIR/answer.toml" <<ENDANSWER
 [global]
-keyboard = "de"
+keyboard = "en-us"
 country = "at"
-fqdn = "$HOSTNAME.ella.proxmox.com"
-mailto = "mail@test.invalidd"
+fqdn = "$HOSTNAME.lana.proxmox.com"
+mailto = "m.koeppl@proxmox.com"
 timezone = "Europe/Vienna"
 root_password = "Test123!"
 root_ssh_keys = [
@@ -49,7 +49,7 @@ root_ssh_keys = [
 
 [network]
 source = "from-answer"
-cidr = "$IP/16"
+cidr = "$IP/20"
 dns = "192.168.2.15"
 gateway = "10.1.1.1"
 filter.ID_NET_NAME = "*"
