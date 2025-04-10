@@ -71,7 +71,14 @@ in {
     #  enable = true;
     #  settings = { italic_comments = true; };
     #};
-    colorschemes.cyberdream.enable = true;
+    #colorschemes.cyberdream.enable = true;
+    colorschemes.tokyonight = {
+      enable = true;
+      settings = {
+        style = "night";
+        styles = { comments = { italic = true; }; };
+      };
+    };
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
