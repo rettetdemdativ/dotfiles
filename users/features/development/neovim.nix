@@ -238,13 +238,11 @@ in {
           };
         };
         servers = {
-          angularls.enable = true;
           ccls.enable = true;
           dockerls.enable = true;
           docker_compose_language_service.enable = true;
           gopls.enable = true;
           lua_ls.enable = true;
-          jdtls.enable = true;
           nil_ls.enable = true;
           nixd.enable = true;
           perlnavigator.enable = true;
@@ -254,8 +252,6 @@ in {
             installCargo = false;
             installRustc = false;
           };
-          svelte.enable = true;
-          tinymist.enable = true;
           ts_ls.enable = true;
         };
       };

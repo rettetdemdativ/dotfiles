@@ -26,7 +26,7 @@ in rec {
 
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [ signal-desktop ];
+  home.packages = with pkgs; [ ];
 
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
