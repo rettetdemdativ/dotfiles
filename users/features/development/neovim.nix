@@ -101,25 +101,25 @@ in {
       conform-nvim = {
         enable = true;
         settings = {
-          #format_on_save = {
-          #  lsp_fallback = "fallback";
-          #  timeout_ms = 500;
-          #};
+          format_on_save = {
+            lsp_fallback = "fallback";
+            timeout_ms = 500;
+          };
           formatters_by_ft = {
             c = [ "clang-format" ];
             cpp = [ "clang-format" ];
             rust = [ "rustfmt" ];
             go = [ "gofmt" ];
             python = [ "black" ];
-            javascript = [ "prettierd" ];
-            typescript = [ "prettierd" ];
+	    #javascript = [ "prettierd" ];
+	    #typescript = [ "prettierd" ];
             css = [ "prettierd" ];
             html = [ "prettierd" ];
             json = [ "prettierd" ];
             lua = [ "stylua" ];
             markdown = [ "prettierd" ];
             nix = [ "nixfmt" ];
-            perl = [ "perltidy" ];
+	    #perl = [ "perltidy" ];
           };
         };
       };

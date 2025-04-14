@@ -3,7 +3,7 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      font-family = "Iosevka NF";
+      font-family = "JetBrains Mono";
       font-size = 10.5;
       font-style = "Medium";
       font-style-bold = "Bold";
