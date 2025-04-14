@@ -15,6 +15,7 @@
       dev_java = "$HOME/dotfiles/scripts/activate-dev.sh languages/java";
       dev_java11 = "$HOME/dotfiles/scripts/activate-dev.sh languages/java11";
       dev_nodejs = "$HOME/dotfiles/scripts/activate-dev.sh languages/nodejs";
+      dev_perl = "$HOME/dotfiles/scripts/activate-dev.sh languages/perl";
       dev_python = "$HOME/dotfiles/scripts/activate-dev.sh languages/python3";
       dev_rust = "$HOME/dotfiles/scripts/activate-dev.sh languages/rust";
       dev_typst = "$HOME/dotfiles/scripts/activate-dev.sh languages/typst";

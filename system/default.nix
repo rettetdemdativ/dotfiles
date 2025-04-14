@@ -160,8 +160,6 @@
     pciutils
     zsh
     lm_sensors
-    mullvad
-    mullvad-vpn
     nvd
     fuse-overlayfs
   ];

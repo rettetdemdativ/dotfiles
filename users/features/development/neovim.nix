@@ -68,39 +68,20 @@ in {
         action = "<cmd>:Lspsaga hover_doc<CR>";
       }
     ];
-        #colorschemes.vscode = {
-        #  enable = true;
-        #  settings = { italic_comments = true; };
-        #};
-    colorschemes.cyberdream = {
-        enable = true;
-        settings = {
-            italic_comments = true;
+    colorschemes.tokyonight = {
+      enable = true;
+      settings = {
+        style = "night";
+        styles = {
+          comments = { italic = true; };
+          floats = "dark";
+          functions = { };
+          keywords = { italic = true; };
+          sidebars = "dark";
+          variables = { };
         };
+      };
     };
-    highlight = {
-      RDYellow = { fg = "#ffd602"; };
-      RDViolet = { fg = "#d66ed2"; };
-      RDBlue = { fg = "#569cd6"; };
-      RDOrange = { fg = "#d7ba7d"; };
-      RDCyan = { fg = "#4ec9b0"; };
-      RDGreen = { fg = "#6a9955"; };
-      RDRed = { fg = "#d16969"; };
-    };
-    #colorschemes.tokyonight = {
-    #enable = true;
-    #settings = {
-    #style = "storm";
-    #styles = {
-    #comments = { italic = true; };
-    #floats = "dark";
-    #functions = { };
-    #keywords = { italic = true; };
-    #sidebars = "dark";
-    #variables = { };
-    #};
-    #};
-    #};
     plugins = {
       # Editor
       illuminate.enable = true;
@@ -270,23 +251,24 @@ in {
         };
         servers = {
           angularls.enable = true;
+          ccls.enable = true;
           dockerls.enable = true;
           docker_compose_language_service.enable = true;
+          gopls.enable = true;
+          lua_ls.enable = true;
+          jdtls.enable = true;
           nil_ls.enable = true;
           nixd.enable = true;
-          lua_ls.enable = true;
           perlnavigator.enable = true;
+          pylsp.enable = true;
           rust_analyzer = {
             enable = true;
             installCargo = false;
             installRustc = false;
           };
-          gopls.enable = true;
-          pylsp.enable = true;
-          ts_ls.enable = true;
-          ccls.enable = true;
           svelte.enable = true;
           tinymist.enable = true;
+          ts_ls.enable = true;
         };
       };
       lspsaga = {

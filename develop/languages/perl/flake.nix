@@ -1,5 +1,5 @@
 {
-  description = "C development environment";
+  description = "Perl development environment";
 
   inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; };
 
@@ -19,9 +19,8 @@
         (system: f { pkgs = import nixpkgs { inherit system; }; });
     in {
       devShells = forAllSystems ({ pkgs }: {
-        default = pkgs.mkShell {
-          packages = with pkgs; [ gcc14 clang_19 cmake gdb cbmc ccls bear ];
-        };
+        default =
+          pkgs.mkShell { packages = with pkgs; [ perl perlnavigator ]; };
       });
     };
 }
