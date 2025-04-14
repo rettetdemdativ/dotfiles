@@ -116,13 +116,9 @@ in {
             css = [ "prettierd" ];
             html = [ "prettierd" ];
             json = [ "prettierd" ];
-            kotlin = [ "ktfmt" ];
             lua = [ "stylua" ];
             markdown = [ "prettierd" ];
             nix = [ "nixfmt" ];
-            terraform = [ "tofu_fmt" ];
-            tf = [ "tofu_fmt" ];
-            typst = [ "typstyle" ];
             perl = [ "perltidy" ];
           };
         };
@@ -142,7 +138,6 @@ in {
           indent.enable = true;
         };
         grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-          angular
           bash
           c
           cpp
@@ -151,30 +146,23 @@ in {
           go
           gomod
           gosum
-          groovy
-          hcl
           html
-          java
           javascript
           json
           jsonc
-          kotlin
           llvm
           lua
           make
           markdown
           nix
           perl
-          python
+	  python
           regex
           rust
           sql
-          svelte
-          terraform
           toml
           tsx
           typescript
-          typst
           yaml
         ];
       };
