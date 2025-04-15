@@ -9,7 +9,7 @@
       specialArgs = { inherit inputs outputs hostname username stateVersion; };
       modules = [
         inputs.disko.nixosModules.disko
-        ../system/disko.nix
+        ../system/${hostname}/disko.nix
         {
           _module.args.disks = [ disk ];
           _module.args.usernames = [ username ];
