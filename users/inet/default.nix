@@ -19,6 +19,10 @@
       ".local/share/nvim/mason"
       ".local/share/mpd"
       ".local/share/Anki2"
+      {
+        directory = ".local/share/waydroid";
+        method = "symlink";
+      }
       ".config/Signal"
       ".config/mpd"
       ".config/VSCodium"
