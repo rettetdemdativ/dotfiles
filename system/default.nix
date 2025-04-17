@@ -38,7 +38,13 @@
       "/var/log"
       "/var/lib"
     ];
-    files = [ "/etc/nix/id_rsa" "/etc/machine-id" ];
+    files = [
+      {
+        file = "/etc/nix/id_rsa";
+        parentDirectory = { mode = "u=rwx,g=rx,o=rx"; };
+      }
+      "/etc/machine-id"
+    ];
   };
 
   boot.tmp = {
