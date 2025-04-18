@@ -71,7 +71,7 @@ in {
     colorschemes.tokyonight = {
       enable = true;
       settings = {
-        style = "storm";
+        style = "night";
         styles = {
           comments = { italic = true; };
           floats = "dark";
