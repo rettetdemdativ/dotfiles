@@ -23,6 +23,20 @@ in {
       withGtkWrapper = swayCfg.wrapperFeatures.gtk;
     });
     systemd.enable = true;
+    config.modes = {
+      resize = {
+        Down = "resize grow height 10 px";
+        Escape = "mode default";
+        Left = "resize shrink width 10 px";
+        Return = "mode default";
+        Right = "resize grow width 10 px";
+        Up = "resize shrink height 10 px";
+        h = "resize shrink width 50 px";
+        j = "resize grow height 50 px";
+        k = "resize shrink height 50 px";
+        l = "resize grow width 50 px";
+      };
+    };
     extraSessionCommands = ''
       export CLUTTER_BACKEND=wayland
       export ECORE_EVAS_ENGINE=wayland-egl
