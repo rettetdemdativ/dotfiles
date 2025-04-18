@@ -40,7 +40,7 @@
 
       # Android Studio
       ".gradle"
-      ".config/Google/AndroidStudio2022.3"
+      #".config/Google/AndroidStudio2024.3"
       ".android"
 
       # Rust

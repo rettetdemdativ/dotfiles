@@ -7,6 +7,7 @@
     ./zsh.nix
     ./ghostty.nix
     ./podman.nix
+    #./android.nix
     #./qemu.nix
     #./aider.nix
   ];
