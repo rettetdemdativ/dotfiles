@@ -23,6 +23,9 @@
               "clippy"
             ])
           ];
+          shellHook = ''
+            export PATH=$PATH:~/.cargo/bin
+          '';
           RUST_BACKTRACE = 1;
         };
       });
