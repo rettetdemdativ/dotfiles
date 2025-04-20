@@ -2,6 +2,7 @@
   imports = [
     ./mpd.nix
     ./cava.nix
+    ./newsboat.nix
     #./ncmpcpp.nix
   ];
 
