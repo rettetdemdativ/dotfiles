@@ -35,6 +35,10 @@
     cascadia-code
   ];
 
+  home.persistence."/persist/home/${username}" = {
+    directories = [ ".config/Signal" ".ts3client" ];
+  };
+
   home.sessionVariables = rec {
     EDITOR = "nvim";
     #DOCKER_HOST = "unix:///run/user/$UID/podman/podman.sock";

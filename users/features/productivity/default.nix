@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }:
+{ inputs, lib, config, pkgs, username, ... }:
 
 let
   tex = (pkgs.texlive.combine {
@@ -10,4 +10,8 @@ let
 in {
 
   home.packages = with pkgs; [ anki-bin qalculate-gtk tex ];
+
+  home.persistence."/persist/home/${username}" = {
+    directories = [ ".local/share/Anki2" ];
+  };
 }

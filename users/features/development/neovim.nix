@@ -1,7 +1,11 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, username, ... }:
 let selectOpts = "{behavior = cmp.SelectBehavior.Select}";
 in {
   imports = [ inputs.nixvim.homeManagerModules.nixvim ];
+
+  home.persistence."/persist/home/${username}" = {
+    directories = [ ".local/share/nvim/lazy" ".local/share/nvim/mason" ];
+  };
 
   programs.neovim = {
     defaultEditor = true;

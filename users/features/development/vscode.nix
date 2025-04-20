@@ -1,4 +1,8 @@
 { inputs, config, pkgs, username, ... }: {
+  home.persistence."/persist/home/${username}" = {
+    directories = [ ".config/VSCodium" ];
+  };
+
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;

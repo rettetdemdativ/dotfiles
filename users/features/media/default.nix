@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, username, ... }: {
   imports = [
     ./mpd.nix
     ./cava.nix
@@ -18,4 +18,8 @@
     tidal-hifi
     invidtui
   ];
+
+  home.persistence."/persist/home/${username}" = {
+    directories = [ ".config/tidal-hifi" ];
+  };
 }

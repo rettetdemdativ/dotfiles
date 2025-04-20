@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, username, ... }: {
   imports = [
     ./helix.nix
     ./neovim.nix
@@ -32,4 +32,27 @@
     nixfmt-classic # Nix formatter
     ripgrep
   ];
+
+  home.persistence."/persist/home/${username}" = {
+    directories = [
+      ".local/share/containers"
+
+      # IntelliJ
+      ".config/JetBrains"
+      ".local/share/JetBrains"
+      ".cache/JetBrains"
+
+      # Android Studio
+      ".gradle"
+      #".config/Google/AndroidStudio2024.3"
+      ".android"
+
+      # Rust
+      ".cargo"
+      ".rustup"
+
+      # Maven, unfortunately
+      ".m2"
+    ];
+  };
 }

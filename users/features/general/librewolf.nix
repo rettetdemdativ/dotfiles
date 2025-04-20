@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, username, ... }: {
   programs.librewolf = {
     enable = true;
     settings = {
@@ -6,5 +6,9 @@
       "sidebar.verticalTabs" = true;
       "privacy.resistFingerprinting.letterboxing" = true;
     };
+  };
+
+  home.persistence."/persist/home/${username}" = {
+    directories = [ ".librewolf" ];
   };
 }
