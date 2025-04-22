@@ -15,6 +15,5 @@
     mpd
     cmus
     tidal-hifi
-    invidtui
   ];
 }

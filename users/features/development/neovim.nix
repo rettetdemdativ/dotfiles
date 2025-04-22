@@ -111,15 +111,15 @@ in {
             rust = [ "rustfmt" ];
             go = [ "gofmt" ];
             python = [ "black" ];
-	    #javascript = [ "prettierd" ];
-	    #typescript = [ "prettierd" ];
+            #javascript = [ "prettierd" ];
+            #typescript = [ "prettierd" ];
             css = [ "prettierd" ];
             html = [ "prettierd" ];
             json = [ "prettierd" ];
             lua = [ "stylua" ];
             markdown = [ "prettierd" ];
             nix = [ "nixfmt" ];
-	    #perl = [ "perltidy" ];
+            #perl = [ "perltidy" ];
           };
         };
       };
@@ -156,7 +156,7 @@ in {
           markdown
           nix
           perl
-	  python
+          python
           regex
           rust
           sql
@@ -195,7 +195,10 @@ in {
         enable = true;
         git.ignore = false;
         updateFocusedFile.enable = true;
-        view = { side = "right"; };
+        view = {
+          side = "left";
+          width = 40;
+        };
       };
       barbar = {
         enable = true;
