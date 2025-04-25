@@ -36,6 +36,12 @@ in {
       }
       {
         mode = "n";
+        key = "<leader>f";
+        options.silent = true;
+        action = "<cmd>:lua vim.lsp.buf.format { async = true }<CR>";
+      }
+      {
+        mode = "n";
         key = "<leader>ff";
         options.silent = true;
         action = "<cmd>:Telescope find_files<CR>";
@@ -75,14 +81,14 @@ in {
     #  enable = true;
     #  settings = { italic_comments = true; };
     #};
-    #colorschemes.cyberdream.enable = true;
-    colorschemes.tokyonight = {
-      enable = true;
-      settings = {
-        style = "night";
-        styles = { comments = { italic = true; }; };
-      };
-    };
+    colorschemes.cyberdream.enable = true;
+    #colorschemes.tokyonight = {
+    #  enable = true;
+    #  settings = {
+    #    style = "night";
+    #    styles = { comments = { italic = true; }; };
+    #  };
+    #};
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
@@ -92,20 +98,6 @@ in {
       RDGreen = { fg = "#6a9955"; };
       RDRed = { fg = "#d16969"; };
     };
-    #colorschemes.tokyonight = {
-    #enable = true;
-    #settings = {
-    #style = "storm";
-    #styles = {
-    #comments = { italic = true; };
-    #floats = "dark";
-    #functions = { };
-    #keywords = { italic = true; };
-    #sidebars = "dark";
-    #variables = { };
-    #};
-    #};
-    #};
     plugins = {
       # Editor
       illuminate.enable = true;
@@ -122,34 +114,34 @@ in {
         ];
       };
       leap.enable = true;
-      conform-nvim = {
-        enable = true;
-        settings = {
-          format_on_save = {
-            lsp_fallback = "fallback";
-            timeout_ms = 500;
-          };
-          formatters_by_ft = {
-            c = [ "clang-format" ];
-            cpp = [ "clang-format" ];
-            rust = [ "rustfmt" ];
-            go = [ "gofmt" ];
-            python = [ "black" ];
-            javascript = [ "prettierd" ];
-            typescript = [ "prettierd" ];
-            css = [ "prettierd" ];
-            html = [ "prettierd" ];
-            json = [ "prettierd" ];
-            kotlin = [ "ktfmt" ];
-            lua = [ "stylua" ];
-            markdown = [ "prettierd" ];
-            nix = [ "nixfmt" ];
-            terraform = [ "tofu_fmt" ];
-            tf = [ "tofu_fmt" ];
-            typst = [ "typstyle" ];
-          };
-        };
-      };
+      #conform-nvim = {
+      #  enable = true;
+      #  settings = {
+      #    format_on_save = {
+      #      lsp_fallback = "fallback";
+      #      timeout_ms = 500;
+      #    };
+      #    formatters_by_ft = {
+      #      c = [ "clang-format" ];
+      #      cpp = [ "clang-format" ];
+      #      #rust = [ "rust-analyzer" ];
+      #      go = [ "gofmt" ];
+      #      python = [ "black" ];
+      #      javascript = [ "prettierd" ];
+      #      typescript = [ "prettierd" ];
+      #      css = [ "prettierd" ];
+      #      html = [ "prettierd" ];
+      #      json = [ "prettierd" ];
+      #      kotlin = [ "ktfmt" ];
+      #      lua = [ "stylua" ];
+      #      markdown = [ "prettierd" ];
+      #      nix = [ "nixfmt" ];
+      #      terraform = [ "tofu_fmt" ];
+      #      tf = [ "tofu_fmt" ];
+      #      typst = [ "typstyle" ];
+      #    };
+      #  };
+      #};
       lint = {
         enable = true;
         lintersByFt = {
@@ -174,8 +166,6 @@ in {
           go
           gomod
           gosum
-          groovy
-          hcl
           html
           java
           javascript
@@ -280,15 +270,13 @@ in {
           gopls.enable = true;
           lua_ls.enable = true;
           jdtls.enable = true;
-          nil_ls.enable = true;
+          nil_ls = {
+            enable = true;
+            settings = { formatting.command = [ "nixfmt" ]; };
+          };
           nixd.enable = true;
           perlnavigator.enable = true;
           pylsp.enable = true;
-          rust_analyzer = {
-            enable = true;
-            installCargo = false;
-            installRustc = false;
-          };
           svelte.enable = true;
           tinymist.enable = true;
           ts_ls.enable = true;
@@ -436,6 +424,8 @@ in {
       dap-go.enable = true;
       dap-python.enable = true;
       dap.enable = true;
+
+      rustaceanvim = { enable = true; };
 
       autoclose.enable = true;
     };
