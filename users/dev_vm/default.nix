@@ -26,7 +26,7 @@ in rec {
   };
 
   home.sessionPath = [
-    "$HOME/flutter"
+    "$HOME/flutter/bin"
   ];
 
   programs.bash = {
