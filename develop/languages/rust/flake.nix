@@ -21,6 +21,7 @@
               "rust-src"
               "rustfmt"
               "clippy"
+              "rust-analyzer"
             ])
           ];
           shellHook = ''
