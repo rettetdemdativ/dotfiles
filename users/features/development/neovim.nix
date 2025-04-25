@@ -108,7 +108,6 @@ in {
           formatters_by_ft = {
             c = [ "clang-format" ];
             cpp = [ "clang-format" ];
-            rust = [ "rustfmt" ];
             go = [ "gofmt" ];
             python = [ "black" ];
             #javascript = [ "prettierd" ];
@@ -158,7 +157,6 @@ in {
           perl
           python
           regex
-          rust
           sql
           toml
           tsx
@@ -250,11 +248,6 @@ in {
           nixd.enable = true;
           perlnavigator.enable = true;
           pylsp.enable = true;
-          rust_analyzer = {
-            enable = true;
-            installCargo = false;
-            installRustc = false;
-          };
           ts_ls.enable = true;
         };
       };
@@ -399,9 +392,14 @@ in {
       dap-virtual-text.enable = true;
       dap-go.enable = true;
       dap-python.enable = true;
+      dap-rr.enable = true;
       dap.enable = true;
 
       autoclose.enable = true;
+
+      rustaceanvim = {
+	enable = true;
+      };
 
       flutter-tools = {
         enable = true;

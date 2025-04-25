@@ -47,6 +47,10 @@ in rec {
     };
   };
 
+  home.sessionPath = [
+    "$HOME/workspace/flutter/bin"
+  ];
+
   programs.bash = {
     enable = true;
     sessionVariables = { 
