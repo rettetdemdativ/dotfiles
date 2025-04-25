@@ -25,6 +25,10 @@ in rec {
     };
   };
 
+  home.sessionPath = [
+    "$HOME/flutter"
+  ];
+
   programs.bash = {
     enable = true;
     sessionVariables = { 
