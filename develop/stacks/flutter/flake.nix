@@ -29,7 +29,8 @@
               flutter
               androidSdk # The customized SDK that we've made above
               jdk17
-            ];
+	      pkg-config
+              ninja ];
           };
       });
 }
