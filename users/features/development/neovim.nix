@@ -157,6 +157,7 @@ in {
           perl
           python
           regex
+	  rust
           sql
           toml
           tsx
