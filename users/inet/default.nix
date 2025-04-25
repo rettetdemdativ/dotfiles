@@ -15,10 +15,6 @@
       "Music"
       "Videos"
       "VMs"
-      {
-        directory = ".local/share/waydroid";
-        method = "symlink";
-      }
 
       # Nix package maintenance
       ".cache/nixpkgs-review"

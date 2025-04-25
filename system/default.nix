@@ -142,8 +142,6 @@
       enable = true;
       qemu = { package = pkgs.qemu_kvm; };
     };
-
-    waydroid.enable = true;
   };
   programs.virt-manager.enable = true;
 
