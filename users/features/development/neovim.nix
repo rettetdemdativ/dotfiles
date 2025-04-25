@@ -402,6 +402,10 @@ in {
       dap.enable = true;
 
       autoclose.enable = true;
+
+      flutter-tools = {
+        enable = true;
+      };
     };
   };
 }

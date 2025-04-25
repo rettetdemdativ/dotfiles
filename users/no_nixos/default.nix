@@ -10,6 +10,7 @@ in rec {
     ../features/desktop/zathura.nix
     ../features/development/ghostty.nix
     ../features/development/neovim.nix
+    #../features/development/vscode.nix
     ../features/development/zsh.nix
     ../features/cli
     ../features/media

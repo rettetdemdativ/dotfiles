@@ -23,6 +23,7 @@
         pkgs.vscode-extensions.editorconfig.editorconfig
         pkgs.vscode-extensions.rust-lang.rust-analyzer
         #pkgs.vscode-extensions.vadimcn.vscode-lldb
+        pkgs.vscode-extensions.dart-code.flutter
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "fleet-theme";
