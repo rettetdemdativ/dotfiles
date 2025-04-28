@@ -10,9 +10,9 @@
         pkgs.vscode-extensions.dbaeumer.vscode-eslint
         pkgs.vscode-extensions.eamodio.gitlens
         pkgs.vscode-extensions.esbenp.prettier-vscode
-        pkgs.vscode-extensions.hashicorp.terraform
-        pkgs.vscode-extensions.golang.go
-        pkgs.vscode-extensions.ms-vscode.cpptools
+	#pkgs.vscode-extensions.hashicorp.terraform
+	#pkgs.vscode-extensions.golang.go
+	#pkgs.vscode-extensions.ms-vscode.cpptools
         pkgs.vscode-extensions.jnoortheen.nix-ide
         pkgs.vscode-extensions.editorconfig.editorconfig
         pkgs.vscode-extensions.rust-lang.rust-analyzer

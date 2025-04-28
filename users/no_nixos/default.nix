@@ -48,7 +48,8 @@ in rec {
   };
 
   home.sessionPath = [
-    "$HOME/workspace/flutter/bin"
+    "$HOME/flutter/bin"
+    #"$HOME/workspace/android-studio/bin"
   ];
 
   programs.bash = {
@@ -56,6 +57,8 @@ in rec {
     sessionVariables = { 
       EDITOR = "nvim";
       TERM = "xterm-256color"; 
+      ANDROID_HOME = "$HOME/Android/Sdk";
+      ANDROID_SDK_ROOT = "$HOME/Android/Sdk";
     };
     shellAliases = {
       apply-home = "$HOME/dotfiles/scripts/no_nixos/apply-home.sh";
