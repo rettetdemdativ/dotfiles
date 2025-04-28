@@ -10,20 +10,14 @@
         pkgs.vscode-extensions.dbaeumer.vscode-eslint
         pkgs.vscode-extensions.eamodio.gitlens
         pkgs.vscode-extensions.esbenp.prettier-vscode
-        pkgs.vscode-extensions.ms-python.python
-        pkgs.vscode-extensions.ms-python.black-formatter
-        pkgs.vscode-extensions.ms-python.debugpy
-        #pkgs.vscode-extensions.ms-toolsai.jupyter
-        #pkgs.vscode-extensions.ms-toolsai.jupyter-renderers
         pkgs.vscode-extensions.hashicorp.terraform
         pkgs.vscode-extensions.golang.go
-        pkgs.vscode-extensions.svelte.svelte-vscode
         pkgs.vscode-extensions.ms-vscode.cpptools
         pkgs.vscode-extensions.jnoortheen.nix-ide
         pkgs.vscode-extensions.editorconfig.editorconfig
         pkgs.vscode-extensions.rust-lang.rust-analyzer
-        #pkgs.vscode-extensions.vadimcn.vscode-lldb
         pkgs.vscode-extensions.dart-code.flutter
+	pkgs.vscode-extensions.dart-code.dart-code
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "fleet-theme";

@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, username, ... }: {
   imports = [
     ./helix.nix
     ./neovim.nix
@@ -7,6 +7,7 @@
     ./zsh.nix
     ./ghostty.nix
     ./podman.nix
+    #./android.nix
     #./qemu.nix
     #./aider.nix
   ];
@@ -16,7 +17,6 @@
     docker-compose
     buildah
     distrobox
-    beekeeper-studio
     bruno
     podman-desktop
     lefthook

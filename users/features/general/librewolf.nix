@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, username, ... }: {
   programs.librewolf = {
     enable = true;
     settings = {

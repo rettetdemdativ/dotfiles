@@ -38,7 +38,13 @@
       "/var/log"
       "/var/lib"
     ];
-    files = [ "/etc/nix/id_rsa" ];
+    files = [
+      "/etc/machine-id"
+      {
+        file = "/etc/nix/id_rsa";
+        parentDirectory = { mode = "u=rwx,g=rx,o=rx"; };
+      }
+    ];
   };
 
   boot.tmp = {
@@ -60,18 +66,6 @@
   time.timeZone = "Europe/Amsterdam";
 
   i18n.defaultLocale = "en_US.UTF-8";
-
-  services.logind = {
-    lidSwitch = "hybrid-sleep";
-    lidSwitchDocked = "hybrid-sleep";
-    lidSwitchExternalPower = "hybrid-sleep";
-    extraConfig = ''
-      HandlePowerKey=hybrid-sleep
-      HandleSuspendKey=suspend
-      HandleHibernateKey=hibernate
-      IdleAction=ignore
-    '';
-  };
 
   #security.polkit.enable = true;
 
@@ -176,6 +170,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  programs.ssh.startAgent = true;
 
   services.mullvad-vpn.enable = true;
   services.resolved.enable = true;

@@ -64,7 +64,7 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network#wifi": {
-        "interface": "wlp2*",
+        "interface": "wlp*",
         "format-wifi": "{essid} ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"

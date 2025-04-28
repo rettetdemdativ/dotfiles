@@ -10,7 +10,7 @@ in rec {
     ../features/desktop/zathura.nix
     ../features/development/ghostty.nix
     ../features/development/neovim.nix
-    #../features/development/vscode.nix
+    ../features/development/vscode.nix
     ../features/development/zsh.nix
     ../features/cli
     ../features/media
@@ -27,7 +27,7 @@ in rec {
 
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [ android-studio ];
 
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";

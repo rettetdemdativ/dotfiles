@@ -11,4 +11,16 @@
 
   # For media keys, etc.
   services.acpid = { enable = true; };
+
+  services.logind = {
+    lidSwitch = "hybrid-sleep";
+    lidSwitchDocked = "hybrid-sleep";
+    lidSwitchExternalPower = "hybrid-sleep";
+    extraConfig = ''
+      HandlePowerKey=hybrid-sleep
+      HandleSuspendKey=suspend
+      HandleHibernateKey=hibernate
+      IdleAction=ignore
+    '';
+  };
 }

@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, username, ... }:
 let selectOpts = "{behavior = cmp.SelectBehavior.Select}";
 in {
   imports = [ inputs.nixvim.homeManagerModules.nixvim ];
@@ -30,6 +30,12 @@ in {
         key = "<C-n>";
         options.silent = true;
         action = "<cmd>NvimTreeToggle<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>f";
+        options.silent = true;
+        action = "<cmd>:lua vim.lsp.buf.format { async = true }<CR>";
       }
       {
         mode = "n";
@@ -68,19 +74,26 @@ in {
         action = "<cmd>:Lspsaga hover_doc<CR>";
       }
     ];
-    colorschemes.tokyonight = {
-      enable = true;
-      settings = {
-        style = "night";
-        styles = {
-          comments = { italic = true; };
-          floats = "dark";
-          functions = { };
-          keywords = { italic = true; };
-          sidebars = "dark";
-          variables = { };
-        };
-      };
+    #colorschemes.vscode = {
+    #  enable = true;
+    #  settings = { italic_comments = true; };
+    #};
+    colorschemes.cyberdream.enable = true;
+    #colorschemes.tokyonight = {
+    #  enable = true;
+    #  settings = {
+    #    style = "night";
+    #    styles = { comments = { italic = true; }; };
+    #  };
+    #};
+    highlight = {
+      RDYellow = { fg = "#ffd602"; };
+      RDViolet = { fg = "#d66ed2"; };
+      RDBlue = { fg = "#569cd6"; };
+      RDOrange = { fg = "#d7ba7d"; };
+      RDCyan = { fg = "#4ec9b0"; };
+      RDGreen = { fg = "#6a9955"; };
+      RDRed = { fg = "#d16969"; };
     };
     plugins = {
       # Editor
@@ -98,30 +111,34 @@ in {
         ];
       };
       leap.enable = true;
-      conform-nvim = {
-        enable = true;
-        settings = {
-          format_on_save = {
-            lsp_fallback = "fallback";
-            timeout_ms = 500;
-          };
-          formatters_by_ft = {
-            c = [ "clang-format" ];
-            cpp = [ "clang-format" ];
-            go = [ "gofmt" ];
-            python = [ "black" ];
-            #javascript = [ "prettierd" ];
-            #typescript = [ "prettierd" ];
-            css = [ "prettierd" ];
-            html = [ "prettierd" ];
-            json = [ "prettierd" ];
-            lua = [ "stylua" ];
-            markdown = [ "prettierd" ];
-            nix = [ "nixfmt" ];
-            #perl = [ "perltidy" ];
-          };
-        };
-      };
+      #conform-nvim = {
+      #  enable = true;
+      #  settings = {
+      #    format_on_save = {
+      #      lsp_fallback = "fallback";
+      #      timeout_ms = 500;
+      #    };
+      #    formatters_by_ft = {
+      #      c = [ "clang-format" ];
+      #      cpp = [ "clang-format" ];
+      #      #rust = [ "rust-analyzer" ];
+      #      go = [ "gofmt" ];
+      #      python = [ "black" ];
+      #      javascript = [ "prettierd" ];
+      #      typescript = [ "prettierd" ];
+      #      css = [ "prettierd" ];
+      #      html = [ "prettierd" ];
+      #      json = [ "prettierd" ];
+      #      kotlin = [ "ktfmt" ];
+      #      lua = [ "stylua" ];
+      #      markdown = [ "prettierd" ];
+      #      nix = [ "nixfmt" ];
+      #      terraform = [ "tofu_fmt" ];
+      #      tf = [ "tofu_fmt" ];
+      #      typst = [ "typstyle" ];
+      #    };
+      #  };
+      #};
       lint = {
         enable = true;
         lintersByFt = {
@@ -245,10 +262,12 @@ in {
           docker_compose_language_service.enable = true;
           gopls.enable = true;
           lua_ls.enable = true;
-          nil_ls.enable = true;
+          nil_ls = {
+            enable = true;
+            settings = { formatting.command = [ "nixfmt" ]; };
+          };
           nixd.enable = true;
           perlnavigator.enable = true;
-          pylsp.enable = true;
           ts_ls.enable = true;
         };
       };

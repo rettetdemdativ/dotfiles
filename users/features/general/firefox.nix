@@ -1,4 +1,9 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, username, ... }: {
+
+  home.persistence."/persist/home/${username}" = {
+    directories = [ ".mozilla/firefox" ];
+  };
+
   programs.firefox = {
     enable = true;
     profiles = {

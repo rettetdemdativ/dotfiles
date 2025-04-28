@@ -21,8 +21,12 @@
               "rust-src"
               "rustfmt"
               "clippy"
+              "rust-analyzer"
             ])
           ];
+          shellHook = ''
+            export PATH=$PATH:~/.cargo/bin
+          '';
           RUST_BACKTRACE = 1;
         };
       });

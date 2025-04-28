@@ -25,6 +25,15 @@
     atomix # puzzle game
   ]);
 
+  services.logind = {
+    extraConfig = ''
+      HandlePowerKey=hybrid-sleep
+      HandleSuspendKey=suspend
+      HandleHibernateKey=hibernate
+      IdleAction=ignore
+    '';
+  };
+
   programs.gamemode.enable = true;
 
   programs.steam = {

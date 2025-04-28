@@ -1,7 +1,8 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, username, ... }: {
   imports = [
     ./mpd.nix
     ./cava.nix
+    #./newsboat.nix
     #./ncmpcpp.nix
   ];
 
