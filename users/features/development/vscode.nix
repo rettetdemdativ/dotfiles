@@ -19,6 +19,7 @@
         pkgs.vscode-extensions.ms-python.debugpy
         #pkgs.vscode-extensions.ms-toolsai.jupyter
         #pkgs.vscode-extensions.ms-toolsai.jupyter-renderers
+        pkgs.vscode-extensions.redhat.java
         pkgs.vscode-extensions.hashicorp.terraform
         pkgs.vscode-extensions.golang.go
         pkgs.vscode-extensions.svelte.svelte-vscode
