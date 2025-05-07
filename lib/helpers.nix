@@ -25,6 +25,7 @@
           };
           home-manager.extraSpecialArgs.flake-inputs = inputs;
         }
+        inputs.nix-ld.nixosModules.nix-ld
         inputs.niri.nixosModules.niri
         ../system
       ] ++ (inputs.nixpkgs.lib.optionals (installer != null) [ installer ]);

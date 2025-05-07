@@ -93,6 +93,9 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+  # nix-ld for running executables that were not created for NixOS
+  programs.nix-ld.dev.enable = true;
+
   #security.doas.enable = true;
   security.sudo.enable = true;
   #security.doas.extraRules = [{
