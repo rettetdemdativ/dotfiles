@@ -4,6 +4,7 @@
     settings = {
       "sidebar.revamp" = true;
       "sidebar.verticalTabs" = true;
+      "browser.tabs.groups.enabled" = true;
       "privacy.resistFingerprinting.letterboxing" = true;
     };
   };
