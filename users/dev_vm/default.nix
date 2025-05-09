@@ -17,6 +17,8 @@ in rec {
     allowUnfreePredicate = (_: true);
   };
 
+  home.packages = with pkgs; [ tig ];
+
   programs.zsh = {
     enable = true;
     shellAliases = {

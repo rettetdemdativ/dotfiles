@@ -27,7 +27,7 @@ in rec {
 
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [ android-studio ];
+  home.packages = with pkgs; [ android-studio tig ];
 
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
