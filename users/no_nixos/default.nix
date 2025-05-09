@@ -85,6 +85,10 @@ in rec {
     '';
   };
 
+  programs.tmux = {
+    enable = true;
+  };
+
   #programs.niri = {
   #  enable = true;
   #  package = with pkgs; (config.lib.nixGL.wrap niri);

@@ -42,4 +42,8 @@ in rec {
       spice-connect = "$HOME/dotfiles/scripts/no_nixos/proxmox/spice-connect.sh";
     };
   };
+
+  programs.tmux = {
+    enable = true;
+  };
 }
