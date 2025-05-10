@@ -193,7 +193,7 @@ layout {
     // default-column-width {}
 
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 12
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
     // You can think of them as a kind of outer gaps. They are set in logical pixels.
@@ -262,7 +262,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    slowdown 0.7
 
     // You can configure all individual animations.
     // Available settings are the same for all of them.
@@ -389,7 +389,7 @@ animations {
 
 
 window-rule {
-    geometry-corner-radius 12
+    //geometry-corner-radius 12
     clip-to-geometry true
 }
 
