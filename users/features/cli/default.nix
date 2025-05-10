@@ -1,4 +1,6 @@
 { pkgs, username, ... }: {
+  imports = [ ./tmux.nix ];
+
   home.packages = with pkgs; [
     git-crypt
     gnupg
