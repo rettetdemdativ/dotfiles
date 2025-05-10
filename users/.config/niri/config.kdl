@@ -262,7 +262,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 0.7
+    slowdown 0.6
 
     // You can configure all individual animations.
     // Available settings are the same for all of them.
@@ -306,7 +306,7 @@ animations {
     // Animation when switching workspaces up and down,
     // including after the touchpad gesture.
     workspace-switch {
-        // off
+        off
         // spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
     }
 
