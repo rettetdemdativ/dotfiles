@@ -17,10 +17,9 @@
     docker-compose
     buildah
     distrobox
-    bruno
-    podman-desktop
     lefthook
     pre-commit
+    tig
 
     # Used for various development tools
     nodePackages.prettier
