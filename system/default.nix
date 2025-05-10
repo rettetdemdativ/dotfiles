@@ -12,6 +12,9 @@
     });
 
   nix = {
+    package = lib.mkDefault pkgs.nix;
+    settings = { warn-dirty = false; };
+
     gc = {
       automatic = true;
       options = "--delete-older-than 14d";

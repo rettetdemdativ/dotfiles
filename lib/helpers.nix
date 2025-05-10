@@ -4,7 +4,10 @@
     inputs.nixpkgs.lib.nixosSystem {
       pkgs = import nixpkgs {
         system = platform;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+          allowUnfreePredicate = (_: true);
+        };
       };
       specialArgs = { inherit inputs outputs hostname username stateVersion; };
       modules = [
