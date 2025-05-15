@@ -17,8 +17,8 @@
         pkgs.vscode-extensions.ms-python.python
         pkgs.vscode-extensions.ms-python.black-formatter
         pkgs.vscode-extensions.ms-python.debugpy
-        #pkgs.vscode-extensions.ms-toolsai.jupyter
-        #pkgs.vscode-extensions.ms-toolsai.jupyter-renderers
+        pkgs.vscode-extensions.ms-toolsai.jupyter
+        pkgs.vscode-extensions.ms-toolsai.jupyter-renderers
         pkgs.vscode-extensions.redhat.java
         pkgs.vscode-extensions.hashicorp.terraform
         pkgs.vscode-extensions.golang.go
@@ -40,6 +40,12 @@
           publisher = "Angular";
           version = "19.0.4";
           sha256 = "sha256-ERsbEtx/PaVCky0TWWlBNqSIyTDwVKpYaZtYaSqQw9g=";
+        }
+        {
+          name = "jupyter-hub";
+          publisher = "ms-toolsai";
+          version = "2024.10.1002831100";
+          sha256 = "sha256-5IRczwXbYkDdYEOXvQnnH+HJNLvsRsrZ6fnoVCveqrs=";
         }
       ];
       userSettings = {
