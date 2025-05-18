@@ -1,14 +1,7 @@
-{ inputs, outputs, nixpkgs, stateVersion, ... }: {
+{ inputs, outputs, pkgs, stateVersion, ... }: {
   mkHost =
     { hostname, username, platform ? "x86_64-linux", disk, installer ? null }:
     inputs.nixpkgs.lib.nixosSystem {
-      pkgs = import nixpkgs {
-        system = platform;
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = (_: true);
-        };
-      };
       specialArgs = { inherit inputs outputs hostname username stateVersion; };
       modules = [
         inputs.disko.nixosModules.disko
@@ -24,7 +17,7 @@
           home-manager.users.${username} = import ../users;
 
           home-manager.extraSpecialArgs = {
-            inherit inputs outputs hostname username stateVersion;
+            inherit inputs outputs pkgs hostname username stateVersion;
           };
           home-manager.extraSpecialArgs.flake-inputs = inputs;
         }
@@ -35,10 +28,6 @@
     };
 
   forAllSystems = inputs.nixpkgs.lib.genAttrs [
-    "aarch64-linux"
-    "i686-linux"
     "x86_64-linux"
-    "aarch64-darwin"
-    "x86_64-darwin"
   ];
 }

@@ -26,7 +26,14 @@
     let
       inherit (self) outputs;
       stateVersion = "23.05";
-      libx = import ../../lib { inherit inputs outputs nixpkgs stateVersion; };
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config = {
+          allowUnfree = true;
+          allowUnfreePredicate = (_: true);
+        };
+      };
+      libx = import ../../lib { inherit inputs outputs pkgs stateVersion; };
     in {
       nixosConfigurations = {
         # sudo nixos-rebuild switch --flake .#
