@@ -3,8 +3,8 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      font-family = "JetBrains Mono";
-      font-size = 11;
+      font-family = "Iosevka NF";
+      font-size = 12;
       font-style = "Medium";
       font-style-bold = "Bold";
       font-style-italic = "Medium Italic";
