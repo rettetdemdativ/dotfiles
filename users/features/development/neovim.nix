@@ -73,19 +73,37 @@ in {
         options.silent = true;
         action = "<cmd>:Lspsaga hover_doc<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>tt";
+        options.silent = true;
+        action = "<cmd>:Trouble diagnostics toggle<cr>";
+      }
+      {
+        mode = "n";
+        key = "<leader>ts";
+        options.silent = true;
+        action = "<cmd>:Trouble symbols toggle focus=false<cr>";
+      }
+      {
+        mode = "n";
+        key = "<leader>td";
+        options.silent = true;
+        action = "<cmd>:Trouble lsp toggle focus=false win.position=right<cr>";
+      }
     ];
-    #colorschemes.vscode = {
-    #  enable = true;
-    #  settings = { italic_comments = true; };
-    #};
-    colorschemes.cyberdream.enable = true;
-    #colorschemes.tokyonight = {
-    #  enable = true;
-    #  settings = {
-    #    style = "night";
-    #    styles = { comments = { italic = true; }; };
-    #  };
-    #};
+    colorschemes.vscode = {
+      enable = true;
+      settings = { italic_comments = true; };
+    };
+    #colorschemes.cyberdream.enable = true;
+	#colorschemes.tokyonight = {
+    	#  enable = true;
+    	#  settings = {
+    	#    style = "night";
+    	#    styles = { comments = { italic = true; }; };
+    	#  };
+    	#};
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
@@ -174,7 +192,7 @@ in {
           perl
           python
           regex
-	  rust
+          rust
           sql
           toml
           tsx
@@ -267,12 +285,12 @@ in {
             settings = { formatting.command = [ "nixfmt" ]; };
           };
           nixd.enable = true;
-	  perlpls = {
-	    enable = true;
-			#settings = {
-	    		#    inc = [ "~/workspace/projects/proxmox" ];
-	    		#};
-	  };
+          perlpls = {
+            enable = true;
+            #settings = {
+            #    inc = [ "~/workspace/projects/proxmox" ];
+            #};
+          };
           ts_ls.enable = true;
         };
       };
@@ -422,13 +440,9 @@ in {
 
       autoclose.enable = true;
 
-      rustaceanvim = {
-	enable = true;
-      };
+      rustaceanvim = { enable = true; };
 
-      flutter-tools = {
-        enable = true;
-      };
+      flutter-tools = { enable = true; };
     };
   };
 }
