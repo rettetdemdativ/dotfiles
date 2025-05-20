@@ -439,6 +439,17 @@ in {
       dap.enable = true;
 
       autoclose.enable = true;
+      whitespace = {
+	enable = true;
+	settings = {
+	  ignored_filetypes = [
+	    "TelescopePrompt"
+	    "Trouble"
+	    "checkhealth"
+	    "fzf"
+	  ];
+	};
+      };
 
       rustaceanvim = { enable = true; };
 
