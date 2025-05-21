@@ -76,12 +76,30 @@ in {
         options.silent = true;
         action = "<cmd>:Lspsaga hover_doc<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>tt";
+        options.silent = true;
+        action = "<cmd>:Trouble diagnostics toggle<cr>";
+      }
+      {
+        mode = "n";
+        key = "<leader>ts";
+        options.silent = true;
+        action = "<cmd>:Trouble symbols toggle focus=false<cr>";
+      }
+      {
+        mode = "n";
+        key = "<leader>td";
+        options.silent = true;
+        action = "<cmd>:Trouble lsp toggle focus=false win.position=right<cr>";
+      }
     ];
-    #colorschemes.vscode = {
-    #  enable = true;
-    #  settings = { italic_comments = true; };
-    #};
-    colorschemes.cyberdream.enable = true;
+    colorschemes.vscode = {
+      enable = true;
+      settings = { italic_comments = true; };
+    };
+    #colorschemes.cyberdream.enable = true;
     #colorschemes.tokyonight = {
     #  enable = true;
     #  settings = {
@@ -428,6 +446,13 @@ in {
       rustaceanvim = { enable = true; };
 
       autoclose.enable = true;
+      whitespace = {
+        enable = true;
+        settings = {
+          ignored_filetypes =
+            [ "TelescopePrompt" "Trouble" "checkhealth" "fzf" ];
+        };
+      };
     };
   };
 }
