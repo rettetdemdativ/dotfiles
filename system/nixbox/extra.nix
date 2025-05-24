@@ -2,6 +2,8 @@
 
 {
   nixpkgs.config = {
+    allowUnfreePredicate = pkg:
+      builtins.elem (lib.getName pkg) [ "steam" "steam-unwrapped" ];
     packageOverrides = let
       curlWithGnuTls = (pkgs.curl.override {
         gnutlsSupport = true;
