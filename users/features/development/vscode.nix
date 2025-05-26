@@ -10,9 +10,6 @@
         pkgs.vscode-extensions.dbaeumer.vscode-eslint
         pkgs.vscode-extensions.eamodio.gitlens
         pkgs.vscode-extensions.esbenp.prettier-vscode
-	#pkgs.vscode-extensions.hashicorp.terraform
-	#pkgs.vscode-extensions.golang.go
-	#pkgs.vscode-extensions.ms-vscode.cpptools
         pkgs.vscode-extensions.jnoortheen.nix-ide
         pkgs.vscode-extensions.editorconfig.editorconfig
         pkgs.vscode-extensions.rust-lang.rust-analyzer
@@ -30,6 +27,12 @@
           publisher = "Angular";
           version = "19.0.4";
           sha256 = "sha256-ERsbEtx/PaVCky0TWWlBNqSIyTDwVKpYaZtYaSqQw9g=";
+        }
+        {
+          name = "jupyter-hub";
+          publisher = "ms-toolsai";
+          version = "2024.10.1002831100";
+          sha256 = "sha256-5IRczwXbYkDdYEOXvQnnH+HJNLvsRsrZ6fnoVCveqrs=";
         }
       ];
       userSettings = {
@@ -51,7 +54,7 @@
           "source.fixAll.eslint" = "explicit";
           "source.organizeImports" = "explicit";
         };
-        "editor.fontFamily" = "Iosevka NF";
+        "editor.fontFamily" = "JetBrains Mono";
         "editor.fontLigatures" = true;
         "editor.fontSize" = 15;
         "editor.formatOnSave" = false;

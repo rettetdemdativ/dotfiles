@@ -1,6 +1,21 @@
 { lib, config, pkgs, ... }:
 
 {
+  nixpkgs.config = {
+    allowUnfreePredicate = pkg:
+      builtins.elem (lib.getName pkg) [ "steam" "steam-unwrapped" ];
+    packageOverrides = let
+      curlWithGnuTls = (pkgs.curl.override {
+        gnutlsSupport = true;
+        opensslSupport = false;
+      });
+    in pkgs: {
+      steam = pkgs.steam.override {
+        extraPkgs = pkgs: with pkgs; [ curlWithGnuTls curlWithGnuTls.out ];
+      };
+    };
+  };
+
   # In addition to niri as a default, nixbox also has GNOME
   services.xserver = {
     enable = true;

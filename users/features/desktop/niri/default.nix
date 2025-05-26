@@ -45,7 +45,7 @@ in {
       monitor_laptop =
         "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh laptop";
     };
-    initExtraFirst = ''
+    initContent = lib.mkBefore ''
       if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
         export QT_QPA_PLATFORM=wayland
         export QT_WAYLAND_DISABLE_WINDOWDECORATION=1

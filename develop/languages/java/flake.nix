@@ -19,6 +19,10 @@
         (system: f { pkgs = import nixpkgs { inherit system; }; });
     in {
       devShells = forAllSystems ({ pkgs }: {
+        NIX_LD_LIBRARY_PATH =
+          pkgs.lib.makeLibraryPath [ pkgs.stdenv.cc.cc pkgs.openssl ];
+        NIX_LD =
+          pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker";
         default = pkgs.mkShell {
           packages = with pkgs; [
             jdk

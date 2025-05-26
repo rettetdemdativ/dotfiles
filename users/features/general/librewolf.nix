@@ -5,7 +5,7 @@
       "sidebar.revamp" = true;
       "sidebar.verticalTabs" = true;
       "privacy.resistFingerprinting" = false;
-      #"privacy.resistFingerprinting.letterboxing" = true;
+      "browser.tabs.groups.enabled" = true;
     };
   };
 }

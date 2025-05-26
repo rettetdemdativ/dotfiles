@@ -97,13 +97,13 @@ in {
       settings = { italic_comments = true; };
     };
     #colorschemes.cyberdream.enable = true;
-	#colorschemes.tokyonight = {
-    	#  enable = true;
-    	#  settings = {
-    	#    style = "night";
-    	#    styles = { comments = { italic = true; }; };
-    	#  };
-    	#};
+    #colorschemes.tokyonight = {
+    #  enable = true;
+    #  settings = {
+    #    style = "night";
+    #    styles = { comments = { italic = true; }; };
+    #  };
+    #};
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
@@ -454,6 +454,14 @@ in {
       rustaceanvim = { enable = true; };
 
       flutter-tools = { enable = true; };
+      autoclose.enable = true;
+      whitespace = {
+        enable = true;
+        settings = {
+          ignored_filetypes =
+            [ "TelescopePrompt" "Trouble" "checkhealth" "fzf" ];
+        };
+      };
     };
   };
 }

@@ -1,5 +1,6 @@
 { inputs, lib, config, pkgs, username, ... }: {
   imports = [
+    ./git.nix
     ./helix.nix
     ./neovim.nix
     ./vscode.nix
@@ -17,10 +18,9 @@
     docker-compose
     buildah
     distrobox
-    bruno
-    podman-desktop
     lefthook
     pre-commit
+    tig
 
     # Used for various development tools
     nodePackages.prettier

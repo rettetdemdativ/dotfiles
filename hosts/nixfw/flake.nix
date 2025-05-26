@@ -14,7 +14,11 @@
     niri.url = "github:sodiboo/niri-flake";
     nixvim = {
       url = "github:nix-community/nixvim";
-      #inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-ld = {
+      url = "github:Mic92/nix-ld";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -22,7 +26,14 @@
     let
       inherit (self) outputs;
       stateVersion = "23.05";
-      libx = import ../../lib { inherit inputs outputs nixpkgs stateVersion; };
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config = {
+          allowUnfree = true;
+          allowUnfreePredicate = (_: true);
+        };
+      };
+      libx = import ../../lib { inherit inputs outputs pkgs stateVersion; };
     in {
       nixosConfigurations = {
         nixfw = libx.mkHost {

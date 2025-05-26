@@ -12,6 +12,9 @@
     });
 
   nix = {
+    package = lib.mkDefault pkgs.nix;
+    settings = { warn-dirty = false; };
+
     gc = {
       automatic = true;
       options = "--delete-older-than 14d";
@@ -52,22 +55,36 @@
     tmpfsSize = "95%";
   };
 
-  networking.hostName = hostname;
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = hostname;
+    networkmanager.enable = true;
 
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp60s0u2u4.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
+    # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+    # (the default) this is the recommended approach. When using systemd-networkd it's
+    # still possible to use this option, but it's recommended to use it in conjunction
+    # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+    useDHCP = lib.mkDefault true;
+    # interfaces.enp60s0u2u4.useDHCP = lib.mkDefault true;
+    # interfaces.wlp2s0.useDHCP = lib.mkDefault true;
+
+    nameservers = [ "194.242.2.3" "9.9.9.9" ];
+  };
+
+  services.resolved = {
+    enable = true;
+    dnssec = "true";
+    fallbackDns = [ "194.242.2.3" "9.9.9.9" ];
+    dnsovertls = "true";
+  };
+
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+  programs.ssh.startAgent = true;
+
+  services.mullvad-vpn.enable = true;
 
   time.timeZone = "Europe/Amsterdam";
-
   i18n.defaultLocale = "en_US.UTF-8";
-
-  #security.polkit.enable = true;
 
   security.pam.services.swaylock = {
     text = ''
@@ -92,6 +109,9 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
+
+  # nix-ld for running executables that were not created for NixOS
+  programs.nix-ld.dev.enable = true;
 
   #security.doas.enable = true;
   security.sudo.enable = true;
@@ -167,13 +187,6 @@
     pkgs.nerd-fonts.mononoki
     pkgs.nerd-fonts.fira-code
   ];
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  programs.ssh.startAgent = true;
-
-  services.mullvad-vpn.enable = true;
-  services.resolved.enable = true;
 
   users.mutableUsers = false;
   users.users = {

@@ -2,6 +2,5 @@
   imports = [
     ./neomutt.nix
   ];
-
   home.packages = with pkgs; [ qalculate-gtk ];
 }

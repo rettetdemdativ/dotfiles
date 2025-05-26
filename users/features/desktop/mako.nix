@@ -1,9 +1,11 @@
 { inputs, lib, config, pkgs, ... }: {
   services.mako = {
     enable = true;
-    backgroundColor = "#000000";
-    borderColor = "#ffffff";
-    defaultTimeout = 3000;
-    font = "Roboto 10";
+    settings = {
+      background-color = "#000000";
+      border-color = "#ffffff";
+      default-timeout = 3000;
+      font = "Roboto 10";
+    };
   };
 }

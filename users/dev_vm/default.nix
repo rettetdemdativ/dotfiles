@@ -2,6 +2,7 @@
 let
 in rec {
   imports = [
+    ../features/cli/tmux.nix
     ../features/development/neovim.nix
   ];
 
