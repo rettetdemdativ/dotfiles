@@ -185,7 +185,7 @@ in {
           json
           jsonc
           llvm
-          lua
+	  #lua
           make
           markdown
           nix
