@@ -558,6 +558,7 @@ binds {
     Mod+R { switch-preset-column-width; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
+    Mod+Ctrl+Shift+F { toggle-windowed-fullscreen; }
     Mod+E { expand-column-to-available-width; }
     Mod+C { center-column; }
 
@@ -587,7 +588,7 @@ binds {
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
-    Mod+Shift+S { spawn "grim" "-g" "'$(slurp)'" "$HOME/Pictures/Screenshots/$(date +'%s_grim.png'"; }
+    Mod+Shift+S { screenshot; }
 
     Mod+Shift+W { spawn "systemctl" "--user" "restart" "swaybg"; }
 
@@ -602,6 +603,8 @@ binds {
     // directly scanned out. It's therefore useful to check if direct scanout
     // is working.
     // Mod+Shift+Ctrl+T { toggle-debug-tint; }
+
+    Mod+Tab { toggle-overview; }
 }
 
 // Settings for debugging. Not meant for normal use.

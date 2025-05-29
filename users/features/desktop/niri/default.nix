@@ -56,7 +56,7 @@ in {
         export MOZ_WEBRENDER=1
         #exec dbus-run-session niri-session
         exec niri-session
-      fi	
+      fi
     '';
   };
 }
