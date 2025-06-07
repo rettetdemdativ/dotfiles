@@ -3,6 +3,7 @@
     ./mpd.nix
     ./cava.nix
     ./newsboat.nix
+    ./streamlink.nix
     #./ncmpcpp.nix
   ];
 
