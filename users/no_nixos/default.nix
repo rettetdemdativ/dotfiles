@@ -8,6 +8,7 @@ in rec {
     (import ../features/desktop/swaybg.nix { wpPath = "/home/${username}/Pictures/Wallpapers"; })
     ../features/desktop/fuzzel.nix
     ../features/desktop/zathura.nix
+    ../features/development/android.nix
     ../features/development/ghostty.nix
     ../features/development/neovim.nix
     ../features/development/vscode.nix
@@ -27,7 +28,7 @@ in rec {
 
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [ android-studio tig ];
+  home.packages = with pkgs; [ tig ];
 
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
