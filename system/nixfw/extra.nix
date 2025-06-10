@@ -1,6 +1,36 @@
 { config, pkgs, ... }:
 
 {
+  # Necessary for the dispatcher script to work as otherwise the
+  # systemd unit has no access to nmcli
+  systemd.services.NetworkManager-dispatcher = {
+    path = [ pkgs.networkmanager ];
+  };
+
+  # Adds dispatcher script that turns off WiFi if ethernet is connected
+  networking.networkmanager.dispatcherScripts = [{
+    source = pkgs.writeText "wifi-wired-exclusive" ''
+      enable_disable_wifi ()
+      {
+          result=$(nmcli dev | grep "ethernet" | grep -w "connected")
+          if [ -n "$result" ]; then
+              nmcli radio wifi off
+          else
+              nmcli radio wifi on
+          fi
+      }
+
+      if [ "$2" = "up" ]; then
+          enable_disable_wifi
+      fi
+
+      if [ "$2" = "down" ]; then
+          enable_disable_wifi
+      fi
+    '';
+    type = "basic";
+  }];
+
   services.hardware.bolt.enable = true;
   services.fwupd.enable = true;
 

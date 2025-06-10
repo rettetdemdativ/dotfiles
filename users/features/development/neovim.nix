@@ -95,7 +95,10 @@ in {
       enable = true;
       settings = { italic_comments = true; };
     };
-    #colorschemes.cyberdream.enable = true;
+    #colorschemes.cyberdream = {
+    #  enable = true;
+    #  settings = { italic_comments = true; };
+    #};
     #colorschemes.tokyonight = {
     #  enable = true;
     #  settings = {

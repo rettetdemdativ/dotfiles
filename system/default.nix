@@ -55,9 +55,13 @@
     tmpfsSize = "95%";
   };
 
+
   networking = {
     hostName = hostname;
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      # Additional configuration might happen per client (some have WiFi, etc.)
+    };
 
     # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
     # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -105,7 +109,11 @@
 
   programs.fuse.userAllowOther = true;
 
-  programs.niri.enable = true;
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-unstable;
+  };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
