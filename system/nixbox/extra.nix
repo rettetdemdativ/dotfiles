@@ -17,11 +17,8 @@
   };
 
   # In addition to niri as a default, nixbox also has GNOME
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
 
   environment.gnome.excludePackages = (with pkgs; [
     cheese
