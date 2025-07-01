@@ -37,6 +37,7 @@ in rec {
     sessionVariables = { 
       EDITOR = "nvim";
       TERM = "xterm-256color"; 
+      PATH = "$PATH:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin";
     };
     shellAliases = {
       apply-home = "$HOME/dotfiles/scripts/dev_vm/apply-home.sh";
