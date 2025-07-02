@@ -20,6 +20,8 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    #nixpkgs-master.url = "github:nixos/nixpkgs/master";
   };
 
   outputs = inputs@{ self, nixpkgs, disko, home-manager, nixos-hardware, ... }:
