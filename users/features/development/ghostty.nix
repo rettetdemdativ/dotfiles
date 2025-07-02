@@ -1,5 +1,9 @@
 { inputs, lib, config, pkgs, username, ... }: {
   programs.ghostty = {
+    # Temporary fix for https://github.com/ghostty-org/ghostty/issues/7724
+    package =
+      inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
     enable = true;
     enableZshIntegration = true;
     settings = {

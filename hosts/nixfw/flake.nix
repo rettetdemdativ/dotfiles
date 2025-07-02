@@ -21,10 +21,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Temporary fix for https://github.com/ghostty-org/ghostty/issues/7724
+    ghostty = { url = "github:ghostty-org/ghostty"; };
+
     #nixpkgs-master.url = "github:nixos/nixpkgs/master";
   };
 
-  outputs = inputs@{ self, nixpkgs, disko, home-manager, nixos-hardware, ... }:
+  outputs = inputs@{ self, nixpkgs, disko, home-manager, nixos-hardware, ghostty, ... }:
     let
       inherit (self) outputs;
       stateVersion = "23.05";
