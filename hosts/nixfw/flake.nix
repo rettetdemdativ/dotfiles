@@ -35,6 +35,7 @@
       };
       libx = import ../../lib { inherit inputs outputs pkgs stateVersion; };
     in {
+      overlays = import ../../overlays { inherit inputs outputs; };
       nixosConfigurations = {
         nixfw = libx.mkHost {
           hostname = "nixfw";
