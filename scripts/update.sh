@@ -1,4 +1,4 @@
 #!/bin/sh
 pushd ~/dotfiles/hosts/"$HOSTNAME"
-nix flake update
+sudo nix flake update
 popd
