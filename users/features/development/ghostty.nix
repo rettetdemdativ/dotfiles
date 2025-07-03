@@ -1,8 +1,13 @@
 { inputs, lib, config, pkgs, username, ... }: {
   programs.ghostty = {
     # Temporary fix for https://github.com/ghostty-org/ghostty/issues/7724
-    package =
-      inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    package = pkgs.ghostty.overrideAttrs (_: {
+      preBuild = ''
+        shopt -s globstar
+        sed -i 's/^const xev = @import("xev");$/const xev = @import("xev").Epoll;/' **/*.zig
+        shopt -u globstar
+      '';
+    });
 
     enable = true;
     enableZshIntegration = true;
