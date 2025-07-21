@@ -54,5 +54,6 @@
       # Maven, unfortunately
       ".m2"
     ];
+    files = [ ".terraformrc" ];
   };
 }
