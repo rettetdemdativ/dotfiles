@@ -4,7 +4,7 @@
     enableZshIntegration = true;
     settings = {
       font-family = "JetBrains Mono";
-      font-size = 12;
+      font-size = 11;
       #$font-style = "Regular";
       #$font-style-bold = "Bold";
       #$font-style-italic = "Italic";
