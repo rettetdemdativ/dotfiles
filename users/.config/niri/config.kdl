@@ -214,6 +214,8 @@ layout {
     //   together with the previously focused column.
     // - "always", the focused column will always be centered.
     center-focused-column "never"
+
+    always-center-single-column
 }
 
 // Add lines like this to spawn processes at startup.
