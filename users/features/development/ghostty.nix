@@ -3,12 +3,12 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      font-family = "Iosevka NF";
+      font-family = "JetBrains Mono";
       font-size = 12;
-      font-style = "Medium";
-      font-style-bold = "Bold";
-      font-style-italic = "Medium Italic";
-      font-style-bold-italic = "Bold Italic";
+      #$font-style = "Regular";
+      #$font-style-bold = "Bold";
+      #$font-style-italic = "Italic";
+      #$font-style-bold-italic = "Bold Italic";
 
       theme = "Monokai Remastered";
       #theme = "Dark Pastel"

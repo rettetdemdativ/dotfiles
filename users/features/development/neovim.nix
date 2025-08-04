@@ -95,21 +95,21 @@ in {
         action = "<cmd>:Trouble lsp toggle focus=false win.position=right<cr>";
       }
     ];
-    colorschemes.vscode = {
-      enable = true;
-      settings = { italic_comments = true; };
-    };
+    #colorschemes.vscode = {
+    #  enable = true;
+    #  settings = { italic_comments = true; };
+    #};
     #colorschemes.cyberdream = {
     #  enable = true;
     #  settings = { italic_comments = true; };
     #};
-    #colorschemes.tokyonight = {
-    #  enable = true;
-    #  settings = {
-    #    style = "night";
-    #    styles = { comments = { italic = true; }; };
-    #  };
-    #};
+    colorschemes.tokyonight = {
+      enable = true;
+      settings = {
+        style = "storm";
+        styles = { comments = { italic = true; }; };
+      };
+    };
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
