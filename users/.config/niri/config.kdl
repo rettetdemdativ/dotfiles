@@ -154,8 +154,6 @@ layout {
         // To do that, set relative-to="workspace-view".
         //
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-
-        always-center-single-column
     }
 
     // You can also add a border. It's similar to the focus ring, but always visible.
