@@ -1,6 +1,13 @@
-{ inputs, config, pkgs, username, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  username,
+  ...
+}:
 let
-in rec {
+in
+rec {
   imports = [
     ../features/cli/tmux.nix
     ../features/development/neovim.nix
@@ -18,7 +25,10 @@ in rec {
     allowUnfreePredicate = (_: true);
   };
 
-  home.packages = with pkgs; [ tig ];
+  home.packages = with pkgs; [
+    tig
+    poedit
+  ];
 
   programs.zsh = {
     enable = true;
@@ -34,9 +44,9 @@ in rec {
 
   programs.bash = {
     enable = true;
-    sessionVariables = { 
+    sessionVariables = {
       EDITOR = "nvim";
-      TERM = "xterm-256color"; 
+      TERM = "xterm-256color";
       PATH = "$PATH:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin";
     };
     shellAliases = {
