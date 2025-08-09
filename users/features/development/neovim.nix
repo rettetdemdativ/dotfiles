@@ -1,7 +1,7 @@
 { inputs, config, pkgs, username, ... }:
 let selectOpts = "{behavior = cmp.SelectBehavior.Select}";
 in {
-  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
+  imports = [ inputs.nixvim.homeModules.nixvim ];
 
   home.persistence."/persist/home/${username}" = {
     directories = [ ".local/share/nvim/lazy" ".local/share/nvim/mason" ];
@@ -103,13 +103,14 @@ in {
     #  enable = true;
     #  settings = { italic_comments = true; };
     #};
-    colorschemes.tokyonight = {
-      enable = true;
-      settings = {
-        style = "storm";
-        styles = { comments = { italic = true; }; };
-      };
-    };
+    #colorschemes.tokyonight = {
+    #  enable = true;
+    #  settings = {
+    #    style = "storm";
+    #    styles = { comments = { italic = true; }; };
+    #  };
+    #};
+    colorschemes.gruvbox = { enable = true; };
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
@@ -225,7 +226,7 @@ in {
         settings = {
           options = {
             globalstatus = true;
-            theme = "papercolor_light";
+            theme = "horizon";
             section_separators = {
               left = "";
               right = "";
@@ -239,9 +240,11 @@ in {
       };
       nvim-tree = {
         enable = true;
-        git.ignore = false;
-        updateFocusedFile.enable = true;
-        view = { side = "right"; };
+        settings = {
+          view = { side = "right"; };
+          git.ignore = false;
+          update_focused_file.enable = true;
+        };
       };
       barbar = {
         enable = true;
@@ -298,6 +301,11 @@ in {
           nixd.enable = true;
           perlnavigator.enable = true;
           pylsp.enable = true;
+          rust_analyzer = {
+            enable = true;
+            installRustc = false;
+            installCargo = false;
+          };
           svelte.enable = true;
           tinymist.enable = true;
           ts_ls.enable = true;
@@ -333,7 +341,7 @@ in {
       dap-python.enable = true;
       dap.enable = true;
 
-      rustaceanvim = { enable = true; };
+      #rustaceanvim.enable = true;
 
       autoclose.enable = true;
       whitespace = {
