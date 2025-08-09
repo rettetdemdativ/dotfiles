@@ -27,7 +27,5 @@
       ] ++ (inputs.nixpkgs.lib.optionals (installer != null) [ installer ]);
     };
 
-  forAllSystems = inputs.nixpkgs.lib.genAttrs [
-    "x86_64-linux"
-  ];
+  forAllSystems = inputs.nixpkgs.lib.genAttrs [ "x86_64-linux" ];
 }

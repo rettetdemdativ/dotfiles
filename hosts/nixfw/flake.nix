@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    #nixpkgs-master.url = "github:nixos/nixpkgs/master";
+
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
@@ -20,8 +22,6 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    #nixpkgs-master.url = "github:nixos/nixpkgs/master";
   };
 
   outputs = inputs@{ self, nixpkgs, disko, home-manager, nixos-hardware, ... }:
