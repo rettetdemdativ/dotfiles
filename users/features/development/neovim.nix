@@ -246,23 +246,6 @@ in {
           update_focused_file.enable = true;
         };
       };
-      barbar = {
-        enable = true;
-        settings = { animations = false; };
-        keymaps = {
-          close = { key = "<C-d>"; };
-          closeAllButCurrent = { key = "<C-S-d>"; };
-          goTo1 = { key = "<C-1>"; };
-          goTo2 = { key = "<C-2>"; };
-          goTo3 = { key = "<C-3>"; };
-          goTo4 = { key = "<C-4>"; };
-          goTo5 = { key = "<C-5>"; };
-          goTo6 = { key = "<C-6>"; };
-          goTo7 = { key = "<C-7>"; };
-          goTo8 = { key = "<C-8>"; };
-          goTo9 = { key = "<C-9>"; };
-        };
-      };
       telescope.enable = true;
       which-key.enable = true;
       web-devicons.enable = true;
