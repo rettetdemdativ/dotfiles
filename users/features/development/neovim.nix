@@ -284,11 +284,11 @@ in {
           nixd.enable = true;
           perlnavigator.enable = true;
           pylsp.enable = true;
-          rust_analyzer = {
-            enable = true;
-            installRustc = false;
-            installCargo = false;
-          };
+          #rust_analyzer = {
+          #  enable = true;
+          #  installRustc = false;
+          #  installCargo = false;
+          #};
           svelte.enable = true;
           tinymist.enable = true;
           ts_ls.enable = true;
@@ -324,7 +324,7 @@ in {
       dap-python.enable = true;
       dap.enable = true;
 
-      #rustaceanvim.enable = true;
+      rustaceanvim.enable = true;
 
       autoclose.enable = true;
       whitespace = {
