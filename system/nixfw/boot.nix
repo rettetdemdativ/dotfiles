@@ -11,8 +11,8 @@
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
     loader.systemd-boot.enable = true;
-    #kernelPackages = pkgs.linuxPackages_latest;
-    kernelPackages = pkgs.linuxPackages_6_15;
+    kernelPackages = pkgs.linuxPackages_latest;
+    #kernelPackages = pkgs.linuxPackages_6_15;
 
     # Specific version
     #kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_15.override {
