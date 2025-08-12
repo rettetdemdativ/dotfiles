@@ -1,7 +1,7 @@
 { inputs, config, pkgs, username, ... }:
 let selectOpts = "{behavior = cmp.SelectBehavior.Select}";
 in {
-  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
+  imports = [ inputs.nixvim.homeModules.nixvim ];
 
   programs.neovim = {
     defaultEditor = true;
@@ -91,10 +91,10 @@ in {
         action = "<cmd>:Trouble lsp toggle focus=false win.position=right<cr>";
       }
     ];
-    colorschemes.vscode = {
-      enable = true;
-      settings = { italic_comments = true; };
-    };
+    #colorschemes.vscode = {
+    #  enable = true;
+    #  settings = { italic_comments = true; };
+    #};
     #colorschemes.cyberdream = {
     #  enable = true;
     #  settings = { italic_comments = true; };
@@ -102,10 +102,11 @@ in {
     #colorschemes.tokyonight = {
     #  enable = true;
     #  settings = {
-    #    style = "night";
+    #    style = "storm";
     #    styles = { comments = { italic = true; }; };
     #  };
     #};
+    colorschemes.gruvbox = { enable = true; };
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
@@ -215,7 +216,7 @@ in {
         settings = {
           options = {
             globalstatus = true;
-            theme = "papercolor_light";
+            theme = "horizon";
             section_separators = {
               left = "";
               right = "";
@@ -229,28 +230,10 @@ in {
       };
       nvim-tree = {
         enable = true;
-        git.ignore = false;
-        updateFocusedFile.enable = true;
-        view = {
-          side = "left";
-          width = 40;
-        };
-      };
-      barbar = {
-        enable = true;
-        settings = { animations = false; };
-        keymaps = {
-          close = { key = "<C-d>"; };
-          closeAllButCurrent = { key = "<C-S-d>"; };
-          goTo1 = { key = "<C-1>"; };
-          goTo2 = { key = "<C-2>"; };
-          goTo3 = { key = "<C-3>"; };
-          goTo4 = { key = "<C-4>"; };
-          goTo5 = { key = "<C-5>"; };
-          goTo6 = { key = "<C-6>"; };
-          goTo7 = { key = "<C-7>"; };
-          goTo8 = { key = "<C-8>"; };
-          goTo9 = { key = "<C-9>"; };
+        settings = {
+          view = { side = "right"; };
+          git.ignore = false;
+          update_focused_file.enable = true;
         };
       };
       telescope.enable = true;
@@ -287,12 +270,13 @@ in {
             settings = { formatting.command = [ "nixfmt" ]; };
           };
           nixd.enable = true;
-          perlpls = {
-            enable = true;
-            #settings = {
-            #    inc = [ "~/workspace/projects/proxmox" ];
-            #};
-          };
+          #perlpls = {
+          #  enable = true;
+          #  #settings = {
+          #  #    inc = [ "~/workspace/projects/proxmox" ];
+          #  #};
+          #};
+          perlnavigator.enable = true;
           ts_ls.enable = true;
         };
       };
@@ -329,15 +313,15 @@ in {
 
       autoclose.enable = true;
       whitespace = {
-	enable = true;
-	settings = {
-	  ignored_filetypes = [
-	    "TelescopePrompt"
-	    "Trouble"
-	    "checkhealth"
-	    "fzf"
-	  ];
-	};
+        enable = true;
+        settings = {
+          ignored_filetypes = [
+            "TelescopePrompt"
+            "Trouble"
+            "checkhealth"
+            "fzf"
+          ];
+        };
       };
 
       rustaceanvim = { enable = true; };

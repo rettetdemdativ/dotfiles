@@ -1,5 +1,5 @@
 { pkgs, username, ... }: {
-  imports = [ ./tmux.nix ];
+  imports = [ ./comma.nix ./tmux.nix ];
 
   home.packages = with pkgs; [
     pinentry-qt

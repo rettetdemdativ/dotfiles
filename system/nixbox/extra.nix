@@ -17,11 +17,8 @@
   };
 
   # In addition to niri as a default, nixbox also has GNOME
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
 
   environment.gnome.excludePackages = (with pkgs; [
     cheese
@@ -85,7 +82,7 @@
   };
 
   # Set limits for esync.
-  systemd.extraConfig = "DefaultLimitNOFILE=1048576";
+  systemd.settings.Manager = { DefaultLimitNOFILE = 1048576; };
 
   security.pam.loginLimits = [{
     domain = "*";

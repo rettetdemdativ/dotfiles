@@ -5,10 +5,6 @@
     settings = {
       font-family = "JetBrains Mono";
       font-size = 12;
-      #font-style = "Medium";
-      #font-style-bold = "Bold";
-      #font-style-italic = "Medium Italic";
-      #font-style-bold-italic = "Bold Italic";
 
       theme = "Monokai Remastered";
       #theme = "Dark Pastel"

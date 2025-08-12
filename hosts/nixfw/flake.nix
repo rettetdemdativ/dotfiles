@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    #nixpkgs-master.url = "github:nixos/nixpkgs/master";
+
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
@@ -35,6 +37,7 @@
       };
       libx = import ../../lib { inherit inputs outputs pkgs stateVersion; };
     in {
+      overlays = import ../../overlays { inherit inputs outputs; };
       nixosConfigurations = {
         nixfw = libx.mkHost {
           hostname = "nixfw";

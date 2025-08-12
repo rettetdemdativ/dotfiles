@@ -7,6 +7,7 @@
     ./zed.nix
     ./zsh.nix
     ./ghostty.nix
+    ./alacritty.nix
     ./podman.nix
     #./android.nix
     #./qemu.nix
