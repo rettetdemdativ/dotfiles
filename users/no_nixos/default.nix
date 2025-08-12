@@ -4,6 +4,7 @@ in rec {
   imports = [
     #inputs.niri.homeModules.niri
     ../features/general
+    ../features/desktop/niri
     ../features/desktop/sway
     (import ../features/desktop/swaybg.nix { wpPath = "/home/${username}/Pictures/Wallpapers"; })
     ../features/desktop/fuzzel.nix
@@ -25,6 +26,7 @@ in rec {
   };
 
   programs.ghostty.package = with pkgs; (config.lib.nixGL.wrap ghostty);
+  programs.fuzzel.package = with pkgs; (config.lib.nixGL.wrap fuzzel);
 
   programs.home-manager.enable = true;
 
@@ -71,6 +73,8 @@ in rec {
       . "/home/${username}/.cargo/env"
       source "/home/${username}/.cargo/env"
       eval "$(ssh-agent -s)"
+
+      export PATH=$PATH:/home/${username}/.nix-profile/bin
     '';
     initExtra = ''
         if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
