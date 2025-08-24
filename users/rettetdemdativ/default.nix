@@ -1,5 +1,5 @@
 { inputs, lib, config, pkgs, username, ... }: {
-  imports = [ ../common.nix ../features/gaming ];
+  imports = [ ../common.nix ../features/gaming ../features/gaming/luanti.nix ];
 
   home.persistence."/persist/home/${username}" = {
     allowOther = true;
