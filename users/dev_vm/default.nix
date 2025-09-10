@@ -9,6 +9,7 @@ let
 in
 rec {
   imports = [
+    ../features/cli/comma.nix
     ../features/cli/tmux.nix
     ../features/development/neovim.nix
   ];
