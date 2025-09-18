@@ -1,7 +1,6 @@
 { inputs, lib, config, pkgs, username, ... }: {
   imports = [
     ./git.nix
-    ./helix.nix
     ./neovim.nix
     ./vscode.nix
     ./zed.nix
@@ -9,9 +8,6 @@
     ./ghostty.nix
     ./alacritty.nix
     ./podman.nix
-    #./android.nix
-    #./qemu.nix
-    #./aider.nix
   ];
 
   home.packages = with pkgs; [

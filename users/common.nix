@@ -24,7 +24,8 @@
     # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
     glib
     signal-desktop
-    teamspeak_client
+    #teamspeak_client
+    teamspeak6-client
 
     # Fonts
     monaspace

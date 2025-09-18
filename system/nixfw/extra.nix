@@ -67,15 +67,13 @@
   # For media keys, etc.
   services.acpid = { enable = true; };
 
-  services.logind = {
-    lidSwitch = "suspend-then-hibernate";
-    lidSwitchDocked = "suspend";
-    lidSwitchExternalPower = "suspend";
-    extraConfig = ''
-      HandlePowerKey=hibernate
-      HandleSuspendKey=suspend
-      HandleHibernateKey=hibernate
-      IdleAction=ignore
-    '';
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchDocked = "suspend";
+    HandleLidSwitchExternalPower = "suspend";
+    HandlePowerKey = "hibernate";
+    HandleSuspendKey = "suspend";
+    HandleHibernateKey = "hibernate";
+    IdleAction = "ignore";
   };
 }

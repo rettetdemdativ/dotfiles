@@ -321,7 +321,6 @@ in {
       dap-ui.enable = true;
       dap-virtual-text.enable = true;
       dap-go.enable = true;
-      dap-python.enable = true;
       dap.enable = true;
 
       rustaceanvim.enable = true;
