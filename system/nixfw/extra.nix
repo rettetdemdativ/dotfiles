@@ -68,7 +68,7 @@
   services.acpid = { enable = true; };
 
   services.logind.settings.Login = {
-    HandleLidSwitch = "ignore";
+    HandleLidSwitch = "suspend";
     HandleLidSwitchDocked = "suspend";
     HandleLidSwitchExternalPower = "suspend";
     HandlePowerKey = "hibernate";
