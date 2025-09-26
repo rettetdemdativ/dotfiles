@@ -188,7 +188,7 @@ in {
           json
           jsonc
           llvm
-	  #lua
+          #lua
           make
           markdown
           nix
@@ -315,16 +315,23 @@ in {
       whitespace = {
         enable = true;
         settings = {
-          ignored_filetypes = [
-            "TelescopePrompt"
-            "Trouble"
-            "checkhealth"
-            "fzf"
-          ];
+          ignored_filetypes =
+            [ "TelescopePrompt" "Trouble" "checkhealth" "fzf" ];
         };
       };
 
-      rustaceanvim = { enable = true; };
+      rustaceanvim = {
+        enable = true;
+        settings = {
+          server = {
+            cmd = [
+              "/usr/bin/rust-analyzer"
+              "--log-file"
+              "/tmp/rust-analyzer.log"
+            ];
+          };
+        };
+      };
 
       flutter-tools = { enable = true; };
     };
