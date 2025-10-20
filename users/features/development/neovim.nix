@@ -121,17 +121,17 @@ in {
       illuminate.enable = true;
       rainbow-delimiters = {
         enable = true;
-        settings = {
-            highlight = [
-              "RDYellow"
-              "RDViolet"
-              "RDBlue"
-              "RDOrange"
-              "RDCyan"
-              "RDGreen"
-              "RDRed"
-            ];
-        };
+        #settings = {
+        #    highlight = [
+        #      "RDYellow"
+        #      "RDViolet"
+        #      "RDBlue"
+        #      "RDOrange"
+        #      "RDCyan"
+        #      "RDGreen"
+        #      "RDRed"
+        #    ];
+        #};
       };
       leap.enable = true;
       #conform-nvim = {
@@ -272,13 +272,13 @@ in {
             settings = { formatting.command = [ "nixfmt" ]; };
           };
           nixd.enable = true;
-          #perlpls = {
-          #  enable = true;
-          #  #settings = {
-          #  #    inc = [ "~/workspace/projects/proxmox" ];
-          #  #};
-          #};
-          perlnavigator.enable = true;
+          perlpls = {
+            enable = true;
+            #settings = {
+            #    inc = [ "~/workspace/projects/proxmox" ];
+            #};
+          };
+          #perlnavigator.enable = true;
           ts_ls.enable = true;
         };
       };
