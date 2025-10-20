@@ -121,15 +121,17 @@ in {
       illuminate.enable = true;
       rainbow-delimiters = {
         enable = true;
-        highlight = [
-          "RDYellow"
-          "RDViolet"
-          "RDBlue"
-          "RDOrange"
-          "RDCyan"
-          "RDGreen"
-          "RDRed"
-        ];
+        settings = {
+            highlight = [
+              "RDYellow"
+              "RDViolet"
+              "RDBlue"
+              "RDOrange"
+              "RDCyan"
+              "RDGreen"
+              "RDRed"
+            ];
+        };
       };
       leap.enable = true;
       #conform-nvim = {
@@ -282,8 +284,10 @@ in {
       };
       lspsaga = {
         enable = true;
-        beacon.enable = false;
-        lightbulb.enable = false;
+        settings = {
+            beacon.enable = false;
+            lightbulb.enable = false;
+        };
       };
       lsp-signature.enable = true;
 

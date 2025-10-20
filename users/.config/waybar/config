@@ -1,9 +1,8 @@
 {
     "layer": "top",
     "height": 25,
-    //"modules-left": ["hyprland/workspaces"],
     "modules-left": ["niri/workspaces"],
-    "modules-right": ["pulseaudio", "network#wifi", "network#eth", "network#vpn", "cpu", "memory", "backlight", "battery", "clock", "tray"],
+    "modules-right": ["pulseaudio", "network#eth", "cpu", "memory", "clock", "tray"],
 
     "wlr/workspaces": {
       "format": "{icon} {name}",
@@ -27,7 +26,9 @@
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
-
+    "sway/workspaces": {
+        "format": "{name}"
+    },
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -44,50 +45,12 @@
     "memory": {
         "format": "{}% "
     },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network#wifi": {
-        "interface": "wlp*",
-        "format-wifi": "{essid} ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
     "network#eth": {
-        "interface": "enp*",
+        "interface": "vmbr*",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈀",
         "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "network#vpn": {
-        "interface": "wg-*",
-        "format-ethernet": "{ipaddr} 󰖂",
-        "format-linked": "(No IP) 󰖂",
-        "format-disconnected": "",
-        "format-alt": "{ipaddr} 󰖂"
-    },
-    "wireplumber": {
-        "format": "{volume}% {icon}",
-        "format-muted": "",
-        "on-click": "helvum",
-        "format-icons": ["", "", ""]
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

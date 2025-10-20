@@ -1,6 +1,6 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
-    ./neomutt.nix
+    ./aerc.nix
   ];
   home.packages = with pkgs; [ qalculate-gtk ];
 }
