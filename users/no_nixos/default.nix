@@ -18,7 +18,7 @@ in rec {
     ../features/productivity
   ];
 
-  nixGL = {
+  targets.genericLinux.nixGL = {
     packages = pkgs.nixgl;
     defaultWrapper = "mesa";
     installScripts = [ "mesa" ];
