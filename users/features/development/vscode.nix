@@ -11,6 +11,7 @@
         pkgs.vscode-extensions.vscodevim.vim
         pkgs.vscode-extensions.pkief.material-icon-theme
         pkgs.vscode-extensions.vscode-icons-team.vscode-icons
+        pkgs.vscode-extensions.jdinhlife.gruvbox
         pkgs.vscode-extensions.dbaeumer.vscode-eslint
         pkgs.vscode-extensions.eamodio.gitlens
         pkgs.vscode-extensions.esbenp.prettier-vscode
@@ -100,6 +101,7 @@
         "workbench.activityBar.location" = "hidden";
         "workbench.editor.tabSizing" = "shrink";
         "workbench.iconTheme" = "material-icon-theme";
+        "workbench.colorTheme" = "Gruvbox Dark Hard";
         "workbench.sideBar.location" = "left";
         "workbench.statusBar.visible" = true;
       };
