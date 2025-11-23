@@ -296,8 +296,10 @@ in {
       };
       lspsaga = {
         enable = true;
-        beacon.enable = false;
-        lightbulb.enable = false;
+        settings = {
+          beacon.enable = false;
+          lightbulb.enable = false;
+        };
       };
       lsp-signature.enable = true;
 
