@@ -4,7 +4,7 @@
     enableZshIntegration = true;
     settings = {
       font-family = "JetBrains Mono";
-      font-size = 12;
+      font-size = 13;
 
       theme = "Monokai Remastered";
       #theme = "Dark Pastel"
