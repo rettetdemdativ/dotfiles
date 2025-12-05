@@ -4,16 +4,16 @@
   nixpkgs.config = {
     allowUnfreePredicate = pkg:
       builtins.elem (lib.getName pkg) [ "steam" "steam-unwrapped" ];
-    packageOverrides = let
-      curlWithGnuTls = (pkgs.curl.override {
-        gnutlsSupport = true;
-        opensslSupport = false;
-      });
-    in pkgs: {
-      steam = pkgs.steam.override {
-        extraPkgs = pkgs: with pkgs; [ curlWithGnuTls curlWithGnuTls.out ];
-      };
-    };
+        #packageOverrides = let
+        #  curlWithGnuTls = (pkgs.curl.override {
+        #    gnutlsSupport = true;
+        #    opensslSupport = false;
+        #  });
+        #in pkgs: {
+        #  steam = pkgs.steam.override {
+        #    extraPkgs = pkgs: [ curlWithGnuTls curlWithGnuTls.out ];
+        #  };
+        #};
   };
 
   # In addition to niri as a default, nixbox also has GNOME
@@ -37,13 +37,11 @@
     atomix # puzzle game
   ]);
 
-  services.logind = {
-    extraConfig = ''
-      HandlePowerKey=hybrid-sleep
-      HandleSuspendKey=suspend
-      HandleHibernateKey=hibernate
-      IdleAction=ignore
-    '';
+  services.logind.settings.Login = {
+    HandlePowerKey = "hybrid-sleep";
+    HandleSuspendKey = "suspend";
+    HandleHibernateKey = "hibernate";
+    IdleAction = "ignore";
   };
 
   programs.gamemode.enable = true;

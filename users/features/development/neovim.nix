@@ -125,15 +125,18 @@ in {
       illuminate.enable = true;
       rainbow-delimiters = {
         enable = true;
-        highlight = [
-          "RDYellow"
-          "RDViolet"
-          "RDBlue"
-          "RDOrange"
-          "RDCyan"
-          "RDGreen"
-          "RDRed"
-        ];
+        settings = {
+          highlight = [
+            "RDYellow"
+            "RDViolet"
+            "RDBlue"
+            "RDOrange"
+            "RDCyan"
+            "RDGreen"
+            "RDRed"
+          ];
+        };
+
       };
       leap.enable = true;
       #conform-nvim = {

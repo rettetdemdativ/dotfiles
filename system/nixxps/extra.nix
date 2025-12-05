@@ -16,11 +16,12 @@
     lidSwitch = "hybrid-sleep";
     lidSwitchDocked = "hybrid-sleep";
     lidSwitchExternalPower = "hybrid-sleep";
-    extraConfig = ''
-      HandlePowerKey=hybrid-sleep
-      HandleSuspendKey=suspend
-      HandleHibernateKey=hibernate
-      IdleAction=ignore
-    '';
+
+    settings.Login = {
+      HandlePowerKey = "hybrid-sleep";
+      HandleSuspendKey = "suspend";
+      HandleHibernateKey = "hibernate";
+      IdleAction = "ignore";
+    };
   };
 }

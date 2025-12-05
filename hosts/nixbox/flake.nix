@@ -14,7 +14,6 @@
     niri.url = "github:sodiboo/niri-flake";
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-ld = {
       url = "github:Mic92/nix-ld";

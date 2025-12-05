@@ -17,7 +17,7 @@
     imv
     mpd
     cmus
-    tidal-hifi
+    #tidal-hifi
     invidtui
   ];
 
