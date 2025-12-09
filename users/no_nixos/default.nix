@@ -29,7 +29,7 @@ in rec {
 
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [ tig xwayland-satellite ];
+  home.packages = with pkgs; [ tig xwayland-satellite signal-desktop ];
 
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
