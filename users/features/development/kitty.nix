@@ -16,8 +16,6 @@
       cursor_shape block
       shell_integration no-cursor
 
-      background_opacity 0.9
-
       enable_audio_bell no
 
       tab_bar_style powerline

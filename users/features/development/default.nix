@@ -5,8 +5,8 @@
     ./vscode.nix
     ./zed.nix
     ./zsh.nix
-    ./ghostty.nix
     ./alacritty.nix
+    ./ghostty.nix
     ./podman.nix
   ];
 
