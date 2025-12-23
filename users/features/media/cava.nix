@@ -21,9 +21,7 @@
       };
 
       color = {
-        background = "'#191724'";
         gradient = 1;
-        gradient_count = 6;
         gradient_color_1 = "'#31748f'";
         gradient_color_2 = "'#9ccfd8'";
         gradient_color_3 = "'#c4a7e7'";
