@@ -29,6 +29,8 @@
         gradient_color_5 = "'#f6c177'";
         gradient_color_6 = "'#eb6f92'";
       };
+
+      smoothing = { noise_reduction = 50; };
     };
   };
 }
