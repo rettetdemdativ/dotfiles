@@ -11,7 +11,7 @@
       };
 
       input = {
-        method = "pulse";
+        method = "pipewire";
         source = "auto";
       };
 
