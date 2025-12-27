@@ -37,7 +37,7 @@
   ];
 
   home.persistence."/persist/home/${username}" = {
-    directories = [ ".config/Signal" ".ts3client" ];
+    directories = [ ".config/Signal" ".ts3client" ".config/TeamSpeak" ];
   };
 
   home.sessionVariables = rec {
