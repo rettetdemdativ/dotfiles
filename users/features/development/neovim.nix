@@ -95,10 +95,10 @@ in {
     #  enable = true;
     #  settings = { italic_comments = true; };
     #};
-    colorschemes.cyberdream = {
-      enable = true;
-      settings = { italic_comments = true; };
-    };
+    #colorschemes.cyberdream = {
+    #  enable = true;
+    #  settings = { italic_comments = true; };
+    #};
     #colorschemes.tokyonight = {
     #  enable = true;
     #  settings = {
@@ -106,7 +106,7 @@ in {
     #    styles = { comments = { italic = true; }; };
     #  };
     #};
-    #colorschemes.gruvbox = { enable = true; };
+    colorschemes.gruvbox = { enable = true; };
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
