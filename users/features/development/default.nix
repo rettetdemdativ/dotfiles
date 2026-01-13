@@ -8,6 +8,7 @@
     ./alacritty.nix
     ./ghostty.nix
     ./podman.nix
+    ./ollama.nix
   ];
 
   home.packages = with pkgs; [
