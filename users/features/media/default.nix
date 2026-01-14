@@ -1,11 +1,12 @@
 { inputs, lib, config, pkgs, username, ... }: {
   imports = [
-    ./mpd.nix
     ./cava.nix
+    ./kew.nix
+    ./mpd.nix
     ./newsboat.nix
     ./streamlink.nix
+    ./tidal.nix
     ./toot.nix
-    ./kew.nix
   ];
 
   programs.obs-studio = { enable = true; };
@@ -16,10 +17,6 @@
     mpv
     imv
     mpd
-    tidal-hifi
   ];
 
-  home.persistence."/persist/home/${username}" = {
-    directories = [ ".config/tidal-hifi" ];
-  };
 }
