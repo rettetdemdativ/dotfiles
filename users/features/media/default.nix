@@ -16,9 +16,7 @@
     mpv
     imv
     mpd
-    cmus
     tidal-hifi
-    invidtui
   ];
 
   home.persistence."/persist/home/${username}" = {
