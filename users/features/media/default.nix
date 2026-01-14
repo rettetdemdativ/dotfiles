@@ -5,7 +5,7 @@
     ./newsboat.nix
     ./streamlink.nix
     ./toot.nix
-    #./ncmpcpp.nix
+    ./kew.nix
   ];
 
   programs.obs-studio = { enable = true; };
