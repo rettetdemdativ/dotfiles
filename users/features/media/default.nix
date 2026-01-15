@@ -1,11 +1,13 @@
 { inputs, lib, config, pkgs, username, ... }: {
   imports = [
-    ./mpd.nix
     ./cava.nix
+    ./kew.nix
+    ./mpd.nix
     #./newsboat.nix
     #./streamlink.nix
     #./toot.nix
     #./ncmpcpp.nix
+    ./tidal.nix
   ];
 
   programs.obs-studio = { enable = true; };
@@ -17,6 +19,5 @@
     imv
     mpd
     cmus
-    tidal-hifi
   ];
 }
