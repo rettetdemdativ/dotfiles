@@ -1,6 +1,14 @@
-{ inputs, config, pkgs, username, nixgl, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  username,
+  nixgl,
+  ...
+}:
 let
-in rec {
+in
+rec {
   imports = [
     ../features/general
     ../features/desktop/niri
@@ -31,7 +39,11 @@ in rec {
 
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [ tig xwayland-satellite signal-desktop ];
+  home.packages = with pkgs; [
+    tig
+    xwayland-satellite
+    signal-desktop
+  ];
 
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
