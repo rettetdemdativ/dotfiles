@@ -261,6 +261,8 @@ in {
                 "/tmp/rust-analyzer.log"
               ];
             };
+            installRustc = false;
+            installCargo = false;
           };
           ts_ls.enable = true;
         };
