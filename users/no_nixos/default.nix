@@ -75,7 +75,9 @@ in rec {
     };
     profileExtra = ''
       export PATH=$PATH:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$HOME/flutter/bin
-      eval "$(ssh-agent -s)"
+      if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval "$(ssh-agent -s)"
+      fi
     '';
     #initExtra = ''
     #    if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
