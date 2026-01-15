@@ -9,6 +9,7 @@ in rec {
     ../features/desktop/fuzzel.nix
     ../features/desktop/zathura.nix
     ../features/development/android.nix
+    ../features/development/alacritty.nix
     ../features/development/ghostty.nix
     ../features/development/neovim.nix
     ../features/development/vscode.nix
@@ -24,6 +25,7 @@ in rec {
     installScripts = [ "mesa" ];
   };
 
+  programs.alacritty.package = with pkgs; (config.lib.nixGL.wrap alacritty);
   programs.ghostty.package = with pkgs; (config.lib.nixGL.wrap ghostty);
   programs.fuzzel.package = with pkgs; (config.lib.nixGL.wrap fuzzel);
 
@@ -60,7 +62,7 @@ in rec {
     enable = true;
     sessionVariables = {
       EDITOR = "nvim";
-      TERM = "xterm-256color";
+      TERM = "alacritty";
       ANDROID_HOME = "$HOME/Android/Sdk";
       ANDROID_SDK_ROOT = "$HOME/Android/Sdk";
       PATH = "$PATH:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin";

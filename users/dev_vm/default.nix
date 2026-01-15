@@ -47,7 +47,7 @@ rec {
     enable = true;
     sessionVariables = {
       EDITOR = "nvim";
-      TERM = "xterm-256color";
+      TERM = "alacritty";
       PATH = "$PATH:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin";
     };
     shellAliases = {

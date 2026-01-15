@@ -3,14 +3,9 @@
     enable = true;
     settings = {
       font = {
-        size = 11;
+        size = 13;
         normal = { family = "JetBrains Mono"; };
       };
-      window.padding = {
-        x = 8;
-        y = 8;
-      };
-      window.opacity = 0.95;
       colors = {
         draw_bold_text_with_bright_colors = true;
         primary = {
