@@ -28,7 +28,7 @@ rec {
 
   home.packages = with pkgs; [
     tig
-    poedit
+    #poedit
   ];
 
   programs.zsh = {

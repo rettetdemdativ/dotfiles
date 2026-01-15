@@ -175,39 +175,12 @@ in {
         settings = {
           highlight.enable = true;
           indent.enable = true;
+          folding.enable = true;
         };
-        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-          bash
-          c
-          cpp
-          css
-          dockerfile
-          go
-          gomod
-          gosum
-          html
-          javascript
-          json
-          jsonc
-          llvm
-          #lua
-          make
-          markdown
-          nix
-          perl
-          python
-          regex
-          rust
-          sql
-          toml
-          tsx
-          typescript
-          yaml
-        ];
       };
       treesitter-context.enable = true;
-      treesitter-refactor.enable = true;
-      treesitter-textobjects.enable = true;
+      #treesitter-refactor.enable = true;
+      #treesitter-textobjects.enable = true;
       trouble = { enable = true; };
 
       # UI
@@ -279,6 +252,16 @@ in {
             #};
           };
           #perlnavigator.enable = true;
+          rust_analyzer = {
+            enable = true;
+            config = {
+              cmd = [
+                "/usr/bin/rust-analyzer"
+                "--log-file"
+                "/tmp/rust-analyzer.log"
+              ];
+            };
+          };
           ts_ls.enable = true;
         };
       };
@@ -324,18 +307,18 @@ in {
         };
       };
 
-      rustaceanvim = {
-        enable = true;
-        settings = {
-          server = {
-            cmd = [
-              "/usr/bin/rust-analyzer"
-              "--log-file"
-              "/tmp/rust-analyzer.log"
-            ];
-          };
-        };
-      };
+      #rustaceanvim = {
+      #  enable = true;
+      #  settings = {
+      #    server = {
+      #      cmd = [
+      #        "/usr/bin/rust-analyzer"
+      #        "--log-file"
+      #        "/tmp/rust-analyzer.log"
+      #      ];
+      #    };
+      #  };
+      #};
 
       flutter-tools = { enable = true; };
     };
