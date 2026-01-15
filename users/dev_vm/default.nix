@@ -56,6 +56,11 @@ rec {
       start-vm = "$HOME/dotfiles/scripts/no_nixos/proxmox/start_vm.sh";
       spice-connect = "$HOME/dotfiles/scripts/no_nixos/proxmox/spice-connect.sh";
     };
+    profileExtra = ''
+      if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval "$(ssh-agent -s)"
+      fi
+    '';
   };
 
   programs.tmux = {
