@@ -95,21 +95,6 @@ in {
         action = "<cmd>:Trouble lsp toggle focus=false win.position=right<cr>";
       }
     ];
-    #colorschemes.vscode = {
-    #  enable = true;
-    #  settings = { italic_comments = true; };
-    #};
-    #colorschemes.cyberdream = {
-    #  enable = true;
-    #  settings = { italic_comments = true; };
-    #};
-    #colorschemes.tokyonight = {
-    #  enable = true;
-    #  settings = {
-    #    style = "storm";
-    #    styles = { comments = { italic = true; }; };
-    #  };
-    #};
     colorschemes.gruvbox = { enable = true; };
     highlight = {
       RDYellow = { fg = "#ffd602"; };
@@ -139,34 +124,6 @@ in {
 
       };
       leap.enable = true;
-      #conform-nvim = {
-      #  enable = true;
-      #  settings = {
-      #    format_on_save = {
-      #      lsp_fallback = "fallback";
-      #      timeout_ms = 500;
-      #    };
-      #    formatters_by_ft = {
-      #      c = [ "clang-format" ];
-      #      cpp = [ "clang-format" ];
-      #      #rust = [ "rust-analyzer" ];
-      #      go = [ "gofmt" ];
-      #      python = [ "black" ];
-      #      javascript = [ "prettierd" ];
-      #      typescript = [ "prettierd" ];
-      #      css = [ "prettierd" ];
-      #      html = [ "prettierd" ];
-      #      json = [ "prettierd" ];
-      #      kotlin = [ "ktfmt" ];
-      #      lua = [ "stylua" ];
-      #      markdown = [ "prettierd" ];
-      #      nix = [ "nixfmt" ];
-      #      terraform = [ "tofu_fmt" ];
-      #      tf = [ "tofu_fmt" ];
-      #      typst = [ "typstyle" ];
-      #    };
-      #  };
-      #};
       lint = {
         enable = true;
         lintersByFt = {
@@ -287,11 +244,11 @@ in {
           nixd.enable = true;
           perlnavigator.enable = true;
           pylsp.enable = true;
-          #rust_analyzer = {
-          #  enable = true;
-          #  installRustc = false;
-          #  installCargo = false;
-          #};
+          rust_analyzer = {
+            enable = true;
+            installRustc = false;
+            installCargo = false;
+          };
           svelte.enable = true;
           tinymist.enable = true;
           ts_ls.enable = true;
@@ -327,8 +284,6 @@ in {
       dap-virtual-text.enable = true;
       dap-go.enable = true;
       dap.enable = true;
-
-      rustaceanvim.enable = true;
 
       autoclose.enable = true;
       whitespace = {
