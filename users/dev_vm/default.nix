@@ -12,6 +12,7 @@ rec {
     ../features/cli/comma.nix
     ../features/cli/tmux.nix
     ../features/development/neovim.nix
+    ../features/development/opencode.nix
   ];
 
   programs.home-manager.enable = true;
