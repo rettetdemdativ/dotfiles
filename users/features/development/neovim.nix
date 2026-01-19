@@ -254,13 +254,11 @@ in {
           #perlnavigator.enable = true;
           rust_analyzer = {
             enable = true;
-            config = {
-              cmd = [
-                "/usr/bin/rust-analyzer"
-                "--log-file"
-                "/tmp/rust-analyzer.log"
-              ];
-            };
+            cmd = [
+              "/usr/bin/rust-analyzer"
+              "--log-file"
+              "/tmp/rust-analyzer.log"
+            ];
             installRustc = false;
             installCargo = false;
           };
@@ -270,8 +268,8 @@ in {
       lspsaga = {
         enable = true;
         settings = {
-            beacon.enable = false;
-            lightbulb.enable = false;
+          beacon.enable = false;
+          lightbulb.enable = false;
         };
       };
       lsp-signature.enable = true;
