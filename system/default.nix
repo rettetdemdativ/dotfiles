@@ -94,6 +94,8 @@
     '';
   };
 
+  security.polkit.enable = true;
+
   programs.zsh = {
     enable = true;
     shellAliases = {
