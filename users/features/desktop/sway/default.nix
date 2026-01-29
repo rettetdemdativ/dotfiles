@@ -3,6 +3,8 @@ let
   inherit (lib) getExe;
   swayCfg = config.wayland.windowManager.sway;
 in {
+  home.packages = with pkgs; [ waybar ];
+
   wayland.windowManager.sway = {
     enable = true;
     package = config.lib.nixGL.wrap (pkgs.sway.override {
@@ -87,16 +89,16 @@ in {
       set $transparent #00000000
 
       # Set workplace names
-      set $workspace1 "1: "
-      set $workspace2 "2: "
-      set $workspace3 "3: "
-      set $workspace4 "4: "
-      set $workspace5 "5: "
-      set $workspace6 "6: "
-      set $workspace7 "7: "
-      set $workspace8 "8: "
-      set $workspace9 "9: "
-      set $workspace10 "10: "
+      set $workspace1 " 1"
+      set $workspace2 " 2"
+      set $workspace3 " 3 "
+      set $workspace4 " 4 "
+      set $workspace5 " 5 "
+      set $workspace6 " 6 "
+      set $workspace7 " 7 "
+      set $workspace8 " 8 "
+      set $workspace9 " 9 "
+      set $workspace10 " 10 "
 
 
       #bar {
@@ -332,5 +334,6 @@ in {
 
   # Waybar config is different for sway than for niri, etc.
   xdg.configFile."waybar/config".source = ../../../.config/waybar/sway/config;
-  xdg.configFile."waybar/style.css".source = ../../../.config/waybar/sway/style.css;
+  xdg.configFile."waybar/style.css".source =
+    ../../../.config/waybar/sway/style.css;
 }

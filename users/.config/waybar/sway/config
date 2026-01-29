@@ -5,7 +5,7 @@
     "modules-right": ["pulseaudio", "network#wifi", "network#eth", "network#vpn", "cpu", "memory", "backlight", "battery", "clock", "tray"],
 
     "wlr/workspaces": {
-      "format": "{icon} {name}",
+      "format": "{icon}",
       "on-click": "activate",
       "format-icons": {
         "1": "",
