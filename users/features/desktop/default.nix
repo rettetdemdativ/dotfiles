@@ -6,7 +6,6 @@
     ./mako.nix
     #./niri
     ./sway
-    (import ./swaybg.nix { wpPath = "/home/${username}/Pictures/Wallpapers"; })
     ./swayidle.nix
     ./zathura.nix
   ];

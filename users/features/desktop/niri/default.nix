@@ -22,7 +22,10 @@ let
     '';
   };
 in {
-  imports = [ ../waybar.nix ../swaybg.nix ];
+  imports = [
+    ../waybar.nix
+    (import ./swaybg.nix { wpPath = "/home/${username}/Pictures/Wallpapers"; })
+  ];
 
   xdg.configFile."niri/config.kdl".source = ../../../.config/niri/config.kdl;
 
