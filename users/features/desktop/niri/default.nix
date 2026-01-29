@@ -22,6 +22,8 @@ let
     '';
   };
 in {
+  imports = [ ../waybar.nix ../swaybg.nix ];
+
   xdg.configFile."niri/config.kdl".source = ../../../.config/niri/config.kdl;
 
   # Services started with niri
@@ -34,6 +36,11 @@ in {
   xdg.configFile."systemd/user/niri.service.wants/waybar.service".source =
     config.lib.file.mkOutOfStoreSymlink
     "${config.xdg.configHome}/systemd/user/waybar.service";
+
+  # Waybar config is different for niri than for sway, etc.
+  xdg.configFile."waybar/config".source = ../../../.config/waybar/niri/config;
+  xdg.configFile."waybar/style.css".source =
+    ../../../.config/waybar/niri/style.css;
 
   home.packages = with pkgs; [ configure-gtk ];
 

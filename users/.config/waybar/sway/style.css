@@ -1,0 +1,86 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Monaspace Neon, MaterialIcons, Termsynu;
+  font-weight: 600;
+  font-size: 12px;
+  min-height: 0;
+}
+
+window#waybar {
+  /*background: rgba(43, 48, 59, 0.6);*/
+  /*background: transparent;*/
+  background: black;
+  color: white;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background: transparent;
+  color: #808080;
+}
+
+#workspaces button.focused {
+  background: transparent;
+  color: white;
+}
+
+#mode,
+#clock,
+#battery {
+  padding: 0 10px;
+  margin: 0 5px;
+}
+
+#mode {
+  background: #64727d;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor {
+  padding: 0 8px;
+  margin: 0 4px;
+  color: #ffffff;
+}
+
+#battery {
+  color: white;
+}
+
+#battery.charging {
+  color: white;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
+
+/*#battery.warning:not(.charging) {
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}*/
+
+#network.disconnected {
+  color: #808080;
+}
+
+#pulseaudio.muted {
+  color: #808080;
+}

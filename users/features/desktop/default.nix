@@ -2,13 +2,11 @@
   imports = [
     ./fuzzel.nix
     ./gammastep.nix
-    ./hyprpaper.nix
     ./kanshi.nix
     ./mako.nix
     ./niri
     (import ./swaybg.nix { wpPath = "/home/${username}/Pictures/Wallpapers"; })
     ./swayidle.nix
-    ./waybar.nix
     ./zathura.nix
   ];
 

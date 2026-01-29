@@ -1,9 +1,4 @@
 { inputs, lib, config, pkgs, ... }: {
-  #programs.waybar = {
-  #  enable = true;
-  #  systemd.enable = true;
-  #};
-
   systemd.user.services.waybar = {
     Unit = {
       Description = "waybar service";
@@ -18,7 +13,4 @@
       ExecStart = "${pkgs.waybar}/bin/waybar";
     };
   };
-
-  xdg.configFile."waybar/config".source = ../../.config/waybar/config;
-  xdg.configFile."waybar/style.css".source = ../../.config/waybar/style.css;
 }
