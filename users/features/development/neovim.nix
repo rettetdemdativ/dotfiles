@@ -95,7 +95,14 @@ in {
         action = "<cmd>:Trouble lsp toggle focus=false win.position=right<cr>";
       }
     ];
-    colorschemes.gruvbox = { enable = true; };
+    colorschemes.tokyonight = {
+      enable = true;
+      settings = {
+        style = "storm";
+        styles = { comments = { italic = true; }; };
+      };
+    };
+    #colorschemes.gruvbox = { enable = true; };
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
