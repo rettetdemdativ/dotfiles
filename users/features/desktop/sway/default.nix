@@ -3,6 +3,10 @@ let
   inherit (lib) getExe;
   swayCfg = config.wayland.windowManager.sway;
 in {
+  imports = [
+    ../kanshi.nix
+  ];
+
   home.packages = with pkgs; [ waybar ];
 
   wayland.windowManager.sway = {

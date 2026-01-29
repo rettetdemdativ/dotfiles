@@ -1,10 +1,6 @@
 { inputs, lib, config, pkgs, ... }: {
-  home.packages = with pkgs; [
-    kanshi
-  ];
-
   services.kanshi = {
-    enable = false;
+    enable = true;
     systemdTarget = "graphical-session.target";
     profiles = {
       undocked = {
@@ -21,20 +17,7 @@
             status = "disable";
           }
           {
-            criteria = "DP-2";
-            status = "enable";
-          }
-        ];
-      };
-
-      dockedHome2 = {
-        outputs = [
-          {
-            criteria = "eDP-1";
-            status = "disable";
-          }
-          {
-            criteria = "DP-1";
+            criteria = "DP-7";
             status = "enable";
           }
         ];

@@ -2,7 +2,6 @@
   imports = [
     ./fuzzel.nix
     ./gammastep.nix
-    ./kanshi.nix
     ./mako.nix
     #./niri
     ./sway
