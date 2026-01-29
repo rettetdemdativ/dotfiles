@@ -25,10 +25,10 @@ in {
         Return = "mode default";
         Right = "resize grow width 10 px";
         Up = "resize shrink height 10 px";
-        h = "resize grow width 100 px";
-        j = "resize shrink height 50 px";
-        k = "resize grow height 50 px";
-        l = "resize shrink width 100 px";
+        h = "resize shrink width 100 px";
+        j = "resize grow height 50 px";
+        k = "resize shrink height 50 px";
+        l = "resize grow width 100 px";
       };
     };
     extraSessionCommands = ''
