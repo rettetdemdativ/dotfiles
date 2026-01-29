@@ -4,7 +4,8 @@
     ./gammastep.nix
     ./kanshi.nix
     ./mako.nix
-    ./niri
+    #./niri
+    ./sway
     (import ./swaybg.nix { wpPath = "/home/${username}/Pictures/Wallpapers"; })
     ./swayidle.nix
     ./zathura.nix
