@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, hostname, username, ... }: {
   imports = [
     (./. + "/${hostname}/boot.nix")
+    (./. + "/${hostname}/fs.nix")
     (./. + "/${hostname}/hardware.nix")
     "${inputs.impermanence}/nixos.nix"
     ./fs.nix
