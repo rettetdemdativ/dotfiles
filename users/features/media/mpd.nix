@@ -5,20 +5,20 @@
     network = {
       listenAddress = "127.0.0.1";
       port = 6601;
-      #startWhenNeeded = true; 
+      #startWhenNeeded = true;
     };
     extraConfig = ''
       audio_buffer_size "4096"
       max_output_buffer_size "16384"
 
-      audio_output {  
-        type               "pipewire"  
+      audio_output {
+        type               "pipewire"
         name               "PipeWire_Output"
       }
     '';
   };
 
-  home.persistence."/persist/home/${username}" = {
+  home.persistence."/persist" = {
     directories = [ ".local/share/mpd" ".config/mpd" ];
   };
 }

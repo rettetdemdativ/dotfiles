@@ -1,6 +1,6 @@
 { inputs, lib, config, pkgs, username, ... }: {
 
-  home.persistence."/persist/home/${username}" = {
+  home.persistence."/persist" = {
     directories = [ ".config/iamb" ".local/share/iamb" ];
   };
 

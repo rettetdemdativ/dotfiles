@@ -9,7 +9,7 @@
     };
   };
 
-  home.persistence."/persist/home/${username}" = {
+  home.persistence."/persist" = {
     directories = [ ".librewolf" ];
   };
 }

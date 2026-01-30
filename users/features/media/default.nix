@@ -6,7 +6,6 @@
     ./newsboat.nix
     ./streamlink.nix
     ./tidal.nix
-    ./toot.nix
   ];
 
   programs.obs-studio = { enable = true; };

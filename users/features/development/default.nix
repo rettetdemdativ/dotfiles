@@ -27,11 +27,11 @@
     lua
     nil # Nix LSP
     nixd # other Nix LSP
-    nixfmt-classic # Nix formatter
+    nixfmt # Nix formatter
     ripgrep
   ];
 
-  home.persistence."/persist/home/${username}" = {
+  home.persistence."/persist" = {
     directories = [
       ".local/share/containers"
 

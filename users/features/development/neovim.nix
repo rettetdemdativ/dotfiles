@@ -1,10 +1,21 @@
-{ inputs, config, pkgs, username, ... }:
-let selectOpts = "{behavior = cmp.SelectBehavior.Select}";
-in {
+{
+  inputs,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+let
+  selectOpts = "{behavior = cmp.SelectBehavior.Select}";
+in
+{
   imports = [ inputs.nixvim.homeModules.nixvim ];
 
-  home.persistence."/persist/home/${username}" = {
-    directories = [ ".local/share/nvim/lazy" ".local/share/nvim/mason" ];
+  home.persistence."/persist" = {
+    directories = [
+      ".local/share/nvim/lazy"
+      ".local/share/nvim/mason"
+    ];
   };
 
   programs.neovim = {
@@ -99,18 +110,36 @@ in {
       enable = true;
       settings = {
         style = "storm";
-        styles = { comments = { italic = true; }; };
+        styles = {
+          comments = {
+            italic = true;
+          };
+        };
       };
     };
     #colorschemes.gruvbox = { enable = true; };
     highlight = {
-      RDYellow = { fg = "#ffd602"; };
-      RDViolet = { fg = "#d66ed2"; };
-      RDBlue = { fg = "#569cd6"; };
-      RDOrange = { fg = "#d7ba7d"; };
-      RDCyan = { fg = "#4ec9b0"; };
-      RDGreen = { fg = "#6a9955"; };
-      RDRed = { fg = "#d16969"; };
+      RDYellow = {
+        fg = "#ffd602";
+      };
+      RDViolet = {
+        fg = "#d66ed2";
+      };
+      RDBlue = {
+        fg = "#569cd6";
+      };
+      RDOrange = {
+        fg = "#d7ba7d";
+      };
+      RDCyan = {
+        fg = "#4ec9b0";
+      };
+      RDGreen = {
+        fg = "#6a9955";
+      };
+      RDRed = {
+        fg = "#d16969";
+      };
     };
     plugins = {
       # Editor
@@ -145,45 +174,11 @@ in {
           highlight.enable = true;
           indent.enable = true;
         };
-        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-          angular
-          bash
-          c
-          cpp
-          css
-          dockerfile
-          go
-          gomod
-          gosum
-          html
-          java
-          javascript
-          json
-          jsonc
-          kotlin
-          llvm
-          lua
-          make
-          markdown
-          nix
-          perl
-          python
-          regex
-          rust
-          sql
-          svelte
-          terraform
-          toml
-          tsx
-          typescript
-          typst
-          yaml
-        ];
       };
       treesitter-context.enable = true;
-      treesitter-refactor.enable = true;
-      treesitter-textobjects.enable = true;
-      trouble = { enable = true; };
+      trouble = {
+        enable = true;
+      };
 
       # UI
       gitgutter.enable = true;
@@ -208,7 +203,9 @@ in {
       nvim-tree = {
         enable = true;
         settings = {
-          view = { side = "right"; };
+          view = {
+            side = "right";
+          };
           git.ignore = false;
           update_focused_file.enable = true;
         };
@@ -246,7 +243,9 @@ in {
           jdtls.enable = true;
           nil_ls = {
             enable = true;
-            settings = { formatting.command = [ "nixfmt" ]; };
+            settings = {
+              formatting.command = [ "nixfmt" ];
+            };
           };
           nixd.enable = true;
           perlnavigator.enable = true;
@@ -280,10 +279,16 @@ in {
                 #semantic_token_resolution = { enabled = false; };
               };
             };
-            documentation = { auto_show = true; };
+            documentation = {
+              auto_show = true;
+            };
           };
-          keymap = { preset = "super-tab"; };
-          signature = { enabled = true; };
+          keymap = {
+            preset = "super-tab";
+          };
+          signature = {
+            enabled = true;
+          };
         };
       };
 
@@ -296,8 +301,12 @@ in {
       whitespace = {
         enable = true;
         settings = {
-          ignored_filetypes =
-            [ "TelescopePrompt" "Trouble" "checkhealth" "fzf" ];
+          ignored_filetypes = [
+            "TelescopePrompt"
+            "Trouble"
+            "checkhealth"
+            "fzf"
+          ];
         };
       };
     };

@@ -2,8 +2,7 @@
   imports = [ ../common.nix ];
   # Most stuff in common.nix
 
-  home.persistence."/persist/home/${username}" = {
-    allowOther = true;
+  home.persistence."/persist" = {
     directories = [
       ".ssh"
       ".gnupg"

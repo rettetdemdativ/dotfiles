@@ -76,7 +76,7 @@
   services.resolved = {
     enable = true;
     #dnssec = "true";
-    fallbackDns = [ "194.242.2.3" "9.9.9.9" ];
+    settings = { Resolve = { FallbackDNS = [ "194.242.2.3" "9.9.9.9" ]; }; };
     #dnsovertls = "true";
   };
 

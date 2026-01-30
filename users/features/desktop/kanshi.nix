@@ -22,6 +22,18 @@
           }
         ];
       };
+      dockedHome2 = {
+        outputs = [
+          {
+            criteria = "eDP-1";
+            status = "disable";
+          }
+          {
+            criteria = "DP-8";
+            status = "enable";
+          }
+        ];
+      };
     };
   };
 }

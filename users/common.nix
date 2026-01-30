@@ -36,7 +36,7 @@
     cascadia-code
   ];
 
-  home.persistence."/persist/home/${username}" = {
+  home.persistence."/persist" = {
     directories = [ ".config/Signal" ".ts3client" ".config/TeamSpeak" ];
   };
 
@@ -44,7 +44,7 @@
     EDITOR = "nvim";
     #DOCKER_HOST = "unix:///run/user/$UID/podman/podman.sock";
     ANDROID_HOME = "$HOME/workspace/Android";
-    MPD_HOST = "$HOME/.config/mpd/socket";
+    #MPD_HOST = "$HOME/.config/mpd/socket";
     GTK_THEME = "Adwaita-dark";
     NIXOS_OZONE_WL = "1";
   };

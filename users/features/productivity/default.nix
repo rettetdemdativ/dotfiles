@@ -11,7 +11,7 @@ in {
 
   home.packages = with pkgs; [ openpomodoro-cli anki-bin qalculate-gtk tex ];
 
-  home.persistence."/persist/home/${username}" = {
+  home.persistence."/persist" = {
     directories = [ ".local/share/Anki2" ];
   };
 }

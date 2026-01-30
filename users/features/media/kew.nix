@@ -1,7 +1,7 @@
 { inputs, lib, config, pkgs, username, ... }: {
   home.packages = with pkgs; [ kew ];
 
-  home.persistence."/persist/home/${username}" = {
+  home.persistence."/persist" = {
     files = [ ".config/kew/library.dat" ".local/share/kewstaterc" ];
   };
 
