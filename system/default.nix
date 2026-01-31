@@ -111,9 +111,14 @@
   programs.fuse.userAllowOther = true;
 
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-  programs.niri = {
+  #programs.niri = {
+  #  enable = true;
+  #  package = pkgs.niri-unstable;
+  #};
+
+  programs.sway = {
     enable = true;
-    package = pkgs.niri-unstable;
+    wrapperFeatures.gtk = true;
   };
 
   # Enable CUPS to print documents.
