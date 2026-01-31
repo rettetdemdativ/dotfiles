@@ -4,20 +4,10 @@
     "modules-left": ["sway/workspaces"],
     "modules-right": ["pulseaudio", "network#wifi", "network#eth", "network#vpn", "cpu", "memory", "backlight", "battery", "clock", "tray"],
 
-    "wlr/workspaces": {
+    "sway/workspaces": {
       "format": "{icon}",
       "on-click": "activate",
       "format-icons": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": "󰎆",
         "urgent": "",
         "active": "",
         "default": ""
