@@ -1,19 +1,29 @@
-{ inputs, lib, config, pkgs, username, ... }:
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
 let
   inherit (lib) getExe;
   swayCfg = config.wayland.windowManager.sway;
-in {
+in
+{
   imports = [ ../kanshi.nix ];
 
   home.packages = with pkgs; [ waybar ];
 
   wayland.windowManager.sway = {
     enable = true;
-    package = config.lib.nixGL.wrap (pkgs.sway.override {
-      inherit (swayCfg) extraSessionCommands extraOptions;
-      withBaseWrapper = swayCfg.wrapperFeatures.base;
-      withGtkWrapper = swayCfg.wrapperFeatures.gtk;
-    });
+    package = config.lib.nixGL.wrap (
+      pkgs.sway.override {
+        inherit (swayCfg) extraSessionCommands extraOptions;
+        withBaseWrapper = swayCfg.wrapperFeatures.base;
+        withGtkWrapper = swayCfg.wrapperFeatures.gtk;
+      }
+    );
     systemd.enable = true;
     config.modes = {
       resize = {
@@ -299,27 +309,27 @@ in {
     '';
 
     config = {
-      bars = [{ command = getExe pkgs.waybar; }];
+      bars = [ { command = getExe pkgs.waybar; } ];
       terminal = getExe (config.lib.nixGL.wrap pkgs.alacritty);
       menu = getExe (config.lib.nixGL.wrap pkgs.fuzzel);
       modifier = "Mod4";
-      keybindings = let
-        cfg = swayCfg.config;
-        mod = cfg.modifier;
-      in {
-        "${mod}+Return" = "exec ${cfg.terminal}";
-        "${mod}+d" = "exec ${cfg.menu}";
-      };
+      keybindings =
+        let
+          cfg = swayCfg.config;
+          mod = cfg.modifier;
+        in
+        {
+          "${mod}+Return" = "exec ${cfg.terminal}";
+          "${mod}+d" = "exec ${cfg.menu}";
+        };
     };
   };
 
   programs.zsh = {
     enable = true;
     shellAliases = {
-      monitor_home =
-        "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh home";
-      monitor_laptop =
-        "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh laptop";
+      monitor_home = "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh home";
+      monitor_laptop = "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh laptop";
     };
     initContent = lib.mkBefore ''
       if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
@@ -336,6 +346,5 @@ in {
 
   # Waybar config is different for sway than for niri, etc.
   xdg.configFile."waybar/config".source = ../../../.config/waybar/sway/config;
-  xdg.configFile."waybar/style.css".source =
-    ../../../.config/waybar/sway/style.css;
+  xdg.configFile."waybar/style.css".source = ../../../.config/waybar/sway/style.css;
 }

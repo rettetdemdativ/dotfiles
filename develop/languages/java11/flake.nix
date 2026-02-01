@@ -1,9 +1,12 @@
 {
   description = "Java development environment";
 
-  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; };
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  };
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       # Systems supported
       allSystems = [
@@ -14,30 +17,34 @@
       ];
 
       # Helper to provide system-specific attributes
-      forAllSystems = f:
-        nixpkgs.lib.genAttrs allSystems
-        (system: f { pkgs = import nixpkgs { inherit system; }; });
-    in {
-      devShells = forAllSystems ({ pkgs }: {
-        default = pkgs.mkShell {
-          NIX_LD_LIBRARY_PATH =
-            pkgs.lib.makeLibraryPath [ pkgs.stdenv.cc.cc pkgs.openssl ];
-          NIX_LD = pkgs.lib.fileContents
-            "${pkgs.stdenv.cc}/nix-support/dynamic-linker";
-          packages = with pkgs; [
-            jdk11
-            maven
-            gradle
-            kotlin
-            zlib
-            ncurses
-            freetype # for missing libfreetype.so.6 ];
-          ];
-          shellHook = ''
-            export JAVA_HOME=${pkgs.jdk11}/lib/openjdk
-            PATH="${pkgs.jdk11}/bin:$PATH"
-          '';
-        };
-      });
+      forAllSystems =
+        f: nixpkgs.lib.genAttrs allSystems (system: f { pkgs = import nixpkgs { inherit system; }; });
+    in
+    {
+      devShells = forAllSystems (
+        { pkgs }:
+        {
+          default = pkgs.mkShell {
+            NIX_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+              pkgs.stdenv.cc.cc
+              pkgs.openssl
+            ];
+            NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker";
+            packages = with pkgs; [
+              jdk11
+              maven
+              gradle
+              kotlin
+              zlib
+              ncurses
+              freetype # for missing libfreetype.so.6 ];
+            ];
+            shellHook = ''
+              export JAVA_HOME=${pkgs.jdk11}/lib/openjdk
+              PATH="${pkgs.jdk11}/bin:$PATH"
+            '';
+          };
+        }
+      );
     };
 }

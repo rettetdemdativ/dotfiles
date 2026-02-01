@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 let
   zed-fhs = pkgs.buildFHSEnv {
     name = "zed";
@@ -6,7 +11,8 @@ let
     runScript = "zeditor";
   };
 
-in {
+in
+{
   programs.zed-editor = {
     enable = true;
     package = zed-fhs;
@@ -48,32 +54,59 @@ in {
       };
 
       experimental.theme_overrides = {
-        syntax = { comment = { font_style = "italic"; }; };
+        syntax = {
+          comment = {
+            font_style = "italic";
+          };
+        };
       };
-      project_panel = { dock = "right"; };
-      outline_panel = { dock = "right"; };
-      collaboration_panel = { dock = "right"; };
+      project_panel = {
+        dock = "right";
+      };
+      outline_panel = {
+        dock = "right";
+      };
+      collaboration_panel = {
+        dock = "right";
+      };
       tabs = {
         file_icons = true;
         git_status = true;
       };
       relative_line_numbers = true;
       #server_url = "https://disable-zed-downloads.invalid";
-      indent_guides = { enabled = false; };
+      indent_guides = {
+        enabled = false;
+      };
 
       lsp = {
-        rust-analyzer = { binary = { path_lookup = true; }; };
+        rust-analyzer = {
+          binary = {
+            path_lookup = true;
+          };
+        };
         clangd = {
           binary = {
             path_lookup = true;
             #path = "clangd";
-            arguments = [ "--background-index" "--compile-commands-dir=build" ];
+            arguments = [
+              "--background-index"
+              "--compile-commands-dir=build"
+            ];
           };
         };
-        nix = { binary = { path_lookup = true; }; };
+        nix = {
+          binary = {
+            path_lookup = true;
+          };
+        };
         #nil.formatting.command = "nixfmt";
         pyright = {
-          settings = { python = { pythonPath = "./venv/bin/python"; }; };
+          settings = {
+            python = {
+              pythonPath = "./venv/bin/python";
+            };
+          };
         };
       };
       languages = {
@@ -89,34 +122,63 @@ in {
           formatter = {
             external = {
               command = "prettierd";
-              arguments = [ "--stdin-filepath" "{buffer_path}" ];
+              arguments = [
+                "--stdin-filepath"
+                "{buffer_path}"
+              ];
             };
           };
-          language_servers = [ "typescript-language-server" "!vtsls" ];
+          language_servers = [
+            "typescript-language-server"
+            "!vtsls"
+          ];
         };
-        "Markdown" = { format_on_save = "on"; };
-        "Python" = {
-          language_servers = [ "pyright" "ruff" ];
+        "Markdown" = {
           format_on_save = "on";
-          formatter = [{ language_server = { name = "ruff"; }; }];
+        };
+        "Python" = {
+          language_servers = [
+            "pyright"
+            "ruff"
+          ];
+          format_on_save = "on";
+          formatter = [
+            {
+              language_server = {
+                name = "ruff";
+              };
+            }
+          ];
         };
         "TSX" = {
-          language_servers = [ "typescript-language-server" "!vtsls" ];
+          language_servers = [
+            "typescript-language-server"
+            "!vtsls"
+          ];
 
           formatter = {
             external = {
               command = "prettierd";
-              arguments = [ "--stdin-filepath" "{buffer_path}" ];
+              arguments = [
+                "--stdin-filepath"
+                "{buffer_path}"
+              ];
             };
           };
 
         };
         "TypeScript" = {
-          language_servers = [ "typescript-language-server" "!vtsls" ];
+          language_servers = [
+            "typescript-language-server"
+            "!vtsls"
+          ];
           formatter = {
             external = {
               command = "prettierd";
-              arguments = [ "--stdin-filepath" "{buffer_path}" ];
+              arguments = [
+                "--stdin-filepath"
+                "{buffer_path}"
+              ];
             };
           };
 

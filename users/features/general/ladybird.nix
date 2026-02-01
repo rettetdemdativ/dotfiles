@@ -1,1 +1,10 @@
-{ inputs, lib, config, pkgs, ... }: { home.packages = with pkgs; [ ladybird ]; }
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [ ladybird ];
+}

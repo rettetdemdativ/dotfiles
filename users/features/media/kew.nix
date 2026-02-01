@@ -1,8 +1,19 @@
-{ inputs, lib, config, pkgs, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   home.packages = with pkgs; [ kew ];
 
   home.persistence."/persist" = {
-    files = [ ".config/kew/library.dat" ".local/share/kewstaterc" ];
+    files = [
+      ".config/kew/library.dat"
+      ".local/share/kewstaterc"
+    ];
   };
 
   xdg.configFile."kew/kewrc".text = ''

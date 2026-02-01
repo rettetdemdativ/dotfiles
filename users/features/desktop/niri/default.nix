@@ -1,4 +1,11 @@
-{ inputs, lib, config, pkgs, username, ... }:
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
 let
   # currently, there is some friction between sway and gtk:
   # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
@@ -10,18 +17,21 @@ let
     name = "configure-gtk";
     destination = "/bin/configure-gtk";
     executable = true;
-    text = let
-      schema = pkgs.gsettings-desktop-schemas;
-      datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-    in ''
-      export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
-      gnome_schema=org.gnome.desktop.interface
-      gsettings set $gnome_schema gtk-theme 'Adwaita-dark'
-      gsettings set $gnome_schema icon-theme 'Numix'
-      gsettings set $gnome_schema color-scheme 'prefer-dark'
-    '';
+    text =
+      let
+        schema = pkgs.gsettings-desktop-schemas;
+        datadir = "${schema}/share/gsettings-schemas/${schema.name}";
+      in
+      ''
+        export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
+        gnome_schema=org.gnome.desktop.interface
+        gsettings set $gnome_schema gtk-theme 'Adwaita-dark'
+        gsettings set $gnome_schema icon-theme 'Numix'
+        gsettings set $gnome_schema color-scheme 'prefer-dark'
+      '';
   };
-in {
+in
+{
   imports = [
     ../waybar.nix
     (import ./swaybg.nix { wpPath = "/home/${username}/Pictures/Wallpapers"; })
@@ -31,29 +41,23 @@ in {
 
   # Services started with niri
   xdg.configFile."systemd/user/niri.service.wants/swayidle.service".source =
-    config.lib.file.mkOutOfStoreSymlink
-    "${config.xdg.configHome}/systemd/user/swayidle.service";
+    config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/systemd/user/swayidle.service";
   xdg.configFile."systemd/user/niri.service.wants/swaybg.service".source =
-    config.lib.file.mkOutOfStoreSymlink
-    "${config.xdg.configHome}/systemd/user/swaybg.service";
+    config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/systemd/user/swaybg.service";
   xdg.configFile."systemd/user/niri.service.wants/waybar.service".source =
-    config.lib.file.mkOutOfStoreSymlink
-    "${config.xdg.configHome}/systemd/user/waybar.service";
+    config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/systemd/user/waybar.service";
 
   # Waybar config is different for niri than for sway, etc.
   xdg.configFile."waybar/config".source = ../../../.config/waybar/niri/config;
-  xdg.configFile."waybar/style.css".source =
-    ../../../.config/waybar/niri/style.css;
+  xdg.configFile."waybar/style.css".source = ../../../.config/waybar/niri/style.css;
 
   home.packages = with pkgs; [ configure-gtk ];
 
   programs.zsh = {
     enable = true;
     shellAliases = {
-      monitor_home =
-        "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh home";
-      monitor_laptop =
-        "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh laptop";
+      monitor_home = "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh home";
+      monitor_laptop = "sh $HOME/dotfiles/users/features/desktop/niri/scripts/monitors.sh laptop";
     };
     initContent = lib.mkBefore ''
       if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then

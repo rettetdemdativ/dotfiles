@@ -1,10 +1,19 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   programs.alacritty = {
     enable = true;
     settings = {
       font = {
         size = 12;
-        normal = { family = "JetBrains Mono Nerd Font Mono"; };
+        normal = {
+          family = "JetBrains Mono Nerd Font Mono";
+        };
       };
       colors = {
         draw_bold_text_with_bright_colors = true;
@@ -41,11 +50,13 @@
         };
       };
       keyboard = {
-        bindings = [{
-          key = "Return";
-          mods = "Control|Shift";
-          action = "SpawnNewInstance";
-        }];
+        bindings = [
+          {
+            key = "Return";
+            mods = "Control|Shift";
+            action = "SpawnNewInstance";
+          }
+        ];
       };
     };
   };

@@ -1,4 +1,12 @@
-{ inputs, lib, config, pkgs, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
 
   home.persistence."/persist" = {
     directories = [ ".mozilla/firefox" ];
@@ -15,64 +23,77 @@
         search = {
           engines = {
             "Brave Search" = {
-              urls = [{
-                template = "https://search.brave.com/search";
-                params = [{
-                  name = "q";
-                  value = "{searchTerms}";
-                }];
-              }];
+              urls = [
+                {
+                  template = "https://search.brave.com/search";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
 
-              icon =
-                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@np" ];
             };
 
             "searx.be" = {
-              urls = [{
-                template = "https://searx.be/search";
-                params = [{
-                  name = "q";
-                  value = "{searchTerms}";
-                }];
-              }];
+              urls = [
+                {
+                  template = "https://searx.be/search";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
             };
 
             "gruble.de" = {
-              urls = [{
-                template = "https://gruble.de/search";
-                params = [{
-                  name = "q";
-                  value = "{searchTerms}";
-                }];
-              }];
+              urls = [
+                {
+                  template = "https://gruble.de/search";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
             };
 
             "Nix Packages" = {
-              urls = [{
-                template = "https://search.nixos.org/packages";
-                params = [
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }];
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
 
-              icon =
-                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@np" ];
             };
 
             "NixOS Wiki" = {
-              urls = [{
-                template =
-                  "https://wiki.nixos.org/index.php?search={searchTerms}";
-              }];
+              urls = [
+                {
+                  template = "https://wiki.nixos.org/index.php?search={searchTerms}";
+                }
+              ];
               iconUpdateURL = "https://wiki.nixos.org/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000; # every day
               definedAliases = [ "@nw" ];

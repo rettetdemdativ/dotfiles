@@ -1,20 +1,33 @@
-{ inputs, lib, config, pkgs, hostname, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  hostname,
+  username,
+  ...
+}:
+{
   imports = [
     (./. + "/${hostname}/boot.nix")
     (./. + "/${hostname}/fs.nix")
     (./. + "/${hostname}/hardware.nix")
     "${inputs.impermanence}/nixos.nix"
     ./fs.nix
-  ] ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix"))
-    (import ./${hostname}/extra.nix {
+  ]
+  ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix")) (
+    import ./${hostname}/extra.nix {
       lib = lib;
       config = config;
       pkgs = pkgs;
-    });
+    }
+  );
 
   nix = {
     package = lib.mkDefault pkgs.nix;
-    settings = { warn-dirty = false; };
+    settings = {
+      warn-dirty = false;
+    };
 
     gc = {
       automatic = true;
@@ -24,7 +37,10 @@
     optimise.automatic = true;
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       #substituters = [ "https://hyprland.cachix.org" ];
       trusted-public-keys = [
         # "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
@@ -46,7 +62,9 @@
       "/etc/machine-id"
       {
         file = "/etc/nix/id_rsa";
-        parentDirectory = { mode = "u=rwx,g=rx,o=rx"; };
+        parentDirectory = {
+          mode = "u=rwx,g=rx,o=rx";
+        };
       }
     ];
   };
@@ -71,13 +89,23 @@
     # interfaces.enp60s0u2u4.useDHCP = lib.mkDefault true;
     # interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
-    nameservers = [ "194.242.2.3" "9.9.9.9" ];
+    nameservers = [
+      "194.242.2.3"
+      "9.9.9.9"
+    ];
   };
 
   services.resolved = {
     enable = true;
     #dnssec = "true";
-    settings = { Resolve = { FallbackDNS = [ "194.242.2.3" "9.9.9.9" ]; }; };
+    settings = {
+      Resolve = {
+        FallbackDNS = [
+          "194.242.2.3"
+          "9.9.9.9"
+        ];
+      };
+    };
     #dnsovertls = "true";
   };
 
@@ -153,7 +181,9 @@
       enable = true;
       dockerCompat = true;
       dockerSocket.enable = true;
-      defaultNetwork.settings = { dns_enabled = true; };
+      defaultNetwork.settings = {
+        dns_enabled = true;
+      };
     };
 
     #oci-containers = { backend = "podman"; };
@@ -174,7 +204,9 @@
 
     libvirtd = {
       enable = true;
-      qemu = { package = pkgs.qemu_kvm; };
+      qemu = {
+        package = pkgs.qemu_kvm;
+      };
     };
   };
   programs.virt-manager.enable = true;
@@ -207,14 +239,24 @@
     inet = {
       isNormalUser = true;
       hashedPasswordFile = "/persist/etc/users/inet";
-      extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+        "libvirtd"
+        "docker"
+      ];
       packages = [ pkgs.home-manager ];
       shell = pkgs.zsh;
     };
     rettetdemdativ = {
       isNormalUser = true;
       hashedPasswordFile = "/persist/etc/users/rettetdemdativ";
-      extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+        "libvirtd"
+        "docker"
+      ];
       packages = [ pkgs.home-manager ];
       shell = pkgs.zsh;
     };

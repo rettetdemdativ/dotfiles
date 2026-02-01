@@ -1,4 +1,12 @@
-{ inputs, lib, config, pkgs, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   programs.ghostty = {
     enable = true;
     enableZshIntegration = true;

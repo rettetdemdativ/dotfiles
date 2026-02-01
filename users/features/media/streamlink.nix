@@ -1,6 +1,16 @@
-{ inputs, lib, config, pkgs, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   programs.streamlink = {
     enable = true;
-    settings = { player = "${pkgs.mpv}/bin/mpv"; };
+    settings = {
+      player = "${pkgs.mpv}/bin/mpv";
+    };
   };
 }

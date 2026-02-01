@@ -1,4 +1,12 @@
-{ inputs, lib, config, pkgs, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   home.packages = with pkgs; [ aider-chat ];
 
   home.persistence."/persist" = {

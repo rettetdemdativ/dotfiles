@@ -1,4 +1,11 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   programs.fuzzel = {
     enable = true;
     settings = {
@@ -11,7 +18,9 @@
         text = "ffffffff";
         match = "cb4b16ff";
       };
-      dmenu = { mode = "text"; };
+      dmenu = {
+        mode = "text";
+      };
     };
   };
 }

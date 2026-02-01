@@ -7,12 +7,20 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
   };
-  outputs = { self, nixpkgs, fenix, flake-utils, }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      fenix,
+      flake-utils,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
         devToolchain = fenix.packages."${system}".stable;
-      in rec {
+      in
+      rec {
         devShell = pkgs.mkShell {
           nativeBuildInputs = [
             (devToolchain.withComponents [
@@ -29,6 +37,6 @@
           '';
           RUST_BACKTRACE = 1;
         };
-      });
+      }
+    );
 }
-

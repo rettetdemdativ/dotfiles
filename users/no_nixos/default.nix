@@ -1,6 +1,14 @@
-{ inputs, config, pkgs, username, nixgl, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  username,
+  nixgl,
+  ...
+}:
 let
-in rec {
+in
+rec {
   imports = [
     #inputs.niri.homeModules.niri
     ../features/desktop
@@ -33,7 +41,9 @@ in rec {
 
   home.packages = with pkgs; [ rustup ];
 
-  home.sessionVariables = rec { EDITOR = "nvim"; };
+  home.sessionVariables = rec {
+    EDITOR = "nvim";
+  };
 
   xdg.mimeApps = {
     enable = true;
@@ -57,7 +67,10 @@ in rec {
       "video/x-flv" = [ "mpv.desktop" ];
       "video/mp4" = [ "mpv.desktop" ];
 
-      "inode/directory" = [ "nnn.desktop" "nautilus.desktop" ];
+      "inode/directory" = [
+        "nnn.desktop"
+        "nautilus.desktop"
+      ];
     };
   };
 }

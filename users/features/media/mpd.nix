@@ -1,4 +1,12 @@
-{ inputs, lib, config, pkgs, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   services.mpd = {
     enable = true;
     musicDirectory = "/home/${username}/Music";
@@ -19,6 +27,9 @@
   };
 
   home.persistence."/persist" = {
-    directories = [ ".local/share/mpd" ".config/mpd" ];
+    directories = [
+      ".local/share/mpd"
+      ".config/mpd"
+    ];
   };
 }

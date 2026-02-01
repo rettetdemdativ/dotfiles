@@ -1,5 +1,17 @@
-{ inputs, lib, config, pkgs, username, ... }: {
-  imports = [ ../common.nix ../features/gaming ../features/gaming/luanti.nix ];
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
+  imports = [
+    ../common.nix
+    ../features/gaming
+    ../features/gaming/luanti.nix
+  ];
 
   home.persistence."/persist" = {
     directories = [

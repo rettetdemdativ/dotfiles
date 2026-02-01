@@ -1,6 +1,12 @@
-{ inputs, lib, config, pkgs, ... }: {
-  xdg.configFile."oh-my-custom/simple.zsh-theme".source =
-    ../../themes/simple.zsh-theme;
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
+  xdg.configFile."oh-my-custom/simple.zsh-theme".source = ../../themes/simple.zsh-theme;
 
   programs.zsh = {
     enable = true;
@@ -26,7 +32,10 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "gpg-agent" ];
+      plugins = [
+        "git"
+        "gpg-agent"
+      ];
 
       custom = "$HOME/.config/oh-my-custom";
       theme = "simple";

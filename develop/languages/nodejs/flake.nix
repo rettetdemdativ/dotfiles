@@ -1,9 +1,12 @@
 {
   description = "NodeJS development environment";
 
-  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; };
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  };
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       # Systems supported
       allSystems = [
@@ -14,21 +17,24 @@
       ];
 
       # Helper to provide system-specific attributes
-      forAllSystems = f:
-        nixpkgs.lib.genAttrs allSystems
-        (system: f { pkgs = import nixpkgs { inherit system; }; });
-    in {
-      devShells = forAllSystems ({ pkgs }: {
-        default = pkgs.mkShell {
-          packages = with pkgs; [
-            nodejs_20
-            eslint_d
-            eslint
-            prettierd
-            nodePackages.typescript-language-server
-            nodePackages.svelte-language-server
-          ];
-        };
-      });
+      forAllSystems =
+        f: nixpkgs.lib.genAttrs allSystems (system: f { pkgs = import nixpkgs { inherit system; }; });
+    in
+    {
+      devShells = forAllSystems (
+        { pkgs }:
+        {
+          default = pkgs.mkShell {
+            packages = with pkgs; [
+              nodejs_20
+              eslint_d
+              eslint
+              prettierd
+              nodePackages.typescript-language-server
+              nodePackages.svelte-language-server
+            ];
+          };
+        }
+      );
     };
 }

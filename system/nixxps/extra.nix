@@ -6,11 +6,15 @@
 
   services.tlp = {
     enable = true;
-    settings = { USB_AUTOSUSPEND = 0; };
+    settings = {
+      USB_AUTOSUSPEND = 0;
+    };
   };
 
   # For media keys, etc.
-  services.acpid = { enable = true; };
+  services.acpid = {
+    enable = true;
+  };
 
   services.logind = {
     lidSwitch = "hybrid-sleep";

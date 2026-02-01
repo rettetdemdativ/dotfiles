@@ -1,4 +1,11 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   systemd.user.services.waybar = {
     Unit = {
       Description = "waybar service";

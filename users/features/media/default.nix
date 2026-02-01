@@ -1,4 +1,12 @@
-{ inputs, lib, config, pkgs, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   imports = [
     ./cava.nix
     ./kew.nix
@@ -8,7 +16,9 @@
     ./tidal.nix
   ];
 
-  programs.obs-studio = { enable = true; };
+  programs.obs-studio = {
+    enable = true;
+  };
 
   home.packages = with pkgs; [
     pulsemixer

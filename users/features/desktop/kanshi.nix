@@ -1,14 +1,23 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   services.kanshi = {
     enable = true;
     systemdTarget = "graphical-session.target";
     profiles = {
       undocked = {
-        outputs = [{
-          criteria = "eDP-1";
-          status = "enable";
-          scale = 1.7;
-        }];
+        outputs = [
+          {
+            criteria = "eDP-1";
+            status = "enable";
+            scale = 1.7;
+          }
+        ];
       };
 
       dockedHome1 = {

@@ -1,4 +1,10 @@
-{ inputs, lib, config, pkgs, ... }:
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   boot.initrd.availableKernelModules = [
@@ -13,9 +19,10 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.kernelParams = [ "clearcpuid=514" ];
-  boot.kernel.sysctl = { "fs.file-max" = 524288; };
+  boot.kernel.sysctl = {
+    "fs.file-max" = 524288;
+  };
   boot.extraModulePackages = [ ];
   boot.loader.systemd-boot.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 }
-

@@ -1,10 +1,21 @@
-{ inputs, lib, config, pkgs, ... }:
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   boot = {
     initrd = {
-      availableKernelModules =
-        [ "xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
+      availableKernelModules = [
+        "xhci_pci"
+        "nvme"
+        "usb_storage"
+        "usbhid"
+        "sd_mod"
+      ];
       kernelModules = [ "amdgpu" ];
     };
 

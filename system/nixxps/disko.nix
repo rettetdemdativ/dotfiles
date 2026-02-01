@@ -1,4 +1,9 @@
-{ disks ? [ "/dev/vda" ], usernames, ... }: {
+{
+  disks ? [ "/dev/vda" ],
+  usernames,
+  ...
+}:
+{
   disko.devices = {
     disk = {
       vda = {
@@ -28,11 +33,17 @@
                   subvolumes = {
                     "/@nix" = {
                       mountpoint = "/nix";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [
+                        "compress=zstd"
+                        "noatime"
+                      ];
                     };
                     "/@persist" = {
                       mountpoint = "/persist";
-                      mountOptions = [ "compress=zstd" "noatime" ];
+                      mountOptions = [
+                        "compress=zstd"
+                        "noatime"
+                      ];
                     };
                   };
                 };
@@ -53,11 +64,17 @@
     nodev = {
       "/" = {
         fsType = "tmpfs";
-        mountOptions = [ "size=2G" "mode=755" ];
+        mountOptions = [
+          "size=2G"
+          "mode=755"
+        ];
       };
       "/home/${builtins.elemAt usernames 0}" = {
         fsType = "tmpfs";
-        mountOptions = [ "size=4G" "mode=777" ];
+        mountOptions = [
+          "size=4G"
+          "mode=777"
+        ];
       };
     };
   };

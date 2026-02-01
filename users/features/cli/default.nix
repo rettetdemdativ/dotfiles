@@ -1,5 +1,9 @@
-{ pkgs, username, ... }: {
-  imports = [ ./comma.nix ./tmux.nix ];
+{ pkgs, username, ... }:
+{
+  imports = [
+    ./comma.nix
+    ./tmux.nix
+  ];
 
   home.packages = with pkgs; [
     git-crypt
@@ -15,7 +19,9 @@
     brightnessctl
   ];
 
-  programs.gpg = { enable = true; };
+  programs.gpg = {
+    enable = true;
+  };
 
   services.gpg-agent = {
     enable = true;

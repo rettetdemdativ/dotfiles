@@ -1,4 +1,12 @@
-{ inputs, lib, config, pkgs, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   programs.cava = {
     enable = true;
     settings = {
@@ -30,7 +38,9 @@
         gradient_color_6 = "'#eb6f92'";
       };
 
-      smoothing = { noise_reduction = 50; };
+      smoothing = {
+        noise_reduction = 50;
+      };
     };
   };
 }

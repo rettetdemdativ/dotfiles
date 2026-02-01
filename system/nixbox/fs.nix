@@ -1,3 +1,11 @@
-{ inputs, lib, config, pkgs, hostname, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  hostname,
+  ...
+}:
+{
   fileSystems."/home/rettetdemdativ".neededForBoot = true;
 }

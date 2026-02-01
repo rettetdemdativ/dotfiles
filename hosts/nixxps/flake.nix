@@ -18,12 +18,28 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, disko, home-manager, nixos-hardware, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      disko,
+      home-manager,
+      nixos-hardware,
+      ...
+    }:
     let
       inherit (self) outputs;
       stateVersion = "23.05";
-      libx = import ../../lib { inherit inputs outputs nixpkgs stateVersion; };
-    in {
+      libx = import ../../lib {
+        inherit
+          inputs
+          outputs
+          nixpkgs
+          stateVersion
+          ;
+      };
+    in
+    {
       nixosConfigurations = {
         # sudo nixos-rebuild switch --flake .#
         nixxps = libx.mkHost {

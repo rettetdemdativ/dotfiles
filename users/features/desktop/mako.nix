@@ -1,4 +1,11 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   services.mako = {
     enable = true;
     settings = {

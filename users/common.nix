@@ -1,4 +1,11 @@
-{ inputs, config, pkgs, username, ... }: {
+{
+  inputs,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   imports = [
     ./features/desktop
     ./features/development
@@ -37,7 +44,11 @@
   ];
 
   home.persistence."/persist" = {
-    directories = [ ".config/Signal" ".ts3client" ".config/TeamSpeak" ];
+    directories = [
+      ".config/Signal"
+      ".ts3client"
+      ".config/TeamSpeak"
+    ];
   };
 
   home.sessionVariables = rec {
@@ -59,9 +70,17 @@
       '';
     };
 
-    gtk3 = { extraConfig = { gtk-application-prefer-dark-theme = 1; }; };
+    gtk3 = {
+      extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
+    };
 
-    gtk4 = { extraConfig = { gtk-application-prefer-dark-theme = 1; }; };
+    gtk4 = {
+      extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
+    };
   };
 
   xdg.mimeApps = {
@@ -86,7 +105,10 @@
       "video/x-flv" = [ "mpv.desktop" ];
       "video/mp4" = [ "mpv.desktop" ];
 
-      "inode/directory" = [ "nnn.desktop" "nautilus.desktop" ];
+      "inode/directory" = [
+        "nnn.desktop"
+        "nautilus.desktop"
+      ];
     };
   };
 

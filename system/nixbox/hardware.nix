@@ -1,7 +1,16 @@
-{ inputs, lib, config, modulesPath, pkgs, ... }:
+{
+  inputs,
+  lib,
+  config,
+  modulesPath,
+  pkgs,
+  ...
+}:
 
-let kver = config.boot.kernelPackages.kernel.version;
-in {
+let
+  kver = config.boot.kernelPackages.kernel.version;
+in
+{
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     inputs.nixos-hardware.nixosModules.common-pc

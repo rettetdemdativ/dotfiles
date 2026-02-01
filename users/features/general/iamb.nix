@@ -1,7 +1,18 @@
-{ inputs, lib, config, pkgs, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
 
   home.persistence."/persist" = {
-    directories = [ ".config/iamb" ".local/share/iamb" ];
+    directories = [
+      ".config/iamb"
+      ".local/share/iamb"
+    ];
   };
 
   home.packages = with pkgs; [ iamb ];

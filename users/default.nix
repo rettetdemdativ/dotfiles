@@ -1,6 +1,16 @@
-{ inputs, config, lib, pkgs, username, ... }: {
-  imports =
-    [ (./. + "/${username}") "${inputs.impermanence}/home-manager.nix" ];
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  username,
+  ...
+}:
+{
+  imports = [
+    (./. + "/${username}")
+    "${inputs.impermanence}/home-manager.nix"
+  ];
 
   home.username = username;
   home.homeDirectory = "/home/${username}";

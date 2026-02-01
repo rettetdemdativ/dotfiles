@@ -1,4 +1,10 @@
-{ inputs, config, pkgs, ... }: {
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
+{
   programs.helix = {
     enable = true;
     extraPackages = [
@@ -21,7 +27,11 @@
         };
 
         statusline = {
-          left = [ "mode" "spinner" "file-name" ];
+          left = [
+            "mode"
+            "spinner"
+            "file-name"
+          ];
           right = [
             "diagnostics"
             "selections"

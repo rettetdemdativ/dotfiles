@@ -13,13 +13,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixgl = {
-      url =
-        "github:nix-community/nixGL"; # Necessary to run GL software on non-NixOS systems
+      url = "github:nix-community/nixGL"; # Necessary to run GL software on non-NixOS systems
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixgl, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      nixgl,
+      ...
+    }:
     let
       username = "inet";
       system = "x86_64-linux";
@@ -27,13 +33,13 @@
         inherit system;
         overlays = [ nixgl.overlay ];
       };
-    in {
-      homeConfigurations.${username} =
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ../../users/no_nixos ];
-          extraSpecialArgs = { inherit inputs username nixgl; };
-          extraSpecialArgs.flake-inputs = inputs;
-        };
+    in
+    {
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ../../users/no_nixos ];
+        extraSpecialArgs = { inherit inputs username nixgl; };
+        extraSpecialArgs.flake-inputs = inputs;
+      };
     };
 }

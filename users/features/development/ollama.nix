@@ -1,7 +1,17 @@
-{ inputs, lib, config, pkgs, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   home.persistence."/persist" = {
     directories = [ ".ollama" ];
   };
 
-  services.ollama = { enable = true; };
+  services.ollama = {
+    enable = true;
+  };
 }

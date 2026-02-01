@@ -1,5 +1,12 @@
-{ inputs, lib, config, pkgs, ... }: {
-    programs.chromium = {
-        enable = true;
-    };
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
+  programs.chromium = {
+    enable = true;
+  };
 }

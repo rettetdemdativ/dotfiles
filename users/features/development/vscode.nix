@@ -1,4 +1,11 @@
-{ inputs, config, pkgs, username, ... }: {
+{
+  inputs,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   home.persistence."/persist" = {
     directories = [ ".config/VSCodium" ];
   };
@@ -29,7 +36,8 @@
         pkgs.vscode-extensions.editorconfig.editorconfig
         pkgs.vscode-extensions.rust-lang.rust-analyzer
         #pkgs.vscode-extensions.vadimcn.vscode-lldb
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      ]
+      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "fleet-theme";
           publisher = "MichaelZhou";
@@ -57,8 +65,7 @@
         "[python]"."editor.defaultFormatter" = "ms-python.black-formatter";
         "[svelte]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
         "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-        "[typescriptreact]"."editor.defaultFormatter" =
-          "esbenp.prettier-vscode";
+        "[typescriptreact]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
         "[vue]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
         "breadcrumbs.enabled" = true;
         "debug.console.fontSize" = 15;
@@ -95,7 +102,9 @@
         "svelte.enable-ts-plugin" = true;
         "terminal.integrated.fontSize" = 15;
         "vim.easymotion" = true;
-        "vim.handleKeys" = { "<C-p>" = false; };
+        "vim.handleKeys" = {
+          "<C-p>" = false;
+        };
         "window.commandCenter" = true;
         "window.menuBarVisibility" = "toggle";
         "workbench.activityBar.location" = "hidden";
