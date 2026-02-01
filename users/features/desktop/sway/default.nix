@@ -306,6 +306,11 @@ in
           #xkb_options grp:rctrl_toggle
           xkb_options grp:alt_shift_toggle
       }
+
+      input type:touchpad {
+        natural_scroll enabled
+        tap enabled
+      }
     '';
 
     config = {
