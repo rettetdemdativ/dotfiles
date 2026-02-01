@@ -241,10 +241,8 @@ in
       bindsym XF86AudioNext exec mpc next
       bindsym XF86AudioPrev exec mpc prev
 
-      #bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-      bindsym XF86MonBrightnessDown exec sudo brightnessctl set 5%- # decrease screen brightness
-      #bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness<Paste>
-      bindsym XF86MonBrightnessUp exec sudo brightnessctl set 5%+ # increase screen brightness<Paste>
+      bindsym XF86MonBrightnessUp exec brightnessctl set +5% # increase screen brightness<Paste>
+      bindsym XF86MonBrightnessDown exec brightnessctl set 5%- # decrease screen brightness
 
       # reload the configuration file
       bindsym $mod+Shift+c reload
