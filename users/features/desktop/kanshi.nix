@@ -15,7 +15,7 @@
           {
             criteria = "eDP-1";
             status = "enable";
-            scale = 1.7;
+            scale = 1.8;
           }
         ];
       };
