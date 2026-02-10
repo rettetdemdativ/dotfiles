@@ -90,11 +90,14 @@ in {
         options.silent = true;
         action = "<cmd>:Trouble lsp toggle focus=false win.position=right<cr>";
       }
+    { mode = [ "n" "x" "o" ]; key = "s"; options.silent = true; action.__raw = "function() require(\"flash\").jump() end"; }
+    { mode = [ "n" "x" "o" ]; key = "S"; options.silent = true; action.__raw = "function() require(\"flash\").treesitter() end"; }
+    { mode = [ "n" "x" "o" ]; key = "R"; options.silent = true; action.__raw = "function() require(\"flash\").treesitter_search() end"; }
     ];
-    #colorschemes.vscode = {
-    #  enable = true;
-    #  settings = { italic_comments = true; };
-    #};
+    colorschemes.vscode = {
+      enable = true;
+      settings = { italic_comments = true; };
+    };
     #colorschemes.cyberdream = {
     #  enable = true;
     #  settings = { italic_comments = true; };
@@ -106,7 +109,7 @@ in {
     #    styles = { comments = { italic = true; }; };
     #  };
     #};
-    colorschemes.gruvbox = { enable = true; };
+    #colorschemes.gruvbox = { enable = true; };
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
@@ -133,7 +136,10 @@ in {
         #    ];
         #};
       };
-      leap.enable = true;
+      flash = {
+        enable = true;
+        autoLoad = true;
+      };
       #conform-nvim = {
       #  enable = true;
       #  settings = {
@@ -252,16 +258,16 @@ in {
             #};
           };
           #perlnavigator.enable = true;
-          rust_analyzer = {
-            enable = true;
-            cmd = [
-              "/usr/bin/rust-analyzer"
-              "--log-file"
-              "/tmp/rust-analyzer.log"
-            ];
-            installRustc = false;
-            installCargo = false;
-          };
+                    #rust_analyzer = {
+                    #  enable = true;
+                    #  cmd = [
+                    #    "/usr/bin/rust-analyzer"
+                    #    "--log-file"
+                    #    "/tmp/rust-analyzer.log"
+                    #  ];
+                    #  installRustc = false;
+                    #  installCargo = false;
+                    #};
           ts_ls.enable = true;
         };
       };
@@ -307,18 +313,27 @@ in {
         };
       };
 
-      #rustaceanvim = {
-      #  enable = true;
-      #  settings = {
-      #    server = {
-      #      cmd = [
-      #        "/usr/bin/rust-analyzer"
-      #        "--log-file"
-      #        "/tmp/rust-analyzer.log"
-      #      ];
-      #    };
-      #  };
-      #};
+      rustaceanvim = {
+        enable = true;
+        settings = {
+          server = {
+            cmd = [
+              "/usr/bin/rust-analyzer"
+              "--log-file"
+              "/tmp/rust-analyzer.log"
+            ];
+            default_settings = {
+              rust-analyzer = {
+                cargo.targetDir = true;
+                check = {
+                  command = "clippy";
+                  extraArgs = [ "--no-deps" ];
+                };
+              };
+            };
+          };
+        };
+      };
 
       flutter-tools = { enable = true; };
     };
