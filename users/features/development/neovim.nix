@@ -105,6 +105,24 @@ in
         options.silent = true;
         action = "<cmd>:Trouble lsp toggle focus=false win.position=right<cr>";
       }
+      {
+        mode = [
+          "n"
+          "x"
+          "o"
+        ];
+        key = "s";
+        options.silent = true;
+        action = "<Plug>(leap)";
+      }
+      {
+        mode = [
+          "n"
+        ];
+        key = "S";
+        options.silent = true;
+        action = "<Plug>(leap-from-window)";
+      }
     ];
     colorschemes.tokyonight = {
       enable = true;
