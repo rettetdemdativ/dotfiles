@@ -90,26 +90,38 @@ in {
         options.silent = true;
         action = "<cmd>:Trouble lsp toggle focus=false win.position=right<cr>";
       }
-    { mode = [ "n" "x" "o" ]; key = "s"; options.silent = true; action.__raw = "function() require(\"flash\").jump() end"; }
-    { mode = [ "n" "x" "o" ]; key = "S"; options.silent = true; action.__raw = "function() require(\"flash\").treesitter() end"; }
-    { mode = [ "n" "x" "o" ]; key = "R"; options.silent = true; action.__raw = "function() require(\"flash\").treesitter_search() end"; }
+      {
+        mode = [ "n" "x" "o" ];
+        key = "s";
+        options.silent = true;
+        action.__raw = ''function() require("flash").jump() end'';
+      }
+      {
+        mode = [ "n" "x" "o" ];
+        key = "S";
+        options.silent = true;
+        action.__raw = ''function() require("flash").treesitter() end'';
+      }
+      {
+        mode = [ "n" "x" "o" ];
+        key = "R";
+        options.silent = true;
+        action.__raw = ''function() require("flash").treesitter_search() end'';
+      }
     ];
-    colorschemes.vscode = {
-      enable = true;
-      settings = { italic_comments = true; };
-    };
+    #colorschemes.vscode = {
+    #  enable = true;
+    #  settings = { italic_comments = true; };
+    #};
     #colorschemes.cyberdream = {
     #  enable = true;
     #  settings = { italic_comments = true; };
     #};
     #colorschemes.tokyonight = {
     #  enable = true;
-    #  settings = {
-    #    style = "storm";
-    #    styles = { comments = { italic = true; }; };
-    #  };
+    #  settings = { style = "night"; };
     #};
-    #colorschemes.gruvbox = { enable = true; };
+    colorschemes.gruvbox = { enable = true; };
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
@@ -258,16 +270,16 @@ in {
             #};
           };
           #perlnavigator.enable = true;
-                    #rust_analyzer = {
-                    #  enable = true;
-                    #  cmd = [
-                    #    "/usr/bin/rust-analyzer"
-                    #    "--log-file"
-                    #    "/tmp/rust-analyzer.log"
-                    #  ];
-                    #  installRustc = false;
-                    #  installCargo = false;
-                    #};
+          #rust_analyzer = {
+          #  enable = true;
+          #  cmd = [
+          #    "/usr/bin/rust-analyzer"
+          #    "--log-file"
+          #    "/tmp/rust-analyzer.log"
+          #  ];
+          #  installRustc = false;
+          #  installCargo = false;
+          #};
           ts_ls.enable = true;
         };
       };
