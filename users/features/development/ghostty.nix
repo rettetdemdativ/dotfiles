@@ -11,7 +11,7 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      font-family = "JetBrains Mono";
+      font-family = "Monaspace Neon NF";
       font-size = 12;
       #$font-style = "Regular";
       #$font-style-bold = "Bold";
