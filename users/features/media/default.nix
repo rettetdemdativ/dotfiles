@@ -26,6 +26,7 @@
     mpv
     imv
     mpd
+    blanket
   ];
 
 }
