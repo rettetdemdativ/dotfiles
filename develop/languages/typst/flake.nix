@@ -26,9 +26,9 @@
         {
           default = pkgs.mkShell {
             packages = with pkgs; [
+              tinymist
               typst
-              typst-lsp
-              typstfmt
+              typstyle
               typst-live
             ];
           };
