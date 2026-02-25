@@ -17,6 +17,7 @@
     ./ghostty.nix
     ./podman.nix
     ./ollama.nix
+    ./opencode.nix
   ];
 
   home.packages = with pkgs; [
@@ -24,8 +25,6 @@
     docker-compose
     buildah
     distrobox
-    lefthook
-    pre-commit
     tig
 
     # Used for various development tools
