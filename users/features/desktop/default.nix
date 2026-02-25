@@ -13,7 +13,6 @@
     ./mako.nix
     #./niri
     ./sway
-    ./swayidle.nix
     ./zathura.nix
   ];
 

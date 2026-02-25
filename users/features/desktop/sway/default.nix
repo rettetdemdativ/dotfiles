@@ -11,7 +11,10 @@ let
   swayCfg = config.wayland.windowManager.sway;
 in
 {
-  imports = [ ../kanshi.nix ];
+  imports = [
+    ../kanshi.nix
+    ../swayidle_sway.nix
+  ];
 
   home.packages = with pkgs; [ waybar ];
 
