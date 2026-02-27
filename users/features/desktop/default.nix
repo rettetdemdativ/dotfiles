@@ -15,14 +15,16 @@
   ];
 
   home.packages = with pkgs; [
-    # Hyprland is imported through its flake in flake.nix
     seatd
     swaylock-effects
+
+    # Display management
     wdisplays
+
+    # Screenshot stuff
     grim
     slurp
     wl-clipboard
-    cage # For running XWayland windows in separate "cage"
 
     numix-icon-theme
   ];
