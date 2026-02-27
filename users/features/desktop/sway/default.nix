@@ -152,7 +152,7 @@ in
       bindsym $mod+Shift+q kill
 
       # Screenshots
-      bindsym $mod+Shift+s exec grim -g "$(slurp)" $HOME/Desktop/$(date +'%s_grim.png')
+      bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
 
       # start rofi
       #bindsym $mod+d exec rofi -show
@@ -293,7 +293,6 @@ in
       #gaps inner 12
       #gaps outer 5
 
-      #bindsym $mod+shift+x exec sh /home/inet/.i3/lock.sh
       bindsym $mod+shift+x exec swaylock -f --screenshots --clock --indicator --effect-blur 7x5 --fade-in 0.2
       bindsym $mod+alt+x exec oblogout
 
