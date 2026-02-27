@@ -33,6 +33,7 @@ let
 in
 {
   imports = [
+    ../fuzzel.nix
     ../swayidle_niri.nix
     ../waybar.nix
     (import ./swaybg.nix { wpPath = "/home/${username}/Pictures/Wallpapers"; })

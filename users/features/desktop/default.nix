@@ -8,10 +8,8 @@
 }:
 {
   imports = [
-    ./fuzzel.nix
     ./gammastep.nix
     ./mako.nix
-    #./niri
     ./sway
     ./zathura.nix
   ];

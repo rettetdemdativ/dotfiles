@@ -14,6 +14,7 @@ in
   imports = [
     ../kanshi.nix
     ../swayidle_sway.nix
+    ../wmenu.nix
   ];
 
   home.packages = with pkgs; [ waybar ];
@@ -317,7 +318,7 @@ in
     config = {
       bars = [ { command = getExe pkgs.waybar; } ];
       terminal = getExe (config.lib.nixGL.wrap pkgs.alacritty);
-      menu = getExe (config.lib.nixGL.wrap pkgs.fuzzel);
+      menu = "${pkgs.wmenu}/bin/wmenu-run";
       modifier = "Mod4";
       keybindings =
         let
