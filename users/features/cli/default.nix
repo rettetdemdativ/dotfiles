@@ -10,8 +10,8 @@
     gnupg
     pinentry-qt
 
-    yazi # File browser
-    ncdu # TUI disk usage
+    nnn
+    gdu
     duf # TUI disk usage overview
 
     handlr-regex
