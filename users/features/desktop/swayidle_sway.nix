@@ -14,10 +14,9 @@
     in
     {
       enable = true;
-      events = {
-        before-sleep = (display "off") + "; " + lock;
-        after-resume = display "on";
-      };
+      #events = {
+      #  before-sleep = (display "off") + "; " + lock;
+      #};
       timeouts = [
         {
           timeout = 600;
@@ -26,6 +25,7 @@
         {
           timeout = 900;
           command = display "off";
+          resumeCommand = display "on";
         }
       ];
     };
