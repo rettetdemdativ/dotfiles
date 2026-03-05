@@ -12,11 +12,11 @@
       font = {
         size = 11;
         normal = {
-          family = "Monaspace Neon NF";
+          family = "JetBrains Mono";
         };
       };
       colors = {
-        draw_bold_text_with_bright_colors = true;
+        #draw_bold_text_with_bright_colors = true;
         primary = {
           background = "0x000000";
           foreground = "0xffffff";
