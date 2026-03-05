@@ -124,18 +124,20 @@ in
         action = "<Plug>(leap-from-window)";
       }
     ];
-    colorschemes.tokyonight = {
+    #colorschemes.tokyonight = {
+    #  enable = true;
+    #  settings = {
+    #    style = "storm";
+    #    styles = {
+    #      comments = {
+    #        italic = true;
+    #      };
+    #    };
+    #  };
+    #};
+    colorschemes.gruvbox = {
       enable = true;
-      settings = {
-        style = "storm";
-        styles = {
-          comments = {
-            italic = true;
-          };
-        };
-      };
     };
-    #colorschemes.gruvbox = { enable = true; };
     highlight = {
       RDYellow = {
         fg = "#ffd602";
