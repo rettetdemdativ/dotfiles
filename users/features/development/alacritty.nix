@@ -10,9 +10,9 @@
     enable = true;
     settings = {
       font = {
-        size = 11;
+        size = 10.5;
         normal = {
-          family = "JetBrains Mono";
+          family = "Monaspace Neon NF";
         };
       };
       colors = {
