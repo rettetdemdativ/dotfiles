@@ -114,6 +114,28 @@
 
   services.mullvad-vpn.enable = true;
 
+  services.netbird.clients.wt0 = {
+
+    # Automatically login to your Netbird network with a setup key
+    # This is mostly useful for server computers.
+    # For manual setup instructions, see the wiki page section below.
+    #login = {
+    #  enable = true;
+
+    #  # Path to a file containing the setup key for your peer
+    #  # NOTE: if your setup key is reusable, make sure it is not copied to the Nix store.
+    #  setupKeyFile = "/path/to/your/setup-key";
+    #};
+
+    port = 51821;
+
+    ui.enable = false;
+
+    openFirewall = true;
+
+    openInternalFirewall = true;
+  };
+
   time.timeZone = "Europe/Amsterdam";
   i18n.defaultLocale = "en_US.UTF-8";
 
