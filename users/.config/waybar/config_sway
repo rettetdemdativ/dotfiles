@@ -4,20 +4,10 @@
     "modules-left": ["sway/workspaces"],
     "modules-right": ["pulseaudio", "network#eth", "cpu", "memory", "clock", "tray"],
 
-    "wlr/workspaces": {
-      "format": "{icon} {name}",
+    "sway/workspaces": {
+      "format": "{icon}",
       "on-click": "activate",
       "format-icons": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "8": "",
-        "9": "",
-        "10": "󰎆",
         "urgent": "",
         "active": "",
         "default": ""
@@ -26,9 +16,7 @@
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
-    "sway/workspaces": {
-        "format": "{name}"
-    },
+
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -46,11 +34,17 @@
         "format": "{}% "
     },
     "network#eth": {
-        "interface": "vmbr*",
+        "interface": "vmbr0",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈀",
         "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "on-click": "helvum",
+        "format-icons": ["", "", ""]
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

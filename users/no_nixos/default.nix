@@ -12,6 +12,7 @@ rec {
   imports = [
     ../features/general
     ../features/desktop/niri
+    ../features/desktop/sway
     ../features/desktop/waybar.nix
     (import ../features/desktop/swaybg.nix { wpPath = "/home/${username}/Pictures/Wallpapers"; })
     ../features/desktop/fuzzel.nix
@@ -36,6 +37,7 @@ rec {
   programs.alacritty.package = with pkgs; (config.lib.nixGL.wrap alacritty);
   programs.ghostty.package = with pkgs; (config.lib.nixGL.wrap ghostty);
   programs.fuzzel.package = with pkgs; (config.lib.nixGL.wrap fuzzel);
+  programs.waybar.package = with pkgs; (config.lib.nixGL.wrap waybar);
 
   programs.home-manager.enable = true;
 

@@ -109,10 +109,10 @@ in {
         action.__raw = ''function() require("flash").treesitter_search() end'';
       }
     ];
-    #colorschemes.vscode = {
-    #  enable = true;
-    #  settings = { italic_comments = true; };
-    #};
+    colorschemes.vscode = {
+      enable = true;
+      settings = { italic_comments = true; };
+    };
     #colorschemes.cyberdream = {
     #  enable = true;
     #  settings = { italic_comments = true; };
@@ -121,7 +121,7 @@ in {
     #  enable = true;
     #  settings = { style = "night"; };
     #};
-    colorschemes.gruvbox = { enable = true; };
+    #colorschemes.gruvbox = { enable = true; };
     highlight = {
       RDYellow = { fg = "#ffd602"; };
       RDViolet = { fg = "#d66ed2"; };
