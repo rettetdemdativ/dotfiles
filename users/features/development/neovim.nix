@@ -137,6 +137,9 @@ in
     #};
     colorschemes.gruvbox = {
       enable = true;
+      settings = {
+        contrast = "soft";
+      };
     };
     highlight = {
       RDYellow = {
