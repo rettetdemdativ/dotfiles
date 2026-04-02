@@ -109,10 +109,14 @@ in {
         action.__raw = ''function() require("flash").treesitter_search() end'';
       }
     ];
-    colorschemes.vscode = {
-      enable = true;
-      settings = { italic_comments = true; };
-    };
+    #colorschemes.vscode = {
+    #  enable = true;
+    #  settings = { italic_comments = true; };
+    #};
+    #colorschemes.kanagawa = {
+    #    enable = true;
+    #    theme = "dragon";
+    #};
     #colorschemes.cyberdream = {
     #  enable = true;
     #  settings = { italic_comments = true; };
@@ -121,16 +125,25 @@ in {
     #  enable = true;
     #  settings = { style = "night"; };
     #};
-    #colorschemes.gruvbox = { enable = true; };
-    highlight = {
-      RDYellow = { fg = "#ffd602"; };
-      RDViolet = { fg = "#d66ed2"; };
-      RDBlue = { fg = "#569cd6"; };
-      RDOrange = { fg = "#d7ba7d"; };
-      RDCyan = { fg = "#4ec9b0"; };
-      RDGreen = { fg = "#6a9955"; };
-      RDRed = { fg = "#d16969"; };
+        #colorschemes.gruvbox = {
+        #  enable = true;
+        #  settings = { contrast = "soft"; };
+        #};
+    colorschemes.gruvbox-material = {
+        enable = true;
+        settings = {
+            background = "hard";
+        };
     };
+    #highlight = {
+    #  RDYellow = { fg = "#ffd602"; };
+    #  RDViolet = { fg = "#d66ed2"; };
+    #  RDBlue = { fg = "#569cd6"; };
+    #  RDOrange = { fg = "#d7ba7d"; };
+    #  RDCyan = { fg = "#4ec9b0"; };
+    #  RDGreen = { fg = "#6a9955"; };
+    #  RDRed = { fg = "#d16969"; };
+    #};
     plugins = {
       # Editor
       illuminate.enable = true;
@@ -196,7 +209,7 @@ in {
           folding.enable = true;
         };
       };
-      treesitter-context.enable = true;
+      #treesitter-context.enable = true;
       #treesitter-refactor.enable = true;
       #treesitter-textobjects.enable = true;
       trouble = { enable = true; };
@@ -336,6 +349,7 @@ in {
             ];
             default_settings = {
               rust-analyzer = {
+                rustc = { source = "discover"; };
                 cargo.targetDir = true;
                 check = {
                   command = "clippy";
