@@ -124,23 +124,29 @@ in
         action = "<Plug>(leap-from-window)";
       }
     ];
-    #colorschemes.tokyonight = {
-    #  enable = true;
-    #  settings = {
-    #    style = "storm";
-    #    styles = {
-    #      comments = {
-    #        italic = true;
-    #      };
-    #    };
-    #  };
-    #};
-    colorschemes.gruvbox = {
+    colorschemes.tokyonight = {
       enable = true;
       settings = {
-        contrast = "soft";
+        style = "storm";
+        styles = {
+          comments = {
+            italic = true;
+          };
+        };
       };
     };
+    #colorschemes.gruvbox = {
+    #  enable = true;
+    #  settings = {
+    #    contrast = "soft";
+    #  };
+    #};
+    #colorschemes.gruvbox-material = {
+    #  enable = true;
+    #  settings = {
+    #    background = "hard";
+    #  };
+    #};
     highlight = {
       RDYellow = {
         fg = "#ffd602";
