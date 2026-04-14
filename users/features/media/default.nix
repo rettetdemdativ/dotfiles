@@ -7,7 +7,6 @@
     #./streamlink.nix
     #./toot.nix
     #./ncmpcpp.nix
-    ./tidal.nix
   ];
 
   programs.obs-studio = { enable = true; };

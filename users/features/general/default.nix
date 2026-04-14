@@ -9,7 +9,6 @@
   imports = [
     ./chromium.nix
     ./librewolf.nix
-    ./iamb.nix
     ./zulip.nix
   ];
 }
