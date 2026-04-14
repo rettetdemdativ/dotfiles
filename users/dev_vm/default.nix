@@ -49,7 +49,7 @@ rec {
     sessionVariables = {
       EDITOR = "nvim";
       TERM = "alacritty";
-      PATH = "$PATH:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin";
+      PATH = "$PATH:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$HOME/.local/bin";
     };
     shellAliases = {
       apply-home = "$HOME/dotfiles/scripts/dev_vm/apply-home.sh";
