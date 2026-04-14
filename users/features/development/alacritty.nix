@@ -3,8 +3,8 @@
     enable = true;
     settings = {
       font = {
-        size = 10.5;
-        normal = { family = "Monaspace Neon"; };
+        size = 11;
+        normal = { family = "JetBrains Mono"; };
       };
       colors = {
         #draw_bold_text_with_bright_colors = true;
