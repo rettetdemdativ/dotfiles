@@ -121,20 +121,20 @@ in {
     #  enable = true;
     #  settings = { italic_comments = true; };
     #};
-    #colorschemes.tokyonight = {
-    #  enable = true;
-    #  settings = { style = "night"; };
-    #};
-        #colorschemes.gruvbox = {
-        #  enable = true;
-        #  settings = { contrast = "soft"; };
-        #};
-    colorschemes.gruvbox-material = {
-        enable = true;
-        settings = {
-            background = "hard";
-        };
+    colorschemes.tokyonight = {
+      enable = true;
+      settings = { style = "night"; };
     };
+    #colorschemes.gruvbox = {
+    #  enable = true;
+    #  settings = { contrast = "soft"; };
+    #};
+    #colorschemes.gruvbox-material = {
+    #    enable = true;
+    #    settings = {
+    #        background = "hard";
+    #    };
+    #};
     #highlight = {
     #  RDYellow = { fg = "#ffd602"; };
     #  RDViolet = { fg = "#d66ed2"; };
