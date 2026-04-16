@@ -11,8 +11,8 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      font-family = "Monaspace Neon NF";
-      font-size = 12;
+      font-family = "JetBrains Mono";
+      font-size = 11;
       #$font-style = "Regular";
       #$font-style-bold = "Bold";
       #$font-style-italic = "Italic";
@@ -24,6 +24,8 @@
 
       window-padding-y = "2,1";
       window-inherit-working-directory = true;
+
+      gtk-single-instance = false;
 
       keybind = [
         "ctrl+shift+n=new_window"

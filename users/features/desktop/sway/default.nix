@@ -42,7 +42,8 @@ in
 
     config = {
       modifier = "Mod4";
-      terminal = getExe (config.lib.nixGL.wrap pkgs.alacritty);
+      terminal = getExe (config.lib.nixGL.wrap pkgs.ghostty);
+      #terminal = getExe (config.lib.nixGL.wrap pkgs.alacritty);
       menu = "${pkgs.wmenu}/bin/wmenu-run";
 
       bars = [ { command = getExe pkgs.waybar; } ];
