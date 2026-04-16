@@ -12,7 +12,7 @@
       font = {
         size = 10.5;
         normal = {
-          family = "Monaspace Neon NF";
+          family = "JetBrains Mono";
         };
       };
       colors = {
