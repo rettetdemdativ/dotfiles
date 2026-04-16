@@ -1,10 +1,19 @@
-{ inputs, lib, config, pkgs, username, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  username,
+  ...
+}:
+{
   programs.ghostty = {
     enable = true;
     enableZshIntegration = true;
+    systemd.enable = true;
     settings = {
       font-family = "JetBrains Mono";
-      font-size = 13;
+      font-size = 11.5;
 
       theme = "Monokai Remastered";
       #theme = "Dark Pastel"
@@ -12,6 +21,8 @@
 
       window-padding-y = "2,1";
       window-inherit-working-directory = true;
+
+      gtk-single-instance = false;
 
       keybind = [
         "ctrl+shift+n=new_window"
