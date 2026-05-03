@@ -18,6 +18,7 @@
     ./podman.nix
     ./ollama.nix
     ./opencode.nix
+    ./claude.nix
   ];
 
   home.packages = with pkgs; [
