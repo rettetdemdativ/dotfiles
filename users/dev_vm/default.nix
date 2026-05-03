@@ -13,6 +13,7 @@ rec {
     ../features/cli/tmux.nix
     ../features/development/neovim.nix
     ../features/development/opencode.nix
+    ../features/development/claude.nix
   ];
 
   programs.home-manager.enable = true;
