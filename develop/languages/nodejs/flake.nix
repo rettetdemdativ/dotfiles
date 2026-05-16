@@ -30,8 +30,8 @@
               eslint_d
               eslint
               prettierd
-              nodePackages.typescript-language-server
-              nodePackages.svelte-language-server
+              typescript-language-server
+              svelte-language-server
             ];
           };
         }

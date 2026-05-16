@@ -6,7 +6,7 @@
   ...
 }:
 {
-  xdg.configFile."oh-my-custom/simple.zsh-theme".source = ../../themes/simple.zsh-theme;
+  #xdg.configFile."oh-my-custom/simple.zsh-theme".source = ../../themes/simple.zsh-theme;
 
   programs.zsh = {
     enable = true;
@@ -38,7 +38,7 @@
       ];
 
       custom = "$HOME/.config/oh-my-custom";
-      theme = "simple";
+      #theme = "simple";
     };
   };
 }

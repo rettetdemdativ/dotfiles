@@ -29,7 +29,7 @@
     tig
 
     # Used for various development tools
-    nodePackages.prettier
+    prettier
     prettierd
     eslint_d
     lua
